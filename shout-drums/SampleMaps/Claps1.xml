@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="Claps1" RRGroupAmount="1" MicPositions=";" SaveMode="2">
+  <sample Root="31" LoKey="19" HiKey="19" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_snap_bell_E.wav" Duplicate="1"
+          MonolithOffset="0" MonolithLength="114688" SampleRate="48000"/>
+  <sample Root="32" LoKey="20" HiKey="20" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_clap_desert_big.wav"
+          Duplicate="1" MonolithOffset="114688" MonolithLength="57344"
+          SampleRate="48000"/>
+  <sample Root="55" LoKey="67" HiKey="67" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_snap_bell_E.wav" Duplicate="1"
+          MonolithOffset="172032" MonolithLength="114688" SampleRate="48000"/>
+  <sample Root="56" LoKey="68" HiKey="68" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_clap_desert_big.wav"
+          Duplicate="1" MonolithOffset="286720" MonolithLength="57344"
+          SampleRate="48000"/>
+  <sample Root="43" LoKey="43" HiKey="43" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_snap_bell_E.wav" Duplicate="1"
+          MonolithOffset="344064" MonolithLength="114688" SampleRate="48000"/>
+  <sample Root="44" LoKey="44" HiKey="44" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_clap_desert_big.wav"
+          Duplicate="1" MonolithOffset="458752" MonolithLength="57344"
+          SampleRate="48000"/>
+</samplemap>

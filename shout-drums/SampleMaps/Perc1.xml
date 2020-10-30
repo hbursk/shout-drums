@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="Perc1" RRGroupAmount="1" MicPositions=";" SaveMode="2">
+  <sample Root="30" LoKey="18" HiKey="18" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_percussion_bike_bell_A.wav"
+          Duplicate="1" MonolithOffset="0" MonolithLength="151552" SampleRate="48000"/>
+  <sample Root="33" LoKey="21" HiKey="21" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_percussion_bronto_pipe.wav"
+          Duplicate="1" MonolithOffset="151552" MonolithLength="57344"
+          SampleRate="48000"/>
+  <sample Root="54" LoKey="66" HiKey="66" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_percussion_bike_bell_A.wav"
+          Duplicate="1" MonolithOffset="208896" MonolithLength="151552"
+          SampleRate="48000"/>
+  <sample Root="57" LoKey="69" HiKey="69" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_percussion_bronto_pipe.wav"
+          Duplicate="1" MonolithOffset="360448" MonolithLength="57344"
+          SampleRate="48000"/>
+  <sample Root="42" LoKey="42" HiKey="42" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_percussion_bike_bell_A.wav"
+          Duplicate="1" MonolithOffset="417792" MonolithLength="151552"
+          SampleRate="48000"/>
+  <sample Root="45" LoKey="45" HiKey="45" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_percussion_bronto_pipe.wav"
+          Duplicate="1" MonolithOffset="569344" MonolithLength="57344"
+          SampleRate="48000"/>
+</samplemap>

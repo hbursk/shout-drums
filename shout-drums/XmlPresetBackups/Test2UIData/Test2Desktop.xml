@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentProperties DeviceType="Desktop">
+  <Component type="ScriptFloatingTile" id="FloatingTile1" x="0.00000000" y="0.00000000"
+             width="1024.00000000" height="768.00000000" ContentType="ExternalTestComponent"
+             bgColour="4294951115" itemColour="4294951115" itemColour2="4294951115"
+             textColour="4294951115" Data="{&#13;&#10;}"/>
+</ContentProperties>

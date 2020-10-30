@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="Kicks2" RRGroupAmount="1" MicPositions=";" SaveMode="2">
+  <sample Root="24" LoKey="12" HiKey="12" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_kick_chunky.wav" Duplicate="1"
+          MonolithOffset="0" MonolithLength="24576" SampleRate="48000"/>
+  <sample Root="28" LoKey="16" HiKey="16" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_kick_caveman_plonk.wav"
+          Duplicate="1" MonolithOffset="24576" MonolithLength="49152" SampleRate="48000"/>
+  <sample Root="48" LoKey="60" HiKey="60" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_kick_chunky.wav" Duplicate="1"
+          MonolithOffset="73728" MonolithLength="24576" SampleRate="48000"/>
+  <sample Root="52" LoKey="64" HiKey="64" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_kick_caveman_plonk.wav"
+          Duplicate="1" MonolithOffset="98304" MonolithLength="49152" SampleRate="48000"/>
+  <sample Root="36" LoKey="36" HiKey="36" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_kick_chunky.wav" Duplicate="1"
+          MonolithOffset="147456" MonolithLength="24576" SampleRate="48000"/>
+  <sample Root="40" LoKey="40" HiKey="40" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_kick_caveman_plonk.wav"
+          Duplicate="1" MonolithOffset="172032" MonolithLength="49152"
+          SampleRate="48000"/>
+</samplemap>

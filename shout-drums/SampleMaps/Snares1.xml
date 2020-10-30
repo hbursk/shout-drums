@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="Snares1" RRGroupAmount="1" MicPositions=";" SaveMode="2">
+  <sample Root="25" LoKey="13" HiKey="13" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_snare_808_prehistoric.wav"
+          Duplicate="1" MonolithOffset="0" MonolithLength="57344" SampleRate="48000"/>
+  <sample Root="29" LoKey="17" HiKey="17" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_snare_coralreef_C#.wav"
+          Duplicate="1" MonolithOffset="57344" MonolithLength="61440" SampleRate="48000"/>
+  <sample Root="49" LoKey="61" HiKey="61" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_snare_808_prehistoric.wav"
+          Duplicate="1" MonolithOffset="118784" MonolithLength="57344"
+          SampleRate="48000"/>
+  <sample Root="53" LoKey="65" HiKey="65" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_snare_coralreef_C#.wav"
+          Duplicate="1" MonolithOffset="176128" MonolithLength="61440"
+          SampleRate="48000"/>
+  <sample Root="37" LoKey="37" HiKey="37" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_snare_808_prehistoric.wav"
+          Duplicate="1" MonolithOffset="237568" MonolithLength="57344"
+          SampleRate="48000"/>
+  <sample Root="41" LoKey="41" HiKey="41" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}MORE_GIRAFFES_snare_coralreef_C#.wav"
+          Duplicate="1" MonolithOffset="294912" MonolithLength="61440"
+          SampleRate="48000"/>
+</samplemap>

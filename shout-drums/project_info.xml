@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ProjectSettings>
+  <Name value="DrumTest"/>
+  <Version value="1.0.0"/>
+  <Description value=""/>
+  <BundleIdentifier value="com.myCompany.product"/>
+  <PluginCode value="Abcd"/>
+  <EmbedAudioFiles value="Yes"/>
+  <AdditionalDspLibraries value=""/>
+  <OSXStaticLibs value=""/>
+  <WindowsStaticLibFolder value=""/>
+  <ExtraDefinitionsWindows value="HI_ENABLE_EXTERNAL_CUSTOM_TILES=0&#10;USE_COMMON_APP_DATA_FOLDER=1&#10;HISE_USE_CUSTOM_ALERTWINDOW_LOOKANDFEEL=1&#10;HISE_INCLUDE_RLOTTIE=1"/>
+  <ExtraDefinitionsOSX value="HI_ENABLE_EXTERNAL_CUSTOM_TILES=0&#10;USE_COMMON_APP_DATA_FOLDER=1&#10;HISE_USE_CUSTOM_ALERTWINDOW_LOOKANDFEEL=1&#10;HISE_INCLUDE_RLOTTIE=1"/>
+  <ExtraDefinitionsIOS value="HI_ENABLE_EXTERNAL_CUSTOM_TILES=0"/>
+  <AppGroupID value=""/>
+  <RedirectSampleFolder value=""/>
+  <SupportFullDynamicsHLAC value="No"/>
+  <AAXCategoryFX value="AAX_ePlugInCategory_Modulation"/>
+  <SupportMonoFX value="No"/>
+  <VST3Support value="1"/>
+  <UseRawFrontend value="1"/>
+  <EmbedImageFiles value="1"/>
+  <ExtraDefinitionsLinux value=""/>
+  <EnableMidiInputFX value="No"/>
+  <ExpansionType value="Disabled"/>
+</ProjectSettings>

@@ -1,0 +1,6 @@
+[submodule "lib/HISE"]
+	path = lib/HISE
+	url = https://github.com/hbursk/HISE.git
+[submodule "lib/JUCE"]
+	path = lib/JUCE
+	url = https://github.com/hbursk/JUCE.git

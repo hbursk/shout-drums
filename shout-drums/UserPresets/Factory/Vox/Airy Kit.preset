@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Preset Version="1.0.0">
+  <Control id="LoadedMap1" value="MoreGiraffeVox"/>
+  <Control id="VeloTable1" value="24......PDQD4C...vO...f+....9C...vO"/>
+  <Control id="Release1" value="1234"/>
+  <Control id="Attack1" value="0"/>
+  <Control id="KicksMap" value="Kicks1"/>
+  <Control id="SnaresMap" value="Snares1"/>
+  <Control id="HatsMap" value="Hats1"/>
+  <Control id="ClapsMap" value="Claps1"/>
+  <Control id="CymbalsMap" value="Cymbals1"/>
+  <Control id="PercMap" value="Perc1"/>
+  <Control id="TomsMap" value="Toms1"/>
+  <Control id="SamplerMuter" value="0"/>
+  <Control id="KicksMuter" value="1"/>
+  <Control id="SnaresMuter" value="1"/>
+  <Control id="HatsMuter" value="1"/>
+  <Control id="ClapsMuter" value="1"/>
+  <Control id="CymbalsMuter" value="1"/>
+  <Control id="PercMuter" value="1"/>
+  <Control id="TomsMuter" value="1"/>
+  <Control id="ReverbWet" value="-100"/>
+  <Control id="Width" value="100"/>
+  <Control id="SaturationMix" value="0"/>
+  <Control id="DelayMix" value="0"/>
+  <Control id="OutputGain" value="0"/>
+  <MidiAutomation/>
+  <MPEData Enabled="0"/>
+</Preset>

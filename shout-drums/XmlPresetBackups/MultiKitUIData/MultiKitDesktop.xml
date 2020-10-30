@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentProperties DeviceType="Desktop">
+  <Component type="ScriptFloatingTile" id="FloatingTile1" x="0" y="0" width="1024"
+             height="768" ContentType="ExternalTestComponent" bgColour="4294951115"
+             itemColour="4294951115" itemColour2="4294951115" textColour="4294951115"
+             Data="{&#13;&#10;}"/>
+  <Component type="ScriptFloatingTile" id="InternalControls" x="1" y="-1"
+             width="800" height="546">
+    <Component type="ScriptSlider" id="MainOutput" x="349" y="25" parentComponent="InternalControls"
+               processorId="Simple Gain1" parameterId="Gain" mode="Decibel"
+               min="-100" max="0" stepSize="0.1" suffix=" dB" middlePosition="-18"/>
+    <Component type="ScriptButton" id="KickMuted" x="50" y="171" parentComponent="InternalControls"
+               processorId="KicksMuter" parameterId="ignoreButton"/>
+    <Component type="ScriptButton" id="SamplerMuted" x="51" y="112" parentComponent="InternalControls"
+               processorId="MidiMuter1" parameterId="ignoreButton"/>
+    <Component type="ScriptSlider" id="ReverbWet" x="199" y="25" parentComponent="InternalControls"
+               processorId="Convolution Reverb" parameterId="WetGain" min="-100"
+               max="0" mode="Decibel" defaultValue="-60" middlePosition="-30"/>
+    <Component type="ScriptComboBox" id="cmbSampleMap" x="212" y="110" max="11"
+               parentComponent="InternalControls" items="Claps1&#10;Cymbals1&#10;Hats1&#10;Kicks1&#10;Kicks2&#10;MoreGiraffeFX&#10;Perc1&#10;Snares1&#10;Snares2&#10;TestDrums&#10;Toms1"/>
+    <Component type="ScriptComboBox" id="snareMap" x="212" y="214" max="11"
+               parentComponent="InternalControls" items="Claps1&#10;Cymbals1&#10;Hats1&#10;Kicks1&#10;Kicks2&#10;MoreGiraffeFX&#10;Perc1&#10;Snares1&#10;Snares2&#10;TestDrums&#10;Toms1"/>
+    <Component type="ScriptComboBox" id="hatMap" x="215" y="268" max="11" parentComponent="InternalControls"
+               items="Claps1&#10;Cymbals1&#10;Hats1&#10;Kicks1&#10;Kicks2&#10;MoreGiraffeFX&#10;Perc1&#10;Snares1&#10;Snares2&#10;TestDrums&#10;Toms1"/>
+    <Component type="ScriptComboBox" id="kickMap" x="210" y="168" max="11" parentComponent="InternalControls"
+               items="Claps1&#10;Cymbals1&#10;Hats1&#10;Kicks1&#10;Kicks2&#10;MoreGiraffeFX&#10;Perc1&#10;Snares1&#10;Snares2&#10;TestDrums&#10;Toms1"/>
+    <Component type="ScriptButton" id="SnareMuted" x="49" y="218" parentComponent="InternalControls"
+               processorId="SnaresMuter" parameterId="ignoreButton"/>
+    <Component type="ScriptButton" id="HatsMuted" x="51" y="268" parentComponent="InternalControls"
+               processorId="HatsMuter" parameterId="ignoreButton"/>
+    <Component type="ScriptButton" id="PercMuted" x="50" y="326" parentComponent="InternalControls"
+               processorId="PercMuter" parameterId="ignoreButton"/>
+    <Component type="ScriptButton" id="ClapMuted" x="50" y="373" parentComponent="InternalControls"
+               processorId="ClapsMuter" parameterId="ignoreButton"/>
+    <Component type="ScriptButton" id="TomsMuted" x="48" y="418" parentComponent="InternalControls"
+               processorId="TomsMuter" parameterId="ignoreButton"/>
+    <Component type="ScriptButton" id="CymbalsMuted" x="49" y="456" parentComponent="InternalControls"
+               processorId="CymbalsMuter" parameterId="ignoreButton"/>
+    <Component type="ScriptComboBox" id="percMap" x="216" y="326" max="11" parentComponent="InternalControls"
+               items="Claps1&#10;Cymbals1&#10;Hats1&#10;Kicks1&#10;Kicks2&#10;MoreGiraffeFX&#10;Perc1&#10;Snares1&#10;Snares2&#10;TestDrums&#10;Toms1"/>
+    <Component type="ScriptComboBox" id="clapMap" x="215" y="371" max="11" parentComponent="InternalControls"
+               items="Claps1&#10;Cymbals1&#10;Hats1&#10;Kicks1&#10;Kicks2&#10;MoreGiraffeFX&#10;Perc1&#10;Snares1&#10;Snares2&#10;TestDrums&#10;Toms1"/>
+    <Component type="ScriptComboBox" id="tomMap" x="213" y="417" max="11" parentComponent="InternalControls"
+               items="Claps1&#10;Cymbals1&#10;Hats1&#10;Kicks1&#10;Kicks2&#10;MoreGiraffeFX&#10;Perc1&#10;Snares1&#10;Snares2&#10;TestDrums&#10;Toms1"/>
+    <Component type="ScriptComboBox" id="cymbalMap" x="215" y="456" max="11"
+               parentComponent="InternalControls" items="Claps1&#10;Cymbals1&#10;Hats1&#10;Kicks1&#10;Kicks2&#10;MoreGiraffeFX&#10;Perc1&#10;Snares1&#10;Snares2&#10;TestDrums&#10;Toms1"/>
+    <Component type="ScriptSlider" id="SaturationMix" x="506" y="27" parentComponent="InternalControls"
+               processorId="Shape FX1" parameterId="Mix"/>
+    <Component type="ScriptSlider" id="Width" x="652" y="30" parentComponent="InternalControls"
+               processorId="Simple Gain1" parameterId="Width" max="200" defaultValue="100"/>
+    <Component type="ScriptSlider" id="SamplerAttack" x="364" y="104" parentComponent="InternalControls"
+               text="Attack" processorId="AHDSR Envelope1" parameterId="Attack"
+               mode="Time" max="20000" stepSize="1" suffix=" ms" middlePosition="1000"/>
+    <Component type="ScriptSlider" id="SamplerRelease" x="523" y="106" parentComponent="InternalControls"
+               text="Release" mode="Time" max="20000" stepSize="1" suffix=" ms"
+               middlePosition="1000" processorId="AHDSR Envelope1" parameterId="Release"
+               defaultValue="1234" min="80"/>
+  </Component>
+</ContentProperties>

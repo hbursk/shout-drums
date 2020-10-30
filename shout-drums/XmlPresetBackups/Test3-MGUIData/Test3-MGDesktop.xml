@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentProperties DeviceType="Desktop">
+  <Component type="ScriptFloatingTile" id="FloatingTile1" x="0" y="0" width="1024"
+             height="768" ContentType="ExternalTestComponent" bgColour="4294951115"
+             itemColour="4294951115" itemColour2="4294951115" textColour="4294951115"
+             Data="{&#13;&#10;}"/>
+  <Component type="ScriptFloatingTile" id="InternalControls" x="1" y="-1"
+             width="604" height="401">
+    <Component type="ScriptSlider" id="SamplerOutput" x="349" y="25" parentComponent="InternalControls"
+               defaultValue="1" processorId="Sampler" parameterId="Gain"/>
+    <Component type="ScriptButton" id="SamplerMuted" x="53" y="25" parentComponent="InternalControls"
+               processorId="MidiMuter1" parameterId="ignoreButton"/>
+    <Component type="ScriptSlider" id="ReverbWet" x="199" y="25" parentComponent="InternalControls"
+               processorId="Convolution Reverb" parameterId="WetGain" min="-60"
+               max="0" mode="Decibel" defaultValue="-60" middlePosition="-30"/>
+    <Component type="ScriptComboBox" id="cmbSampleMap" x="51" y="111" max="2"
+               parentComponent="InternalControls" items="MoreGiraffeFX&#10;TestDrums"/>
+  </Component>
+</ContentProperties>
