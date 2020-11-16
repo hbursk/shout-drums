@@ -37,7 +37,7 @@ public:
             }
             else
             {
-                jassertfalse;
+                //jassertfalse;
                 return;
             }
 		}

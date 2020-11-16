@@ -13,18 +13,34 @@ DrumsData::DrumsData(MainController* mc) :
       
     // sampler
     addToUserPreset<raw::GenericStorage::SampleMap>("LoadedMap1",  sampler_id );
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("SamplerGain", sampler_id);
+
     addToUserPreset<raw::GenericStorage::Table<0>>("VeloTable1",  sampler_velomod_id );
     addToUserPreset<raw::GenericStorage::Attribute<AhdsrEnvelope::Release>>("Release1", sampler_ahdsr_id);
     addToUserPreset<raw::GenericStorage::Attribute<AhdsrEnvelope::Attack>>("Attack1", sampler_ahdsr_id);
     
     // drums
     addToUserPreset<raw::GenericStorage::SampleMap>("KicksMap", drum_kicks_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("KicksGain", drum_kicks_id);
+    
     addToUserPreset<raw::GenericStorage::SampleMap>("SnaresMap", drum_snares_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("SnaresGain", drum_snares_id);
+
     addToUserPreset<raw::GenericStorage::SampleMap>("HatsMap", drum_hats_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("HatsGain", drum_hats_id);
+
     addToUserPreset<raw::GenericStorage::SampleMap>("ClapsMap", drum_claps_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("ClapsGain", drum_claps_id);
+
     addToUserPreset<raw::GenericStorage::SampleMap>("CymbalsMap", drum_cymbals_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("CymbalsGain", drum_cymbals_id);
+
     addToUserPreset<raw::GenericStorage::SampleMap>("PercMap", drum_perc_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("PercGain", drum_perc_id);
+
     addToUserPreset<raw::GenericStorage::SampleMap>("TomsMap", drum_toms_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("TomsGain", drum_toms_id);
+
     
     // muters
     addToUserPreset<raw::GenericStorage::Attribute<MuteAllScriptProcessor::Parameters::IgnoreNotes>>("SamplerMuter", midi_muter_id);

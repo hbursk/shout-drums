@@ -12,27 +12,55 @@
 
 #include "Font.h"
 #include "InfoView.h"
+#include "Presets.h"
 
 template <int ParameterIndex>
 class Knob : public juce::Component
 {
 public:
     Knob() = delete;
-    Knob( const std::string& name, MainController* mc, const std::string& procId )
+    Knob( const std::string& name, MainController* mc, const std::string& procId, Presets& presets )
     : juce::Component( name )
     , m_connection(&m_slider, mc, procId)
     , m_processorId( procId )
     , m_mainController( mc )
+    , m_processorReference( mc, String(procId), true )
+    , m_presets( presets )
     {
+        addChildComponent(m_iconAnimation = new RLottieComponent(mc->getRLottieManager()));
+        m_iconAnimation->setBackgroundColour(Colours::transparentBlack);
+
         setupSlider();
         setupLabel( name );
+        
+        hise::raw::Reference<Processor>::ParameterCallback update = [this](float newValue)
+        {
+            if (m_iconAnimation)
+            {
+                auto normalized = m_slider.valueToProportionOfLength( newValue );
+                auto scaled = normalized * (m_animationEnd - m_animationStart) + m_animationStart;
+                m_iconAnimation->setFrameNormalised( scaled );
+            }
+        };
+
+        m_processorReference.addParameterToWatch(ParameterIndex, update);
+        
+        m_presets.presetSelection.onChanged([this](const auto&){
+            updateDoubleClickValue();
+        });
     }
     
-    ~Knob() = default;
+    ~Knob()
+    {
+    }
     
     void resized() override
     {
         auto area = getLocalBounds();
+        
+        const float margin = 8.0;
+        
+        m_iconAnimation->setBounds(margin/2+1,margin,area.getWidth()-margin,area.getWidth()-margin);
         
         m_slider.setBounds(0, 0, area.getWidth(), area.getWidth() );
         m_label.setBounds( 0, area.getWidth(), area.getWidth(), 20 );
@@ -51,9 +79,8 @@ public:
         
         auto p = ProcessorHelpers::getFirstProcessorWithName(m_mainController->getMainSynthChain(), m_processorId);
         m_slider.setValue( p->getAttribute( ParameterIndex ), dontSendNotification );
-        m_slider.repaint();
         
-        //m_connection.template setData<raw::Data<float>::Attribute<ParameterIndex>>();
+        m_slider.repaint();
     }
     
     void mouseEnter (const MouseEvent& event) override{}
@@ -64,7 +91,28 @@ public:
         getProperties().set(info_title_property, String(CharPointer_UTF8(title.c_str())));
         getProperties().set(info_message_property, String(CharPointer_UTF8(text.c_str())));
     }
-
+    
+    void setIconAnimation(const char* animation, size_t animationSize, float start = 0.f, float end = 1.f)
+    {
+        m_iconAnimation->loadAnimation(String(animation, animationSize), true);
+        m_iconAnimation->setVisible(true);
+        m_animationStart = start;
+        m_animationEnd = end;
+        updateIconAnimation();
+    }
+    
+    void updateIconAnimation()
+    {
+        auto normalized = m_slider.valueToProportionOfLength( m_slider.getValue() );
+        auto scaled = normalized * (m_animationEnd - m_animationStart) + m_animationStart;
+        m_iconAnimation->setFrameNormalised( scaled );
+    }
+    
+    void updateDoubleClickValue()
+    {
+        auto p = ProcessorHelpers::getFirstProcessorWithName(m_mainController->getMainSynthChain(), m_processorId);
+        m_slider.setDoubleClickReturnValue(true, (double)p->getAttribute(ParameterIndex));
+    }
     
 private:
     void setupSlider()
@@ -75,13 +123,15 @@ private:
         m_slider.setTextBoxStyle(Slider::NoTextBox, false, getLocalBounds().getWidth(), getLocalBounds().getWidth() );
         m_slider.setRange(0.0, 1.0);
         m_slider.setRotaryParameters(juce::MathConstants<float>::pi, juce::MathConstants<float>::pi * 3, true);
-        
-//        auto p = ProcessorHelpers::getFirstProcessorWithName(m_mainController->getMainSynthChain(), m_processorId);
-//        m_slider.setDoubleClickReturnValue(true, (double)p->getDefaultValue(ParameterIndex));
     }
-
+    
     void setupLabel( const std::string& name )
     {
+        if (name.empty())
+        {
+            return;
+        }
+        
         addAndMakeVisible( &m_label );
         m_label.setText( name, dontSendNotification );
         m_label.setJustificationType( Justification::centred );
@@ -97,4 +147,10 @@ private:
     std::string m_processorId;
     MainController* m_mainController = nullptr;
     
+    ScopedPointer<RLottieComponent> m_iconAnimation;
+    float m_animationStart = 0.0f;
+    float m_animationEnd = 1.0f;
+    hise::raw::Reference<Processor> m_processorReference;
+    Presets& m_presets;
+
 };

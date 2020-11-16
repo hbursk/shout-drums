@@ -11,13 +11,14 @@
 #include "JuceHeader.h"
 
 #include "BrightComboBox.h"
+#include "Knob.h"
 #include "PowerButton.h"
-#include "SampleMaps.h"
+#include "App.h"
 
 class PresetEditorComponent : public juce::Component
 {
 public:
-    PresetEditorComponent( hise::MainController* mc, SampleMaps& sampleMaps );
+    PresetEditorComponent( hise::MainController* mc, shout::App& app );
     virtual ~PresetEditorComponent() = default;
     
     void resized() override;
@@ -45,6 +46,22 @@ private:
     PowerButton m_percMuter;
     PowerButton m_tomsMuter;
     
+    Knob<hise::ConvolutionEffect::Parameters::WetGain> m_reverbMixSlider;
+    Knob<hise::ShapeFX::SpecialParameters::Mix> m_saturationMixSlider;
+    Knob<hise::GainEffect::Parameters::Width> m_widthSlider;
+    Knob<hise::DelayEffect::Parameters::Mix> m_delayMixSlider;
+    Knob<hise::AhdsrEnvelope::SpecialParameters::Attack> m_attackSlider;
+    Knob<hise::AhdsrEnvelope::SpecialParameters::Release> m_releaseSlider;
+    
+    Knob<hise::ModulatorSynth::Parameters::Gain> m_samplerGain;
+    Knob<hise::ModulatorSynth::Parameters::Gain> m_kickGain;
+    Knob<hise::ModulatorSynth::Parameters::Gain> m_snareGain;
+    Knob<hise::ModulatorSynth::Parameters::Gain> m_hatGain;
+    Knob<hise::ModulatorSynth::Parameters::Gain> m_clapGain;
+    Knob<hise::ModulatorSynth::Parameters::Gain> m_cymbalGain;
+    Knob<hise::ModulatorSynth::Parameters::Gain> m_percGain;
+    Knob<hise::ModulatorSynth::Parameters::Gain> m_tomsGain;
+
     juce::TextButton m_savePresetButton;
     
     hise::PresetBrowser m_presetBrowser;

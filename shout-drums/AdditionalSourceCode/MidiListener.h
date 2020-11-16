@@ -24,6 +24,7 @@ public:
                         int midiChannel, int midiNoteNumber, float velocity) override;
     
     Property<std::vector<int>> activeNotes;
+    Property<std::vector<int>, AlwaysUpdatePolicy> dyingNotes;
     
     MidiKeyboardState& m_keyboardState;
 };

@@ -1,6 +1,7 @@
 #include "MainComponent.h"
 #include "ImageData.h"
 #include "Font.h"
+#include "WaterFillFlatAnimation.h"
 
 //#define SHOW_KEYBOARD
 #define SHOW_PRESET_EDITOR
@@ -13,17 +14,17 @@ FloatingTileContent(parent)
 ,
 #endif
   m_app( mc )
-, m_gainSlider( "", mc, "Simple Gain1" )
-, m_reverbMixSlider( TRANS("reverb").toStdString(), mc, "Convolution Reverb" )
-, m_saturationMixSlider( TRANS("drive").toStdString(), mc, "Shape FX1" )
-, m_widthSlider( TRANS("width").toStdString(), mc, "Simple Gain1" )
-, m_delayMixSlider( TRANS("delay").toStdString(), mc, "Delay1" )
-, m_attackSlider( TRANS("attack").toStdString(), mc, "AHDSR Envelope1" )
-, m_releaseSlider( TRANS("release").toStdString(), mc, "AHDSR Envelope1")
+, m_gainSlider( "", mc, "Simple Gain1", m_app.presets() )
+, m_reverbMixSlider( TRANS("reverb").toStdString(), mc, "Convolution Reverb", m_app.presets() )
+, m_saturationMixSlider( TRANS("drive").toStdString(), mc, "Shape FX1", m_app.presets() )
+, m_widthSlider( TRANS("width").toStdString(), mc, "Simple Gain1", m_app.presets() )
+, m_delayMixSlider( TRANS("delay").toStdString(), mc, "Delay1", m_app.presets() )
+, m_attackSlider( TRANS("attack").toStdString(), mc, "AHDSR Envelope1", m_app.presets() )
+, m_releaseSlider( TRANS("release").toStdString(), mc, "AHDSR Envelope1", m_app.presets() )
 , m_attackReleaseContainer( "attack/release" )
 , m_presetSwitcher( m_app.presets() )
 , m_backgroundImage()
-, m_presetEditorComponent( mc, m_app.sampleMaps() )
+, m_presetEditorComponent( mc, m_app )
 , m_editButton( TRANS("edit") )
 , m_midiBarComponent( m_app.midiListener() )
 , m_mainController( mc )
@@ -40,12 +41,12 @@ FloatingTileContent(parent)
     
     addAndMakeVisible( &m_backgroundImage );
     
-//    // Get the data model that handles MIDI messages from our main controller
-//    auto& state = mc->getKeyboardState();
-//    state.addListener( &m_app.midiListener() );
+#ifdef SHOW_KEYBOARD
+    
+    // Get the data model that handles MIDI messages from our main controller
+    auto& state = mc->getKeyboardState();
 
     // Add a stock JUCE MIDI keyboard and connect it to the main controller's MIDI state
-#ifdef SHOW_KEYBOARD
     addAndMakeVisible(m_stockKeyboard = new juce::MidiKeyboardComponent(state, MidiKeyboardComponent::horizontalKeyboard));
     m_stockKeyboard->setKeyWidth(40);
 #endif
@@ -53,18 +54,14 @@ FloatingTileContent(parent)
     addAndMakeVisible( &m_presetSwitcher );
     addAndMakeVisible( &m_midiBarComponent );
     addAndMakeVisible( &m_infoView );
-    
-    addChildComponent( &m_presetEditorComponent );
-    
-#ifdef SHOW_PRESET_EDITOR
-    addAndMakeVisible( &m_editButton );
-#endif
-    
+        
     m_editButton.onClick = [this](){
         m_presetEditorComponent.setVisible( !m_presetEditorComponent.isVisible() );
     };
-    
-    m_app.presets().presetCategory.onChangedAndNow([this](const auto& category)
+    const float animationStart = 0.0099f;
+    const float animationEnd = 0.9703f;
+
+    m_app.presets().presetCategory.onChangedAndNow([this, animationStart, animationEnd](const auto& category)
     {
         juce::Image bgImage;
         if ( category == "Drums" )
@@ -72,6 +69,7 @@ FloatingTileContent(parent)
             bgImage = juce::ImageFileFormat::loadFrom( GoodVibes_png, GoodVibes_pngSize );
             m_attackReleaseContainer.setVisible( false );
             getLookAndFeel().setColour( Slider::rotarySliderFillColourId, Colour( 0xff00cec9 ) );
+            m_reverbMixSlider.setIconAnimation(water_fill_curves_json, water_fill_curves_jsonSize, animationStart, animationEnd);
 
         }
         else if ( category == "FX" )
@@ -79,12 +77,14 @@ FloatingTileContent(parent)
             bgImage = juce::ImageFileFormat::loadFrom( Eyes_png, Eyes_pngSize );
             m_attackReleaseContainer.setVisible( true );
             getLookAndFeel().setColour( Slider::rotarySliderFillColourId, Colour( 0xffe84393 ) );
+            m_reverbMixSlider.setIconAnimation(water_fill_curves_json, water_fill_curves_jsonSize, animationStart, animationEnd);
         }
         else if ( category == "Vox" )
         {
             bgImage = juce::ImageFileFormat::loadFrom( GeoShapes_png, GeoShapes_pngSize );
             m_attackReleaseContainer.setVisible( true );
             getLookAndFeel().setColour( Slider::rotarySliderFillColourId, Colour( 0xff00cec9 ) );
+            m_reverbMixSlider.setIconAnimation(water_fill_curves_json, water_fill_curves_jsonSize, animationStart, animationEnd);
         }
         
         m_backgroundImage.setImage( bgImage, RectanglePlacement::stretchToFit );
@@ -93,30 +93,51 @@ FloatingTileContent(parent)
     addAndMakeVisible( &m_gainSlider );
     m_gainSlider.rangeAndSkewPoint( -100.f, 0.f, -30.f );
     m_gainSlider.setInfoText(TRANS("output").toStdString(), TRANS("Click and drag up and down to change the main volume").toStdString());
+    m_gainSlider.updateDoubleClickValue();
 
     addAndMakeVisible( &m_reverbMixSlider );
     m_reverbMixSlider.rangeAndSkewPoint( -100.f, 0.f, -30.f );
     m_reverbMixSlider.setInfoText(TRANS("reverb").toStdString(), TRANS("Click and drag up and down to add more space").toStdString());
+    m_reverbMixSlider.setIconAnimation(water_fill_curves_json, water_fill_curves_jsonSize, animationStart, animationEnd);
+    m_reverbMixSlider.updateDoubleClickValue();
+
     
     addAndMakeVisible( &m_saturationMixSlider );
     m_saturationMixSlider.setInfoText(TRANS("drive").toStdString(), TRANS("Click and drag up and down to add more grit and dirt").toStdString());
-    
+    m_saturationMixSlider.setIconAnimation(water_fill_curves_json, water_fill_curves_jsonSize, animationStart, animationEnd);
+    m_saturationMixSlider.updateDoubleClickValue();
+
     addAndMakeVisible( &m_delayMixSlider );
     m_delayMixSlider.rangeAndSkewPoint(0.0, 0.5, 0.2);
     m_delayMixSlider.setInfoText(TRANS("delay").toStdString(), TRANS("Click and drag up and down to add more echoes").toStdString());
+    m_delayMixSlider.setIconAnimation(water_fill_curves_json, water_fill_curves_jsonSize, animationStart, animationEnd);
+    m_delayMixSlider.updateDoubleClickValue();
+
 
     addAndMakeVisible( &m_widthSlider );
     m_widthSlider.rangeAndSkewPoint(0, 200, 100);
     m_widthSlider.setInfoText(TRANS("width").toStdString(), TRANS("Click and drag up and down to make your sound more narrow (mono) or more wide (stereo)").toStdString());
-    
+    m_widthSlider.setIconAnimation(water_fill_curves_json, water_fill_curves_jsonSize, animationStart, animationEnd);
+    m_widthSlider.updateDoubleClickValue();
+
     addChildComponent( &m_attackReleaseContainer );
     m_attackReleaseContainer.addAndMakeVisible( &m_attackSlider );
     m_attackSlider.slider().setRange(juce::Range<double>(0, 20000), 1);
     m_attackSlider.setInfoText(TRANS("attack").toStdString(), TRANS("Click and drag up and down to control how your sounds fade in").toStdString());
+    m_attackSlider.setIconAnimation(water_fill_curves_json, water_fill_curves_jsonSize, animationStart, animationEnd);
+    m_attackSlider.updateDoubleClickValue();
+
     
     m_attackReleaseContainer.addAndMakeVisible( &m_releaseSlider );
     m_releaseSlider.slider().setRange(juce::Range<double>(80,20000), 1);
     m_releaseSlider.setInfoText(TRANS("release").toStdString(), TRANS("Click and drag up and down to control how your sounds fade out").toStdString());
+    m_releaseSlider.setIconAnimation(water_fill_curves_json, water_fill_curves_jsonSize, animationStart, animationEnd);
+    m_releaseSlider.updateDoubleClickValue();
+
+#ifdef SHOW_PRESET_EDITOR
+    addChildComponent( &m_presetEditorComponent );
+    addAndMakeVisible( &m_editButton );
+#endif
 }
 
 MainComponent::~MainComponent()
@@ -162,7 +183,7 @@ void MainComponent::resized()
     m_midiBarComponent.setBounds( 0, m_presetSwitcher.getY() - 4, total_width, 4 );
     m_infoView.setBounds(0, m_midiBarComponent.getY() - 40, total_width, 40);
     
-    m_attackReleaseContainer.setBounds(0, total_height/2, total_width, total_height/2 - switcherHeight);
+    m_attackReleaseContainer.setBounds(0, total_height/2 - 38, total_width, total_height/2 - switcherHeight);
     m_attackSlider.setBounds( total_width/2 - width/2 - width/2, switcherHeight, width, height );
     m_releaseSlider.setBounds( total_width/2 - width/2 + width/2, switcherHeight, width, height );
     

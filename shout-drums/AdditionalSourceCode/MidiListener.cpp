@@ -30,15 +30,20 @@ void MidiListener::handleNoteOn (MidiKeyboardState* source, int midiChannel, int
 void MidiListener::handleNoteOff (MidiKeyboardState* source, int midiChannel, int midiNoteNumber, float velocity)
 {
     auto notes = activeNotes();
-
+    
+    auto dying = dyingNotes();
+    dying.clear();
+    
     for (auto it = notes.begin(); it != notes.end(); it++ )
     {
         if (midiNoteNumber == *it )
         {
             notes.erase( it );
+            dying.push_back(midiNoteNumber);
             break;
         }
     }
     
     activeNotes( notes );
+    dyingNotes( dying );
 }
