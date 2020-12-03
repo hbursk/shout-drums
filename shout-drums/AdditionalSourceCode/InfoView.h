@@ -16,6 +16,9 @@ public:
     InfoView();
 
     void resized() override;
+    
+    void refresh();
+    void clear();
 
 private:
     void timerCallback() override;
@@ -26,4 +29,6 @@ private:
     AttributedLabel   m_infoMessage;
 
     juce::Component::SafePointer<juce::Component> m_infoComponent = nullptr;
+    std::string m_text;
+    std::string m_title;
 };

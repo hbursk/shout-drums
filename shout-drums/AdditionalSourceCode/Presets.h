@@ -34,9 +34,10 @@ struct Bank
 
 struct PresetSelection
 {
-    size_t bank = 0;
-    size_t category = 0;
-    size_t preset = 0;
+    int bank = -1;
+    int category = -1;
+    int preset = -1;
+    int linearIndex = -1;
     
     inline bool operator==(const PresetSelection& other ) const
     {
@@ -65,6 +66,7 @@ public:
     void presetListUpdated() override;
     
     void loadPreset( PresetSelection selection );
+    void loadPreset( size_t index );
     void nextPreset();
     void prevPreset();
     
@@ -72,10 +74,20 @@ public:
     Property<std::string> presetBank;
     Property<std::string> presetCategory;
     Property<PresetSelection> presetSelection;
+    
+    const std::vector<Bank>& banks() const;
+    
+    const std::string presetNameForIndex(size_t index) const;
+    
+    size_t numPresets() const;
 
 private:
     void buildPresets();
     void updateSelection();
+    
+    Preset presetForIndex(size_t index) const;
+    int indexForPreset(int bank, int category, int preset) const;
+    
     std::string lowercase(const std::string& str);
     
     hise::MainController* m_mainController = nullptr;

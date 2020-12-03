@@ -6,3 +6,4 @@
 #include "ImageEyes.h"
 #include "ImageGeoShapes.h"
 #include "ImageGoodVibes.h"
+#include "DrumsImage.h"

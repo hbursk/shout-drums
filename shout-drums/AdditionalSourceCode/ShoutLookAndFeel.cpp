@@ -16,6 +16,8 @@ ShoutLookAndFeel::ShoutLookAndFeel()
 {
     setColour( Slider::rotarySliderOutlineColourId, Colour( 0xffffffff ) );
     setColour( Slider::rotarySliderFillColourId, Colour( 0xff00cec9 ) );
+    setColour( ScrollBar::thumbColourId, Colour( 0xbb000000 ) );
+    setColour( ListBox::backgroundColourId, Colour( 0x00000000));
     
     // custom fonts
     Typeface::Ptr tface = Typeface::createSystemTypefaceFor(MontserratRegular_ttf, MontserratRegular_ttfSize);
@@ -64,6 +66,24 @@ const float rotaryStartAngle, const float rotaryEndAngle, Slider& slider)
         g.strokePath (valueArc, PathStrokeType (lineW, PathStrokeType::curved, PathStrokeType::rounded));
     }
 }
+
+void ShoutLookAndFeel::drawScrollbar (Graphics& g, ScrollBar& scrollbar, int x, int y, int width, int height,
+                                    bool isScrollbarVertical, int thumbStartPosition, int thumbSize, bool isMouseOver, bool isMouseDown)
+{
+    ignoreUnused (isMouseDown);
+
+    Rectangle<int> thumbBounds;
+
+    if (isScrollbarVertical)
+        thumbBounds = { x, thumbStartPosition, width, thumbSize };
+    else
+        thumbBounds = { thumbStartPosition, y, thumbSize, height };
+
+    auto c = scrollbar.findColour (ScrollBar::ColourIds::thumbColourId);
+    g.setColour (isMouseOver ? c.darker(0.25f) : c);
+    g.fillRoundedRectangle (thumbBounds.reduced (1).toFloat(), 4.0f);
+}
+
 
 Font ShoutLookAndFeel::getAlertWindowMessageFont ()
 {

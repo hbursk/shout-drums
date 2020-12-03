@@ -5,6 +5,7 @@
 #include "App.h"
 #include "InfoView.h"
 #include "MidiBarComponent.h"
+#include "PresetBarContainer.h"
 #include "PresetEditorComponent.h"
 #include "PresetSwitcher.h"
 #include "ShoutLookAndFeel.h"
@@ -43,6 +44,8 @@ public:
     
 
 protected:
+    
+    void updateAllKnobIconAnimation(const char * animation, size_t animationSize);
         
     juce::ScopedPointer<juce::MidiKeyboardComponent> m_stockKeyboard;
     
@@ -61,17 +64,19 @@ protected:
     
     juce::Component m_attackReleaseContainer;
     
-    PresetSwitcher m_presetSwitcher;
+    //PresetSwitcher m_presetSwitcher;
     juce::ImageComponent m_backgroundImage;
     juce::Image          m_bgImage;
+    juce::ImageButton    m_backgroundClick;
     
     ShoutLookAndFeel m_shoutLookAndFeel;
     
     PresetEditorComponent m_presetEditorComponent;
+    PresetBarContainer m_presetBarContainer;
     
     juce::TextButton m_editButton;
     
-    MidiBarComponent m_midiBarComponent;
+    //MidiBarComponent m_midiBarComponent;
     
     MainController* m_mainController = nullptr;
     

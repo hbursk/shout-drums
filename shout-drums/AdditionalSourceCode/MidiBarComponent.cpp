@@ -11,12 +11,13 @@
 #include "InfoView.h"
 #include <cmath>
 
+
 MidiBarComponent::MidiBarComponent( MidiListener& listener )
 : m_midiListener( listener )
 {
-    addRange( 12, 35, juce::Colour( 255, 109, 107 ) );
-    addRange( 36, 59, juce::Colour( 255, 201, 243 ) );
-    addRange( 60, 84, juce::Colour( 177, 247, 227 ) );
+    addRange( 12, 35, juce::Colour( 0xff73aceb ), juce::Colour( 0xff73aceb ).brighter(1.25) );
+    addRange( 36, 59, juce::Colour( 0xff5fbe75 ), juce::Colour( 0xff5fbe75 ).brighter(1.25) );
+    addRange( 60, 84, juce::Colour( 0xffffb72c ),  juce::Colour( 0xffffb72c ).brighter(1.25) );
     
     m_midiListener.activeNotes.onChanged( [this](const auto&){
         juce::MessageManager::callAsync([this](){
@@ -33,7 +34,7 @@ MidiBarComponent::MidiBarComponent( MidiListener& listener )
                 m_dyingNotes.push_back(dying);
             }
             
-            startTimer((1.0/30.0) * 1000);
+            startTimer(1000.0/frame_rate);
         });
     });
     
@@ -60,8 +61,8 @@ void MidiBarComponent::paint(Graphics& g)
     {
         const auto x = ( range.low - m_lowest ) * segmentWidth;
         const auto width = ( range.high - range.low + 1 ) * segmentWidth;
-        g.setColour( range.color.withBrightness( 0.7f ) );
-        g.fillRect(x, 0, width, area.getHeight() );
+        g.setColour( range.barColor );
+        g.fillRect( x, 0, width, area.getHeight() );
         
         // draw notes
         for ( const auto& note : notes )
@@ -76,7 +77,7 @@ void MidiBarComponent::paint(Graphics& g)
             }
             
             const auto noteX = ( note - m_lowest ) * segmentWidth;
-            g.setColour( range.color );
+            g.setColour( range.lightColor );
             g.fillRect( noteX, 0, segmentWidth, area.getHeight() );
         }
         
@@ -93,7 +94,7 @@ void MidiBarComponent::paint(Graphics& g)
             }
             
             const auto noteX = ( dying.note - m_lowest ) * segmentWidth;
-            g.setColour( range.color.withAlpha(dying.alpha) );
+            g.setColour( range.lightColor.withAlpha(dying.alpha) );
             g.fillRect( noteX, 0, segmentWidth, area.getHeight() );
         }
     }
@@ -104,9 +105,9 @@ void MidiBarComponent::clearRanges()
     m_ranges.clear();
 }
 
-void MidiBarComponent::addRange(int low, int high, juce::Colour color)
+void MidiBarComponent::addRange(int low, int high, juce::Colour barColor, juce::Colour lightColor)
 {
-    m_ranges.push_back( Range(low, high, color) );
+    m_ranges.push_back( Range(low, high, barColor, lightColor) );
     
     m_lowest = 127;
     m_highest = 0;

@@ -106,28 +106,20 @@ PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::A
     m_releaseSlider.slider().setRange(juce::Range<double>(80,20000), 1);
     
     addAndMakeVisible(&m_samplerGain);
-    m_samplerGain.rangeAndSkewPoint( -100.f, 0.f, -30.f );
 
     addAndMakeVisible(&m_kickGain);
-    m_kickGain.rangeAndSkewPoint( -100.f, 0.f, -30.f );
 
     addAndMakeVisible(&m_snareGain);
-    m_snareGain.rangeAndSkewPoint( -100.f, 0.f, -30.f );
 
     addAndMakeVisible(&m_hatGain);
-    m_hatGain.rangeAndSkewPoint( -100.f, 0.f, -30.f );
 
     addAndMakeVisible(&m_clapGain);
-    m_clapGain.rangeAndSkewPoint( -100.f, 0.f, -30.f );
 
     addAndMakeVisible(&m_cymbalGain);
-    m_cymbalGain.rangeAndSkewPoint( -100.f, 0.f, -30.f );
 
     addAndMakeVisible(&m_percGain);
-    m_percGain.rangeAndSkewPoint( -100.f, 0.f, -30.f );
 
     addAndMakeVisible(&m_tomsGain);
-    m_tomsGain.rangeAndSkewPoint( -100.f, 0.f, -30.f );
     
     addChildComponent( m_presetBrowser );
 }

@@ -20,6 +20,10 @@ public:
                            float sliderPosProportional, float rotaryStartAngle, float rotaryEndAngle,
                            Slider& s) override;
     
+    void drawScrollbar (Graphics&, ScrollBar&, int x, int y, int width, int height, bool isScrollbarVertical,
+                        int thumbStartPosition, int thumbSize, bool isMouseOver, bool isMouseDown) override;
+
+    
     Font getAlertWindowMessageFont () override;
     
     virtual Font     getAlertWindowTitleFont() override;

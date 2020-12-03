@@ -63,7 +63,7 @@ public:
         m_iconAnimation->setBounds(margin/2+1,margin,area.getWidth()-margin,area.getWidth()-margin);
         
         m_slider.setBounds(0, 0, area.getWidth(), area.getWidth() );
-        m_label.setBounds( 0, area.getWidth(), area.getWidth(), 20 );
+        m_label.setBounds( 0, area.getWidth() - 1, area.getWidth(), 22 );
     }
 
     

@@ -10,12 +10,13 @@
 
 #include "JuceHeader.h"
 #include "Presets.h"
+#include "LottieButton.h"
 
 class PresetSwitcher : public juce::Component
 {
 public:
     PresetSwitcher() = delete;
-    PresetSwitcher( Presets& _presets );
+    PresetSwitcher( Presets& _presets, MainController* mc );
     ~PresetSwitcher() = default;
     
     void resized() override;
@@ -23,8 +24,8 @@ public:
 private:
     void setupLabel();
     
-    juce::ArrowButton m_prevButton;
-    juce::ArrowButton m_nextButton;
+    LottieButton m_prevButton;
+    LottieButton m_nextButton;
     juce::Label  m_label;
     
     Presets& m_presets;

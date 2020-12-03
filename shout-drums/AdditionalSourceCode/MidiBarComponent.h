@@ -11,22 +11,25 @@
 #include "JuceHeader.h"
 #include "MidiListener.h"
 
+constexpr float frame_rate = 60.0;
+
 class MidiBarComponent : public juce::Component, public juce::Timer
 {
 public:
     struct Range
     {
-        Range( int low_, int high_, juce::Colour color_ )
+        Range( int low_, int high_, juce::Colour barColor_, juce::Colour lightColor_ )
         : low( low_ )
         , high( high_ )
-        , color( color_ )
+        , barColor( barColor_ )
+        , lightColor( lightColor_ )
         {
-            
         }
         
         int low = 0;
         int high = 127;
-        juce::Colour color = juce::Colours::grey;
+        juce::Colour barColor = juce::Colours::grey;
+        juce::Colour lightColor = juce::Colours::white;
     };
     
     struct DyingNote
@@ -35,7 +38,7 @@ public:
         
         int note = 0;
         float alpha = 1.0f;
-        float decrementValue = 1.0f/( 0.3f * 60.f);
+        float decrementValue = 1.0f/( 0.3f * frame_rate);
         
         void decrement()
         {
@@ -63,7 +66,7 @@ public:
 
 private:
     void clearRanges();
-    void addRange(int low, int high, juce::Colour color);
+    void addRange(int low, int high, juce::Colour barColor, juce::Colour lightColor);
     
     void updateDyingNotes();
     void clearDeadNotes();

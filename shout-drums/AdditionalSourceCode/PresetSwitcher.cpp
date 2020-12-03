@@ -10,11 +10,13 @@
 
 #include "Font.h"
 #include "InfoView.h"
+#include "ArrowLeftAnimation.h"
+#include "ArrowRightAnimation.h"
 
-PresetSwitcher::PresetSwitcher( Presets& _presets )
+PresetSwitcher::PresetSwitcher( Presets& _presets, MainController* mc )
 : juce::Component("PresetSwitcher")
-, m_nextButton( "next", 0, Colour( 0xffeeeeee ) )
-, m_prevButton( "prev", 0.5, Colour( 0xffeeeeee ) )
+, m_nextButton( mc, String(arrowright_json, arrowright_jsonSize) )
+, m_prevButton( mc, String(arrowleft_json, arrowleft_jsonSize) )
 , m_presets(_presets)
 {
     addAndMakeVisible( &m_prevButton );
@@ -61,6 +63,6 @@ void PresetSwitcher::setupLabel()
     m_label.setText( "", dontSendNotification );
     m_label.setJustificationType( Justification::centred );
     m_label.setEditable( false );
-    m_label.setFont( shout::Font::mainFont( 20.0 ) );
+    m_label.setFont( shout::Font::mainFont( 18.0 ) );
     m_label.setColour( juce::Label::textColourId, Colour( 0xffffffff) );
 }

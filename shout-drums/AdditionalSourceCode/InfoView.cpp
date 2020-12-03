@@ -28,6 +28,16 @@ void InfoView::resized()
                              area.getHeight() - 2*topMargin);
 }
 
+void InfoView::refresh()
+{
+    setText( m_text, m_title );
+}
+
+void InfoView::clear()
+{
+    setText("","");
+}
+
 void InfoView::timerCallback()
 {
     // find the component under the mouse
@@ -139,6 +149,9 @@ void InfoView::setText( const std::string& text, const std::string& title )
     msg.setJustification( juce::Justification::topLeft );
     msg.setColour( Colours::white );
     msg.setWordWrap( juce::AttributedString::WordWrap::byWord );
-    msg.append(separator + text, shout::Font::labelFont(14.0), Colours::white.withAlpha(0.9f));
+    msg.append(separator + text, shout::Font::labelFont(14.0), Colours::white.withAlpha(0.95f));
     m_infoMessage.setText( std::move( msg ) );
+    
+    m_text = text;
+    m_title = title;
 }
