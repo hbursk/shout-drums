@@ -10,6 +10,7 @@
 
 #include "JuceHeader.h"
 #include "MidiListener.h"
+#include "Presets.h"
 
 constexpr float frame_rate = 60.0;
 
@@ -57,7 +58,7 @@ public:
         }
     };
     
-    MidiBarComponent( MidiListener& listener );
+    MidiBarComponent( MidiListener& listener, Presets& presets );
     virtual ~MidiBarComponent() = default;
     
     void paint(Graphics& g) override;
@@ -67,11 +68,14 @@ public:
 private:
     void clearRanges();
     void addRange(int low, int high, juce::Colour barColor, juce::Colour lightColor);
+    void updateRanges(CategoryType type);
     
     void updateDyingNotes();
     void clearDeadNotes();
     
     MidiListener& m_midiListener;
+    Presets& m_presets;
+    
     std::vector<Range> m_ranges;
     std::vector<DyingNote> m_dyingNotes;
     int m_lowest = 0;

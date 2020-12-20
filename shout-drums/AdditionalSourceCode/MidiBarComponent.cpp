@@ -7,17 +7,20 @@
 //
 
 #include "MidiBarComponent.h"
+#include "Colors.h"
 
 #include "InfoView.h"
 #include <cmath>
 
+using namespace shout::spec::color;
 
-MidiBarComponent::MidiBarComponent( MidiListener& listener )
+MidiBarComponent::MidiBarComponent( MidiListener& listener, Presets& presets )
 : m_midiListener( listener )
+, m_presets( presets )
 {
-    addRange( 12, 35, juce::Colour( 0xff73aceb ), juce::Colour( 0xff73aceb ).brighter(1.25) );
-    addRange( 36, 59, juce::Colour( 0xff5fbe75 ), juce::Colour( 0xff5fbe75 ).brighter(1.25) );
-    addRange( 60, 84, juce::Colour( 0xffffb72c ),  juce::Colour( 0xffffb72c ).brighter(1.25) );
+    addRange( 12, 35, drums_blue, drums_blue.brighter(1.25) );
+    addRange( 36, 59, drums_green, drums_green.brighter(1.25) );
+    addRange( 60, 84, drums_yellow,  drums_yellow.brighter(1.25) );
     
     m_midiListener.activeNotes.onChanged( [this](const auto&){
         juce::MessageManager::callAsync([this](){
@@ -40,6 +43,10 @@ MidiBarComponent::MidiBarComponent( MidiListener& listener )
     
     getProperties().set(info_title_property, "midi bar");
     getProperties().set(info_message_property, "Shows the notes you're playing and where on the keyboard the sounds pitch down and up");
+    
+    m_presets.presetCategory.onChanged([this](const auto& type){
+        updateRanges(type);
+    });
 }
 
 
@@ -117,6 +124,57 @@ void MidiBarComponent::addRange(int low, int high, juce::Colour barColor, juce::
         m_highest = std::max(m_highest, range.high);
     }
 }
+
+void MidiBarComponent::updateRanges(CategoryType type)
+{
+    clearRanges();
+    
+    switch (type)
+    {
+        case CategoryType::Drums:
+        {
+            addRange( 12, 35, drums_blue, drums_blue.brighter(1.25) );
+            addRange( 36, 59, drums_green, drums_green.brighter(1.25) );
+            addRange( 60, 84, drums_yellow,  drums_yellow.brighter(1.25) );
+
+        }
+            break;
+            
+        case CategoryType::Vox:
+        {
+            addRange( 12, 35, vox_maroon, vox_maroon.brighter(1.25) );
+            addRange( 36, 59, vox_green, vox_green.brighter(1.25) );
+            addRange( 60, 84, vox_red,  vox_red.brighter(1.25) );
+        }
+            break;
+            
+        case CategoryType::FX:
+        {
+            addRange( 12, 35, drums_blue, drums_blue.brighter(1.25) );
+            addRange( 36, 59, drums_green, drums_green.brighter(1.25) );
+            addRange( 60, 84, drums_yellow,  drums_yellow.brighter(1.25) );
+        }
+            break;
+            
+        case CategoryType::Lead:
+        {
+            addRange( 12, 84, drums_blue, drums_blue.brighter(1.25) );
+        }
+            break;
+            
+        case CategoryType::Bass:
+        {
+            addRange( 12, 84, drums_blue, drums_blue.brighter(1.25) );
+        }
+            break;
+            
+        default:
+            throw std::runtime_error("Unhandled category type");
+    }
+    
+    repaint();
+}
+
 
 void MidiBarComponent::updateDyingNotes()
 {

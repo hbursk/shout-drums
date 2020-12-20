@@ -65,6 +65,7 @@ public:
 private:
     void createModules(MainController* mc);
     void createPluginParameters(MainController* mc);
+    void createMacros(MainController* mc);
 
 	OwnedArray<raw::GenericStorage> storedData;
 

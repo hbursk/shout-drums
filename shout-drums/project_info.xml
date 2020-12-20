@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ProjectSettings>
-  <Name value="DrumTest"/>
+  <Name value="Snackage"/>
   <Version value="1.0.0"/>
-  <Description value=""/>
-  <BundleIdentifier value="com.myCompany.product"/>
-  <PluginCode value="Abcd"/>
+  <Description value="Sounds from Dresage and Bad Snacks"/>
+  <BundleIdentifier value="com.shoutAudio.snackage"/>
+  <PluginCode value="Sasn"/>
   <EmbedAudioFiles value="Yes"/>
   <AdditionalDspLibraries value=""/>
   <OSXStaticLibs value=""/>
@@ -15,7 +15,7 @@
   <ExtraDefinitionsIOS value="HI_ENABLE_EXTERNAL_CUSTOM_TILES=0"/>
   <AppGroupID value=""/>
   <RedirectSampleFolder value=""/>
-  <SupportFullDynamicsHLAC value="No"/>
+  <SupportFullDynamicsHLAC value="1"/>
   <AAXCategoryFX value="AAX_ePlugInCategory_Modulation"/>
   <SupportMonoFX value="No"/>
   <VST3Support value="1"/>

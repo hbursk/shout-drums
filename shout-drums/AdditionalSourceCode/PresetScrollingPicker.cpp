@@ -70,10 +70,10 @@ Component* PresetScrollingPicker::refreshComponentForRow (int rowNumber, bool is
         return nullptr;
     }
     
-    auto name = m_presets.presetNameForIndex(rowNumber);
+    auto preset = m_presets.presetForIndex(rowNumber);
     if (existingComponentToUpdate == nullptr)
     {
-        auto presetTile = new PresetTile( m_mainController, name );
+        auto presetTile = new PresetTile( m_mainController, preset );
         existingComponentToUpdate = presetTile;
         presetTile->row(rowNumber);
         presetTile->selected(isRowSelected);
@@ -84,7 +84,7 @@ Component* PresetScrollingPicker::refreshComponentForRow (int rowNumber, bool is
     {
         auto presetTile = static_cast<PresetTile*>(existingComponentToUpdate);
         presetTile->row(rowNumber);
-        presetTile->text( name );
+        presetTile->preset(preset);
         presetTile->selected(isRowSelected);
     }
     

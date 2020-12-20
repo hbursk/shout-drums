@@ -1,10 +1,3 @@
-//
-//  Knob.hpp
-//  DrumTest - App
-//
-//  Created by Hayden Bursk on 8/18/20.
-//  Copyright © 2020 Shout Audio. All rights reserved.
-//
 
 #pragma once
 
@@ -14,44 +7,42 @@
 #include "InfoView.h"
 #include "Presets.h"
 
-template <int ParameterIndex>
-class Knob : public juce::Component
+#include <memory>
+
+template <int MacroIndex>
+class MacroKnob : public juce::Component,
+                  public MacroControlBroadcaster::MacroConnectionListener
 {
 public:
-    Knob() = delete;
-    Knob( const std::string& name, MainController* mc, const std::string& procId, Presets& presets )
+    MacroKnob() = delete;
+    MacroKnob( const std::string& name, MainController* mc, Presets& presets )
     : juce::Component( name )
-    , m_connection(&m_slider, mc, procId)
-    , m_processorId( procId )
     , m_mainController( mc )
-    , m_processorReference( mc, String(procId), true )
     , m_presets( presets )
     {
+        m_mainController->getMacroManager().getMacroChain()->addMacroConnectionListener(this);
+        
         addChildComponent(m_iconAnimation = new RLottieComponent(mc->getRLottieManager()));
         m_iconAnimation->setBackgroundColour(Colours::transparentBlack);
 
         setupSlider();
         setupLabel( name );
         
-        hise::raw::Reference<Processor>::ParameterCallback update = [this](float newValue)
-        {
-            if (m_iconAnimation)
-            {
-                auto normalized = m_slider.valueToProportionOfLength( newValue );
-                auto scaled = normalized * (m_animationEnd - m_animationStart) + m_animationStart;
-                m_iconAnimation->setFrameNormalised( scaled );
-            }
+        m_slider.onValueChange = [this](){
+            m_mainController->getMacroManager().getMacroChain()->setMacroControl( MacroIndex, m_slider.getValue() * 127, dontSendNotification );
         };
-
-        m_processorReference.addParameterToWatch(ParameterIndex, update);
-        
+                
         m_presets.presetSelection.onChanged([this](const auto&){
             updateDoubleClickValue();
         });
+        
+        setupParameterWatcher();
+        
     }
     
-    ~Knob()
+    ~MacroKnob()
     {
+        m_mainController->getMacroManager().getMacroChain()->removeMacroConnectionListener(this);
     }
     
     void resized() override
@@ -61,7 +52,7 @@ public:
         const float margin = 8.0;
         
         m_iconAnimation->setBounds(margin/2.0 + 1.0, margin,area.getWidth()- (margin + 1.0), area.getWidth()-(margin+1.0));
-        
+
         m_slider.setBounds(0, 0, area.getWidth(), area.getWidth() );
         m_label.setBounds( 0, area.getWidth() - 1, area.getWidth(), 22 );
     }
@@ -71,20 +62,7 @@ public:
     {
         return m_slider;
     }
-    
-    void rangeAndSkewPoint( double min, double max, double skew )
-    {
-        m_slider.setRange( min, max );
-        m_slider.setSkewFactorFromMidPoint( skew );
         
-        auto p = ProcessorHelpers::getFirstProcessorWithName(m_mainController->getMainSynthChain(), m_processorId);
-        m_slider.setValue( p->getAttribute( ParameterIndex ), dontSendNotification );
-        
-        m_slider.repaint();
-        
-        updateIconAnimation();
-    }
-    
     void mouseEnter (const MouseEvent& event) override{}
     void mouseExit( const MouseEvent& event ) override{}
     
@@ -112,9 +90,28 @@ public:
     
     void updateDoubleClickValue()
     {
-        auto p = ProcessorHelpers::getFirstProcessorWithName(m_mainController->getMainSynthChain(), m_processorId);
-        m_slider.setDoubleClickReturnValue(true, (double)p->getAttribute(ParameterIndex));
+        auto value = m_mainController->getMacroManager().getMacroChain()->getMacroControlData(MacroIndex)->getCurrentValue();
+        
+        m_slider.setDoubleClickReturnValue(true, value);
     }
+    
+    void macroConnectionChanged(int macroIndex, Processor* p, int parameterIndex, bool wasAdded)
+    {
+        
+    }
+    
+    void macroLoadedFromValueTree(int macroIndex, float value)
+    {
+        if (macroIndex == MacroIndex)
+        {
+            juce::MessageManager::callAsync([this, value](){
+                m_slider.setValue(value/127.0, dontSendNotification);
+            });
+
+            setupParameterWatcher();
+        }
+    }
+
     
 private:
     void setupSlider()
@@ -141,18 +138,58 @@ private:
         m_label.setFont( shout::Font::mainFont( 20.f ) );
         m_label.setColour( juce::Label::textColourId, Colour( 0xffffffff) );
     }
+    
+    void setupParameterWatcher()
+    {
+        if (auto data = m_mainController->getMacroManager().getMacroChain()->getMacroControlData(MacroIndex))
+        {
+            if ( data->getNumParameters() == 0 )
+            {
+                return;
+            }
+            
+            auto pData = data->getParameter(0);
+            auto proc = pData->getProcessor();
+            auto pIndex = pData->getParameter();
+            
+            if ( proc != nullptr )
+            {
+                m_processorReference = std::make_unique<hise::raw::Reference<Processor>>( m_mainController, proc->getId(), true);
+                
+                hise::raw::Reference<Processor>::ParameterCallback update = [this](float newValue)
+                {
+                    auto data = m_mainController->getMacroManager().getMacroChain()->getMacroControlData(MacroIndex);
+                    
+                    auto pData = data->getParameter(0);
+                    if (m_iconAnimation)
+                    {
+                        auto range = pData->getParameterRange();
+                        auto n = range.convertTo0to1(newValue);
+                        auto normalized = m_slider.valueToProportionOfLength( n );
+                        auto scaled = normalized * (m_animationEnd - m_animationStart) + m_animationStart;
+                        juce::MessageManager::callAsync([this, scaled](){
+                            m_iconAnimation->setFrameNormalised( scaled );
+                        });
+
+                    }
+                };
+
+                m_processorReference->addParameterToWatch(pIndex, update);
+            }
+        }
+    }
 
     
     juce::Slider m_slider;
     juce::Label  m_label;
-    raw::UIConnection::Slider<ParameterIndex> m_connection;
-    std::string m_processorId;
     MainController* m_mainController = nullptr;
     
     ScopedPointer<RLottieComponent> m_iconAnimation;
     float m_animationStart = 0.0f;
     float m_animationEnd = 1.0f;
-    hise::raw::Reference<Processor> m_processorReference;
     Presets& m_presets;
+    
+    std::unique_ptr<hise::raw::Reference<Processor>> m_processorReference;
+
 
 };

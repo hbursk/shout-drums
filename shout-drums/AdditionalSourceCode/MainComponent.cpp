@@ -1,11 +1,14 @@
 #include "MainComponent.h"
+#include "Colors.h"
 #include "ImageData.h"
 #include "Font.h"
 #include "WaterFillFlatAnimation.h"
 #include "WaterFillFlatAnimationPink.h"
+#include "WaterFillFlatAnimationDarkPink.h"
 
 //#define SHOW_KEYBOARD
-//#define SHOW_PRESET_EDITOR
+#define SHOW_PRESET_EDITOR
+//#define USE_OPENGL
 
 #if USE_RAW_FRONTEND
 MainComponent::MainComponent(MainController* mc) :
@@ -16,7 +19,8 @@ FloatingTileContent(parent)
 #endif
   m_app( mc )
 , m_gainSlider( "", mc, "Simple Gain1", m_app.presets() )
-, m_reverbMixSlider( TRANS("reverb").toStdString(), mc, "Convolution Reverb", m_app.presets() )
+//, m_reverbMixSlider( TRANS("reverb").toStdString(), mc, "Convolution Reverb", m_app.presets() )
+, m_reverbMacroSlider( TRANS("reverb").toStdString(), mc, m_app.presets())
 , m_saturationMixSlider( TRANS("drive").toStdString(), mc, "Shape FX1", m_app.presets() )
 , m_widthSlider( TRANS("width").toStdString(), mc, "Simple Gain1", m_app.presets() )
 , m_delayMixSlider( TRANS("delay").toStdString(), mc, "Delay1", m_app.presets() )
@@ -29,6 +33,9 @@ FloatingTileContent(parent)
 , m_editButton( TRANS("edit") )
 , m_mainController( mc )
 {
+#ifdef USE_OPENGL
+    m_openGLContext.attachTo(*this);
+#endif
     setLookAndFeel(&m_shoutLookAndFeel);
     
     assert( mc );
@@ -54,66 +61,36 @@ FloatingTileContent(parent)
 
     addAndMakeVisible( &m_infoView );
         
-    m_editButton.onClick = [this](){
-        m_presetEditorComponent.setVisible( !m_presetEditorComponent.isVisible() );
-    };
     const float animationStart = 0.0099f;
     const float animationEnd = 0.9703f;
 
-    m_app.presets().presetCategory.onChangedAndNow([this, animationStart, animationEnd](const auto& category)
-    {
-        juce::Image bgImage;
-        if ( category == "Drums" )
-        {
-            bgImage = juce::ImageFileFormat::loadFrom( Drums_png, Drums_pngSize );
-            m_attackReleaseContainer.setVisible( false );
-            getLookAndFeel().setColour( Slider::rotarySliderFillColourId, Colour( 255, 160, 205 ) );
-            updateAllKnobIconAnimation(waterfillpink_json, waterfillpink_jsonSize);
-        }
-        else if ( category == "FX" )
-        {
-            bgImage = juce::ImageFileFormat::loadFrom( Eyes_png, Eyes_pngSize );
-            m_attackReleaseContainer.setVisible( true );
-            getLookAndFeel().setColour( Slider::rotarySliderFillColourId, Colour( 0xffe84393 ) );
-            updateAllKnobIconAnimation(water_fill_curves_json, water_fill_curves_jsonSize);
-        }
-        else if ( category == "Vox" )
-        {
-            bgImage = juce::ImageFileFormat::loadFrom( GeoShapes_png, GeoShapes_pngSize );
-            m_attackReleaseContainer.setVisible( true );
-            getLookAndFeel().setColour( Slider::rotarySliderFillColourId, Colour( 7, 236, 254 ) );
-            updateAllKnobIconAnimation(water_fill_curves_json, water_fill_curves_jsonSize);
-        }
-        else
-        {
-            
-        }
-        
-        m_backgroundImage.setImage( bgImage, RectanglePlacement::stretchToFit );
-        m_infoView.clear();
-    });
             
     addAndMakeVisible( &m_gainSlider );
     m_gainSlider.rangeAndSkewPoint( -100.f, 0.f, -30.f );
     m_gainSlider.setInfoText(TRANS("output").toStdString(), TRANS("Click and drag up and down to change the main volume").toStdString());
     m_gainSlider.updateDoubleClickValue();
 
-    addAndMakeVisible( &m_reverbMixSlider );
-    m_reverbMixSlider.rangeAndSkewPoint( -100.f, 0.f, -30.f );
-    m_reverbMixSlider.setInfoText(TRANS("reverb").toStdString(), TRANS("Click and drag up and down to add more space").toStdString());
+//    addAndMakeVisible( &m_reverbMixSlider );
+//    m_reverbMixSlider.rangeAndSkewPoint( -100.f, -20.f, -30.f );
+//    m_reverbMixSlider.setInfoText(TRANS("reverb").toStdString(), TRANS("Click and drag up and down to add more space").toStdString());
 //    m_reverbMixSlider.setIconAnimation(waterfillpink_json, waterfillpink_jsonSize, animationStart, animationEnd);
-    m_reverbMixSlider.updateDoubleClickValue();
-
+//    m_reverbMixSlider.updateDoubleClickValue();
+    
+    addAndMakeVisible( &m_reverbMacroSlider );
+    m_reverbMacroSlider.setInfoText(TRANS("reverb").toStdString(), TRANS("Click and drag up and down to add more space").toStdString());
+    m_reverbMacroSlider.setIconAnimation(waterfillpink_json, waterfillpink_jsonSize, animationStart, animationEnd);
+    m_reverbMacroSlider.updateDoubleClickValue();
     
     addAndMakeVisible( &m_saturationMixSlider );
+    m_saturationMixSlider.rangeAndSkewPoint(0.0, 0.75, 0.37);
     m_saturationMixSlider.setInfoText(TRANS("drive").toStdString(), TRANS("Click and drag up and down to add more grit and dirt").toStdString());
-//    m_saturationMixSlider.setIconAnimation(water_fill_curves_json, water_fill_curves_jsonSize, animationStart, animationEnd);
+    m_saturationMixSlider.setIconAnimation(waterfillpink_json, waterfillpink_jsonSize, animationStart, animationEnd);
     m_saturationMixSlider.updateDoubleClickValue();
 
     addAndMakeVisible( &m_delayMixSlider );
     m_delayMixSlider.rangeAndSkewPoint(0.0, 0.5, 0.2);
     m_delayMixSlider.setInfoText(TRANS("delay").toStdString(), TRANS("Click and drag up and down to add more echoes").toStdString());
-//    m_delayMixSlider.setIconAnimation(water_fill_curves_json, water_fill_curves_jsonSize, animationStart, animationEnd);
+    m_delayMixSlider.setIconAnimation(waterfillpink_json, waterfillpink_jsonSize, animationStart, animationEnd);
     m_delayMixSlider.updateDoubleClickValue();
 
 
@@ -127,31 +104,85 @@ FloatingTileContent(parent)
     m_attackReleaseContainer.addAndMakeVisible( &m_attackSlider );
     m_attackSlider.slider().setRange(juce::Range<double>(0, 20000), 1);
     m_attackSlider.setInfoText(TRANS("attack").toStdString(), TRANS("Click and drag up and down to control how your sounds fade in").toStdString());
-//    m_attackSlider.setIconAnimation(water_fill_curves_json, water_fill_curves_jsonSize, animationStart, animationEnd);
+    m_attackSlider.setIconAnimation(waterfillpink_json, waterfillpink_jsonSize, animationStart, animationEnd);
     m_attackSlider.updateDoubleClickValue();
 
     
     m_attackReleaseContainer.addAndMakeVisible( &m_releaseSlider );
     m_releaseSlider.slider().setRange(juce::Range<double>(80,20000), 1);
     m_releaseSlider.setInfoText(TRANS("release").toStdString(), TRANS("Click and drag up and down to control how your sounds fade out").toStdString());
-//    m_releaseSlider.setIconAnimation(water_fill_curves_json, water_fill_curves_jsonSize, animationStart, animationEnd);
+    m_releaseSlider.setIconAnimation(waterfillpink_json, waterfillpink_jsonSize, animationStart, animationEnd);
     m_releaseSlider.updateDoubleClickValue();
 
-#ifdef SHOW_PRESET_EDITOR
-    addChildComponent( &m_presetEditorComponent );
-    addAndMakeVisible( &m_editButton );
-#endif
     
     addAndMakeVisible( &m_presetBarContainer );
     
     m_backgroundClick.onClick = [this](){
         m_presetBarContainer.closePresetBar();
     };
+    
+    m_editButton.onClick = [this](){
+        m_presetEditorComponent.setVisible( !m_presetEditorComponent.isVisible() );
+    };
+    
+    m_app.presets().presetCategory.onChangedAndNow([this, animationStart, animationEnd](const auto& category)
+    {
+        juce::Image bgImage;
+        switch (category)
+        {
+            case CategoryType::Drums:
+        {
+            bgImage = juce::ImageFileFormat::loadFrom( Drums_png, Drums_pngSize );
+            m_attackReleaseContainer.setVisible( false );
+            getLookAndFeel().setColour( Slider::rotarySliderFillColourId, shout::spec::color::drums_pink );
+            updateAllKnobIconAnimation(waterfillpink_json, waterfillpink_jsonSize);
+        }
+                break;
+                
+            case CategoryType::FX:
+        {
+            bgImage = juce::ImageFileFormat::loadFrom( Eyes_png, Eyes_pngSize );
+            m_attackReleaseContainer.setVisible( true );
+            getLookAndFeel().setColour( Slider::rotarySliderFillColourId, Colour( 0xffe84393 ) );
+            updateAllKnobIconAnimation(water_fill_curves_json, water_fill_curves_jsonSize);
+        }
+                break;
+                
+            case CategoryType::Vox:
+            {
+            bgImage = juce::ImageFileFormat::loadFrom( Vox_png, Vox_pngSize );
+            m_attackReleaseContainer.setVisible( true );
+            getLookAndFeel().setColour( Slider::rotarySliderFillColourId, shout::spec::color::vox_pink );
+            updateAllKnobIconAnimation(waterfill_darkpink_json, waterfill_darkpink_jsonSize);
+            }
+                break;
+
+            case CategoryType::Lead:
+                break;
+                
+            case CategoryType::Bass:
+                break;
+                
+            default:
+                break;
+        }
+                
+        m_backgroundImage.setImage( bgImage, RectanglePlacement::stretchToFit );
+        m_infoView.clear();
+    });
+    
+#ifdef SHOW_PRESET_EDITOR
+    addChildComponent( &m_presetEditorComponent );
+    addAndMakeVisible( &m_editButton );
+#endif
 }
 
 MainComponent::~MainComponent()
 {
-    m_stockKeyboard = nullptr;    
+    m_stockKeyboard = nullptr;
+#ifdef USE_OPENGL
+    m_openGLContext.detach();
+#endif
 }
 
 void MainComponent::resized()
@@ -183,7 +214,8 @@ void MainComponent::resized()
 
     fb.items.add (juce::FlexItem (m_saturationMixSlider).withMinWidth (width).withMinHeight (height));
     fb.items.add (juce::FlexItem (m_delayMixSlider).withMinWidth (width).withMinHeight (height));
-    fb.items.add (juce::FlexItem (m_reverbMixSlider).withMinWidth (width).withMinHeight (height));
+//    fb.items.add (juce::FlexItem (m_reverbMixSlider).withMinWidth (width).withMinHeight (height));
+    fb.items.add (juce::FlexItem (m_reverbMacroSlider).withMinWidth (width).withMinHeight (height));
     fb.items.add (juce::FlexItem (m_widthSlider).withMinWidth (width).withMinHeight (height));
 
     fb.performLayout (area.withTrimmedBottom( 80 ).toFloat() );
@@ -193,8 +225,6 @@ void MainComponent::resized()
     const int presetBarHeight = switcherHeight + midiBarHeight + 128;
     
     m_presetBarContainer.setBounds( 0, total_height - 60 - 4, total_width, presetBarHeight );
-//    m_presetSwitcher.setBounds((total_width - 300)/2, total_height - switcherHeight, 300, switcherHeight );
-//    m_midiBarComponent.setBounds( 0, m_presetSwitcher.getY() - 4, total_width, 4 );
     m_infoView.setBounds(0, m_presetBarContainer.getY() - 40, total_width, 40);
     
     m_attackReleaseContainer.setBounds(0, total_height/2 - 38, total_width, total_height/2 - switcherHeight);
@@ -208,7 +238,7 @@ void MainComponent::resized()
 
 void MainComponent::paint(Graphics& g)
 {
-    g.fillAll(juce::Colour(0xfff0f0f0));
+    g.fillAll(juce::Colour(0xff000000));
 }
 
 void MainComponent::updateAllKnobIconAnimation(const char * animation, size_t animationSize)
@@ -216,7 +246,8 @@ void MainComponent::updateAllKnobIconAnimation(const char * animation, size_t an
     const float animationStart = 0.0099f;
     const float animationEnd = 0.9703f;
 
-    m_reverbMixSlider.setIconAnimation(animation, animationSize, animationStart, animationEnd);
+    m_reverbMacroSlider.setIconAnimation(animation, animationSize, animationStart, animationEnd);
+//    m_reverbMixSlider.setIconAnimation(animation, animationSize, animationStart, animationEnd);
     m_saturationMixSlider.setIconAnimation(animation, animationSize, animationStart, animationEnd);
     m_delayMixSlider.setIconAnimation(animation, animationSize, animationStart, animationEnd);
     m_widthSlider.setIconAnimation(animation, animationSize, animationStart, animationEnd);

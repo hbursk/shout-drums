@@ -7,9 +7,11 @@
 #include "MidiBarComponent.h"
 #include "PresetBarContainer.h"
 #include "PresetEditorComponent.h"
+#include "ProcessorKeys.h"
 #include "PresetSwitcher.h"
 #include "ShoutLookAndFeel.h"
 #include "Knob.h"
+#include "MacroKnob.h"
 
 
 /** This will be our custom interface for the HISE project.
@@ -52,13 +54,15 @@ protected:
     App m_app;
     
     Knob<hise::GainEffect::Parameters::Gain> m_gainSlider;
-    Knob<hise::ConvolutionEffect::Parameters::WetGain> m_reverbMixSlider;
+//    Knob<hise::ConvolutionEffect::Parameters::WetGain> m_reverbMixSlider;
     Knob<hise::ShapeFX::SpecialParameters::Mix> m_saturationMixSlider;
     Knob<hise::GainEffect::Parameters::Width> m_widthSlider;
     Knob<hise::DelayEffect::Parameters::Mix> m_delayMixSlider;
     
     Knob<hise::AhdsrEnvelope::SpecialParameters::Attack> m_attackSlider;
     Knob<hise::AhdsrEnvelope::SpecialParameters::Release> m_releaseSlider;
+    
+    MacroKnob<MacroIndexes::Reverb> m_reverbMacroSlider;
     
     InfoView m_infoView;
     
@@ -79,8 +83,7 @@ protected:
     //MidiBarComponent m_midiBarComponent;
     
     MainController* m_mainController = nullptr;
-    
-    
+    juce::OpenGLContext m_openGLContext;
 };
 
 #if !defined( USE_RAW_FRONTEND )

@@ -19,7 +19,6 @@ public:
 
 private:
     std::unique_ptr<MainComponent> m_mainComponent;
-    
 
 };
 

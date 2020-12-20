@@ -30,6 +30,8 @@ public:
     void resized() override;
     
     void reset();
+    
+    void animation( String animationJson );
         
 protected:
     juce::ImageButton m_button;

@@ -62,6 +62,7 @@ DrumsData::DrumsData(MainController* mc) :
     addToUserPreset<raw::GenericStorage::Attribute<GainEffect::Gain>>("OutputGain", simple_gain_id);
     
     createPluginParameters(mc);
+    createMacros(mc);
 }
 
 void DrumsData::createModules(MainController* mc)
@@ -73,7 +74,7 @@ void DrumsData::createModules(MainController* mc)
     // global fx
     auto shape = builder.create<hise::ShapeFX>( root, raw::IDs::Chains::FX );
     shape->setId( shape_fx_id );
-    ProcessorHelpers::restoreFromBase64String( shape, "335.3ocUQ0ySCCCD0l1LfXhMFYuRUTwGBXgzlRfJRapZpPkQSsSyI4FGY6jRYhQ9+weD9G.1ooJM2z8du676tySkhkLkRHQ3SmuMigvG6DkPxX9KPiFhvmrCct+hdnAayHJEihv3Vd4xBSwW6b4McaFEgS7l2syPYX+a89L.JBMjwcrR2A723uDhF.DU.KVaLqMpJrbyfUIMHe1PL03YM2UtAhMMn99G2wBJqtjybCKXREYcFGRWUy+6COQfzJ7Www26NiQyWxNzv94Zwp5pJ6J.VC5QoY45CYGJghFsNF9nw9Tdr7At1LKGJfa8HEzBYjlnYFk1CDzsQIhMFSa4zC8Jnf24rcfHAWXyt.4K3T6o2li7R.Nc59uNk4UmIx0lscLQKsygyj70Qhb4RlWBIMkwMF4fOBYasDegEaGmHVJsD7mIpD6Yw3Jwd6EQ+WB9.VM");
+    ProcessorHelpers::restoreFromBase64String( shape, "329.3ocUQ1qSCCCEE1lPFPLwFirWopFwOBXgzlRgJRahZpPkQSiSyUxMNx1IkxDi79wKBuAfcZpRycxmuy85i+ITvWRkRt.gOa91bJBehcTJImNZAZ7PD9zcpKFsvAMXaNQJowHL1xqPTpa9Z6Kuoa6pLXp27tcFJB5eq2m9PYfFlzwXcGvdi8R.Z.Pj9zDkNriQ0kgMCVk1B9rFDpyrgckqOeSKz2+3NgGSaZ4b2fRpPRVmyfrUM7ee3IBjUq+JI4d2Yz3hkzCCreghupoqpo7g0fZbVdg5P5PAT1ZzIvGstOUOVi.lReVNz.a8XLn3hHEQQ0NVC3waiR4azgZY6fdEjv6L5NQDmwMq5gPdo.KNb+2kTuSy3EJ8MbBQILYaOsXcDuPrj5kRxxnL8laiOBYFsR2ynMGgHZVbk3OcUa5Xz3ZSm8ln+Ipg90D");
     
     auto delay = builder.create<hise::DelayEffect>( root, raw::IDs::Chains::FX );
     delay->setId( delay_id );
@@ -115,19 +116,19 @@ void DrumsData::createModules(MainController* mc)
     midimuter->setId( midi_muter_id );
     midimuter->setAttribute( MuteAllScriptProcessor::Parameters::IgnoreNotes, 1, dontSendNotification);
     
-    addDrumSampler( drum_kicks_id, kicks_muter_id, builder, root, mc, "Kicks1" );
-    addDrumSampler( drum_snares_id, snare_muter_id, builder, root, mc, "Snares1" );
-    addDrumSampler( drum_hats_id, hats_muter_id, builder, root, mc, "Hats1" );
-    addDrumSampler( drum_cymbals_id, cymbals_muter_id, builder, root, mc, "Cymbals1" );
-    addDrumSampler( drum_toms_id, toms_muter_id, builder, root, mc, "Toms1" );
-    addDrumSampler( drum_perc_id, perc_muter_id, builder, root, mc, "Perc1" );
-    addDrumSampler( drum_claps_id, claps_muter_id, builder, root, mc, "Claps1" );
+    addDrumSampler( drum_kicks_id, kicks_muter_id, builder, root, mc, "Pancake_Kicks" );
+    addDrumSampler( drum_snares_id, snare_muter_id, builder, root, mc, "Pancake_Snares" );
+    addDrumSampler( drum_hats_id, hats_muter_id, builder, root, mc, "Pancake_Hats" );
+    addDrumSampler( drum_cymbals_id, cymbals_muter_id, builder, root, mc, "Pancake_Cymbals" );
+    addDrumSampler( drum_toms_id, toms_muter_id, builder, root, mc, "Pancake_Toms" );
+    addDrumSampler( drum_perc_id, perc_muter_id, builder, root, mc, "Pancake_Perc" );
+    addDrumSampler( drum_claps_id, claps_muter_id, builder, root, mc, "Pancake_Claps" );
 }
 
 void DrumsData::createPluginParameters(MainController *mc)
 {
     auto p1 = new raw_parameter(ConvolutionEffect::WetGain, "reverb");
-    p1->setup(raw::IDs::UIWidgets::Slider, convolution_reverb_id, { -100.f, -30.f, 0.1f }, -40.f);
+    p1->setup(raw::IDs::UIWidgets::Slider, convolution_reverb_id, { -100.f, -20.f, 0.1f }, -30.f);
     addParameter(p1);
     
     auto p2 = new raw_parameter(DelayEffect::Parameters::Mix, "delay");
@@ -149,6 +150,21 @@ void DrumsData::createPluginParameters(MainController *mc)
     auto p6 = new raw_parameter( hise::AhdsrEnvelope::SpecialParameters::Release, "release");
     p6->setup(raw::IDs::UIWidgets::Slider, sampler_ahdsr_id, { 80.f, 20000.f, 1.f }, 10000.0f);
     addParameter(p6);
+}
+
+void DrumsData::createMacros(MainController* mc)
+{
+    // reverb
+    mc->getMacroManager().setEnableMacroOnFrontend(true);
+    mc->getMacroManager().setMidiControllerForMacro(MacroIndexes::Reverb, 1);
+    
+    auto wetRange = NormalisableRange<double>( -100.f, -10.f, 0.1f );
+    wetRange.setSkewForCentre(-20.f);
+    mc->getMacroManager().getMacroChain()->addControlledParameter(MacroIndexes::Reverb, convolution_reverb_id, ConvolutionEffect::WetGain, "reverb wet", wetRange);
+    
+    auto dryRange = NormalisableRange<double>( -10.f, 0.f, 0.1f );
+    dryRange.setSkewForCentre(-2.f);
+    mc->getMacroManager().getMacroChain()->addControlledParameter(MacroIndexes::Reverb, convolution_reverb_id, ConvolutionEffect::DryGain, "reverb dry", dryRange, true, true);
 }
 
 void DrumsData::addDrumSampler( const std::string& id, const std::string& muterId, raw::Builder& builder,  hise::ModulatorSynthChain* root, MainController* mc, String mapName )

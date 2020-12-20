@@ -1,14 +1,13 @@
-//
-//  Knob.cpp
-//  DrumTest - App
-//
-//  Created by Hayden Bursk on 8/18/20.
-//  Copyright © 2020 Shout Audio. All rights reserved.
-//
 
 #include "Presets.h"
 
 #include <algorithm>
+
+const char category_drums[] = "Drums";
+const char category_fx[] = "FX";
+const char category_lead[] = "Lead";
+const char category_bass[] = "Bass";
+const char category_vox[] = "Vox";
 
 Presets::Presets(hise::MainController* _mc)
 : m_mainController( _mc )
@@ -109,11 +108,13 @@ void Presets::buildPresets()
         auto name = lowercase( preset.getFileNameWithoutExtension().toStdString() );
         auto category = preset.getParentDirectory();
         auto categoryName = category.getFileNameWithoutExtension().toStdString();
+        auto categoryType = categoryStringToType(categoryName);
         auto bankName = category.getParentDirectory().getFileNameWithoutExtension().toStdString();
         
         Preset p;
         p.name = name;
         p.file = preset;
+        p.type = categoryType;
         
         auto& b = m_banks[bankIndex];
         if ( b.name.empty() )
@@ -122,6 +123,7 @@ void Presets::buildPresets()
             b.name = bankName;
             Category c;
             c.name = categoryName;
+            c.type = categoryType;
             c.presets.push_back( p );
             b.categories.push_back( c );
             continue;
@@ -138,6 +140,7 @@ void Presets::buildPresets()
                 catIndex++;
                 Category nextC;
                 nextC.name = categoryName;
+                nextC.type = categoryType;
                 nextC.presets.push_back( p );
                 b.categories.push_back( nextC );
             }
@@ -158,6 +161,7 @@ void Presets::buildPresets()
             
             Category nextCategory;
             nextCategory.name = categoryName;
+            nextCategory.type = categoryType;
             nextCategory.presets.push_back( p );
             
             nextBank.categories.push_back( nextCategory );
@@ -166,14 +170,6 @@ void Presets::buildPresets()
             catIndex = 0;
         }
     }
-    
-    auto old_count = m_banks.size();
-    m_banks.resize(2 * old_count);
-    std::copy_n(m_banks.begin(), old_count, m_banks.begin() + old_count);
-    
-    old_count = m_banks.size();
-    m_banks.resize(2 * old_count);
-    std::copy_n(m_banks.begin(), old_count, m_banks.begin() + old_count);
 }
 
 void Presets::updateSelection()
@@ -185,7 +181,7 @@ void Presets::updateSelection()
     {
         presetName( TRANS("load a preset").toStdString() );
         presetBank( "Factory" );
-        presetCategory( "Drums" );
+        presetCategory( CategoryType::Drums );
         presetSelection( PresetSelection() );
         return;
     }
@@ -222,8 +218,8 @@ void Presets::updateSelection()
     }
     
     presetBank( m_banks[bank].name );
-    presetCategory( m_banks[bank].categories[cat].name );
-    presetName( lowercase(presetCategory() + " || " + presetStr) );
+    presetCategory( m_banks[bank].categories[cat].type );
+    presetName( lowercase(m_banks[bank].categories[cat].name + " || " + presetStr) );
 
     PresetSelection sel;
     sel.bank = bank;
@@ -289,6 +285,60 @@ int Presets::indexForPreset(int bank, int category, int preset) const
     linearIndex += preset;
     
     return linearIndex;
+}
+
+CategoryType Presets::categoryStringToType(const std::string& category) const
+{
+    if ( category == category_drums)
+    {
+        return CategoryType::Drums;
+    }
+    else if ( category == category_fx )
+    {
+        return CategoryType::FX;
+    }
+    else if (category == category_lead)
+    {
+        return CategoryType::Lead;
+    }
+    else if (category == category_vox)
+    {
+        return CategoryType::Vox;
+    }
+    else if ( category == category_bass)
+    {
+        return CategoryType::Bass;
+    }
+    else if ( category == "User Presets")
+    {
+        return CategoryType::Drums;
+    }
+    
+    throw std::runtime_error("Uknown category string");
+}
+
+std::string Presets::categoryTypeToString(const CategoryType& type) const
+{
+    switch (type)
+    {
+        case CategoryType::Drums:
+            return category_drums;
+            
+        case CategoryType::FX:
+            return category_fx;
+            
+        case CategoryType::Lead:
+            return category_lead;
+            
+        case CategoryType::Bass:
+            return category_bass;
+            
+        case CategoryType::Vox:
+            return category_vox;
+            
+        default:
+            throw std::runtime_error("Unhandled category type");
+    }
 }
 
 

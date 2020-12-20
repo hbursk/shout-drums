@@ -7,3 +7,4 @@
 #include "ImageGeoShapes.h"
 #include "ImageGoodVibes.h"
 #include "DrumsImage.h"
+#include "VoxImage.h"

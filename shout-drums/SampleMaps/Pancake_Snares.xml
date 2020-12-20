@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="Pancake_Snares" RRGroupAmount="1" MicPositions=";" SaveMode="2">
+  <sample Root="25" LoKey="13" HiKey="13" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Pancake_Shag Snare.wav" Duplicate="1"
+          MonolithOffset="0" MonolithLength="65536" SampleRate="44100"/>
+  <sample Root="29" LoKey="17" HiKey="17" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Pancake_Tupperware Snare.wav" Duplicate="1"
+          MonolithOffset="65536" MonolithLength="65536" SampleRate="44100"/>
+  <sample Root="49" LoKey="61" HiKey="61" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Pancake_Shag Snare.wav" Duplicate="1"
+          MonolithOffset="131072" MonolithLength="65536" SampleRate="44100"/>
+  <sample Root="53" LoKey="65" HiKey="65" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Pancake_Tupperware Snare.wav" Duplicate="1"
+          MonolithOffset="196608" MonolithLength="65536" SampleRate="44100"/>
+  <sample Root="37" LoKey="37" HiKey="37" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Pancake_Shag Snare.wav" Duplicate="1"
+          MonolithOffset="262144" MonolithLength="65536" SampleRate="44100"/>
+  <sample Root="41" LoKey="41" HiKey="41" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Pancake_Tupperware Snare.wav" Duplicate="1"
+          MonolithOffset="327680" MonolithLength="65536" SampleRate="44100"/>
+</samplemap>

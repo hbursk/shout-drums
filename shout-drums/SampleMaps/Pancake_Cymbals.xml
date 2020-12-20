@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="Pancake_Cymbals" RRGroupAmount="1" MicPositions=";" SaveMode="2">
+  <sample Root="35" LoKey="23" HiKey="23" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Pancake_Mid Length Crash.wav" Duplicate="0"
+          MonolithOffset="0" MonolithLength="135168" SampleRate="44100"/>
+  <sample Root="59" LoKey="71" HiKey="71" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Pancake_Mid Length Crash.wav" Duplicate="1"
+          MonolithOffset="135168" MonolithLength="135168" SampleRate="44100"/>
+  <sample Root="47" LoKey="47" HiKey="47" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Pancake_Mid Length Crash.wav" Duplicate="1"
+          MonolithOffset="270336" MonolithLength="135168" SampleRate="44100"/>
+  <sample Root="43" LoKey="31" HiKey="31" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Pancake_Cymbal Wind Down.wav" Duplicate="0"
+          Volume="-3" MonolithOffset="405504" MonolithLength="69632" SampleRate="44100"/>
+  <sample Root="67" LoKey="79" HiKey="79" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Pancake_Cymbal Wind Down.wav" Duplicate="1"
+          MonolithOffset="475136" MonolithLength="69632" SampleRate="44100"/>
+  <sample Root="55" LoKey="55" HiKey="55" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Pancake_Cymbal Wind Down.wav" Duplicate="1"
+          MonolithOffset="544768" MonolithLength="69632" SampleRate="44100"/>
+</samplemap>

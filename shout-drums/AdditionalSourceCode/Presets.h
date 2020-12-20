@@ -14,16 +14,28 @@
 
 #include <vector>
 
+enum class CategoryType
+{
+    Drums,
+    FX,
+    Vox,
+    Lead,
+    Bass,
+    Unknown
+};
+
 struct Preset
 {
     std::string name;
     juce::File file;
+    CategoryType type;
 };
 
 struct Category
 {
     std::string name;
     std::vector<Preset> presets;
+    CategoryType type;
 };
 
 struct Bank
@@ -72,22 +84,24 @@ public:
     
     Property<std::string> presetName;
     Property<std::string> presetBank;
-    Property<std::string> presetCategory;
+    Property<CategoryType> presetCategory;
     Property<PresetSelection> presetSelection;
     
     const std::vector<Bank>& banks() const;
     
     const std::string presetNameForIndex(size_t index) const;
-    
+    Preset presetForIndex(size_t index) const;
+
     size_t numPresets() const;
 
 private:
     void buildPresets();
     void updateSelection();
     
-    Preset presetForIndex(size_t index) const;
     int indexForPreset(int bank, int category, int preset) const;
-    
+    CategoryType categoryStringToType(const std::string& category) const;
+    std::string categoryTypeToString(const CategoryType& type) const;
+
     std::string lowercase(const std::string& str);
     
     hise::MainController* m_mainController = nullptr;

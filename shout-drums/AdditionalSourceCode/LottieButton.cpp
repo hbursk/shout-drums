@@ -12,7 +12,7 @@ LottieButton::LottieButton(MainController* mc, String animationJson)
 : m_lottieComponent(mc->getRLottieManager())
 {
     m_lottieComponent.setBackgroundColour(Colours::transparentBlack);
-    m_lottieComponent.loadAnimation(animationJson, true);
+    animation(animationJson);
 
     addAndMakeVisible(&m_lottieComponent);
     addAndMakeVisible(&m_button);
@@ -66,4 +66,10 @@ void LottieButton::reset()
 {
     m_lottieComponent.stop();
     m_lottieComponent.setFrameNormalised(0);
+}
+
+void LottieButton::animation( String animationJson )
+{
+    m_lottieComponent.loadAnimation(animationJson, true);
+    m_lottieComponent.setFrameNormalised( 0 );
 }

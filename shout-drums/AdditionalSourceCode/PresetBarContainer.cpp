@@ -15,7 +15,7 @@ constexpr int midiBarHeight = 4;
 
 PresetBarContainer::PresetBarContainer(MainController* mc, Presets& presets, MidiListener& midiListener)
 : m_presetSwitcher(presets, mc)
-, m_midiBarComponent(midiListener)
+, m_midiBarComponent(midiListener, presets)
 , m_expandAnimation(mc->getRLottieManager())
 , m_presetPicker(mc, presets)
 {
