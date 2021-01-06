@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="Biscuit_Cymbals" RRGroupAmount="1" MicPositions=";">
+  <sample Root="59" LoKey="71" HiKey="71" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_Long Noise Crash.wav" Duplicate="0"/>
+  <sample Root="67" LoKey="79" HiKey="79" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_Long Tom Rise.wav" Duplicate="0"/>
+  <sample Root="35" LoKey="23" HiKey="23" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_Long Noise Crash.wav" Duplicate="1"/>
+  <sample Root="43" LoKey="31" HiKey="31" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_Long Tom Rise.wav" Duplicate="1"/>
+  <sample Root="47" LoKey="47" HiKey="47" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_Long Noise Crash.wav" Duplicate="1"/>
+  <sample Root="55" LoKey="55" HiKey="55" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_Long Tom Rise.wav" Duplicate="1"/>
+</samplemap>

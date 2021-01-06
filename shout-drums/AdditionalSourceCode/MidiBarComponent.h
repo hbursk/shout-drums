@@ -19,14 +19,16 @@ class MidiBarComponent : public juce::Component, public juce::Timer
 public:
     struct Range
     {
-        Range( int low_, int high_, juce::Colour barColor_, juce::Colour lightColor_ )
+        Range( int low_, int high_, juce::Colour barColor_, juce::Colour lightColor_, bool primary_ )
         : low( low_ )
         , high( high_ )
         , barColor( barColor_ )
         , lightColor( lightColor_ )
+        , primary( primary_ )
         {
         }
         
+        bool primary = false;
         int low = 0;
         int high = 127;
         juce::Colour barColor = juce::Colours::grey;
@@ -67,7 +69,7 @@ public:
 
 private:
     void clearRanges();
-    void addRange(int low, int high, juce::Colour barColor, juce::Colour lightColor);
+    void addRange(int low, int high, juce::Colour barColor, juce::Colour lightColor, bool primary);
     void updateRanges(CategoryType type);
     
     void updateDyingNotes();

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="Biscuit_Toms" RRGroupAmount="1" MicPositions=";">
+  <sample Root="60" LoKey="72" HiKey="72" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_ATM Bend Tom.wav" Duplicate="0"/>
+  <sample Root="61" LoKey="73" HiKey="73" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_ATM Tom w delay.wav" Duplicate="0"/>
+  <sample Root="62" LoKey="74" HiKey="74" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_ATM Tom.wav" Duplicate="0"/>
+  <sample Root="63" LoKey="75" HiKey="75" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_Slot Machine Tom.wav" Duplicate="0"/>
+  <sample Root="64" LoKey="76" HiKey="76" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_Knee Knock.wav" Duplicate="0"/>
+  <sample Root="68" LoKey="80" HiKey="80" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_Knock Snap.wav" Duplicate="0"/>
+  <sample Root="36" LoKey="24" HiKey="24" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_ATM Bend Tom.wav" Duplicate="1"/>
+  <sample Root="37" LoKey="25" HiKey="25" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_ATM Tom w delay.wav" Duplicate="1"/>
+  <sample Root="38" LoKey="26" HiKey="26" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_ATM Tom.wav" Duplicate="1"/>
+  <sample Root="39" LoKey="27" HiKey="27" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_Slot Machine Tom.wav" Duplicate="1"/>
+  <sample Root="40" LoKey="28" HiKey="28" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_Knee Knock.wav" Duplicate="1"/>
+  <sample Root="44" LoKey="32" HiKey="32" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_Knock Snap.wav" Duplicate="1"/>
+  <sample Root="48" LoKey="48" HiKey="48" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_ATM Bend Tom.wav" Duplicate="1"/>
+  <sample Root="49" LoKey="49" HiKey="49" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_ATM Tom w delay.wav" Duplicate="1"/>
+  <sample Root="50" LoKey="50" HiKey="50" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_ATM Tom.wav" Duplicate="1"/>
+  <sample Root="51" LoKey="51" HiKey="51" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_Slot Machine Tom.wav" Duplicate="1"/>
+  <sample Root="52" LoKey="52" HiKey="52" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_Knee Knock.wav" Duplicate="1"/>
+  <sample Root="56" LoKey="56" HiKey="56" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Biscuit_Knock Snap.wav" Duplicate="1"/>
+</samplemap>

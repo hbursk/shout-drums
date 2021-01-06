@@ -11,7 +11,7 @@
 
 constexpr int switcherHeight = 60;
 constexpr int switcherWidth = 300;
-constexpr int midiBarHeight = 4;
+constexpr int midiBarHeight = 8;
 
 PresetBarContainer::PresetBarContainer(MainController* mc, Presets& presets, MidiListener& midiListener)
 : m_presetSwitcher(presets, mc)
@@ -67,7 +67,9 @@ void PresetBarContainer::resized()
 
 void PresetBarContainer::paint(Graphics& g)
 {
-    g.fillAll(juce::Colour(0xaa000000));
+    const auto area = getLocalBounds();
+    g.setColour(juce::Colour(0xaa000000));
+    g.fillRect( 0, midiBarHeight/2, area.getWidth(), area.getHeight() - midiBarHeight/2);
 }
 
 void PresetBarContainer::closePresetBar()

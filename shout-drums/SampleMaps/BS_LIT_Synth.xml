@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="BS_LIT_Synth" RRGroupAmount="1" MicPositions=";" SaveMode="2">
+  <sample Root="24" LoKey="12" HiKey="35" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_LIT Synth_C0.wav" Duplicate="1"
+          LoopStart="44537" LoopEnabled="1" LoopEnd="386053" LoopXFade="8192"
+          MonolithOffset="0" MonolithLength="409600" SampleRate="44100"/>
+  <sample Root="36" LoKey="36" HiKey="47" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_LIT Synth_C1.wav" Duplicate="1"
+          LoopStart="50341" LoopXFade="8192" LoopEnd="371096" LoopEnabled="1"
+          MonolithOffset="409600" MonolithLength="425984" SampleRate="44100"/>
+  <sample Root="48" LoKey="48" HiKey="59" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_LIT Synth_C2.wav" Duplicate="1"
+          LoopEnd="196881" LoopStart="31945" LoopEnabled="1" LoopXFade="8192"
+          MonolithOffset="835584" MonolithLength="425984" SampleRate="44100"
+          Volume="-1"/>
+  <sample Root="60" LoKey="60" HiKey="83" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_LIT Synth_C3.wav" Duplicate="1"
+          LoopStart="40033" LoopEnd="344105" LoopXFade="8192" LoopEnabled="1"
+          MonolithOffset="1261568" MonolithLength="425984" SampleRate="44100"
+          Volume="-2"/>
+</samplemap>

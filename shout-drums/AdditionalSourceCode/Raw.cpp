@@ -11,9 +11,10 @@ DrumsData::DrumsData(MainController* mc) :
 {
     createModules( mc );
       
-    // sampler
+    // synth and sampler
     addToUserPreset<raw::GenericStorage::SampleMap>("LoadedMap1",  sampler_id );
     addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("SamplerGain", sampler_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Balance>>("SamplerPan", sampler_id);
 
     addToUserPreset<raw::GenericStorage::Table<0>>("VeloTable1",  sampler_velomod_id );
     addToUserPreset<raw::GenericStorage::Attribute<AhdsrEnvelope::Release>>("Release1", sampler_ahdsr_id);
@@ -22,24 +23,32 @@ DrumsData::DrumsData(MainController* mc) :
     // drums
     addToUserPreset<raw::GenericStorage::SampleMap>("KicksMap", drum_kicks_id);
     addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("KicksGain", drum_kicks_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Balance>>("KicksPan", drum_kicks_id);
+
     
     addToUserPreset<raw::GenericStorage::SampleMap>("SnaresMap", drum_snares_id);
     addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("SnaresGain", drum_snares_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Balance>>("SnaresPan", drum_snares_id);
 
     addToUserPreset<raw::GenericStorage::SampleMap>("HatsMap", drum_hats_id);
     addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("HatsGain", drum_hats_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Balance>>("HatsPan", drum_hats_id);
 
     addToUserPreset<raw::GenericStorage::SampleMap>("ClapsMap", drum_claps_id);
     addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("ClapsGain", drum_claps_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Balance>>("ClapsPan", drum_claps_id);
 
     addToUserPreset<raw::GenericStorage::SampleMap>("CymbalsMap", drum_cymbals_id);
     addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("CymbalsGain", drum_cymbals_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Balance>>("CymbalsPan", drum_cymbals_id);
 
     addToUserPreset<raw::GenericStorage::SampleMap>("PercMap", drum_perc_id);
     addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("PercGain", drum_perc_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Balance>>("PercPan", drum_perc_id);
 
     addToUserPreset<raw::GenericStorage::SampleMap>("TomsMap", drum_toms_id);
     addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("TomsGain", drum_toms_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Balance>>("TomsPan", drum_toms_id);
 
     
     // muters
@@ -57,6 +66,10 @@ DrumsData::DrumsData(MainController* mc) :
     addToUserPreset<raw::GenericStorage::Attribute<GainEffect::Width>>("Width", simple_gain_id);
     addToUserPreset<raw::GenericStorage::Attribute<ShapeFX::SpecialParameters::Mix>>("SaturationMix", shape_fx_id);
     addToUserPreset<raw::GenericStorage::Attribute<DelayEffect::Parameters::Mix>>("DelayMix", delay_id);
+    addToUserPreset<raw::GenericStorage::Attribute<DelayEffect::Parameters::FeedbackLeft>>("DelayFdbkL", delay_id);
+    addToUserPreset<raw::GenericStorage::Attribute<DelayEffect::Parameters::FeedbackRight>>("DelayFdbkR", delay_id);
+    addToUserPreset<raw::GenericStorage::Attribute<DelayEffect::Parameters::DelayTimeLeft>>("DelayTimeL", delay_id);
+    addToUserPreset<raw::GenericStorage::Attribute<DelayEffect::Parameters::DelayTimeRight>>("DelayTimeR", delay_id);
     
     // output
     addToUserPreset<raw::GenericStorage::Attribute<GainEffect::Gain>>("OutputGain", simple_gain_id);
@@ -118,11 +131,23 @@ void DrumsData::createModules(MainController* mc)
     
     addDrumSampler( drum_kicks_id, kicks_muter_id, builder, root, mc, "Pancake_Kicks" );
     addDrumSampler( drum_snares_id, snare_muter_id, builder, root, mc, "Pancake_Snares" );
-    addDrumSampler( drum_hats_id, hats_muter_id, builder, root, mc, "Pancake_Hats" );
-    addDrumSampler( drum_cymbals_id, cymbals_muter_id, builder, root, mc, "Pancake_Cymbals" );
+    auto hats = addDrumSampler( drum_hats_id, hats_muter_id, builder, root, mc, "Pancake_Hats" );
+    auto pitch = builder.create<hise::VelocityModulator>( hats, raw::IDs::Chains::Pitch );
+    pitch->setId( hats_pitch_id );
+    ProcessorHelpers::restoreFromBase64String(pitch, "193.3ocSOsjBBCDCMo0JT26dOB5BWKTqK5BAgpteZm.cfgIklQkda7b30vKhGAmJVw.Adu748RNzw0jHbGfoG6aI.mkblrbsw2CE4.N+GcwdVewp7b2ZHquUIBoADiKbdxICyioS..t+b5iMYlV1pBphQmD5npxReaGhWaJbWoN+v9i0.HmpMUjM3B8e4Q6+nQtxq.LJIj6zlvoT5UdR.LNi08kM7MW.mrBNaDyGOGHkrkGPKAXaiwpOL9zRP+2.kY4PlA");
+    pitch->setIntensity(0.75/12.0);
+
     addDrumSampler( drum_toms_id, toms_muter_id, builder, root, mc, "Pancake_Toms" );
     addDrumSampler( drum_perc_id, perc_muter_id, builder, root, mc, "Pancake_Perc" );
     addDrumSampler( drum_claps_id, claps_muter_id, builder, root, mc, "Pancake_Claps" );
+    
+    // make cymbals use a release instead of one-shot
+    auto cymbals = addDrumSampler( drum_cymbals_id, cymbals_muter_id, builder, root, mc, "Pancake_Cymbals" );
+    cymbals->setAttribute( hise::ModulatorSampler::Parameters::OneShot, 0, dontSendNotification);
+    auto simpleEnvelope = ProcessorHelpers::getFirstProcessorWithNameSubstring(cymbals, "DefaultEnvelope");
+    simpleEnvelope->setAttribute( hise::SimpleEnvelope::SpecialParameters::Attack, 0, dontSendNotification);
+    simpleEnvelope->setAttribute( hise::SimpleEnvelope::SpecialParameters::Release, 500, dontSendNotification);
+    simpleEnvelope->setAttribute( hise::SimpleEnvelope::SpecialParameters::LinearMode, true, dontSendNotification);
 }
 
 void DrumsData::createPluginParameters(MainController *mc)
@@ -167,11 +192,15 @@ void DrumsData::createMacros(MainController* mc)
     mc->getMacroManager().getMacroChain()->addControlledParameter(MacroIndexes::Reverb, convolution_reverb_id, ConvolutionEffect::DryGain, "reverb dry", dryRange, true, true);
 }
 
-void DrumsData::addDrumSampler( const std::string& id, const std::string& muterId, raw::Builder& builder,  hise::ModulatorSynthChain* root, MainController* mc, String mapName )
+hise::ModulatorSampler* DrumsData::addDrumSampler( const std::string& id, const std::string& muterId, raw::Builder& builder,  hise::ModulatorSynthChain* root, MainController* mc, String mapName )
 {
     auto drum = builder.create<hise::ModulatorSampler>( root );
     drum->setId( id );
     drum->setAttribute( hise::ModulatorSampler::Parameters::OneShot, 1, dontSendNotification);
+    
+    auto simpleEnvelope = ProcessorHelpers::getFirstProcessorWithNameSubstring(drum, "DefaultEnvelope");
+    simpleEnvelope->setAttribute( hise::SimpleEnvelope::SpecialParameters::Attack, 0, dontSendNotification);
+
     
     auto muter = builder.create<hise::MuteAllScriptProcessor>( drum, raw::IDs::Chains::Midi );
     muter->setId( id + "Muter" );
@@ -184,7 +213,7 @@ void DrumsData::addDrumSampler( const std::string& id, const std::string& muterI
 
     if ( mapName.isEmpty() || !FrontendHandler::checkSamplesCorrectlyInstalled())
     {
-        return;
+        return drum;
     }
     
     auto pool = mc->getCurrentSampleMapPool();
@@ -203,6 +232,8 @@ void DrumsData::addDrumSampler( const std::string& id, const std::string& muterI
     }
     
     jassert( foundIt );
+    
+    return drum;
 }
 
 

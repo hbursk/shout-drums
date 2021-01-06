@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="Scone_Hats" RRGroupAmount="1" MicPositions=";" SaveMode="2">
+  <sample Root="50" LoKey="62" HiKey="62" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Metal Clang.wav" Duplicate="0"
+          MonolithOffset="0" MonolithLength="53248" SampleRate="44100"/>
+  <sample Root="51" LoKey="63" HiKey="63" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Metal Rest.wav" Duplicate="0"
+          MonolithOffset="53248" MonolithLength="69632" SampleRate="44100"/>
+  <sample Root="54" LoKey="66" HiKey="66" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Tang.wav" Duplicate="0" MonolithOffset="122880"
+          MonolithLength="77824" SampleRate="44100"/>
+  <sample Root="58" LoKey="70" HiKey="70" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Tingting.wav" Duplicate="0"
+          MonolithOffset="200704" MonolithLength="77824" SampleRate="44100"/>
+  <sample Root="26" LoKey="14" HiKey="14" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Metal Clang.wav" Duplicate="1"
+          MonolithOffset="278528" MonolithLength="53248" SampleRate="44100"/>
+  <sample Root="27" LoKey="15" HiKey="15" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Metal Rest.wav" Duplicate="1"
+          MonolithOffset="331776" MonolithLength="69632" SampleRate="44100"/>
+  <sample Root="30" LoKey="18" HiKey="18" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Tang.wav" Duplicate="1" MonolithOffset="401408"
+          MonolithLength="77824" SampleRate="44100"/>
+  <sample Root="34" LoKey="22" HiKey="22" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Tingting.wav" Duplicate="1"
+          MonolithOffset="479232" MonolithLength="77824" SampleRate="44100"/>
+  <sample Root="38" LoKey="38" HiKey="38" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Metal Clang.wav" Duplicate="1"
+          MonolithOffset="557056" MonolithLength="53248" SampleRate="44100"/>
+  <sample Root="39" LoKey="39" HiKey="39" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Metal Rest.wav" Duplicate="1"
+          MonolithOffset="610304" MonolithLength="69632" SampleRate="44100"/>
+  <sample Root="42" LoKey="42" HiKey="42" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Tang.wav" Duplicate="1" MonolithOffset="679936"
+          MonolithLength="77824" SampleRate="44100"/>
+  <sample Root="46" LoKey="46" HiKey="46" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Tingting.wav" Duplicate="1"
+          MonolithOffset="757760" MonolithLength="77824" SampleRate="44100"/>
+</samplemap>

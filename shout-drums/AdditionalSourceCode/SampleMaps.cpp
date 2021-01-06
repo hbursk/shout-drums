@@ -29,19 +29,19 @@ SampleMaps::SampleMaps( hise::MainController* mc )
     
     sampleMaps( maps );
     
-    filterSampleMaps( "Kick", kickMaps );
-    filterSampleMaps( "Snare", snareMaps );
-    filterSampleMaps( "Hat", hatMaps );
-    filterSampleMaps( "Perc", percMaps );
-    filterSampleMaps( "Clap", clapMaps );
-    filterSampleMaps( "Cymbal", cymbalMaps );
-    filterSampleMaps( "Tom", tomsMaps );
+    filterSampleMaps( {"Kick"}, kickMaps );
+    filterSampleMaps( {"Snare"}, snareMaps );
+    filterSampleMaps( {"Hat"}, hatMaps );
+    filterSampleMaps( {"Perc"}, percMaps );
+    filterSampleMaps( {"Clap"}, clapMaps );
+    filterSampleMaps( {"Cymbal"}, cymbalMaps );
+    filterSampleMaps( {"Tom"}, tomsMaps );
     
     // TODO: Change filter when I have the proper instruments
-    filterSampleMaps( "More", instrumentMaps );
+    filterSampleMaps( {"FX", "Strings"}, instrumentMaps );
 }
 
-void SampleMaps::filterSampleMaps( const std::string& filter, Property<std::vector<std::string>>& property )
+void SampleMaps::filterSampleMaps( const std::vector<std::string>& filter, Property<std::vector<std::string>>& property )
 {
     auto maps = sampleMaps();
     
@@ -49,9 +49,13 @@ void SampleMaps::filterSampleMaps( const std::string& filter, Property<std::vect
     
     for ( const auto& map : maps )
     {
-        if ( map.find(filter) != std::string::npos )
+        for ( const auto& filt : filter )
         {
-            filtered.push_back( map );
+            if ( map.find(filt) != std::string::npos )
+            {
+                filtered.push_back( map );
+                break;
+            }
         }
     }
     

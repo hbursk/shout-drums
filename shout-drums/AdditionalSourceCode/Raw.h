@@ -58,11 +58,12 @@ public:
 		return v;
 	}
     
-    void addDrumSampler( const std::string& id, const std::string& muterId, raw::Builder& builder,  hise::ModulatorSynthChain* root, MainController* mc, String mapName );
 
 	Component* createEditor() override;
 
 private:
+    hise::ModulatorSampler* addDrumSampler( const std::string& id, const std::string& muterId, raw::Builder& builder,  hise::ModulatorSynthChain* root, MainController* mc, String mapName );
+
     void createModules(MainController* mc);
     void createPluginParameters(MainController* mc);
     void createMacros(MainController* mc);

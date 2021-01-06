@@ -7,7 +7,7 @@
 #include "WaterFillFlatAnimationDarkPink.h"
 
 //#define SHOW_KEYBOARD
-#define SHOW_PRESET_EDITOR
+//#define SHOW_PRESET_EDITOR
 //#define USE_OPENGL
 
 #if USE_RAW_FRONTEND
@@ -221,10 +221,10 @@ void MainComponent::resized()
     fb.performLayout (area.withTrimmedBottom( 80 ).toFloat() );
     
     const int switcherHeight = 60;
-    const int midiBarHeight = 4;
+    const int midiBarHeight = 8;
     const int presetBarHeight = switcherHeight + midiBarHeight + 128;
     
-    m_presetBarContainer.setBounds( 0, total_height - 60 - 4, total_width, presetBarHeight );
+    m_presetBarContainer.setBounds( 0, total_height - switcherHeight - midiBarHeight, total_width, presetBarHeight );
     m_infoView.setBounds(0, m_presetBarContainer.getY() - 40, total_width, 40);
     
     m_attackReleaseContainer.setBounds(0, total_height/2 - 38, total_width, total_height/2 - switcherHeight);

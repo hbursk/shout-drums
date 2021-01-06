@@ -30,6 +30,10 @@ PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::A
 ,m_saturationMixSlider( TRANS("drive").toStdString(), mc, "Shape FX1", app.presets() )
 ,m_widthSlider( TRANS("width").toStdString(), mc, "Simple Gain1", app.presets() )
 ,m_delayMixSlider( TRANS("delay").toStdString(), mc, "Delay1", app.presets() )
+,m_delayFeedbackLeftSlider( TRANS("dly fL").toStdString(), mc, "Delay1", app.presets() )
+,m_delayFeedbackRightSlider( TRANS("dly fR").toStdString(), mc, "Delay1", app.presets() )
+,m_delayLeftTimeSlider( TRANS("dly L").toStdString(), mc, "Delay1", app.presets() )
+,m_delayRightTimeSlider( TRANS("dly R").toStdString(), mc, "Delay1", app.presets() )
 ,m_attackSlider( TRANS("attack").toStdString(), mc, "AHDSR Envelope1", app.presets() )
 ,m_releaseSlider( TRANS("release").toStdString(), mc, "AHDSR Envelope1", app.presets())
 ,m_savePresetButton()
@@ -43,6 +47,15 @@ PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::A
 ,m_cymbalGain( "", mc, drum_cymbals_id, app.presets())
 ,m_percGain( "", mc, drum_perc_id, app.presets())
 ,m_tomsGain( "", mc, drum_toms_id, app.presets())
+,m_samplerPan( "", mc, sampler_id, app.presets())
+,m_kickPan( "", mc, drum_kicks_id, app.presets())
+,m_snarePan( "", mc, drum_snares_id, app.presets())
+,m_hatPan( "", mc, drum_hats_id, app.presets())
+,m_clapPan( "", mc, drum_claps_id, app.presets())
+,m_cymbalPan( "", mc, drum_cymbals_id, app.presets())
+,m_percPan( "", mc, drum_perc_id, app.presets())
+,m_tomsPan( "", mc, drum_toms_id, app.presets())
+
 {
     addAndMakeVisible( m_sampleMapSelector );
     addAndMakeVisible( m_kickMapSelector );
@@ -95,6 +108,16 @@ PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::A
     
     addAndMakeVisible( &m_delayMixSlider );
     m_delayMixSlider.rangeAndSkewPoint(0.0, 0.5, 0.2);
+    
+    addAndMakeVisible( &m_delayFeedbackLeftSlider );
+
+    addAndMakeVisible( &m_delayFeedbackRightSlider );
+    
+    addAndMakeVisible( &m_delayLeftTimeSlider );
+    m_delayLeftTimeSlider.slider().setRange(0, 19, 1);
+
+    addAndMakeVisible( &m_delayRightTimeSlider );
+    m_delayRightTimeSlider.slider().setRange(0, 19, 1);
 
     addAndMakeVisible( &m_widthSlider );
     m_widthSlider.rangeAndSkewPoint(0, 200, 100);
@@ -106,21 +129,37 @@ PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::A
     m_releaseSlider.slider().setRange(juce::Range<double>(80,20000), 1);
     
     addAndMakeVisible(&m_samplerGain);
-
     addAndMakeVisible(&m_kickGain);
-
     addAndMakeVisible(&m_snareGain);
-
     addAndMakeVisible(&m_hatGain);
-
     addAndMakeVisible(&m_clapGain);
-
     addAndMakeVisible(&m_cymbalGain);
-
     addAndMakeVisible(&m_percGain);
-
     addAndMakeVisible(&m_tomsGain);
     
+    addAndMakeVisible(&m_samplerPan);
+    m_samplerPan.rangeAndSkewPoint(-1.0, 1.0, 0.0);
+    addAndMakeVisible(&m_kickPan);
+    m_kickPan.rangeAndSkewPoint(-1.0, 1.0, 0.0);
+
+    addAndMakeVisible(&m_snarePan);
+    m_snarePan.rangeAndSkewPoint(-1.0, 1.0, 0.0);
+
+    addAndMakeVisible(&m_hatPan);
+    m_hatPan.rangeAndSkewPoint(-1.0, 1.0, 0.0);
+
+    addAndMakeVisible(&m_clapPan);
+    m_clapPan.rangeAndSkewPoint(-1.0, 1.0, 0.0);
+
+    addAndMakeVisible(&m_cymbalPan);
+    m_cymbalPan.rangeAndSkewPoint(-1.0, 1.0, 0.0);
+
+    addAndMakeVisible(&m_percPan);
+    m_percPan.rangeAndSkewPoint(-1.0, 1.0, 0.0);
+
+    addAndMakeVisible(&m_tomsPan);
+    m_tomsPan.rangeAndSkewPoint(-1.0, 1.0, 0.0);
+
     addChildComponent( m_presetBrowser );
 }
 
@@ -190,6 +229,22 @@ void PresetEditorComponent::resized()
 
     fb.performLayout (area.withLeft( 232 ).withRight(264) );
 
+    // Pans
+    fb = juce::FlexBox();
+    fb.flexWrap = juce::FlexBox::Wrap::wrap;
+    fb.justifyContent = juce::FlexBox::JustifyContent::center;
+    fb.alignContent = juce::FlexBox::AlignContent::center;
+            
+    fb.items.add (juce::FlexItem (m_samplerPan).withMinWidth (gainWidth).withMinHeight (gainHeight));
+    fb.items.add (juce::FlexItem (m_kickPan).withMinWidth (gainWidth).withMinHeight (gainHeight));
+    fb.items.add (juce::FlexItem (m_snarePan).withMinWidth (gainWidth).withMinHeight (gainHeight));
+    fb.items.add (juce::FlexItem (m_hatPan).withMinWidth (gainWidth).withMinHeight (gainHeight));
+    fb.items.add (juce::FlexItem (m_clapPan).withMinWidth (gainWidth).withMinHeight (gainHeight));
+    fb.items.add (juce::FlexItem (m_cymbalPan).withMinWidth (gainWidth).withMinHeight (gainHeight));
+    fb.items.add (juce::FlexItem (m_percPan).withMinWidth (gainWidth).withMinHeight (gainHeight));
+    fb.items.add (juce::FlexItem (m_tomsPan).withMinWidth (gainWidth).withMinHeight (gainHeight));
+
+    fb.performLayout (area.withLeft( 264 ).withRight(296) );
 
     m_presetBrowser.setBounds( 0, 50, area.getWidth(), area.getHeight() - 50 );
     
@@ -208,6 +263,10 @@ void PresetEditorComponent::resized()
     fb.items.add (juce::FlexItem (m_widthSlider).withMinWidth (knobWidth).withMinHeight (knobHeight));
     fb.items.add (juce::FlexItem (m_attackSlider).withMinWidth (knobWidth).withMinHeight (knobHeight));
     fb.items.add (juce::FlexItem (m_releaseSlider).withMinWidth (knobWidth).withMinHeight (knobHeight));
+    fb.items.add (juce::FlexItem (m_delayFeedbackLeftSlider).withMinWidth (knobWidth).withMinHeight (knobHeight));
+    fb.items.add (juce::FlexItem (m_delayFeedbackRightSlider).withMinWidth (knobWidth).withMinHeight (knobHeight));
+    fb.items.add (juce::FlexItem (m_delayLeftTimeSlider).withMinWidth (knobWidth).withMinHeight (knobHeight));
+    fb.items.add (juce::FlexItem (m_delayRightTimeSlider).withMinWidth (knobWidth).withMinHeight (knobHeight));
 
     fb.performLayout (area.withLeft(area.getWidth()-400).withRight(area.getWidth()) );
 }

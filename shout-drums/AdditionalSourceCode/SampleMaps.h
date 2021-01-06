@@ -34,6 +34,6 @@ public:
 private:
     hise::MainController* m_mainController = nullptr;
     
-    void filterSampleMaps( const std::string& filter, Property<std::vector<std::string>>& property );
+    void filterSampleMaps( const std::vector<std::string>& filter, Property<std::vector<std::string>>& property );
     
 };

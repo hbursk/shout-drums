@@ -50,6 +50,11 @@ private:
     Knob<hise::ShapeFX::SpecialParameters::Mix> m_saturationMixSlider;
     Knob<hise::GainEffect::Parameters::Width> m_widthSlider;
     Knob<hise::DelayEffect::Parameters::Mix> m_delayMixSlider;
+    Knob<hise::DelayEffect::Parameters::FeedbackLeft> m_delayFeedbackLeftSlider;
+    Knob<hise::DelayEffect::Parameters::FeedbackRight> m_delayFeedbackRightSlider;
+    Knob<hise::DelayEffect::Parameters::DelayTimeLeft> m_delayLeftTimeSlider;
+    Knob<hise::DelayEffect::Parameters::DelayTimeRight> m_delayRightTimeSlider;
+
     Knob<hise::AhdsrEnvelope::SpecialParameters::Attack> m_attackSlider;
     Knob<hise::AhdsrEnvelope::SpecialParameters::Release> m_releaseSlider;
     
@@ -61,6 +66,16 @@ private:
     Knob<hise::ModulatorSynth::Parameters::Gain> m_cymbalGain;
     Knob<hise::ModulatorSynth::Parameters::Gain> m_percGain;
     Knob<hise::ModulatorSynth::Parameters::Gain> m_tomsGain;
+    
+    Knob<hise::ModulatorSynth::Parameters::Balance> m_samplerPan;
+    Knob<hise::ModulatorSynth::Parameters::Balance> m_kickPan;
+    Knob<hise::ModulatorSynth::Parameters::Balance> m_snarePan;
+    Knob<hise::ModulatorSynth::Parameters::Balance> m_hatPan;
+    Knob<hise::ModulatorSynth::Parameters::Balance> m_clapPan;
+    Knob<hise::ModulatorSynth::Parameters::Balance> m_cymbalPan;
+    Knob<hise::ModulatorSynth::Parameters::Balance> m_percPan;
+    Knob<hise::ModulatorSynth::Parameters::Balance> m_tomsPan;
+
 
     juce::TextButton m_savePresetButton;
     

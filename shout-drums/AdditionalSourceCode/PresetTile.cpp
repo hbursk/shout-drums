@@ -11,6 +11,8 @@
 #include "DrumPadsAnimation.h"
 #include "KeysAnimation.h"
 #include "MouthAnimation.h"
+#include "SpeakerAnimation.h"
+#include "WaveformAnimation.h"
 
 PresetTile::PresetTile(MainController* mc, const Preset& preset)
 : m_icon( mc, animationForCategoryType(preset.type))
@@ -25,7 +27,22 @@ void PresetTile::resized()
 {
     const auto area = getLocalBounds();
     const float height = 20;
-    const float scale = m_lastCategoryType == CategoryType::Vox ? 0.8f : 1.f;
+    float scale = 1.f;
+    switch (m_lastCategoryType)
+    {
+        case CategoryType::Vox:
+            scale = 0.8f;
+            break;
+            
+        case CategoryType::FX:
+            scale = 2.f;
+            break;
+            
+        default:
+            scale = 1.f;
+            break;
+    }
+    
     m_label.setBounds(0, area.getHeight() - height - 5.0, area.getWidth(), height);
     m_icon.centreWithSize(area.getWidth() * scale, area.getWidth() * scale);
 }
@@ -34,8 +51,7 @@ void PresetTile::paint(Graphics& g)
 {
     const auto area = getLocalBounds();
     const auto thickness = 3.0f;
-//    auto color = juce::Colour(0x00000000);
-//    g.fillAll(color);
+
     if (m_selected)
     {
         g.setColour(m_selectionColor);
@@ -110,13 +126,13 @@ String PresetTile::animationForCategoryType(const CategoryType& type)
             return String(keys_json, keys_jsonSize);
 
         case CategoryType::FX:
-            return String(keys_json, keys_jsonSize);
+            return String(waveform_json, waveform_jsonSize);
 
         case CategoryType::Vox:
             return String(mouth_json, mouth_jsonSize);
 
         case CategoryType::Bass:
-            return String(keys_json, keys_jsonSize);
+            return String(speaker_json, speaker_jsonSize);
 
         default:
             throw std::runtime_error("Uknown category type");

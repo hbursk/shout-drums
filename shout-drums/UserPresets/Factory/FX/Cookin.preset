@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Preset Version="1.0.0">
+  <Control id="LoadedMap1" value="Cookin_FX"/>
+  <Control id="SamplerGain" value="1"/>
+  <Control id="SamplerPan" value="0"/>
+  <Control id="VeloTable1" value="24......PDQD4C...vO...f+....9C...vO"/>
+  <Control id="Release1" value="1234"/>
+  <Control id="Attack1" value="0"/>
+  <Control id="KicksMap" value="Pancake_Kicks"/>
+  <Control id="KicksGain" value="1"/>
+  <Control id="KicksPan" value="0"/>
+  <Control id="SnaresMap" value="Pancake_Snares"/>
+  <Control id="SnaresGain" value="1"/>
+  <Control id="SnaresPan" value="0"/>
+  <Control id="HatsMap" value="Pancake_Hats"/>
+  <Control id="HatsGain" value="1"/>
+  <Control id="HatsPan" value="0"/>
+  <Control id="ClapsMap" value="Pancake_Claps"/>
+  <Control id="ClapsGain" value="1"/>
+  <Control id="ClapsPan" value="0"/>
+  <Control id="CymbalsMap" value="Pancake_Cymbals"/>
+  <Control id="CymbalsGain" value="1"/>
+  <Control id="CymbalsPan" value="0"/>
+  <Control id="PercMap" value="Pancake_Perc"/>
+  <Control id="PercGain" value="1"/>
+  <Control id="PercPan" value="0"/>
+  <Control id="TomsMap" value="Pancake_Toms"/>
+  <Control id="TomsGain" value="1"/>
+  <Control id="TomsPan" value="0"/>
+  <Control id="SamplerMuter" value="0"/>
+  <Control id="KicksMuter" value="1"/>
+  <Control id="SnaresMuter" value="1"/>
+  <Control id="HatsMuter" value="1"/>
+  <Control id="ClapsMuter" value="1"/>
+  <Control id="CymbalsMuter" value="1"/>
+  <Control id="PercMuter" value="1"/>
+  <Control id="TomsMuter" value="1"/>
+  <Control id="ReverbWet" value="-100"/>
+  <Control id="Width" value="100"/>
+  <Control id="SaturationMix" value="0"/>
+  <Control id="DelayMix" value="0"/>
+  <Control id="DelayFdbkL" value="0.3"/>
+  <Control id="DelayFdbkR" value="0.3"/>
+  <Control id="DelayTimeL" value="6"/>
+  <Control id="DelayTimeR" value="5"/>
+  <Control id="OutputGain" value="0"/>
+  <MidiAutomation/>
+  <MPEData Enabled="0"/>
+  <macro_controls>
+    <macro name="Macro 1" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 2" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 3" value="0.0" midi_cc="-1">
+      <controlled_parameter id="Convolution Reverb" parameter="1" parameter_name="reverb wet"
+                            min="-100.0" max="-10.0" skew="5.884949192361716" low="-100.0"
+                            high="-10.0" inverted="0" readonly="1"/>
+      <controlled_parameter id="Convolution Reverb" parameter="0" parameter_name="reverb dry"
+                            min="-10.0" max="0.0" skew="3.10628371950539" low="-10.0" high="0.0"
+                            inverted="1" readonly="1"/>
+    </macro>
+    <macro name="Macro 4" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 5" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 6" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 7" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 8" value="0.0" midi_cc="-1"/>
+  </macro_controls>
+</Preset>

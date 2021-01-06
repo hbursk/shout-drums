@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="Cookin_FX" RRGroupAmount="1" MicPositions=";" SaveMode="2">
+  <sample Root="48" LoKey="60" HiKey="60" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Can't Find my wallet 1.wav"
+          Duplicate="1" MonolithOffset="0" MonolithLength="135168" SampleRate="44100"/>
+  <sample Root="49" LoKey="61" HiKey="61" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Can't Find my wallet 2.wav"
+          Duplicate="1" MonolithOffset="135168" MonolithLength="135168"
+          SampleRate="44100"/>
+  <sample Root="50" LoKey="62" HiKey="62" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Close It Up.wav" Duplicate="1"
+          MonolithOffset="270336" MonolithLength="266240" SampleRate="44100"/>
+  <sample Root="51" LoKey="63" HiKey="63" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Dishwasher Riser.wav" Duplicate="1"
+          MonolithOffset="536576" MonolithLength="151552" SampleRate="44100"/>
+  <sample Root="52" LoKey="64" HiKey="64" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Dishwasher Symphony .wav" Duplicate="1"
+          MonolithOffset="688128" MonolithLength="266240" SampleRate="44100"/>
+  <sample Root="53" LoKey="65" HiKey="65" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Drill 1.wav" Duplicate="1" MonolithOffset="954368"
+          MonolithLength="57344" SampleRate="44100"/>
+  <sample Root="54" LoKey="66" HiKey="66" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Drill Chamber.wav" Duplicate="1"
+          MonolithOffset="1011712" MonolithLength="49152" SampleRate="44100"/>
+  <sample Root="55" LoKey="67" HiKey="67" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Drill Riser.wav" Duplicate="1"
+          MonolithOffset="1060864" MonolithLength="581632" SampleRate="44100"/>
+  <sample Root="56" LoKey="68" HiKey="68" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Heavy Weight.wav" Duplicate="1"
+          MonolithOffset="1642496" MonolithLength="49152" SampleRate="44100"/>
+  <sample Root="57" LoKey="69" HiKey="69" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Jingle Warp.wav" Duplicate="1"
+          MonolithOffset="1691648" MonolithLength="69632" SampleRate="44100"/>
+  <sample Root="58" LoKey="70" HiKey="70" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Long Chime.wav" Duplicate="1"
+          MonolithOffset="1761280" MonolithLength="311296" SampleRate="44100"/>
+  <sample Root="59" LoKey="71" HiKey="71" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Measuring Tape 1.wav" Duplicate="1"
+          MonolithOffset="2072576" MonolithLength="135168" SampleRate="44100"/>
+  <sample Root="60" LoKey="72" HiKey="72" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Measuring Tape 2.wav" Duplicate="1"
+          MonolithOffset="2207744" MonolithLength="77824" SampleRate="44100"/>
+  <sample Root="61" LoKey="73" HiKey="73" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Metal 3 Hits.wav" Duplicate="1"
+          MonolithOffset="2285568" MonolithLength="86016" SampleRate="44100"/>
+  <sample Root="62" LoKey="74" HiKey="74" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Metal Wind Down.wav" Duplicate="1"
+          MonolithOffset="2371584" MonolithLength="135168" SampleRate="44100"/>
+  <sample Root="63" LoKey="75" HiKey="75" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Oven rack Granular.wav" Duplicate="1"
+          MonolithOffset="2506752" MonolithLength="233472" SampleRate="44100"/>
+  <sample Root="64" LoKey="76" HiKey="76" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Oven Rack Smear.wav" Duplicate="1"
+          MonolithOffset="2740224" MonolithLength="122880" SampleRate="44100"/>
+  <sample Root="65" LoKey="77" HiKey="77" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Reading Rainbow.wav" Duplicate="1"
+          MonolithOffset="2863104" MonolithLength="90112" SampleRate="44100"/>
+  <sample Root="66" LoKey="78" HiKey="78" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Staple Gun.wav" Duplicate="1"
+          MonolithOffset="2953216" MonolithLength="135168" SampleRate="44100"/>
+  <sample Root="67" LoKey="79" HiKey="79" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Stomp Answer.wav" Duplicate="1"
+          MonolithOffset="3088384" MonolithLength="90112" SampleRate="44100"/>
+  <sample Root="68" LoKey="80" HiKey="80" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Swirly Metal.wav" Duplicate="1"
+          MonolithOffset="3178496" MonolithLength="81920" SampleRate="44100"/>
+  <sample Root="69" LoKey="81" HiKey="81" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_TV Dinner.wav" Duplicate="1"
+          MonolithOffset="3260416" MonolithLength="135168" SampleRate="44100"/>
+  <sample Root="70" LoKey="82" HiKey="82" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Wood hit.wav" Duplicate="1"
+          MonolithOffset="3395584" MonolithLength="57344" SampleRate="44100"/>
+  <sample Root="71" LoKey="83" HiKey="83" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Wood Screw it Up.wav" Duplicate="1"
+          MonolithOffset="3452928" MonolithLength="65536" SampleRate="44100"/>
+  <sample Root="24" LoKey="12" HiKey="12" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Can't Find my wallet 1.wav"
+          Duplicate="1" MonolithOffset="3518464" MonolithLength="135168"
+          SampleRate="44100"/>
+  <sample Root="25" LoKey="13" HiKey="13" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Can't Find my wallet 2.wav"
+          Duplicate="1" MonolithOffset="3653632" MonolithLength="135168"
+          SampleRate="44100"/>
+  <sample Root="26" LoKey="14" HiKey="14" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Close It Up.wav" Duplicate="1"
+          MonolithOffset="3788800" MonolithLength="266240" SampleRate="44100"/>
+  <sample Root="27" LoKey="15" HiKey="15" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Dishwasher Riser.wav" Duplicate="1"
+          MonolithOffset="4055040" MonolithLength="151552" SampleRate="44100"/>
+  <sample Root="28" LoKey="16" HiKey="16" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Dishwasher Symphony .wav" Duplicate="1"
+          MonolithOffset="4206592" MonolithLength="266240" SampleRate="44100"/>
+  <sample Root="29" LoKey="17" HiKey="17" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Drill 1.wav" Duplicate="1" MonolithOffset="4472832"
+          MonolithLength="57344" SampleRate="44100"/>
+  <sample Root="30" LoKey="18" HiKey="18" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Drill Chamber.wav" Duplicate="1"
+          MonolithOffset="4530176" MonolithLength="49152" SampleRate="44100"/>
+  <sample Root="31" LoKey="19" HiKey="19" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Drill Riser.wav" Duplicate="1"
+          MonolithOffset="4579328" MonolithLength="581632" SampleRate="44100"/>
+  <sample Root="32" LoKey="20" HiKey="20" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Heavy Weight.wav" Duplicate="1"
+          MonolithOffset="5160960" MonolithLength="49152" SampleRate="44100"/>
+  <sample Root="33" LoKey="21" HiKey="21" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Jingle Warp.wav" Duplicate="1"
+          MonolithOffset="5210112" MonolithLength="69632" SampleRate="44100"/>
+  <sample Root="34" LoKey="22" HiKey="22" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Long Chime.wav" Duplicate="1"
+          MonolithOffset="5279744" MonolithLength="311296" SampleRate="44100"/>
+  <sample Root="35" LoKey="23" HiKey="23" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Measuring Tape 1.wav" Duplicate="1"
+          MonolithOffset="5591040" MonolithLength="135168" SampleRate="44100"/>
+  <sample Root="36" LoKey="24" HiKey="24" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Measuring Tape 2.wav" Duplicate="1"
+          MonolithOffset="5726208" MonolithLength="77824" SampleRate="44100"/>
+  <sample Root="37" LoKey="25" HiKey="25" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Metal 3 Hits.wav" Duplicate="1"
+          MonolithOffset="5804032" MonolithLength="86016" SampleRate="44100"/>
+  <sample Root="38" LoKey="26" HiKey="26" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Metal Wind Down.wav" Duplicate="1"
+          MonolithOffset="5890048" MonolithLength="135168" SampleRate="44100"/>
+  <sample Root="39" LoKey="27" HiKey="27" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Oven rack Granular.wav" Duplicate="1"
+          MonolithOffset="6025216" MonolithLength="233472" SampleRate="44100"/>
+  <sample Root="40" LoKey="28" HiKey="28" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Oven Rack Smear.wav" Duplicate="1"
+          MonolithOffset="6258688" MonolithLength="122880" SampleRate="44100"/>
+  <sample Root="41" LoKey="29" HiKey="29" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Reading Rainbow.wav" Duplicate="1"
+          MonolithOffset="6381568" MonolithLength="90112" SampleRate="44100"/>
+  <sample Root="42" LoKey="30" HiKey="30" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Staple Gun.wav" Duplicate="1"
+          MonolithOffset="6471680" MonolithLength="135168" SampleRate="44100"/>
+  <sample Root="43" LoKey="31" HiKey="31" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Stomp Answer.wav" Duplicate="1"
+          MonolithOffset="6606848" MonolithLength="90112" SampleRate="44100"/>
+  <sample Root="44" LoKey="32" HiKey="32" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Swirly Metal.wav" Duplicate="1"
+          MonolithOffset="6696960" MonolithLength="81920" SampleRate="44100"/>
+  <sample Root="45" LoKey="33" HiKey="33" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_TV Dinner.wav" Duplicate="1"
+          MonolithOffset="6778880" MonolithLength="135168" SampleRate="44100"/>
+  <sample Root="46" LoKey="34" HiKey="34" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Wood hit.wav" Duplicate="1"
+          MonolithOffset="6914048" MonolithLength="57344" SampleRate="44100"/>
+  <sample Root="47" LoKey="35" HiKey="35" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Wood Screw it Up.wav" Duplicate="1"
+          MonolithOffset="6971392" MonolithLength="65536" SampleRate="44100"/>
+  <sample Root="36" LoKey="36" HiKey="36" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Can't Find my wallet 1.wav"
+          Duplicate="1" MonolithOffset="7036928" MonolithLength="135168"
+          SampleRate="44100"/>
+  <sample Root="37" LoKey="37" HiKey="37" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Can't Find my wallet 2.wav"
+          Duplicate="1" MonolithOffset="7172096" MonolithLength="135168"
+          SampleRate="44100"/>
+  <sample Root="38" LoKey="38" HiKey="38" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Close It Up.wav" Duplicate="1"
+          MonolithOffset="7307264" MonolithLength="266240" SampleRate="44100"/>
+  <sample Root="39" LoKey="39" HiKey="39" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Dishwasher Riser.wav" Duplicate="1"
+          MonolithOffset="7573504" MonolithLength="151552" SampleRate="44100"/>
+  <sample Root="40" LoKey="40" HiKey="40" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Dishwasher Symphony .wav" Duplicate="1"
+          MonolithOffset="7725056" MonolithLength="266240" SampleRate="44100"/>
+  <sample Root="41" LoKey="41" HiKey="41" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Drill 1.wav" Duplicate="1" MonolithOffset="7991296"
+          MonolithLength="57344" SampleRate="44100"/>
+  <sample Root="42" LoKey="42" HiKey="42" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Drill Chamber.wav" Duplicate="1"
+          MonolithOffset="8048640" MonolithLength="49152" SampleRate="44100"/>
+  <sample Root="43" LoKey="43" HiKey="43" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Drill Riser.wav" Duplicate="1"
+          MonolithOffset="8097792" MonolithLength="581632" SampleRate="44100"/>
+  <sample Root="44" LoKey="44" HiKey="44" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Heavy Weight.wav" Duplicate="1"
+          MonolithOffset="8679424" MonolithLength="49152" SampleRate="44100"/>
+  <sample Root="45" LoKey="45" HiKey="45" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Jingle Warp.wav" Duplicate="1"
+          MonolithOffset="8728576" MonolithLength="69632" SampleRate="44100"/>
+  <sample Root="46" LoKey="46" HiKey="46" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Long Chime.wav" Duplicate="1"
+          MonolithOffset="8798208" MonolithLength="311296" SampleRate="44100"/>
+  <sample Root="47" LoKey="47" HiKey="47" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Measuring Tape 1.wav" Duplicate="1"
+          MonolithOffset="9109504" MonolithLength="135168" SampleRate="44100"/>
+  <sample Root="48" LoKey="48" HiKey="48" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Measuring Tape 2.wav" Duplicate="1"
+          MonolithOffset="9244672" MonolithLength="77824" SampleRate="44100"/>
+  <sample Root="49" LoKey="49" HiKey="49" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Metal 3 Hits.wav" Duplicate="1"
+          MonolithOffset="9322496" MonolithLength="86016" SampleRate="44100"/>
+  <sample Root="50" LoKey="50" HiKey="50" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Metal Wind Down.wav" Duplicate="1"
+          MonolithOffset="9408512" MonolithLength="135168" SampleRate="44100"/>
+  <sample Root="51" LoKey="51" HiKey="51" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Oven rack Granular.wav" Duplicate="1"
+          MonolithOffset="9543680" MonolithLength="233472" SampleRate="44100"/>
+  <sample Root="52" LoKey="52" HiKey="52" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Oven Rack Smear.wav" Duplicate="1"
+          MonolithOffset="9777152" MonolithLength="122880" SampleRate="44100"/>
+  <sample Root="53" LoKey="53" HiKey="53" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Reading Rainbow.wav" Duplicate="1"
+          MonolithOffset="9900032" MonolithLength="90112" SampleRate="44100"/>
+  <sample Root="54" LoKey="54" HiKey="54" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Staple Gun.wav" Duplicate="1"
+          MonolithOffset="9990144" MonolithLength="135168" SampleRate="44100"/>
+  <sample Root="55" LoKey="55" HiKey="55" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Stomp Answer.wav" Duplicate="1"
+          MonolithOffset="10125312" MonolithLength="90112" SampleRate="44100"/>
+  <sample Root="56" LoKey="56" HiKey="56" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Swirly Metal.wav" Duplicate="1"
+          MonolithOffset="10215424" MonolithLength="81920" SampleRate="44100"/>
+  <sample Root="57" LoKey="57" HiKey="57" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_TV Dinner.wav" Duplicate="1"
+          MonolithOffset="10297344" MonolithLength="135168" SampleRate="44100"/>
+  <sample Root="58" LoKey="58" HiKey="58" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Wood hit.wav" Duplicate="1"
+          MonolithOffset="10432512" MonolithLength="57344" SampleRate="44100"/>
+  <sample Root="59" LoKey="59" HiKey="59" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Cookin_Wood Screw it Up.wav" Duplicate="1"
+          MonolithOffset="10489856" MonolithLength="65536" SampleRate="44100"/>
+</samplemap>

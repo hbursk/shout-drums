@@ -7,7 +7,9 @@
 //
 
 #include "MidiBarComponent.h"
+#include "MidiUtils.h"
 #include "Colors.h"
+#include "Font.h"
 
 #include "InfoView.h"
 #include <cmath>
@@ -18,9 +20,9 @@ MidiBarComponent::MidiBarComponent( MidiListener& listener, Presets& presets )
 : m_midiListener( listener )
 , m_presets( presets )
 {
-    addRange( 12, 35, drums_blue, drums_blue.brighter(1.25) );
-    addRange( 36, 59, drums_green, drums_green.brighter(1.25) );
-    addRange( 60, 84, drums_yellow,  drums_yellow.brighter(1.25) );
+    addRange( 12, 35, drums_blue, drums_blue.brighter(1.25), false );
+    addRange( 36, 59, drums_green, drums_green.brighter(1.25), true );
+    addRange( 60, 84, drums_yellow,  drums_yellow.brighter(1.25), false );
     
     m_midiListener.activeNotes.onChanged( [this](const auto&){
         juce::MessageManager::callAsync([this](){
@@ -63,13 +65,34 @@ void MidiBarComponent::paint(Graphics& g)
     const auto area = getLocalBounds();
     const int segmentWidth = area.getWidth() / numSegments;
     
+    const float radius = 4.f;
+
     // draw ranges
     for ( const auto& range : m_ranges )
     {
         const auto x = ( range.low - m_lowest ) * segmentWidth;
+        const auto y = range.primary ? 0 : area.getHeight()/2;
         const auto width = ( range.high - range.low + 1 ) * segmentWidth;
+        const auto height = range.primary ? area.getHeight() : area.getHeight()/2;
         g.setColour( range.barColor );
-        g.fillRect( x, 0, width, area.getHeight() );
+        
+        if (range.primary)
+        {
+            // draw rounded rect
+            juce::Path path;
+            path.addRoundedRectangle(x, y, width, height, radius, radius, true, true, false, false);
+            g.fillPath(path);
+            
+            // draw label
+            auto note = MidiUtils::noteNumberToStringWithOctave(range.low);
+            g.setColour( range.barColor.darker(0.9) );
+            g.setFont( shout::Font::mainFont(8.0) );
+            g.drawText(note, x+2, y, 10, height, Justification::centredLeft);
+        }
+        else
+        {
+            g.fillRect( x, y, width, height );
+        }
         
         // draw notes
         for ( const auto& note : notes )
@@ -85,7 +108,23 @@ void MidiBarComponent::paint(Graphics& g)
             
             const auto noteX = ( note - m_lowest ) * segmentWidth;
             g.setColour( range.lightColor );
-            g.fillRect( noteX, 0, segmentWidth, area.getHeight() );
+
+            if (range.primary && note == range.low )
+            {
+                Path p;
+                p.addRoundedRectangle(noteX, y, segmentWidth, height, radius, radius, true, false, false, false);
+                g.fillPath(p);
+            }
+            else if (range.primary && note == range.high)
+            {
+                Path p;
+                p.addRoundedRectangle(noteX, y, segmentWidth, height, radius, radius, false, true, false, false);
+                g.fillPath(p);
+            }
+            else
+            {
+                g.fillRect( noteX, y, segmentWidth, height );
+            }
         }
         
         // draw fading notes
@@ -102,7 +141,22 @@ void MidiBarComponent::paint(Graphics& g)
             
             const auto noteX = ( dying.note - m_lowest ) * segmentWidth;
             g.setColour( range.lightColor.withAlpha(dying.alpha) );
-            g.fillRect( noteX, 0, segmentWidth, area.getHeight() );
+            if (range.primary && dying.note == range.low )
+            {
+                Path p;
+                p.addRoundedRectangle(noteX, y, segmentWidth, height, radius, radius, true, false, false, false);
+                g.fillPath(p);
+            }
+            else if (range.primary && dying.note == range.high)
+            {
+                Path p;
+                p.addRoundedRectangle(noteX, y, segmentWidth, height, radius, radius, false, true, false, false);
+                g.fillPath(p);
+            }
+            else
+            {
+                g.fillRect( noteX, y, segmentWidth, height );
+            }
         }
     }
 }
@@ -112,9 +166,9 @@ void MidiBarComponent::clearRanges()
     m_ranges.clear();
 }
 
-void MidiBarComponent::addRange(int low, int high, juce::Colour barColor, juce::Colour lightColor)
+void MidiBarComponent::addRange(int low, int high, juce::Colour barColor, juce::Colour lightColor, bool primary)
 {
-    m_ranges.push_back( Range(low, high, barColor, lightColor) );
+    m_ranges.push_back( Range(low, high, barColor, lightColor, primary) );
     
     m_lowest = 127;
     m_highest = 0;
@@ -133,38 +187,38 @@ void MidiBarComponent::updateRanges(CategoryType type)
     {
         case CategoryType::Drums:
         {
-            addRange( 12, 35, drums_blue, drums_blue.brighter(1.25) );
-            addRange( 36, 59, drums_green, drums_green.brighter(1.25) );
-            addRange( 60, 84, drums_yellow,  drums_yellow.brighter(1.25) );
+            addRange( 12, 35, drums_blue, drums_blue.brighter(1.25), false );
+            addRange( 36, 59, drums_green, drums_green.brighter(1.25), true );
+            addRange( 60, 84, drums_yellow,  drums_yellow.brighter(1.25), false );
 
         }
             break;
             
         case CategoryType::Vox:
         {
-            addRange( 12, 35, vox_maroon, vox_maroon.brighter(1.25) );
-            addRange( 36, 59, vox_green, vox_green.brighter(1.25) );
-            addRange( 60, 84, vox_red,  vox_red.brighter(1.25) );
+            addRange( 12, 35, vox_maroon, vox_maroon.brighter(1.25), false );
+            addRange( 36, 59, vox_green, vox_green.brighter(1.25), true );
+            addRange( 60, 84, vox_red,  vox_red.brighter(1.25), false );
         }
             break;
             
         case CategoryType::FX:
         {
-            addRange( 12, 35, drums_blue, drums_blue.brighter(1.25) );
-            addRange( 36, 59, drums_green, drums_green.brighter(1.25) );
-            addRange( 60, 84, drums_yellow,  drums_yellow.brighter(1.25) );
+            addRange( 12, 35, drums_blue, drums_blue.brighter(1.25), false );
+            addRange( 36, 59, drums_green, drums_green.brighter(1.25), true );
+            addRange( 60, 84, drums_yellow,  drums_yellow.brighter(1.25), false );
         }
             break;
             
         case CategoryType::Lead:
         {
-            addRange( 12, 84, drums_blue, drums_blue.brighter(1.25) );
+            addRange( 12, 84, drums_blue, drums_blue.brighter(1.25), false );
         }
             break;
             
         case CategoryType::Bass:
         {
-            addRange( 12, 84, drums_blue, drums_blue.brighter(1.25) );
+            addRange( 12, 84, drums_blue, drums_blue.brighter(1.25), false );
         }
             break;
             

@@ -43,6 +43,8 @@ const char drum_claps_id[] = "Claps";
 const char drum_perc_id[] = "Perc";
 const char drum_toms_id[] = "Toms";
 
+const char hats_pitch_id[] = "HatsPitch";
+
 enum MacroIndexes
 {
     Drive,

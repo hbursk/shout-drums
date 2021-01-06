@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="Scone_Perc" RRGroupAmount="1" MicPositions=";" SaveMode="2">
+  <sample Root="69" LoKey="81" HiKey="81" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Lid Screw 1.wav" Duplicate="0"
+          MonolithOffset="0" MonolithLength="49152" SampleRate="44100"/>
+  <sample Root="70" LoKey="82" HiKey="82" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Lid Screw 2.wav" Duplicate="0"
+          MonolithOffset="49152" MonolithLength="45056" SampleRate="44100"/>
+  <sample Root="71" LoKey="83" HiKey="83" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Lid Screw 3.wav" Duplicate="0"
+          MonolithOffset="94208" MonolithLength="45056" SampleRate="44100"/>
+  <sample Root="45" LoKey="33" HiKey="33" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Lid Screw 1.wav" Duplicate="1"
+          MonolithOffset="139264" MonolithLength="49152" SampleRate="44100"/>
+  <sample Root="46" LoKey="34" HiKey="34" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Lid Screw 2.wav" Duplicate="1"
+          MonolithOffset="188416" MonolithLength="45056" SampleRate="44100"/>
+  <sample Root="47" LoKey="35" HiKey="35" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Lid Screw 3.wav" Duplicate="1"
+          MonolithOffset="233472" MonolithLength="45056" SampleRate="44100"/>
+  <sample Root="57" LoKey="57" HiKey="57" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Lid Screw 1.wav" Duplicate="1"
+          MonolithOffset="278528" MonolithLength="49152" SampleRate="44100"/>
+  <sample Root="58" LoKey="58" HiKey="58" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Lid Screw 2.wav" Duplicate="1"
+          MonolithOffset="327680" MonolithLength="45056" SampleRate="44100"/>
+  <sample Root="59" LoKey="59" HiKey="59" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Lid Screw 3.wav" Duplicate="1"
+          MonolithOffset="372736" MonolithLength="45056" SampleRate="44100"/>
+  <sample Root="41" LoKey="29" HiKey="29" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Dish Stomp 1.wav" Duplicate="0"
+          MonolithOffset="417792" MonolithLength="77824" SampleRate="44100"/>
+  <sample Root="42" LoKey="30" HiKey="30" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Dish Stomp 2.wav" Duplicate="0"
+          MonolithOffset="495616" MonolithLength="61440" SampleRate="44100"/>
+  <sample Root="53" LoKey="53" HiKey="53" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Dish Stomp 1.wav" Duplicate="1"
+          MonolithOffset="557056" MonolithLength="77824" SampleRate="44100"/>
+  <sample Root="54" LoKey="54" HiKey="54" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Dish Stomp 2.wav" Duplicate="1"
+          MonolithOffset="634880" MonolithLength="61440" SampleRate="44100"/>
+  <sample Root="65" LoKey="77" HiKey="77" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Dish Stomp 1.wav" Duplicate="1"
+          MonolithOffset="696320" MonolithLength="77824" SampleRate="44100"/>
+  <sample Root="66" LoKey="78" HiKey="78" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Scones_Dish Stomp 2.wav" Duplicate="1"
+          MonolithOffset="774144" MonolithLength="61440" SampleRate="44100"/>
+</samplemap>

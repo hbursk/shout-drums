@@ -24,6 +24,6 @@ static constexpr unsigned char Spanish_txt_local[] =
 "\"Click and drag up and down to control how your sounds fade out\" = \"Haga clic y arrastre hacia arriba y hacia abajo para controlar c\xc3\xb3mo se desvanecen sus sonidos\"\n"
 "\"Click left and right arrows to load different sounds\" = \"Haga clic en las flechas izquierda y derecha para cargar diferentes sonidos\"\n"
 "\"load a preset\" = \"cargar un preset\"\n"
-"\"Success! Enjoy DrumTest from Shout Audio.\" = \"\xc2\xa1\xc3\x89xito! Disfrute de DrumTest de Shout Audio.\"";
+"\"Success! Enjoy Snackage from Shout Audio.\" = \"\xc2\xa1\xc3\x89xito! Disfrute de Snackage de Shout Audio.\"";
 
 const char* Spanish_txt = (const char*) Spanish_txt_local;
