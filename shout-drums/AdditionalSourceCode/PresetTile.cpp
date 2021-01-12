@@ -15,9 +15,9 @@
 #include "WaveformAnimation.h"
 
 PresetTile::PresetTile(MainController* mc, const Preset& preset)
-: m_icon( mc, animationForCategoryType(preset.type))
+: m_icon( mc, animationForCategoryType(preset.category.type))
 {
-    category(preset.type);
+    category(preset.category);
     setInterceptsMouseClicks(false, true);
     setupLabel( preset.name );
     setupIcon();
@@ -27,24 +27,8 @@ void PresetTile::resized()
 {
     const auto area = getLocalBounds();
     const float height = 20;
-    float scale = 1.f;
-    switch (m_lastCategoryType)
-    {
-        case CategoryType::Vox:
-            scale = 0.8f;
-            break;
-            
-        case CategoryType::FX:
-            scale = 2.f;
-            break;
-            
-        default:
-            scale = 1.f;
-            break;
-    }
-    
+    updateIconScale();
     m_label.setBounds(0, area.getHeight() - height - 5.0, area.getWidth(), height);
-    m_icon.centreWithSize(area.getWidth() * scale, area.getWidth() * scale);
 }
 
 void PresetTile::paint(Graphics& g)
@@ -67,10 +51,11 @@ void PresetTile::text(const std::string& text)
 void PresetTile::preset(const Preset& preset)
 {
     m_label.setText( preset.name, dontSendNotification);
-    if ( m_lastCategoryType != preset.type )
+    if ( m_lastCategoryType != preset.category.type )
     {
-        category(preset.type);
-        m_icon.animation( animationForCategoryType(preset.type));
+        category(preset.category);
+        m_icon.animation( animationForCategoryType(preset.category.type));
+        updateIconScale();
     }
 }
 
@@ -98,6 +83,28 @@ void PresetTile::setupIcon()
        getParentComponent()->mouseDown(fakeEvent);
        getParentComponent()->mouseUp(fakeEvent);
     };
+}
+
+void PresetTile::updateIconScale()
+{
+    float scale = 1.f;
+    switch (m_lastCategoryType)
+    {
+        case CategoryType::Bass:
+        case CategoryType::Vox:
+            scale = 0.8f;
+            break;
+            
+        case CategoryType::FX:
+            scale = 2.f;
+            break;
+            
+        default:
+            scale = 1.f;
+            break;
+    }
+    const auto area = getLocalBounds();
+    m_icon.centreWithSize(area.getWidth() * scale, area.getWidth() * scale);
 }
 
 void PresetTile::row(int row)
@@ -137,29 +144,14 @@ String PresetTile::animationForCategoryType(const CategoryType& type)
         default:
             throw std::runtime_error("Uknown category type");
     }
-
 }
 
-void PresetTile::category(CategoryType type)
+void PresetTile::category(CategoryTypeAndColor category_)
 {
-    if ( m_lastCategoryType != type )
+    if ( m_lastCategoryType != category_.type )
     {
-        m_lastCategoryType = type;
-        
-        switch (m_lastCategoryType)
-        {
-            case CategoryType::Drums:
-                m_selectionColor = shout::spec::color::drums_pink;
-                break;
-                
-            case CategoryType::Vox:
-                m_selectionColor = shout::spec::color::vox_pink;
-                break;
-
-            default:
-                m_selectionColor = shout::spec::color::drums_pink;
-                break;
-        }
+        m_lastCategoryType = category_.type;
+        m_selectionColor = category_.color;
         
         repaint();
     }

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Preset Version="1.0.0">
+  <Control id="UnisonoVoiceAmount" value="1"/>
+  <Control id="UnisonoDetune" value="0"/>
+  <Control id="UnisonoSpread" value="1"/>
+  <Control id="ArpBypass" value="1"/>
+  <Control id="ArpNumSteps" value="8"/>
+  <Control id="ArpNumSteps" value="8"/>
+  <Control id="ArpStride" value="1"/>
+  <Control id="ArpSpeed" value="8"/>
+  <Control id="ArpDirection" value="1"/>
+  <Control id="ArpOctaveRange" value="0"/>
+  <Control id="ArpShuffle" value="0"/>
+  <Control id="ArpSemitone" value="32............................................"/>
+  <Control id="ArpVelocity" value="32...f+BA...JD..3uP..fmBA..9KD..XpP..f+BA..TID"/>
+  <Control id="ArpLength" value="32....rBA..xJD..HqP..frBA..3JD..fqP..ftBA..5JD"/>
+  <Control id="WaveForm1" value="3"/>
+  <Control id="WaveForm2" value="3"/>
+  <Control id="PulseWidth1" value="0.5"/>
+  <Control id="PulseWidth2" value="0.5"/>
+  <Control id="OctaveTranspose1" value="0"/>
+  <Control id="OctaveTranspose2" value="0"/>
+  <Control id="Detune1" value="0"/>
+  <Control id="Detune2" value="0"/>
+  <Control id="WaveGeneratorPan1" value="0"/>
+  <Control id="WaveGeneratorPan2" value="0"/>
+  <Control id="WaveGeneratorMix" value="0.5"/>
+  <Control id="EnableSecondOscillator" value="0"/>
+  <Control id="WaveGeneratorBypass" value="1"/>
+  <Control id="WaveGeneratorGain" value="0.25"/>
+  <Control id="WaveGeneratorPan" value="0"/>
+  <Control id="LoadedMap1" value="BS_PP_Synth"/>
+  <Control id="Sampler1Gain" value="1"/>
+  <Control id="Sampler1Pan" value="0"/>
+  <Control id="Sampler1Bypass" value="0"/>
+  <Control id="LoadedMap2" value=""/>
+  <Control id="Sampler2Gain" value="1"/>
+  <Control id="Sampler2Pan" value="0"/>
+  <Control id="Sampler2Bypass" value="1"/>
+  <Control id="VeloTable1" value="24......PDQD4C...vO...f+....9C...vO"/>
+  <Control id="Release1" value="1193"/>
+  <Control id="Attack1" value="0"/>
+  <Control id="KicksMap" value="Scone_Kicks"/>
+  <Control id="KicksGain" value="1"/>
+  <Control id="KicksPan" value="0"/>
+  <Control id="SnaresMap" value="Scone_Snares"/>
+  <Control id="SnaresGain" value="1"/>
+  <Control id="SnaresPan" value="0"/>
+  <Control id="HatsMap" value="Scone_Hats"/>
+  <Control id="HatsGain" value="1"/>
+  <Control id="HatsPan" value="0"/>
+  <Control id="ClapsMap" value="Scone_Claps"/>
+  <Control id="ClapsGain" value="1"/>
+  <Control id="ClapsPan" value="0"/>
+  <Control id="CymbalsMap" value="Scone_Cymbals"/>
+  <Control id="CymbalsGain" value="1"/>
+  <Control id="CymbalsPan" value="0"/>
+  <Control id="PercMap" value="Scone_Perc"/>
+  <Control id="PercGain" value="1"/>
+  <Control id="PercPan" value="0"/>
+  <Control id="TomsMap" value="Scone_Toms"/>
+  <Control id="TomsGain" value="1"/>
+  <Control id="TomsPan" value="0"/>
+  <Control id="SynthMuter" value="0"/>
+  <Control id="KicksMuter" value="1"/>
+  <Control id="SnaresMuter" value="1"/>
+  <Control id="HatsMuter" value="1"/>
+  <Control id="ClapsMuter" value="1"/>
+  <Control id="CymbalsMuter" value="1"/>
+  <Control id="PercMuter" value="1"/>
+  <Control id="TomsMuter" value="1"/>
+  <Control id="Width" value="100"/>
+  <Control id="SaturationMix" value="0.220853"/>
+  <Control id="DelayMix" value="0"/>
+  <Control id="DelayFdbkL" value="0.3"/>
+  <Control id="DelayFdbkR" value="0.3"/>
+  <Control id="DelayTimeL" value="6"/>
+  <Control id="DelayTimeR" value="5"/>
+  <Control id="OutputGain" value="0"/>
+  <MidiAutomation/>
+  <MPEData Enabled="0"/>
+  <macro_controls>
+    <macro name="Macro 1" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 2" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 3" value="48.01592254638672" midi_cc="-1">
+      <controlled_parameter id="Convolution Reverb" parameter="1" parameter_name="reverb wet"
+                            min="-100.0" max="-10.0" skew="5.884949192361716" low="-100.0"
+                            high="-10.0" inverted="0" readonly="1"/>
+      <controlled_parameter id="Convolution Reverb" parameter="0" parameter_name="reverb dry"
+                            min="-10.0" max="0.0" skew="3.10628371950539" low="-10.0" high="0.0"
+                            inverted="1" readonly="1"/>
+    </macro>
+    <macro name="Macro 4" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 5" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 6" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 7" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 8" value="0.0" midi_cc="-1"/>
+  </macro_controls>
+</Preset>

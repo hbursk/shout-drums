@@ -7,10 +7,14 @@
 //
 
 #pragma once
+const char synth_group_id[] = "Synth Group";
+const char arp_id[] = "Arpeggiator1";
+const char synth_group_velomod_id[] = "Velocity Modulator1";
+const char synth_group_ahdsr_id[] = "AHDSR Envelope1";
 
-const char sampler_id[] = "Sampler";
-const char sampler_velomod_id[] = "Velocity Modulator1";
-const char sampler_ahdsr_id[] = "AHDSR Envelope1";
+const char sampler1_id[] = "Sampler1";
+const char sampler2_id[] = "Sampler2";
+const char waveform_generator_id[] = "Waveform Generator1";
 
 const char convolution_reverb_id[] = "Convolution Reverb";
 const char shape_fx_id[] = "Shape FX1";

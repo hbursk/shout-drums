@@ -5,6 +5,10 @@
 #include "WaterFillFlatAnimation.h"
 #include "WaterFillFlatAnimationPink.h"
 #include "WaterFillFlatAnimationDarkPink.h"
+#include "WaterFillFlatAnimationBlue.h"
+#include "WaterFillFlatAnimationOrange.h"
+#include "WaterFillFlatAnimationTeal.h"
+
 
 //#define SHOW_KEYBOARD
 //#define SHOW_PRESET_EDITOR
@@ -48,7 +52,8 @@ FloatingTileContent(parent)
     
     addAndMakeVisible( &m_backgroundImage );
     addAndMakeVisible( &m_backgroundClick );
-    
+    m_attackReleaseContainer.addAndMakeVisible( &m_otherBackgroundClick );
+
 #ifdef SHOW_KEYBOARD
     
     // Get the data model that handles MIDI messages from our main controller
@@ -56,7 +61,7 @@ FloatingTileContent(parent)
 
     // Add a stock JUCE MIDI keyboard and connect it to the main controller's MIDI state
     addAndMakeVisible(m_stockKeyboard = new juce::MidiKeyboardComponent(state, MidiKeyboardComponent::horizontalKeyboard));
-    m_stockKeyboard->setKeyWidth(40);
+    m_stockKeyboard->setKeyWidth(32);
 #endif
 
     addAndMakeVisible( &m_infoView );
@@ -117,9 +122,11 @@ FloatingTileContent(parent)
     
     addAndMakeVisible( &m_presetBarContainer );
     
-    m_backgroundClick.onClick = [this](){
+    auto close = [this](){
         m_presetBarContainer.closePresetBar();
     };
+    m_backgroundClick.onClick = close;
+    m_otherBackgroundClick.onClick = close;
     
     m_editButton.onClick = [this](){
         m_presetEditorComponent.setVisible( !m_presetEditorComponent.isVisible() );
@@ -128,40 +135,53 @@ FloatingTileContent(parent)
     m_app.presets().presetCategory.onChangedAndNow([this, animationStart, animationEnd](const auto& category)
     {
         juce::Image bgImage;
-        switch (category)
+        switch (category.type)
         {
             case CategoryType::Drums:
         {
             bgImage = juce::ImageFileFormat::loadFrom( Drums_png, Drums_pngSize );
             m_attackReleaseContainer.setVisible( false );
-            getLookAndFeel().setColour( Slider::rotarySliderFillColourId, shout::spec::color::drums_pink );
+            getLookAndFeel().setColour( Slider::rotarySliderFillColourId, category.color);
             updateAllKnobIconAnimation(waterfillpink_json, waterfillpink_jsonSize);
         }
                 break;
                 
             case CategoryType::FX:
         {
-            bgImage = juce::ImageFileFormat::loadFrom( Eyes_png, Eyes_pngSize );
+            bgImage = juce::ImageFileFormat::loadFrom( FX_png, FX_pngSize );
             m_attackReleaseContainer.setVisible( true );
-            getLookAndFeel().setColour( Slider::rotarySliderFillColourId, Colour( 0xffe84393 ) );
-            updateAllKnobIconAnimation(water_fill_curves_json, water_fill_curves_jsonSize);
+            getLookAndFeel().setColour( Slider::rotarySliderFillColourId, Colour( category.color ) );
+            updateAllKnobIconAnimation(waterfill_blue_json, waterfill_blue_jsonSize);
         }
                 break;
                 
-            case CategoryType::Vox:
-            {
+        case CategoryType::Vox:
+        {
             bgImage = juce::ImageFileFormat::loadFrom( Vox_png, Vox_pngSize );
             m_attackReleaseContainer.setVisible( true );
-            getLookAndFeel().setColour( Slider::rotarySliderFillColourId, shout::spec::color::vox_pink );
+            getLookAndFeel().setColour( Slider::rotarySliderFillColourId, category.color );
             updateAllKnobIconAnimation(waterfill_darkpink_json, waterfill_darkpink_jsonSize);
             }
                 break;
 
-            case CategoryType::Lead:
-                break;
+        case CategoryType::Lead:
+        {
+            bgImage = juce::ImageFileFormat::loadFrom( KEYS_png, KEYS_pngSize );
+            m_attackReleaseContainer.setVisible( true );
+            getLookAndFeel().setColour( Slider::rotarySliderFillColourId, category.color );
+            updateAllKnobIconAnimation(waterfill_orange_json, waterfill_orange_jsonSize);
+        }
+
+            break;
                 
-            case CategoryType::Bass:
-                break;
+        case CategoryType::Bass:
+        {
+            bgImage = juce::ImageFileFormat::loadFrom( BASS_png, BASS_pngSize );
+            m_attackReleaseContainer.setVisible( true );
+            getLookAndFeel().setColour( Slider::rotarySliderFillColourId, category.color );
+            updateAllKnobIconAnimation(waterfill_teal_json, waterfill_teal_jsonSize);
+        }
+            break;
                 
             default:
                 break;
@@ -193,7 +213,7 @@ void MainComponent::resized()
     
     if ( m_stockKeyboard )
     {
-        m_stockKeyboard->setBounds( 0, 0, total_width, 200 );
+        m_stockKeyboard->setBounds( 0, 0, total_width, 100 );
     }
     
     const auto area = juce::Rectangle<int>(0, 0, total_width, total_height);
@@ -230,6 +250,7 @@ void MainComponent::resized()
     m_attackReleaseContainer.setBounds(0, total_height/2 - 38, total_width, total_height/2 - switcherHeight);
     m_attackSlider.setBounds( total_width/2 - width/2 - width/2, switcherHeight, width, height );
     m_releaseSlider.setBounds( total_width/2 - width/2 + width/2, switcherHeight, width, height );
+    m_otherBackgroundClick.setBounds(0, 0, m_attackReleaseContainer.getWidth(), m_attackReleaseContainer.getHeight());
     
     m_editButton.setBounds( area.getWidth() - 120, 6, 60, 30 );
     

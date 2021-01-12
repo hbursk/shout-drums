@@ -33,7 +33,8 @@ public:
 private:
     void setupLabel(const std::string& name);
     void setupIcon();
-    void category(CategoryType type);
+    void category(CategoryTypeAndColor category);
+    void updateIconScale();
     
     String animationForCategoryType(const CategoryType& type);
     

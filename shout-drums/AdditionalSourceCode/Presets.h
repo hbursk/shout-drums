@@ -24,18 +24,43 @@ enum class CategoryType
     Unknown
 };
 
+struct CategoryTypeAndColor
+{
+    CategoryTypeAndColor() = default;
+    CategoryTypeAndColor( CategoryType type_, juce::Colour color_)
+    : type(type_)
+    , color(color_)
+    {
+    }
+    
+    CategoryType type = CategoryType::Unknown;
+    juce::Colour color = juce::Colours::grey;
+    
+    inline bool operator==(const CategoryTypeAndColor& other ) const
+    {
+        return type == other.type;
+    }
+    
+    inline bool operator!=(const CategoryTypeAndColor& other) const
+    {
+        return type != other.type;
+    }
+
+};
+
 struct Preset
 {
     std::string name;
     juce::File file;
-    CategoryType type;
+    CategoryTypeAndColor category;
 };
 
 struct Category
 {
     std::string name;
     std::vector<Preset> presets;
-    CategoryType type;
+    CategoryType type = CategoryType::Unknown;
+    juce::Colour color = juce::Colours::grey;
 };
 
 struct Bank
@@ -84,8 +109,9 @@ public:
     
     Property<std::string> presetName;
     Property<std::string> presetBank;
-    Property<CategoryType> presetCategory;
+    Property<CategoryTypeAndColor> presetCategory;
     Property<PresetSelection> presetSelection;
+    Property<bool> supportsArpeggiator{false};
     
     const std::vector<Bank>& banks() const;
     
@@ -101,6 +127,7 @@ private:
     int indexForPreset(int bank, int category, int preset) const;
     CategoryType categoryStringToType(const std::string& category) const;
     std::string categoryTypeToString(const CategoryType& type) const;
+    juce::Colour categoryTypeToColor(const CategoryType& type) const;
 
     std::string lowercase(const std::string& str);
     

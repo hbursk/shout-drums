@@ -1,11 +1,12 @@
 
 #include "Presets.h"
+#include "Colors.h"
 
 #include <algorithm>
 
 const char category_drums[] = "Drums";
 const char category_fx[] = "FX";
-const char category_lead[] = "Lead";
+const char category_lead[] = "Keys";
 const char category_bass[] = "Bass";
 const char category_vox[] = "Vox";
 
@@ -109,12 +110,13 @@ void Presets::buildPresets()
         auto category = preset.getParentDirectory();
         auto categoryName = category.getFileNameWithoutExtension().toStdString();
         auto categoryType = categoryStringToType(categoryName);
+        auto categoryColor = categoryTypeToColor(categoryType);
         auto bankName = category.getParentDirectory().getFileNameWithoutExtension().toStdString();
         
         Preset p;
         p.name = name;
         p.file = preset;
-        p.type = categoryType;
+        p.category = CategoryTypeAndColor(categoryType, categoryColor);
         
         auto& b = m_banks[bankIndex];
         if ( b.name.empty() )
@@ -124,6 +126,7 @@ void Presets::buildPresets()
             Category c;
             c.name = categoryName;
             c.type = categoryType;
+            c.color = categoryColor;
             c.presets.push_back( p );
             b.categories.push_back( c );
             continue;
@@ -141,6 +144,7 @@ void Presets::buildPresets()
                 Category nextC;
                 nextC.name = categoryName;
                 nextC.type = categoryType;
+                nextC.color = categoryColor;
                 nextC.presets.push_back( p );
                 b.categories.push_back( nextC );
             }
@@ -162,6 +166,7 @@ void Presets::buildPresets()
             Category nextCategory;
             nextCategory.name = categoryName;
             nextCategory.type = categoryType;
+            nextCategory.color = categoryColor;
             nextCategory.presets.push_back( p );
             
             nextBank.categories.push_back( nextCategory );
@@ -181,7 +186,7 @@ void Presets::updateSelection()
     {
         presetName( TRANS("load a preset").toStdString() );
         presetBank( "Factory" );
-        presetCategory( CategoryType::Drums );
+        presetCategory( CategoryTypeAndColor(CategoryType::Drums, categoryTypeToColor(CategoryType::Drums) ) );
         presetSelection( PresetSelection() );
         return;
     }
@@ -218,8 +223,9 @@ void Presets::updateSelection()
     }
     
     presetBank( m_banks[bank].name );
-    presetCategory( m_banks[bank].categories[cat].type );
+    presetCategory( CategoryTypeAndColor(m_banks[bank].categories[cat].type,  m_banks[bank].categories[cat].color) );
     presetName( lowercase(m_banks[bank].categories[cat].name + " || " + presetStr) );
+    supportsArpeggiator( m_banks[bank].categories[cat].type != CategoryType::Drums );
 
     PresetSelection sel;
     sel.bank = bank;
@@ -340,5 +346,31 @@ std::string Presets::categoryTypeToString(const CategoryType& type) const
             throw std::runtime_error("Unhandled category type");
     }
 }
+
+juce::Colour Presets::categoryTypeToColor(const CategoryType& type) const
+{
+    switch (type)
+    {
+        case CategoryType::Drums:
+            return shout::spec::color::drums_pink;
+            
+        case CategoryType::FX:
+            return shout::spec::color::fx_blue;
+            
+        case CategoryType::Lead:
+            return shout::spec::color::keys_orange;
+            
+        case CategoryType::Bass:
+            return shout::spec::color::bass_teal;
+
+        case CategoryType::Vox:
+            return shout::spec::color::vox_pink;
+
+        default:
+            throw std::runtime_error("Unhandled category type");
+    }
+
+}
+
 
 

@@ -10,7 +10,8 @@
 #include "ProcessorKeys.h"
 
 PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::App& app )
-:m_sampleMapSelector(mc, "InstrumentSelector", sampler_id)
+:m_sample1MapSelector(mc, "InstrumentSelector", sampler1_id)
+,m_sample2MapSelector(mc, "InstrumentSelector2", sampler2_id)
 ,m_kickMapSelector(mc, "KickSelector", drum_kicks_id)
 ,m_snareMapSelector(mc, "SnareSelector", drum_snares_id)
 ,m_hatMapSelector(mc, "HatSelector", drum_hats_id)
@@ -18,7 +19,7 @@ PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::A
 ,m_cymbalMapSelector(mc, "CymbalSelector", drum_cymbals_id)
 ,m_percMapSelector(mc, "PercSelector", drum_perc_id)
 ,m_tomsMapSelector(mc, "TomsSelector", drum_toms_id)
-,m_samplerMuter(mc, "SamplerMuter", midi_muter_id)
+,m_synthMuter(mc, "SynthMuter", midi_muter_id)
 ,m_kicksMuter(mc, "KicksMuter", kicks_muter_id)
 ,m_snaresMuter(mc, "SnaresMuter", snare_muter_id)
 ,m_hatsMuter(mc, "HatsMuter", hats_muter_id)
@@ -26,20 +27,23 @@ PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::A
 ,m_cymbalsMuter(mc, "CymbalsMuter", cymbals_muter_id)
 ,m_percMuter(mc, "PercMuter", perc_muter_id)
 ,m_tomsMuter(mc, "HatsMuter", toms_muter_id)
-,m_reverbMixSlider( TRANS("reverb").toStdString(), mc, "Convolution Reverb", app.presets() )
-,m_saturationMixSlider( TRANS("drive").toStdString(), mc, "Shape FX1", app.presets() )
-,m_widthSlider( TRANS("width").toStdString(), mc, "Simple Gain1", app.presets() )
-,m_delayMixSlider( TRANS("delay").toStdString(), mc, "Delay1", app.presets() )
-,m_delayFeedbackLeftSlider( TRANS("dly fL").toStdString(), mc, "Delay1", app.presets() )
-,m_delayFeedbackRightSlider( TRANS("dly fR").toStdString(), mc, "Delay1", app.presets() )
-,m_delayLeftTimeSlider( TRANS("dly L").toStdString(), mc, "Delay1", app.presets() )
-,m_delayRightTimeSlider( TRANS("dly R").toStdString(), mc, "Delay1", app.presets() )
-,m_attackSlider( TRANS("attack").toStdString(), mc, "AHDSR Envelope1", app.presets() )
-,m_releaseSlider( TRANS("release").toStdString(), mc, "AHDSR Envelope1", app.presets())
+,m_sampler1Enabled(mc, "Sampler1 Enabled", sampler1_id)
+,m_sampler2Enabled(mc, "Sampler2 Enabled", sampler2_id)
+,m_reverbMixSlider( TRANS("reverb").toStdString(), mc, convolution_reverb_id, app.presets() )
+,m_saturationMixSlider( TRANS("drive").toStdString(), mc, shape_fx_id, app.presets() )
+,m_widthSlider( TRANS("width").toStdString(), mc, simple_gain_id, app.presets() )
+,m_delayMixSlider( TRANS("delay").toStdString(), mc, delay_id, app.presets() )
+,m_delayFeedbackLeftSlider( TRANS("dly fL").toStdString(), mc, delay_id, app.presets() )
+,m_delayFeedbackRightSlider( TRANS("dly fR").toStdString(), mc, delay_id, app.presets() )
+,m_delayLeftTimeSlider( TRANS("dly L").toStdString(), mc, delay_id, app.presets() )
+,m_delayRightTimeSlider( TRANS("dly R").toStdString(), mc, delay_id, app.presets() )
+,m_attackSlider( TRANS("attack").toStdString(), mc, synth_group_ahdsr_id, app.presets() )
+,m_releaseSlider( TRANS("release").toStdString(), mc, synth_group_ahdsr_id, app.presets())
 ,m_savePresetButton()
 ,m_presetBrowser( mc )
 ,m_sampleMaps( app.sampleMaps() )
-,m_samplerGain( "", mc, sampler_id, app.presets())
+,m_sampler1Gain( "", mc, sampler1_id, app.presets())
+,m_sampler2Gain( "", mc, sampler2_id, app.presets())
 ,m_kickGain( "", mc, drum_kicks_id, app.presets())
 ,m_snareGain( "", mc, drum_snares_id, app.presets())
 ,m_hatGain( "", mc, drum_hats_id, app.presets())
@@ -47,7 +51,8 @@ PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::A
 ,m_cymbalGain( "", mc, drum_cymbals_id, app.presets())
 ,m_percGain( "", mc, drum_perc_id, app.presets())
 ,m_tomsGain( "", mc, drum_toms_id, app.presets())
-,m_samplerPan( "", mc, sampler_id, app.presets())
+,m_sampler1Pan( "", mc, sampler1_id, app.presets())
+,m_sampler2Pan( "", mc, sampler2_id, app.presets())
 ,m_kickPan( "", mc, drum_kicks_id, app.presets())
 ,m_snarePan( "", mc, drum_snares_id, app.presets())
 ,m_hatPan( "", mc, drum_hats_id, app.presets())
@@ -55,9 +60,10 @@ PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::A
 ,m_cymbalPan( "", mc, drum_cymbals_id, app.presets())
 ,m_percPan( "", mc, drum_perc_id, app.presets())
 ,m_tomsPan( "", mc, drum_toms_id, app.presets())
-
+,m_waveformGeneratorContainer(mc, app)
 {
-    addAndMakeVisible( m_sampleMapSelector );
+    addAndMakeVisible( m_sample1MapSelector );
+    addAndMakeVisible( m_sample2MapSelector );
     addAndMakeVisible( m_kickMapSelector );
     addAndMakeVisible( m_snareMapSelector );
     addAndMakeVisible( m_hatMapSelector );
@@ -66,8 +72,9 @@ PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::A
     addAndMakeVisible( m_percMapSelector );
     addAndMakeVisible( m_tomsMapSelector );
     addAndMakeVisible( m_savePresetButton );
+    addAndMakeVisible( m_waveformButton );
     
-    addAndMakeVisible( m_samplerMuter );
+    addAndMakeVisible( m_synthMuter );
     addAndMakeVisible( m_kicksMuter );
     addAndMakeVisible( m_snaresMuter );
     addAndMakeVisible( m_hatsMuter );
@@ -76,11 +83,19 @@ PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::A
     addAndMakeVisible( m_percMuter );
     addAndMakeVisible( m_tomsMuter );
 
+    addAndMakeVisible( m_sampler1Enabled );
+    addAndMakeVisible( m_sampler2Enabled );
+    
     m_savePresetButton.setButtonText( "Presets" );
     m_savePresetButton.onClick = [this](){
         m_presetBrowser.setVisible( !m_presetBrowser.isVisible() );
     };
     
+    m_waveformButton.setButtonText( "Waveform" );
+    m_waveformButton.onClick = [this](){
+        m_waveformGeneratorContainer.setVisible( !m_waveformGeneratorContainer.isVisible() );
+    };
+
     PresetBrowser::Options newOptions;
 
     newOptions.backgroundColour = Colours::black;
@@ -92,7 +107,8 @@ PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::A
 
     m_presetBrowser.setOptions(newOptions);
     
-    fillSampleMapList( m_sampleMaps.instrumentMaps(), "Instrument", m_sampleMapSelector );
+    fillSampleMapList( m_sampleMaps.instrumentMaps(), "Instrument", m_sample1MapSelector );
+    fillSampleMapList( m_sampleMaps.instrumentMaps(), "Instrument", m_sample2MapSelector );
     fillSampleMapList( m_sampleMaps.kickMaps(), "Kicks", m_kickMapSelector );
     fillSampleMapList( m_sampleMaps.snareMaps(), "Snares", m_snareMapSelector );
     fillSampleMapList( m_sampleMaps.hatMaps(), "Hats", m_hatMapSelector );
@@ -128,7 +144,8 @@ PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::A
     addAndMakeVisible( &m_releaseSlider );
     m_releaseSlider.slider().setRange(juce::Range<double>(80,20000), 1);
     
-    addAndMakeVisible(&m_samplerGain);
+    addAndMakeVisible(&m_sampler1Gain);
+    addAndMakeVisible(&m_sampler2Gain);
     addAndMakeVisible(&m_kickGain);
     addAndMakeVisible(&m_snareGain);
     addAndMakeVisible(&m_hatGain);
@@ -137,8 +154,11 @@ PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::A
     addAndMakeVisible(&m_percGain);
     addAndMakeVisible(&m_tomsGain);
     
-    addAndMakeVisible(&m_samplerPan);
-    m_samplerPan.rangeAndSkewPoint(-1.0, 1.0, 0.0);
+    addAndMakeVisible(&m_sampler1Pan);
+    m_sampler1Pan.rangeAndSkewPoint(-1.0, 1.0, 0.0);
+    addAndMakeVisible(&m_sampler2Pan);
+    m_sampler2Pan.rangeAndSkewPoint(-1.0, 1.0, 0.0);
+
     addAndMakeVisible(&m_kickPan);
     m_kickPan.rangeAndSkewPoint(-1.0, 1.0, 0.0);
 
@@ -161,6 +181,7 @@ PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::A
     m_tomsPan.rangeAndSkewPoint(-1.0, 1.0, 0.0);
 
     addChildComponent( m_presetBrowser );
+    addChildComponent( m_waveformGeneratorContainer );
 }
 
 void PresetEditorComponent::resized()
@@ -171,14 +192,16 @@ void PresetEditorComponent::resized()
     const int height = 32;
     
     m_savePresetButton.setBounds( area.getWidth() - 130, 10, 120, 30 );
-
+    m_waveformButton.setBounds( area.getWidth() - 130*2, 10, 120, 30 );
+    
     // combo boxes
     auto fb = juce::FlexBox();
     fb.flexWrap = juce::FlexBox::Wrap::wrap;
     fb.justifyContent = juce::FlexBox::JustifyContent::center;
     fb.alignContent = juce::FlexBox::AlignContent::center;
 
-    fb.items.add (juce::FlexItem (m_sampleMapSelector).withMinWidth (width).withMinHeight (height));
+    fb.items.add (juce::FlexItem (m_sample1MapSelector).withMinWidth (width).withMinHeight (height));
+    fb.items.add (juce::FlexItem (m_sample2MapSelector).withMinWidth (width).withMinHeight (height));
     fb.items.add (juce::FlexItem (m_kickMapSelector).withMinWidth (width).withMinHeight (height));
     fb.items.add (juce::FlexItem (m_snareMapSelector).withMinWidth (width).withMinHeight (height));
     fb.items.add (juce::FlexItem (m_hatMapSelector).withMinWidth (width).withMinHeight (height));
@@ -198,7 +221,8 @@ void PresetEditorComponent::resized()
     const int buttonWidth = 32;
     const int buttonHeight = 32;
     
-    fb.items.add (juce::FlexItem (m_samplerMuter).withMinWidth (buttonWidth).withMinHeight (buttonHeight));
+    fb.items.add (juce::FlexItem (m_synthMuter).withMinWidth (buttonWidth).withMinHeight (buttonHeight));
+    fb.items.add (juce::FlexItem(buttonWidth, buttonHeight));
     fb.items.add (juce::FlexItem (m_kicksMuter).withMinWidth (buttonWidth).withMinHeight (buttonHeight));
     fb.items.add (juce::FlexItem (m_snaresMuter).withMinWidth (buttonWidth).withMinHeight (buttonHeight));
     fb.items.add (juce::FlexItem (m_hatsMuter).withMinWidth (buttonWidth).withMinHeight (buttonHeight));
@@ -218,7 +242,8 @@ void PresetEditorComponent::resized()
     const int gainWidth = 32;
     const int gainHeight = 32;
         
-    fb.items.add (juce::FlexItem (m_samplerGain).withMinWidth (gainWidth).withMinHeight (gainHeight));
+    fb.items.add (juce::FlexItem (m_sampler1Gain).withMinWidth (gainWidth).withMinHeight (gainHeight));
+    fb.items.add (juce::FlexItem (m_sampler2Gain).withMinWidth (gainWidth).withMinHeight (gainHeight));
     fb.items.add (juce::FlexItem (m_kickGain).withMinWidth (gainWidth).withMinHeight (gainHeight));
     fb.items.add (juce::FlexItem (m_snareGain).withMinWidth (gainWidth).withMinHeight (gainHeight));
     fb.items.add (juce::FlexItem (m_hatGain).withMinWidth (gainWidth).withMinHeight (gainHeight));
@@ -235,7 +260,8 @@ void PresetEditorComponent::resized()
     fb.justifyContent = juce::FlexBox::JustifyContent::center;
     fb.alignContent = juce::FlexBox::AlignContent::center;
             
-    fb.items.add (juce::FlexItem (m_samplerPan).withMinWidth (gainWidth).withMinHeight (gainHeight));
+    fb.items.add (juce::FlexItem (m_sampler1Pan).withMinWidth (gainWidth).withMinHeight (gainHeight));
+    fb.items.add (juce::FlexItem (m_sampler2Pan).withMinWidth (gainWidth).withMinHeight (gainHeight));
     fb.items.add (juce::FlexItem (m_kickPan).withMinWidth (gainWidth).withMinHeight (gainHeight));
     fb.items.add (juce::FlexItem (m_snarePan).withMinWidth (gainWidth).withMinHeight (gainHeight));
     fb.items.add (juce::FlexItem (m_hatPan).withMinWidth (gainWidth).withMinHeight (gainHeight));
@@ -247,6 +273,10 @@ void PresetEditorComponent::resized()
     fb.performLayout (area.withLeft( 264 ).withRight(296) );
 
     m_presetBrowser.setBounds( 0, 50, area.getWidth(), area.getHeight() - 50 );
+    m_waveformGeneratorContainer.setBounds( 0, 0, area.getWidth(), area.getHeight() );
+    
+    m_sampler1Enabled.setBounds( m_sampler1Pan.getX() + m_sampler1Pan.getWidth(), m_sampler1Pan.getY(), gainWidth, gainHeight);
+    m_sampler2Enabled.setBounds( m_sampler2Pan.getX() + m_sampler2Pan.getWidth(), m_sampler2Pan.getY(), gainWidth, gainHeight);
     
     // Effect knobs
     fb = juce::FlexBox();

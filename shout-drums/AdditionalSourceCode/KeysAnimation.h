@@ -2,5 +2,5 @@
 // Source file: ../../../../Downloads/keys.json
 
 extern const char*  keys_json;
-const unsigned int  keys_jsonSize = 7592;
+const unsigned int  keys_jsonSize = 7300;
 

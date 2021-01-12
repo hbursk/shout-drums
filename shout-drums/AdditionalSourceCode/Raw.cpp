@@ -11,14 +11,54 @@ DrumsData::DrumsData(MainController* mc) :
 {
     createModules( mc );
       
-    // synth and sampler
-    addToUserPreset<raw::GenericStorage::SampleMap>("LoadedMap1",  sampler_id );
-    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("SamplerGain", sampler_id);
-    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Balance>>("SamplerPan", sampler_id);
+    // synth group
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynthGroup::SpecialParameters::UnisonoVoiceAmount>>("UnisonoVoiceAmount", synth_group_id );
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynthGroup::SpecialParameters::UnisonoDetune>>("UnisonoDetune", synth_group_id );
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynthGroup::SpecialParameters::UnisonoSpread>>("UnisonoSpread", synth_group_id );
+    
+    // arp
+    addToUserPreset<raw::GenericStorage::Bypassed<false>>("ArpBypass", arp_id );
+    addToUserPreset<raw::GenericStorage::Attribute<Arpeggiator::Parameters::NumSteps>>("ArpNumSteps", arp_id );
+    addToUserPreset<raw::GenericStorage::Attribute<Arpeggiator::Parameters::NumSteps>>("ArpNumSteps", arp_id );
+    addToUserPreset<raw::GenericStorage::Attribute<Arpeggiator::Parameters::Stride>>("ArpStride", arp_id );
+    addToUserPreset<raw::GenericStorage::Attribute<Arpeggiator::Parameters::Tempo>>("ArpSpeed", arp_id );
+    addToUserPreset<raw::GenericStorage::Attribute<Arpeggiator::Parameters::Direction>>("ArpDirection", arp_id );
+    addToUserPreset<raw::GenericStorage::Attribute<Arpeggiator::Parameters::OctaveRange>>("ArpOctaveRange", arp_id );
+    addToUserPreset<raw::GenericStorage::Attribute<Arpeggiator::Parameters::Shuffle>>("ArpShuffle", arp_id );
+    addToUserPreset<raw::GenericStorage::SliderPack<0>>("ArpSemitone", arp_id );
+    addToUserPreset<raw::GenericStorage::SliderPack<1>>("ArpVelocity", arp_id );
+    addToUserPreset<raw::GenericStorage::SliderPack<2>>("ArpLength", arp_id );
 
-    addToUserPreset<raw::GenericStorage::Table<0>>("VeloTable1",  sampler_velomod_id );
-    addToUserPreset<raw::GenericStorage::Attribute<AhdsrEnvelope::Release>>("Release1", sampler_ahdsr_id);
-    addToUserPreset<raw::GenericStorage::Attribute<AhdsrEnvelope::Attack>>("Attack1", sampler_ahdsr_id);
+    // waveform generator
+    addToUserPreset<raw::GenericStorage::Attribute<WaveSynth::SpecialParameters::WaveForm1>>("WaveForm1", waveform_generator_id );
+    addToUserPreset<raw::GenericStorage::Attribute<WaveSynth::SpecialParameters::WaveForm2>>("WaveForm2", waveform_generator_id );
+    addToUserPreset<raw::GenericStorage::Attribute<WaveSynth::SpecialParameters::PulseWidth1>>("PulseWidth1", waveform_generator_id );
+    addToUserPreset<raw::GenericStorage::Attribute<WaveSynth::SpecialParameters::PulseWidth2>>("PulseWidth2", waveform_generator_id );
+    addToUserPreset<raw::GenericStorage::Attribute<WaveSynth::SpecialParameters::OctaveTranspose1>>("OctaveTranspose1", waveform_generator_id );
+    addToUserPreset<raw::GenericStorage::Attribute<WaveSynth::SpecialParameters::OctaveTranspose2>>("OctaveTranspose2", waveform_generator_id );
+    addToUserPreset<raw::GenericStorage::Attribute<WaveSynth::SpecialParameters::Detune1>>("Detune1", waveform_generator_id );
+    addToUserPreset<raw::GenericStorage::Attribute<WaveSynth::SpecialParameters::Detune2>>("Detune2", waveform_generator_id );
+    addToUserPreset<raw::GenericStorage::Attribute<WaveSynth::SpecialParameters::Pan1>>("WaveGeneratorPan1", waveform_generator_id );
+    addToUserPreset<raw::GenericStorage::Attribute<WaveSynth::SpecialParameters::Pan2>>("WaveGeneratorPan2", waveform_generator_id );
+    addToUserPreset<raw::GenericStorage::Attribute<WaveSynth::SpecialParameters::Mix>>("WaveGeneratorMix", waveform_generator_id );
+    addToUserPreset<raw::GenericStorage::Attribute<WaveSynth::SpecialParameters::EnableSecondOscillator>>("EnableSecondOscillator", waveform_generator_id );
+    addToUserPreset<raw::GenericStorage::Bypassed<false>>("WaveGeneratorBypass", waveform_generator_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("WaveGeneratorGain", waveform_generator_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Balance>>("WaveGeneratorPan", waveform_generator_id);
+
+    addToUserPreset<raw::GenericStorage::SampleMap>("LoadedMap1",  sampler1_id );
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("Sampler1Gain", sampler1_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Balance>>("Sampler1Pan", sampler1_id);
+    addToUserPreset<raw::GenericStorage::Bypassed<false>>("Sampler1Bypass", sampler1_id);
+
+    addToUserPreset<raw::GenericStorage::SampleMap>("LoadedMap2",  sampler2_id );
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("Sampler2Gain", sampler2_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Balance>>("Sampler2Pan", sampler2_id);
+    addToUserPreset<raw::GenericStorage::Bypassed<false>>("Sampler2Bypass", sampler2_id);
+
+    addToUserPreset<raw::GenericStorage::Table<0>>("VeloTable1",  synth_group_velomod_id );
+    addToUserPreset<raw::GenericStorage::Attribute<AhdsrEnvelope::Release>>("Release1", synth_group_ahdsr_id);
+    addToUserPreset<raw::GenericStorage::Attribute<AhdsrEnvelope::Attack>>("Attack1", synth_group_ahdsr_id);
     
     // drums
     addToUserPreset<raw::GenericStorage::SampleMap>("KicksMap", drum_kicks_id);
@@ -52,7 +92,7 @@ DrumsData::DrumsData(MainController* mc) :
 
     
     // muters
-    addToUserPreset<raw::GenericStorage::Attribute<MuteAllScriptProcessor::Parameters::IgnoreNotes>>("SamplerMuter", midi_muter_id);
+    addToUserPreset<raw::GenericStorage::Attribute<MuteAllScriptProcessor::Parameters::IgnoreNotes>>("SynthMuter", midi_muter_id);
     addToUserPreset<raw::GenericStorage::Attribute<MuteAllScriptProcessor::Parameters::IgnoreNotes>>("KicksMuter", kicks_muter_id);
     addToUserPreset<raw::GenericStorage::Attribute<MuteAllScriptProcessor::Parameters::IgnoreNotes>>("SnaresMuter", snare_muter_id);
     addToUserPreset<raw::GenericStorage::Attribute<MuteAllScriptProcessor::Parameters::IgnoreNotes>>("HatsMuter", hats_muter_id);
@@ -62,7 +102,7 @@ DrumsData::DrumsData(MainController* mc) :
     addToUserPreset<raw::GenericStorage::Attribute<MuteAllScriptProcessor::Parameters::IgnoreNotes>>("TomsMuter", toms_muter_id);
 
     // fx
-    addToUserPreset<raw::GenericStorage::Attribute<ConvolutionEffect::WetGain>>("ReverbWet", convolution_reverb_id);
+//    addToUserPreset<raw::GenericStorage::Attribute<ConvolutionEffect::WetGain>>("ReverbWet", convolution_reverb_id);
     addToUserPreset<raw::GenericStorage::Attribute<GainEffect::Width>>("Width", simple_gain_id);
     addToUserPreset<raw::GenericStorage::Attribute<ShapeFX::SpecialParameters::Mix>>("SaturationMix", shape_fx_id);
     addToUserPreset<raw::GenericStorage::Attribute<DelayEffect::Parameters::Mix>>("DelayMix", delay_id);
@@ -106,29 +146,54 @@ void DrumsData::createModules(MainController* mc)
     limiter->setId( limiter_id );
     ProcessorHelpers::restoreFromBase64String( limiter, "242.3ocMOtjSCCCDFdLsQhxZN.bDZNAQzBHg3UotpqXAtwivV3ZGYOQPXE2fdm3HfD66dj3J.1AmY078+OOW3c0XH37.6vUcMHvlTbsdqlPOb4Y.6nApDl00HBATBL1nUJOFTwhGC.r+si+o5tVpokxJu+886qVhFTDvrzi693qpSIRT+bV4jG18Y0UVbnh9fM5bolbdNIHL.rwybxNtx8hMZUTBq0A8FC9OvcFWJaJbgyHSWVJGlqzF4hgGKDm5RWKosOcif75WAVwssa4tVeMNWIrVzDWTA6.H0ZOOMwoygiVYO7aLxlkIlkMKGLg+.vf8YoC");
     
-    // Sampler module
-    auto sampler = builder.create<ModulatorSampler>( root );
-    sampler->setId( sampler_id );
+    // synth group
+    auto synthGroup = builder.create<ModulatorSynthGroup>( root );
+    synthGroup->setId( synth_group_id );
     
     // velocity modulator
-    auto velo = builder.create<hise::VelocityModulator>( sampler, raw::IDs::Chains::Gain );
+    auto velo = builder.create<hise::VelocityModulator>( synthGroup, raw::IDs::Chains::Gain );
     velo->setAttribute(VelocityModulator::UseTable, 1.0f, dontSendNotification );
-    velo->setId( sampler_velomod_id );
+    velo->setId( synth_group_velomod_id );
     ProcessorHelpers::restoreFromBase64String( velo, "202.3ocSPErhBCDCMwZAWuu28hmDDU7hmVPGOzCKakpderSV5.CMRynR+q2OgclJULGBu2ijWdj7FtjDga.bzw1qDfiSOSNtz5agLEfe9hN4a1byo8byRXa6UsHjAPLIq1S0Rbd7igPW82WmD5n9hidWKq9N03iK0qAfhJsWHWvZ5c49a14gR60.NMc054cUt5fZ8t.39Og1uyhZadxAbvdiMDwBu1SBfIaYSaQE+nNfSWBmshsKVQRA63HZA.6prNSd+yPBQ3e.J55Q6A");
-    
-    // Remove default Simple Envelope
-    auto envelope = builder.find<hise::SimpleEnvelope>("DefaultEnvelope1").getProcessor();
+
+    // remove default Simple Envelope
+    auto envelope = builder.find<hise::SimpleEnvelope>("DefaultEnvelope").getProcessor();
     builder.remove<SimpleEnvelope>(envelope);
         
-    auto ahdsr = builder.create<hise::AhdsrEnvelope>( sampler, raw::IDs::Chains::Gain );
-    ahdsr->setId( sampler_ahdsr_id );
+    // add ahdsr
+    auto ahdsr = builder.create<hise::AhdsrEnvelope>( synthGroup, raw::IDs::Chains::Gain );
+    ahdsr->setId( synth_group_ahdsr_id );
     ahdsr->setAttribute( AhdsrEnvelope::Attack, 0, dontSendNotification );
     ahdsr->setAttribute( AhdsrEnvelope::Release, 1234, dontSendNotification );
     
-    auto midimuter = builder.create<hise::MuteAllScriptProcessor>( sampler, raw::IDs::Chains::Midi );
+    // add midi muter
+    auto midimuter = builder.create<hise::MuteAllScriptProcessor>( synthGroup, raw::IDs::Chains::Midi );
     midimuter->setId( midi_muter_id );
     midimuter->setAttribute( MuteAllScriptProcessor::Parameters::IgnoreNotes, 1, dontSendNotification);
     
+    // add arpeggiator
+    auto arpeggiator = builder.create<hise::Arpeggiator>( synthGroup, raw::IDs::Chains::Midi);
+    arpeggiator->setId( arp_id );
+    ProcessorHelpers::restoreFromBase64String(arpeggiator, "468.3ocqT98SaCCDG2FvZBgJTplzdcuOoJXU6g81HsUZP2FQ3Jzd0M9ZiEt1gjK.4+9Ym1t0eLU4fvuD+8r8m6qubxw41DnnvlSnGNtJCHzVrqxyfYyTBzE85AD5oqG4RRTUlnn.jDJ8.5gCkJWTNJPnvwHxJq3o1mMt4rKI2qJTSzvBA2ps9YWPH8SUZY7pbWPbQrFDLHgP63mla0tsh0N5TFOIWkgQkHZMDkzGZgKVF5IgtzswiOhrZD.iVr6fB.2DAit2iy0JIjWe7yX+pbNGgrkw1xCe7ag.4DlmPsOZvkXM.sqAvePskMXTZfkAGAaNNBpZdwbyKRF.xQF6j.pDsWBnuc9Daj8kZDcXb3wRvj.+MbXWl0rQK1sIn3I3NgYFz7+oGy3okSmpgWWG0IrgFgqcerZu.NZAfNaj+XQxC0PduqLLWM1Zf0VXGZRAJHzKX89b2FLZfItGz1DEVsqIXz2ssAl9onqbetYP2t8Jic54d8WG4z+NKd05icOlDpA5v9AXlgoAk9t4d7u3S+2ezmtZcOudZsF85uby.RXchmy5mJLFPyAMj3eFb+Mh+WHefcaIlUhuAnNm8y3gtmXyWA6ePNHXHm4gLzH2AQaOh+vqMl48");
+    arpeggiator->setBypassed( true );
+
+
+    // Sampler1 module
+    auto sampler1 = builder.create<ModulatorSampler>( synthGroup );
+    sampler1->setId( sampler1_id );
+    sampler1->setBypassed( true );
+    
+    // Sampler2 module
+    auto sampler2 = builder.create<ModulatorSampler>( synthGroup );
+    sampler2->setId( sampler2_id );
+    sampler2->setBypassed( true );
+
+    // Waveform Generator
+    auto waveformGenerator = builder.create<WaveSynth>( synthGroup );
+    waveformGenerator->setId( waveform_generator_id );
+    waveformGenerator->setBypassed( true );
+    
+    // Drums
     addDrumSampler( drum_kicks_id, kicks_muter_id, builder, root, mc, "Pancake_Kicks" );
     addDrumSampler( drum_snares_id, snare_muter_id, builder, root, mc, "Pancake_Snares" );
     auto hats = addDrumSampler( drum_hats_id, hats_muter_id, builder, root, mc, "Pancake_Hats" );
@@ -169,11 +234,11 @@ void DrumsData::createPluginParameters(MainController *mc)
     addParameter(p4);
     
     auto p5 = new raw_parameter( hise::AhdsrEnvelope::SpecialParameters::Attack, "attack");
-    p5->setup(raw::IDs::UIWidgets::Slider, sampler_ahdsr_id, { 0.f, 20000.f, 1.f }, 10000.0f);
+    p5->setup(raw::IDs::UIWidgets::Slider, synth_group_ahdsr_id, { 0.f, 20000.f, 1.f }, 10000.0f);
     addParameter(p5);
 
     auto p6 = new raw_parameter( hise::AhdsrEnvelope::SpecialParameters::Release, "release");
-    p6->setup(raw::IDs::UIWidgets::Slider, sampler_ahdsr_id, { 80.f, 20000.f, 1.f }, 10000.0f);
+    p6->setup(raw::IDs::UIWidgets::Slider, synth_group_ahdsr_id, { 80.f, 20000.f, 1.f }, 10000.0f);
     addParameter(p6);
 }
 

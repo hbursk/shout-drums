@@ -72,6 +72,7 @@ protected:
     juce::ImageComponent m_backgroundImage;
     juce::Image          m_bgImage;
     juce::ImageButton    m_backgroundClick;
+    juce::ImageButton    m_otherBackgroundClick;
     
     ShoutLookAndFeel m_shoutLookAndFeel;
     

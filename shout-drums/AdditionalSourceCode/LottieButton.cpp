@@ -70,6 +70,6 @@ void LottieButton::reset()
 
 void LottieButton::animation( String animationJson )
 {
+    m_lottieComponent.stop( true );
     m_lottieComponent.loadAnimation(animationJson, true);
-    m_lottieComponent.setFrameNormalised( 0 );
 }

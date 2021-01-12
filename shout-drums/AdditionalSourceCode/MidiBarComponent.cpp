@@ -46,8 +46,8 @@ MidiBarComponent::MidiBarComponent( MidiListener& listener, Presets& presets )
     getProperties().set(info_title_property, "midi bar");
     getProperties().set(info_message_property, "Shows the notes you're playing and where on the keyboard the sounds pitch down and up");
     
-    m_presets.presetCategory.onChanged([this](const auto& type){
-        updateRanges(type);
+    m_presets.presetCategory.onChanged([this](const auto& category){
+        updateRanges(category.type);
     });
 }
 
@@ -204,21 +204,21 @@ void MidiBarComponent::updateRanges(CategoryType type)
             
         case CategoryType::FX:
         {
-            addRange( 12, 35, drums_blue, drums_blue.brighter(1.25), false );
-            addRange( 36, 59, drums_green, drums_green.brighter(1.25), true );
-            addRange( 60, 84, drums_yellow,  drums_yellow.brighter(1.25), false );
+            addRange( 12, 35, fx_red, fx_red.brighter(1.25), false );
+            addRange( 36, 59, fx_green, fx_green.brighter(1.25), true );
+            addRange( 60, 84, fx_yellow,  fx_yellow.brighter(1.25), false );
         }
             break;
             
         case CategoryType::Lead:
         {
-            addRange( 12, 84, drums_blue, drums_blue.brighter(1.25), false );
+            addRange( 12, 84, keys_orange, keys_orange.brighter(1.25), false );
         }
             break;
             
         case CategoryType::Bass:
         {
-            addRange( 12, 84, drums_blue, drums_blue.brighter(1.25), false );
+            addRange( 12, 84, bass_yellow, bass_yellow.brighter(1.25), false );
         }
             break;
             

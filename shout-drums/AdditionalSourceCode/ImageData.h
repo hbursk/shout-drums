@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "ImageEyes.h"
-#include "ImageGeoShapes.h"
-#include "ImageGoodVibes.h"
 #include "DrumsImage.h"
+#include "FXImage.h"
 #include "VoxImage.h"
+#include "KeysImage.h"
+#include "BassImage.h"
