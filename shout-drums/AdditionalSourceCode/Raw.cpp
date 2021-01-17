@@ -217,36 +217,65 @@ void DrumsData::createModules(MainController* mc)
 
 void DrumsData::createPluginParameters(MainController *mc)
 {
-    auto p1 = new raw_parameter(ConvolutionEffect::WetGain, "reverb");
-    p1->setup(raw::IDs::UIWidgets::Slider, convolution_reverb_id, { -100.f, -20.f, 0.1f }, -30.f);
+    auto handler = mc->getMacroManager().getMidiControlAutomationHandler();
+
+    auto p1 = new raw::PluginParameter<raw::Data<float>::Macro<MacroIndexes::Reverb>>(getMainController(), "reverb");
+    p1->setup(raw::IDs::UIWidgets::Slider, convolution_reverb_id, { 0.f, 1.f, 1.0/127.0 }, 0.5f);
     addParameter(p1);
+    
+    // MIDI CC handled by Macro for Reverb
     
     auto p2 = new raw_parameter(DelayEffect::Parameters::Mix, "delay");
     p2->setup(raw::IDs::UIWidgets::Slider, delay_id, { 0.f, 0.5f, 0.01f }, 0.1f);
     addParameter(p2);
     
+    // add MIDI CC for delay
+    auto proc = ProcessorHelpers::getFirstProcessorWithName(mc->getMainSynthChain(), delay_id);
+    handler->addMidiControlledParameter(proc, DelayEffect::Parameters::Mix, { 0.f, 0.5f, 0.01f }, -1);
+    handler->setUnlearndedMidiControlNumber(15, sendNotification);
+    
     auto p3 = new raw_parameter(hise::ShapeFX::SpecialParameters::Mix, "drive");
-    p3->setup(raw::IDs::UIWidgets::Slider, shape_fx_id, { 0.f, 1.f, 0.01f }, 0.5f);
+    p3->setup(raw::IDs::UIWidgets::Slider, shape_fx_id, { 0.f, 0.75f, 0.01f }, 0.5f);
     addParameter(p3);
     
-    auto p4 = new raw_parameter( hise::GainEffect::Parameters::Width, "width");
+    // add MIDI CC for drive
+    proc = ProcessorHelpers::getFirstProcessorWithName(mc->getMainSynthChain(), shape_fx_id);
+    handler->addMidiControlledParameter(proc, hise::ShapeFX::SpecialParameters::Mix, { 0.f, 0.75f, 0.01f }, -1);
+    handler->setUnlearndedMidiControlNumber(14, sendNotification);
+
+        auto p4 = new raw_parameter( hise::GainEffect::Parameters::Width, "width");
     p4->setup(raw::IDs::UIWidgets::Slider, simple_gain_id, { 0.f, 200.f, 0.1f }, 100.f);
     addParameter(p4);
     
+    // add MIDI CC for width
+    proc = ProcessorHelpers::getFirstProcessorWithName(mc->getMainSynthChain(), simple_gain_id);
+    handler->addMidiControlledParameter(proc, hise::GainEffect::Parameters::Width, { 0.f, 200.f, 0.1f }, -1);
+    handler->setUnlearndedMidiControlNumber(17, sendNotification);
+
     auto p5 = new raw_parameter( hise::AhdsrEnvelope::SpecialParameters::Attack, "attack");
     p5->setup(raw::IDs::UIWidgets::Slider, synth_group_ahdsr_id, { 0.f, 20000.f, 1.f }, 10000.0f);
     addParameter(p5);
+    
+    // add MIDI CC for attack
+    proc = ProcessorHelpers::getFirstProcessorWithName(mc->getMainSynthChain(), synth_group_ahdsr_id);
+    handler->addMidiControlledParameter(proc, hise::AhdsrEnvelope::SpecialParameters::Attack, { 0.f, 20000.f, 1.f }, -1);
+    handler->setUnlearndedMidiControlNumber(18, sendNotification);
 
     auto p6 = new raw_parameter( hise::AhdsrEnvelope::SpecialParameters::Release, "release");
     p6->setup(raw::IDs::UIWidgets::Slider, synth_group_ahdsr_id, { 80.f, 20000.f, 1.f }, 10000.0f);
     addParameter(p6);
+    
+    // add MIDI CC for release
+    proc = ProcessorHelpers::getFirstProcessorWithName(mc->getMainSynthChain(), synth_group_ahdsr_id);
+    handler->addMidiControlledParameter(proc, hise::AhdsrEnvelope::SpecialParameters::Release, { 80.f, 20000.f, 1.f }, -1);
+    handler->setUnlearndedMidiControlNumber(19, sendNotification);
 }
 
 void DrumsData::createMacros(MainController* mc)
 {
     // reverb
     mc->getMacroManager().setEnableMacroOnFrontend(true);
-    mc->getMacroManager().setMidiControllerForMacro(MacroIndexes::Reverb, 1);
+    mc->getMacroManager().setMidiControllerForMacro(MacroIndexes::Reverb, 16);
     
     auto wetRange = NormalisableRange<double>( -100.f, -10.f, 0.1f );
     wetRange.setSkewForCentre(-20.f);
@@ -255,6 +284,10 @@ void DrumsData::createMacros(MainController* mc)
     auto dryRange = NormalisableRange<double>( -10.f, 0.f, 0.1f );
     dryRange.setSkewForCentre(-2.f);
     mc->getMacroManager().getMacroChain()->addControlledParameter(MacroIndexes::Reverb, convolution_reverb_id, ConvolutionEffect::DryGain, "reverb dry", dryRange, true, true);
+    
+    auto handler = mc->getMacroManager().getMidiControlAutomationHandler();
+    handler->addMidiControlledParameter(mc->getMainSynthChain(), 0, {0, 1}, MacroIndexes::Reverb);
+    handler->setUnlearndedMidiControlNumber(16, sendNotification);
 }
 
 hise::ModulatorSampler* DrumsData::addDrumSampler( const std::string& id, const std::string& muterId, raw::Builder& builder,  hise::ModulatorSynthChain* root, MainController* mc, String mapName )

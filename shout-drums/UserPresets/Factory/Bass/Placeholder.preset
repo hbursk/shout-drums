@@ -4,7 +4,7 @@
   <Control id="UnisonoVoiceAmount" value="1"/>
   <Control id="UnisonoDetune" value="0"/>
   <Control id="UnisonoSpread" value="1"/>
-  <Control id="ArpBypass" value="0"/>
+  <Control id="ArpBypass" value="1"/>
   <Control id="ArpNumSteps" value="8"/>
   <Control id="ArpNumSteps" value="8"/>
   <Control id="ArpStride" value="1"/>
@@ -31,7 +31,7 @@
   <Control id="WaveGeneratorGain" value="0.25"/>
   <Control id="WaveGeneratorPan" value="0"/>
   <Control id="LoadedMap1" value="BS_LIT_Synth"/>
-  <Control id="Sampler1Gain" value="0.249265"/>
+  <Control id="Sampler1Gain" value="1"/>
   <Control id="Sampler1Pan" value="0"/>
   <Control id="Sampler1Bypass" value="0"/>
   <Control id="LoadedMap2" value=""/>
@@ -39,7 +39,7 @@
   <Control id="Sampler2Pan" value="0"/>
   <Control id="Sampler2Bypass" value="1"/>
   <Control id="VeloTable1" value="24......PDQD4C...vO...f+....9C...vO"/>
-  <Control id="Release1" value="1424"/>
+  <Control id="Release1" value="1193"/>
   <Control id="Attack1" value="0"/>
   <Control id="KicksMap" value="Scone_Kicks"/>
   <Control id="KicksGain" value="1"/>
@@ -70,20 +70,39 @@
   <Control id="CymbalsMuter" value="1"/>
   <Control id="PercMuter" value="1"/>
   <Control id="TomsMuter" value="1"/>
-  <Control id="Width" value="200"/>
-  <Control id="SaturationMix" value="0.367136"/>
+  <Control id="Width" value="100"/>
+  <Control id="SaturationMix" value="0.220853"/>
   <Control id="DelayMix" value="0"/>
-  <Control id="DelayFdbkL" value="0.0798125"/>
-  <Control id="DelayFdbkR" value="0.0460625"/>
+  <Control id="DelayFdbkL" value="0.3"/>
+  <Control id="DelayFdbkR" value="0.3"/>
   <Control id="DelayTimeL" value="6"/>
-  <Control id="DelayTimeR" value="6"/>
+  <Control id="DelayTimeR" value="5"/>
   <Control id="OutputGain" value="0"/>
-  <MidiAutomation/>
+  <MidiAutomation>
+    <Controller Controller="14" Processor="Shape FX1" MacroIndex="-1" Start="0"
+                End="0.75" FullStart="0" FullEnd="0.75" Skew="1" Interval="0.01"
+                Attribute="Mix" Inverted="0"/>
+    <Controller Controller="15" Processor="Delay1" MacroIndex="-1" Start="0"
+                End="0.5" FullStart="0" FullEnd="0.5" Skew="1" Interval="0.01"
+                Attribute="Mix" Inverted="0"/>
+    <Controller Controller="16" Processor="Master Chain" MacroIndex="2" Start="0"
+                End="1" FullStart="0" FullEnd="1" Skew="1" Interval="0" Attribute="Gain"
+                Inverted="0"/>
+    <Controller Controller="17" Processor="Simple Gain1" MacroIndex="-1" Start="0"
+                End="200" FullStart="0" FullEnd="200" Skew="1" Interval="0.1"
+                Attribute="Width" Inverted="0"/>
+    <Controller Controller="18" Processor="AHDSR Envelope1" MacroIndex="-1" Start="0"
+                End="20000" FullStart="0" FullEnd="20000" Skew="1" Interval="1"
+                Attribute="Attack" Inverted="0"/>
+    <Controller Controller="19" Processor="AHDSR Envelope1" MacroIndex="-1" Start="80"
+                End="20000" FullStart="80" FullEnd="20000" Skew="1" Interval="1"
+                Attribute="Release" Inverted="0"/>
+  </MidiAutomation>
   <MPEData Enabled="0"/>
   <macro_controls>
     <macro name="Macro 1" value="0.0" midi_cc="-1"/>
     <macro name="Macro 2" value="0.0" midi_cc="-1"/>
-    <macro name="Macro 3" value="87.84828186035156" midi_cc="-1">
+    <macro name="Macro 3" value="48.01592254638672" midi_cc="16">
       <controlled_parameter id="Convolution Reverb" parameter="1" parameter_name="reverb wet"
                             min="-100.0" max="-10.0" skew="5.884949192361716" low="-100.0"
                             high="-10.0" inverted="0" readonly="1"/>

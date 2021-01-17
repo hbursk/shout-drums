@@ -38,6 +38,11 @@ public:
         
         setupParameterWatcher();
         
+        // set initial value
+        auto value = m_mainController->getMacroManager().getMacroChain()->getMacroControlData(MacroIndex)->getCurrentValue();
+
+        m_slider.setValue( value / 127.0, dontSendNotification );
+        updateIconAnimation();
     }
     
     ~MacroKnob()
@@ -111,7 +116,16 @@ public:
             setupParameterWatcher();
         }
     }
-
+    
+    void macroChangedByAutomation(int macroIndex, float value)
+    {
+        if (macroIndex == MacroIndex)
+        {
+            juce::MessageManager::callAsync([this, value](){
+                m_slider.setValue(value/127.0, dontSendNotification);
+            });
+        }
+    }
     
 private:
     void setupSlider()

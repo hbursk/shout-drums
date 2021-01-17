@@ -95,8 +95,12 @@ void PresetTile::updateIconScale()
             scale = 0.8f;
             break;
             
+        case CategoryType::Lead:
+            scale = 1.175f;
+            break;
+            
         case CategoryType::FX:
-            scale = 2.f;
+            scale = 1.75f;
             break;
             
         default:

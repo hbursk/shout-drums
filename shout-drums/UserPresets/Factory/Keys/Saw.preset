@@ -28,7 +28,7 @@
   <Control id="WaveGeneratorMix" value="0.5"/>
   <Control id="EnableSecondOscillator" value="0"/>
   <Control id="WaveGeneratorBypass" value="0"/>
-  <Control id="WaveGeneratorGain" value="0.18875"/>
+  <Control id="WaveGeneratorGain" value="0.327531"/>
   <Control id="WaveGeneratorPan" value="0"/>
   <Control id="LoadedMap1" value="BS_LIT_Synth"/>
   <Control id="Sampler1Gain" value="1"/>
@@ -78,12 +78,31 @@
   <Control id="DelayTimeL" value="6"/>
   <Control id="DelayTimeR" value="6"/>
   <Control id="OutputGain" value="0"/>
-  <MidiAutomation/>
+  <MidiAutomation>
+    <Controller Controller="14" Processor="Shape FX1" MacroIndex="-1" Start="0"
+                End="0.75" FullStart="0" FullEnd="0.75" Skew="1" Interval="0.01"
+                Attribute="Mix" Inverted="0"/>
+    <Controller Controller="15" Processor="Delay1" MacroIndex="-1" Start="0"
+                End="0.5" FullStart="0" FullEnd="0.5" Skew="1" Interval="0.01"
+                Attribute="Mix" Inverted="0"/>
+    <Controller Controller="16" Processor="Master Chain" MacroIndex="2" Start="0"
+                End="1" FullStart="0" FullEnd="1" Skew="1" Interval="0" Attribute="Gain"
+                Inverted="0"/>
+    <Controller Controller="17" Processor="Simple Gain1" MacroIndex="-1" Start="0"
+                End="200" FullStart="0" FullEnd="200" Skew="1" Interval="0.1"
+                Attribute="Width" Inverted="0"/>
+    <Controller Controller="18" Processor="AHDSR Envelope1" MacroIndex="-1" Start="0"
+                End="20000" FullStart="0" FullEnd="20000" Skew="1" Interval="1"
+                Attribute="Attack" Inverted="0"/>
+    <Controller Controller="19" Processor="AHDSR Envelope1" MacroIndex="-1" Start="80"
+                End="20000" FullStart="80" FullEnd="20000" Skew="1" Interval="1"
+                Attribute="Release" Inverted="0"/>
+  </MidiAutomation>
   <MPEData Enabled="0"/>
   <macro_controls>
     <macro name="Macro 1" value="0.0" midi_cc="-1"/>
     <macro name="Macro 2" value="0.0" midi_cc="-1"/>
-    <macro name="Macro 3" value="87.84828186035156" midi_cc="-1">
+    <macro name="Macro 3" value="87.84828186035156" midi_cc="16">
       <controlled_parameter id="Convolution Reverb" parameter="1" parameter_name="reverb wet"
                             min="-100.0" max="-10.0" skew="5.884949192361716" low="-100.0"
                             high="-10.0" inverted="0" readonly="1"/>

@@ -30,7 +30,7 @@ public:
 		if (v.getNumChildren() != storedData.size())
 		{
             auto xml = v.toXmlString();
-            printf("Preset\n%s\n", xml.toStdString().c_str());
+            //printf("Preset\n%s\n", xml.toStdString().c_str());
             if ( size > storedData.size() )
             {
                 size = storedData.size();

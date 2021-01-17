@@ -8,6 +8,8 @@
 
 #include "PresetBarContainer.h"
 #include "ExpandAnimation.h"
+#include "ProcessorKeys.h"
+#include "LightningAnimation.h"
 
 constexpr int switcherHeight = 60;
 constexpr int switcherWidth = 300;
@@ -18,10 +20,11 @@ PresetBarContainer::PresetBarContainer(MainController* mc, Presets& presets, Mid
 , m_midiBarComponent(midiListener, presets)
 , m_expandAnimation(mc->getRLottieManager())
 , m_presetPicker(mc, presets)
+, m_arpButton( mc, String(lightning_json, lightning_jsonSize) )
+, m_presets( presets )
 {
     m_expandAnimation.setBackgroundColour(Colours::transparentBlack);
     m_expandAnimation.loadAnimation(String(expand_json, expand_jsonSize), true);
-    //m_expandAnimation.setFrameNormalised(0.5);
     
     addAndMakeVisible(&m_presetSwitcher);
     addAndMakeVisible(&m_midiBarComponent);
@@ -29,10 +32,22 @@ PresetBarContainer::PresetBarContainer(MainController* mc, Presets& presets, Mid
     addAndMakeVisible(&m_expandButton);
     addAndMakeVisible(&m_presetTitleButton);
     addAndMakeVisible(&m_presetPicker);
+    addAndMakeVisible(&m_arpButton);
     
-    auto expand = [this](){
+    auto expand = [this, &presets](){
         
-        if (m_state == State::Closed)
+        if ( presets.pickerState() == PickerState::Open )
+        {
+            presets.pickerState( PickerState::Closed );
+        }
+        else
+        {
+            presets.pickerState( PickerState::Open );
+        }
+    };
+    
+    presets.pickerState.onChanged([this](const auto& pickerState){
+        if ( pickerState == PickerState::Open )
         {
             animateOpen();
         }
@@ -40,9 +55,22 @@ PresetBarContainer::PresetBarContainer(MainController* mc, Presets& presets, Mid
         {
             animateClose();
         }
-    };
+    });
     m_expandButton.onClick = expand;
     m_presetTitleButton.onClick = expand;
+    
+    presets.supportsArpeggiator.onChangedAndNow([this](const auto& support){
+        m_arpButton.setEnabled(support);
+        m_arpButton.setAlpha(support ? 1.0 : 0.5 );
+    });
+    
+    m_arpButton.setupConnection( arp_id );
+    
+    m_arpButton.setInfoText(TRANS("arpeggiator").toStdString(), TRANS("Some presets support rhythmic patterns you can turn on and off").toStdString());
+    
+    m_arpButton.onClick = [this](){
+        printf( "ArpButton::onclick selected:%d\n", m_arpButton.isToggled() );
+    };
 }
 
 void PresetBarContainer::resized()
@@ -63,6 +91,9 @@ void PresetBarContainer::resized()
     m_expandButton.setBounds( area.getWidth() - switcherHeight, midiBarHeight, switcherHeight, switcherHeight);
     m_expandAnimation.setBounds( area.getWidth() - switcherHeight, midiBarHeight, switcherHeight, switcherHeight);//midiBarHeight + 17, 20, 20);
     m_expandAnimation.resized();
+    m_arpButton.setBounds(m_presetSwitcher.getX()/2 - switcherHeight/2 + 5, midiBarHeight, switcherHeight, switcherHeight);
+    m_arpButton.resized();
+    
 }
 
 void PresetBarContainer::paint(Graphics& g)
@@ -74,31 +105,17 @@ void PresetBarContainer::paint(Graphics& g)
 
 void PresetBarContainer::closePresetBar()
 {
-    animateClose();
+    m_presets.pickerState( PickerState::Closed );
 }
 
 void PresetBarContainer::animateOpen()
 {
-    if ( m_state == State::Open )
-    {
-        return;
-    }
-    
-    m_state = State::Open;
-        
     juce::Desktop::getInstance().getAnimator().animateComponent(this, m_openedPos, 1.0, 300, false, 2.0, 0);
     m_expandAnimation.play(RLottieComponent::PlaybackMode::OneShotForward);
 }
 
 void PresetBarContainer::animateClose()
-{
-    if ( m_state == State::Closed )
-    {
-        return;
-    }
-    
-    m_state = State::Closed;
-    
+{    
     juce::Desktop::getInstance().getAnimator().animateComponent(this, m_closedPos, 1.0, 300, false, 2.0, 0);
     m_expandAnimation.play(RLottieComponent::PlaybackMode::OneShotBackward);
 }

@@ -24,6 +24,13 @@ enum class CategoryType
     Unknown
 };
 
+enum class PickerState
+{
+    Closed,
+    Open
+};
+
+
 struct CategoryTypeAndColor
 {
     CategoryTypeAndColor() = default;
@@ -112,6 +119,7 @@ public:
     Property<CategoryTypeAndColor> presetCategory;
     Property<PresetSelection> presetSelection;
     Property<bool> supportsArpeggiator{false};
+    Property<PickerState> pickerState{PickerState::Closed};
     
     const std::vector<Bank>& banks() const;
     

@@ -2,5 +2,5 @@
 // Source file: ../../../../Downloads/speaker.json
 
 extern const char*  speaker_json;
-const unsigned int  speaker_jsonSize = 18186;
+const unsigned int  speaker_jsonSize = 18303;
 

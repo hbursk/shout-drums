@@ -19,11 +19,7 @@ using namespace shout::spec::color;
 MidiBarComponent::MidiBarComponent( MidiListener& listener, Presets& presets )
 : m_midiListener( listener )
 , m_presets( presets )
-{
-    addRange( 12, 35, drums_blue, drums_blue.brighter(1.25), false );
-    addRange( 36, 59, drums_green, drums_green.brighter(1.25), true );
-    addRange( 60, 84, drums_yellow,  drums_yellow.brighter(1.25), false );
-    
+{    
     m_midiListener.activeNotes.onChanged( [this](const auto&){
         juce::MessageManager::callAsync([this](){
             repaint();
@@ -46,7 +42,7 @@ MidiBarComponent::MidiBarComponent( MidiListener& listener, Presets& presets )
     getProperties().set(info_title_property, "midi bar");
     getProperties().set(info_message_property, "Shows the notes you're playing and where on the keyboard the sounds pitch down and up");
     
-    m_presets.presetCategory.onChanged([this](const auto& category){
+    m_presets.presetCategory.onChangedAndNow([this](const auto& category){
         updateRanges(category.type);
     });
 }
@@ -218,7 +214,7 @@ void MidiBarComponent::updateRanges(CategoryType type)
             
         case CategoryType::Bass:
         {
-            addRange( 12, 84, bass_yellow, bass_yellow.brighter(1.25), false );
+            addRange( 12, 84, bass_yellow, juce::Colours::white, false );
         }
             break;
             

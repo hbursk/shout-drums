@@ -26,8 +26,11 @@ PresetScrollingPicker::PresetScrollingPicker(MainController* mc, Presets& preset
     m_listBox.getViewport()->setScrollOnDragEnabled(true);
     m_listBox.setTransform(AffineTransform::rotation(-1.0 * float_Pi/2.0));
     
-    m_presets.presetSelection.onChanged([this](const auto& selection){
-        m_listBox.selectRow(static_cast<int>(selection.linearIndex));
+    m_presets.presetSelection.onChangedAndNow([this](const auto& selection){
+        if (selection.linearIndex != -1)
+        {
+            m_listBox.selectRow(static_cast<int>(selection.linearIndex));
+        }
     });
 }
 

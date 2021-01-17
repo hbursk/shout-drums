@@ -5,7 +5,7 @@
 constexpr char default_info[] = "";
 constexpr char default_title[] = "";
 
-InfoView::InfoView()
+InfoView::InfoView(Presets& presets)
 {
     if ( juce::Desktop::getInstance().getMainMouseSource().canHover() )
     {
@@ -15,6 +15,11 @@ InfoView::InfoView()
     
     setText( default_info, default_title );
     addAndMakeVisible( m_infoMessage );
+    
+    presets.pickerState.onChanged( [this](const auto& pickerState)
+    {
+        disableDisplay( pickerState == PickerState::Open );
+    });
 }
 
 void InfoView::resized()
@@ -30,12 +35,28 @@ void InfoView::resized()
 
 void InfoView::refresh()
 {
-    setText( m_text, m_title );
+    if (m_displayDisabled)
+    {
+        clear();
+    }
+    else
+    {
+        setText( m_text, m_title );
+    }
 }
 
 void InfoView::clear()
 {
     setText("","");
+}
+
+void InfoView::disableDisplay(bool disable)
+{
+    m_displayDisabled = disable;
+    if ( disable )
+    {
+        clear();
+    }
 }
 
 void InfoView::timerCallback()
@@ -46,7 +67,7 @@ void InfoView::timerCallback()
     bool             needToResearchDesktop = true;
 
     // special case if mouse is inside info view (since it could be on top of another component)
-    if ( getLocalBounds().contains( getLocalPoint( nullptr, mousePos ) ) )
+    if ( getLocalBounds().contains( getLocalPoint( nullptr, mousePos ) ) || m_displayDisabled )
     {
         setText( default_info, default_title );
         return;

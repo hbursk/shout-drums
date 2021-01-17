@@ -25,6 +25,7 @@ FloatingTileContent(parent)
 , m_gainSlider( "", mc, "Simple Gain1", m_app.presets() )
 //, m_reverbMixSlider( TRANS("reverb").toStdString(), mc, "Convolution Reverb", m_app.presets() )
 , m_reverbMacroSlider( TRANS("reverb").toStdString(), mc, m_app.presets())
+, m_infoView( m_app.presets() )
 , m_saturationMixSlider( TRANS("drive").toStdString(), mc, "Shape FX1", m_app.presets() )
 , m_widthSlider( TRANS("width").toStdString(), mc, "Simple Gain1", m_app.presets() )
 , m_delayMixSlider( TRANS("delay").toStdString(), mc, "Delay1", m_app.presets() )
@@ -107,14 +108,14 @@ FloatingTileContent(parent)
 
     addChildComponent( &m_attackReleaseContainer );
     m_attackReleaseContainer.addAndMakeVisible( &m_attackSlider );
-    m_attackSlider.slider().setRange(juce::Range<double>(0, 20000), 1);
+    m_attackSlider.rangeAndIncrement(0, 20000, 1);
     m_attackSlider.setInfoText(TRANS("attack").toStdString(), TRANS("Click and drag up and down to control how your sounds fade in").toStdString());
     m_attackSlider.setIconAnimation(waterfillpink_json, waterfillpink_jsonSize, animationStart, animationEnd);
     m_attackSlider.updateDoubleClickValue();
 
     
     m_attackReleaseContainer.addAndMakeVisible( &m_releaseSlider );
-    m_releaseSlider.slider().setRange(juce::Range<double>(80,20000), 1);
+    m_releaseSlider.rangeAndIncrement(80, 20000, 1);
     m_releaseSlider.setInfoText(TRANS("release").toStdString(), TRANS("Click and drag up and down to control how your sounds fade out").toStdString());
     m_releaseSlider.setIconAnimation(waterfillpink_json, waterfillpink_jsonSize, animationStart, animationEnd);
     m_releaseSlider.updateDoubleClickValue();

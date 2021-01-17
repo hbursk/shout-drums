@@ -77,13 +77,15 @@ public:
         m_slider.setRange( min, max );
         m_slider.setSkewFactorFromMidPoint( skew );
         
-        auto p = ProcessorHelpers::getFirstProcessorWithName(m_mainController->getMainSynthChain(), m_processorId);
-        m_slider.setValue( p->getAttribute( ParameterIndex ), dontSendNotification );
-        
-        m_slider.repaint();
-        
-        updateIconAnimation();
+        updateValue();
     }
+    
+    void rangeAndIncrement( double min, double max, double increment )
+    {
+        m_slider.setRange( juce::Range<double>(min, max), increment );
+        
+        updateValue();
+    }    
     
     void mouseEnter (const MouseEvent& event) override{}
     void mouseExit( const MouseEvent& event ) override{}
@@ -117,6 +119,16 @@ public:
     }
     
 private:
+    void updateValue()
+    {
+        auto p = ProcessorHelpers::getFirstProcessorWithName(m_mainController->getMainSynthChain(), m_processorId);
+        m_slider.setValue( p->getAttribute( ParameterIndex ), dontSendNotification );
+        
+        m_slider.repaint();
+        
+        updateIconAnimation();
+    }
+    
     void setupSlider()
     {
         addAndMakeVisible( &m_slider );

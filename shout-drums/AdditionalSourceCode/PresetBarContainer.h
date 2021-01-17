@@ -14,15 +14,12 @@
 #include "PresetSwitcher.h"
 #include "MidiBarComponent.h"
 #include "MidiListener.h"
+#include "LottieButton.h"
+#include "PowerButton.h"
 
 class PresetBarContainer : public juce::Component
 {
 public:
-    enum class State
-    {
-        Closed,
-        Open
-    };
     
     PresetBarContainer(MainController* mc, Presets& presets, MidiListener& midiListener);
     ~PresetBarContainer() = default;
@@ -42,10 +39,10 @@ private:
     MidiBarComponent m_midiBarComponent;
     juce::ImageButton m_expandButton;
     juce::ImageButton m_presetTitleButton;
-    State m_state = State::Closed;
     Rectangle<int> m_closedPos;
     Rectangle<int> m_openedPos;
     RLottieComponent m_expandAnimation;
     PresetScrollingPicker m_presetPicker;
-    
+    LottieButton m_arpButton;
+    Presets& m_presets;
 };

@@ -2,5 +2,5 @@
 // Source file: ../../../../Downloads/waveform.json
 
 extern const char*  waveform_json;
-const unsigned int  waveform_jsonSize = 14322;
+const unsigned int  waveform_jsonSize = 11510;
 
