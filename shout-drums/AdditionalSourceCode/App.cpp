@@ -15,6 +15,7 @@ App::App( hise::MainController* _mc )
 , m_presets( _mc )
 , m_sampleMaps( _mc )
 , m_midiListener( _mc->getKeyboardState() )
+, m_targetKey( _mc, m_presets)
 {
     assert( m_mainController );
 }
@@ -32,4 +33,9 @@ SampleMaps& App::sampleMaps()
 MidiListener& App::midiListener()
 {
     return m_midiListener;
+}
+
+TargetKey& App::targetKey()
+{
+    return m_targetKey;
 }

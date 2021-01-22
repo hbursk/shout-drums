@@ -13,6 +13,7 @@
 #include "Localizations.h"
 #include "MidiListener.h"
 #include "Presets.h"
+#include "TargetKey.h"
 #include "SampleMaps.h"
 
 namespace shout
@@ -27,6 +28,7 @@ public:
     Presets&      presets();
     SampleMaps&   sampleMaps();
     MidiListener& midiListener();
+    TargetKey&    targetKey();
 
 private:
     hise::MainController* m_mainController = nullptr;
@@ -35,5 +37,6 @@ private:
     SampleMaps    m_sampleMaps;
     MidiListener  m_midiListener;
     Localizations m_localizations;
+    TargetKey     m_targetKey;
 };
 } // namespace shout

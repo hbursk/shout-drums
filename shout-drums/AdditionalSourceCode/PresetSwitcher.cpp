@@ -36,7 +36,7 @@ PresetSwitcher::PresetSwitcher( Presets& _presets, MainController* mc )
         m_label.setText( val, dontSendNotification );
     });
     
-    getProperties().set(info_title_property, "presets");
+    getProperties().set(info_title_property, TRANS("presets"));
     getProperties().set(info_message_property, TRANS("Click left and right arrows to load different sounds"));
 }
 

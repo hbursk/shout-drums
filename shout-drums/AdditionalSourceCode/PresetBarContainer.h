@@ -9,6 +9,7 @@
 #pragma once
 
 #include "JuceHeader.h"
+#include "App.h"
 #include "Presets.h"
 #include "PresetScrollingPicker.h"
 #include "PresetSwitcher.h"
@@ -16,12 +17,13 @@
 #include "MidiListener.h"
 #include "LottieButton.h"
 #include "PowerButton.h"
+#include "KeySwitcher.h"
 
 class PresetBarContainer : public juce::Component
 {
 public:
     
-    PresetBarContainer(MainController* mc, Presets& presets, MidiListener& midiListener);
+    PresetBarContainer(MainController* mc, shout::App& app, MidiListener& midiListener);
     ~PresetBarContainer() = default;
     
     void resized() override;
@@ -45,4 +47,5 @@ private:
     PresetScrollingPicker m_presetPicker;
     LottieButton m_arpButton;
     Presets& m_presets;
+    KeySwitcher m_keySwitcher;
 };

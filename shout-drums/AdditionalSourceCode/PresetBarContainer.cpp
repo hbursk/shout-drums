@@ -15,13 +15,14 @@ constexpr int switcherHeight = 60;
 constexpr int switcherWidth = 300;
 constexpr int midiBarHeight = 8;
 
-PresetBarContainer::PresetBarContainer(MainController* mc, Presets& presets, MidiListener& midiListener)
-: m_presetSwitcher(presets, mc)
-, m_midiBarComponent(midiListener, presets)
+PresetBarContainer::PresetBarContainer(MainController* mc, shout::App& app, MidiListener& midiListener)
+: m_presetSwitcher(app.presets(), mc)
+, m_midiBarComponent(midiListener, app.presets())
 , m_expandAnimation(mc->getRLottieManager())
-, m_presetPicker(mc, presets)
+, m_presetPicker(mc, app.presets())
 , m_arpButton( mc, String(lightning_json, lightning_jsonSize) )
-, m_presets( presets )
+, m_presets( app.presets() )
+, m_keySwitcher( mc, app.targetKey())
 {
     m_expandAnimation.setBackgroundColour(Colours::transparentBlack);
     m_expandAnimation.loadAnimation(String(expand_json, expand_jsonSize), true);
@@ -33,7 +34,9 @@ PresetBarContainer::PresetBarContainer(MainController* mc, Presets& presets, Mid
     addAndMakeVisible(&m_presetTitleButton);
     addAndMakeVisible(&m_presetPicker);
     addAndMakeVisible(&m_arpButton);
+    addChildComponent(&m_keySwitcher);
     
+    auto &presets = app.presets();
     auto expand = [this, &presets](){
         
         if ( presets.pickerState() == PickerState::Open )
@@ -94,6 +97,7 @@ void PresetBarContainer::resized()
     m_arpButton.setBounds(m_presetSwitcher.getX()/2 - switcherHeight/2 + 5, midiBarHeight, switcherHeight, switcherHeight);
     m_arpButton.resized();
     
+    m_keySwitcher.setBounds(area.getWidth() - switcherHeight*3, midiBarHeight, switcherHeight*1.7, switcherHeight);
 }
 
 void PresetBarContainer::paint(Graphics& g)

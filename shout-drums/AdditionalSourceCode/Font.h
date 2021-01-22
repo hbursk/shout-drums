@@ -20,5 +20,6 @@ public:
 
     static const juce::Font mainFont( float pointSize );
     static const juce::Font labelFont( float pointSize );
+    static const juce::Font symbolJPFont( float pointSize );
 };
 } // namespace shout

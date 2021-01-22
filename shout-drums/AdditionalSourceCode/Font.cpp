@@ -10,6 +10,7 @@
 
 #include "FontMontserrat.h"
 #include "FontOpenSans-Light.h"
+#include "FontNotoSansJP-Regular.h"
 
 
 const juce::Font shout::Font::mainFont( float pointSize )
@@ -25,3 +26,11 @@ const juce::Font shout::Font::labelFont( float pointSize )
         juce::Font( Typeface::createSystemTypefaceFor( OpenSansLight_ttf, OpenSansLight_ttfSize ) ) );
     return labelFont.withPointHeight( pointSize );
 }
+
+const juce::Font shout::Font::symbolJPFont( float pointSize )
+{
+    static juce::Font symbolJPFont(
+        juce::Font( Typeface::createSystemTypefaceFor( NotoSansJPRegular_otf, NotoSansJPRegular_otfSize ) ) );
+    return symbolJPFont.withPointHeight( pointSize );
+}
+

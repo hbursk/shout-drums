@@ -114,6 +114,9 @@ DrumsData::DrumsData(MainController* mc) :
     // output
     addToUserPreset<raw::GenericStorage::Attribute<GainEffect::Gain>>("OutputGain", simple_gain_id);
     
+    // source key
+    addToUserPreset<raw::GenericStorage::SourceKey>("SourceKey", simple_gain_id);
+    
     createPluginParameters(mc);
     createMacros(mc);
 }

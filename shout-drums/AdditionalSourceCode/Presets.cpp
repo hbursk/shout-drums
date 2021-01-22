@@ -109,6 +109,7 @@ void Presets::buildPresets()
         auto name = lowercase( preset.getFileNameWithoutExtension().toStdString() );
         auto category = preset.getParentDirectory();
         auto categoryName = category.getFileNameWithoutExtension().toStdString();
+        categoryName = categoryName.substr( 3, categoryName.length() );
         auto categoryType = categoryStringToType(categoryName);
         auto categoryColor = categoryTypeToColor(categoryType);
         auto bankName = category.getParentDirectory().getFileNameWithoutExtension().toStdString();
@@ -208,7 +209,9 @@ void Presets::updateSelection()
     
     for ( cat=0; cat < m_banks[bank].categories.size(); cat++ )
     {
-        if ( m_banks[bank].categories[cat].name == catDir.getFileNameWithoutExtension() )
+        auto compareCat = catDir.getFileNameWithoutExtension();
+        compareCat = compareCat.substring(3, compareCat.length());
+        if ( m_banks[bank].categories[cat].name == compareCat )
         {
             break;
         }

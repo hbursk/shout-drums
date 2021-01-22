@@ -11,7 +11,7 @@
 
 
 //#define SHOW_KEYBOARD
-//#define SHOW_PRESET_EDITOR
+#define SHOW_PRESET_EDITOR
 //#define USE_OPENGL
 
 #if USE_RAW_FRONTEND
@@ -34,7 +34,7 @@ FloatingTileContent(parent)
 , m_attackReleaseContainer( "attack/release" )
 , m_backgroundImage()
 , m_presetEditorComponent( mc, m_app )
-, m_presetBarContainer( mc, m_app.presets(), m_app.midiListener())
+, m_presetBarContainer( mc, m_app, m_app.midiListener())
 , m_editButton( TRANS("edit") )
 , m_mainController( mc )
 {
