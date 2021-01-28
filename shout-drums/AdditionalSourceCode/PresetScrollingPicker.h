@@ -10,6 +10,7 @@
 
 #include "JuceHeader.h"
 #include "Presets.h"
+#include "HorizontalListBox.h"
 
 class PresetScrollingPicker : public juce::Component, public juce::ListBoxModel
 {
@@ -30,6 +31,6 @@ public:
     
 private:
     Presets& m_presets;
-    juce::ListBox m_listBox;
+    shout::HorizontalListBox m_listBox;
     MainController* m_mainController;
 };

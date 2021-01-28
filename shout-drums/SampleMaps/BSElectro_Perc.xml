@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="BSElectro_Perc" RRGroupAmount="1" MicPositions=";" SaveMode="2">
+  <sample Root="65" LoKey="77" HiKey="77" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Bell1_C3.wav" Duplicate="0"
+          MonolithOffset="0" MonolithLength="40960" SampleRate="44100"
+          Volume="-5"/>
+  <sample Root="66" LoKey="78" HiKey="78" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Bell2_C#3.wav" Duplicate="0"
+          MonolithOffset="40960" MonolithLength="40960" SampleRate="44100"
+          Volume="-5"/>
+  <sample Root="69" LoKey="81" HiKey="81" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Ride_D2.wav" Duplicate="0"
+          Volume="-5" MonolithOffset="81920" MonolithLength="172032" SampleRate="44100"/>
+  <sample Root="70" LoKey="82" HiKey="82" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Ride_D#2.wav" Duplicate="0"
+          Volume="-5" MonolithOffset="253952" MonolithLength="126976" SampleRate="44100"/>
+  <sample Root="71" LoKey="83" HiKey="83" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Perc_F#1.wav" Duplicate="0"
+          MonolithOffset="380928" MonolithLength="12288" SampleRate="44100"/>
+  <sample Root="41" LoKey="29" HiKey="29" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Bell1_C3.wav" Duplicate="1"
+          MonolithOffset="393216" MonolithLength="40960" SampleRate="44100"
+          Volume="-5"/>
+  <sample Root="42" LoKey="30" HiKey="30" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Bell2_C#3.wav" Duplicate="1"
+          MonolithOffset="434176" MonolithLength="40960" SampleRate="44100"
+          Volume="-5"/>
+  <sample Root="45" LoKey="33" HiKey="33" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Ride_D2.wav" Duplicate="1"
+          Volume="-5" MonolithOffset="475136" MonolithLength="172032" SampleRate="44100"/>
+  <sample Root="46" LoKey="34" HiKey="34" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Ride_D#2.wav" Duplicate="1"
+          Volume="-5" MonolithOffset="647168" MonolithLength="126976" SampleRate="44100"/>
+  <sample Root="47" LoKey="35" HiKey="35" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Perc_F#1.wav" Duplicate="1"
+          MonolithOffset="774144" MonolithLength="12288" SampleRate="44100"/>
+  <sample Root="53" LoKey="53" HiKey="53" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Bell1_C3.wav" Duplicate="1"
+          MonolithOffset="786432" MonolithLength="40960" SampleRate="44100"
+          Volume="-5"/>
+  <sample Root="54" LoKey="54" HiKey="54" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Bell2_C#3.wav" Duplicate="1"
+          MonolithOffset="827392" MonolithLength="40960" SampleRate="44100"
+          Volume="-5"/>
+  <sample Root="57" LoKey="57" HiKey="57" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Ride_D2.wav" Duplicate="1"
+          Volume="-5" MonolithOffset="868352" MonolithLength="172032" SampleRate="44100"/>
+  <sample Root="58" LoKey="58" HiKey="58" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Ride_D#2.wav" Duplicate="1"
+          Volume="-5" MonolithOffset="1040384" MonolithLength="126976"
+          SampleRate="44100"/>
+  <sample Root="59" LoKey="59" HiKey="59" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Perc_F#1.wav" Duplicate="1"
+          MonolithOffset="1167360" MonolithLength="12288" SampleRate="44100"/>
+</samplemap>

@@ -10,10 +10,7 @@
 #include "ExpandAnimation.h"
 #include "ProcessorKeys.h"
 #include "LightningAnimation.h"
-
-constexpr int switcherHeight = 60;
-constexpr int switcherWidth = 300;
-constexpr int midiBarHeight = 8;
+#include "Spec.h"
 
 PresetBarContainer::PresetBarContainer(MainController* mc, shout::App& app, MidiListener& midiListener)
 : m_presetSwitcher(app.presets(), mc)
@@ -23,6 +20,7 @@ PresetBarContainer::PresetBarContainer(MainController* mc, shout::App& app, Midi
 , m_arpButton( mc, String(lightning_json, lightning_jsonSize) )
 , m_presets( app.presets() )
 , m_keySwitcher( mc, app.targetKey())
+, m_presetInfoView( app.presetInfo() )
 {
     m_expandAnimation.setBackgroundColour(Colours::transparentBlack);
     m_expandAnimation.loadAnimation(String(expand_json, expand_jsonSize), true);
@@ -35,6 +33,7 @@ PresetBarContainer::PresetBarContainer(MainController* mc, shout::App& app, Midi
     addAndMakeVisible(&m_presetPicker);
     addAndMakeVisible(&m_arpButton);
     addChildComponent(&m_keySwitcher);
+    addAndMakeVisible(&m_presetInfoView);
     
     auto &presets = app.presets();
     auto expand = [this, &presets](){
@@ -71,8 +70,13 @@ PresetBarContainer::PresetBarContainer(MainController* mc, shout::App& app, Midi
     
     m_arpButton.setInfoText(TRANS("arpeggiator").toStdString(), TRANS("Some presets support rhythmic patterns you can turn on and off").toStdString());
     
-    m_arpButton.onClick = [this](){
-        printf( "ArpButton::onclick selected:%d\n", m_arpButton.isToggled() );
+    m_arpButton.onClick = [this, mc](){
+        if (!m_arpButton.isToggled())
+        {
+            // send note off to prevent stuck notes
+            auto arp = static_cast<hise::Arpeggiator*>(ProcessorHelpers::getFirstProcessorWithName(mc->getMainSynthChain(), arp_id));
+            arp->stopCurrentNote();
+        }
     };
 }
 
@@ -83,28 +87,30 @@ void PresetBarContainer::resized()
     if (m_closedPos.getWidth() == 0)
     {
         m_closedPos = getBoundsInParent();
-        const auto offset = getHeight() - switcherHeight - midiBarHeight;
+        const auto offset = getHeight() - shout::spec::preset::switcherHeight - shout::spec::preset::midiBarHeight;
         m_openedPos = getBoundsInParent().withY(getBoundsInParent().getY() - offset);
     }
     
-    m_presetSwitcher.setBounds((area.getWidth() - switcherWidth)/2, midiBarHeight, switcherWidth, switcherHeight );
+    m_presetSwitcher.setBounds((area.getWidth() - shout::spec::preset::switcherWidth)/2, shout::spec::preset::midiBarHeight, shout::spec::preset::switcherWidth, shout::spec::preset::switcherHeight );
     m_presetTitleButton.setBounds(m_presetSwitcher.getX() + 40, m_presetSwitcher.getY(), m_presetSwitcher.getWidth() - 80, m_presetSwitcher.getHeight());
-    m_midiBarComponent.setBounds( 0, 0, area.getWidth(), midiBarHeight );
-    m_presetPicker.setBounds(0, midiBarHeight+switcherHeight, area.getWidth(), area.getHeight() - midiBarHeight - switcherHeight);
-    m_expandButton.setBounds( area.getWidth() - switcherHeight, midiBarHeight, switcherHeight, switcherHeight);
-    m_expandAnimation.setBounds( area.getWidth() - switcherHeight, midiBarHeight, switcherHeight, switcherHeight);//midiBarHeight + 17, 20, 20);
+    m_midiBarComponent.setBounds( 0, 0, area.getWidth(), shout::spec::preset::midiBarHeight );
+    m_presetPicker.setBounds(0, shout::spec::preset::midiBarHeight+shout::spec::preset::switcherHeight, area.getWidth(), area.getHeight() - shout::spec::preset::midiBarHeight - shout::spec::preset::switcherHeight - shout::spec::preset::presetInfoHeight);
+    m_expandButton.setBounds( area.getWidth() - shout::spec::preset::switcherHeight, shout::spec::preset::midiBarHeight, shout::spec::preset::switcherHeight, shout::spec::preset::switcherHeight);
+    m_expandAnimation.setBounds( area.getWidth() - shout::spec::preset::switcherHeight, shout::spec::preset::midiBarHeight, shout::spec::preset::switcherHeight, shout::spec::preset::switcherHeight);//midiBarHeight + 17, 20, 20);
     m_expandAnimation.resized();
-    m_arpButton.setBounds(m_presetSwitcher.getX()/2 - switcherHeight/2 + 5, midiBarHeight, switcherHeight, switcherHeight);
+    m_arpButton.setBounds(m_presetSwitcher.getX()/2 - shout::spec::preset::switcherHeight/2 + 5, shout::spec::preset::midiBarHeight, shout::spec::preset::switcherHeight, shout::spec::preset::switcherHeight);
     m_arpButton.resized();
     
-    m_keySwitcher.setBounds(area.getWidth() - switcherHeight*3, midiBarHeight, switcherHeight*1.7, switcherHeight);
+    m_keySwitcher.setBounds(area.getWidth() - shout::spec::preset::switcherHeight*3, shout::spec::preset::midiBarHeight, shout::spec::preset::switcherHeight*1.7, shout::spec::preset::switcherHeight);
+    
+    m_presetInfoView.setBounds(0, area.getHeight() - shout::spec::preset::presetInfoHeight, area.getWidth(), shout::spec::preset::presetInfoHeight );
 }
 
 void PresetBarContainer::paint(Graphics& g)
 {
     const auto area = getLocalBounds();
     g.setColour(juce::Colour(0xaa000000));
-    g.fillRect( 0, midiBarHeight/2, area.getWidth(), area.getHeight() - midiBarHeight/2);
+    g.fillRect( 0, shout::spec::preset::midiBarHeight/2, area.getWidth(), area.getHeight() - shout::spec::preset::midiBarHeight/2);
 }
 
 void PresetBarContainer::closePresetBar()
@@ -114,12 +120,12 @@ void PresetBarContainer::closePresetBar()
 
 void PresetBarContainer::animateOpen()
 {
-    juce::Desktop::getInstance().getAnimator().animateComponent(this, m_openedPos, 1.0, 300, false, 2.0, 0);
+    juce::Desktop::getInstance().getAnimator().animateComponent(this, m_openedPos, 1.0, shout::spec::preset::switcherWidth + shout::spec::preset::presetInfoHeight, false, 2.0, 0);
     m_expandAnimation.play(RLottieComponent::PlaybackMode::OneShotForward);
 }
 
 void PresetBarContainer::animateClose()
 {    
-    juce::Desktop::getInstance().getAnimator().animateComponent(this, m_closedPos, 1.0, 300, false, 2.0, 0);
+    juce::Desktop::getInstance().getAnimator().animateComponent(this, m_closedPos, 1.0, shout::spec::preset::switcherWidth + shout::spec::preset::presetInfoHeight, false, 2.0, 0);
     m_expandAnimation.play(RLottieComponent::PlaybackMode::OneShotBackward);
 }

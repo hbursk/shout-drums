@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="BSElectro_Claps" RRGroupAmount="1" MicPositions=";" SaveMode="2">
+  <sample Root="56" LoKey="68" HiKey="68" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Clap_G#1.wav" Duplicate="0"
+          MonolithOffset="0" MonolithLength="61440" SampleRate="44100"/>
+  <sample Root="55" LoKey="67" HiKey="67" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Rimshot_G1.wav" Duplicate="0"
+          MonolithOffset="61440" MonolithLength="24576" SampleRate="44100"/>
+  <sample Root="57" LoKey="69" HiKey="69" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Snap_F2.wav" Duplicate="0"
+          MonolithOffset="86016" MonolithLength="8192" SampleRate="44100"/>
+  <sample Root="32" LoKey="20" HiKey="20" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Clap_G#1.wav" Duplicate="1"
+          MonolithOffset="94208" MonolithLength="61440" SampleRate="44100"/>
+  <sample Root="31" LoKey="19" HiKey="19" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Rimshot_G1.wav" Duplicate="1"
+          MonolithOffset="155648" MonolithLength="24576" SampleRate="44100"/>
+  <sample Root="33" LoKey="21" HiKey="21" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Snap_F2.wav" Duplicate="1"
+          MonolithOffset="180224" MonolithLength="8192" SampleRate="44100"/>
+  <sample Root="44" LoKey="44" HiKey="44" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Clap_G#1.wav" Duplicate="1"
+          MonolithOffset="188416" MonolithLength="61440" SampleRate="44100"/>
+  <sample Root="43" LoKey="43" HiKey="43" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Rimshot_G1.wav" Duplicate="1"
+          MonolithOffset="249856" MonolithLength="24576" SampleRate="44100"/>
+  <sample Root="45" LoKey="45" HiKey="45" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Snap_F2.wav" Duplicate="1"
+          MonolithOffset="274432" MonolithLength="8192" SampleRate="44100"/>
+</samplemap>

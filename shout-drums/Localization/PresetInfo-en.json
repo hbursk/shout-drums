@@ -1,0 +1,62 @@
+{
+	"authors":{
+		"Dresage" :{
+			"name" : "Dresage",
+			"url" : "https://bit.ly/2NvWekk"
+		},
+		"Bad" : {
+			"name" : "Bad Snacks",
+			"url" : "https://bit.ly/3t7dg91"
+		}
+	},
+	"presets":{
+	"pancake":{
+		"description" : "Description for pancake",
+		"author" : "Dresage"
+	},
+	"biscuit" : {
+		"description" : "Description for biscuit",
+		"author" : "Dresage"
+	},
+	"scone" : {
+		"description" : "Description for scone",
+		"author" : "Dresage"
+	},
+	"cookin" : {
+		"description" : "Foley sounds from power tools to the kitchen",
+		"author" : "Dresage"
+	},
+	"stringsss" : {
+		"description" : "Beautiful chords you can play with one finger",
+		"author" : "Bad"
+	},
+	"lit" : {
+		"description" : "Round analog synth sound with arpeggiation",
+		"author" : "Bad"
+	},
+	"saw" : {
+		"description" : "Description for saw",
+		"author" : "" 
+	},
+	"sine" : {
+		"description" : "Description for sine",
+		"author" : "" 
+	},
+	"square" : {
+		"description" : "Description for square",
+		"author" : "" 
+	},
+	"trapezoid" : {
+		"description" : "Description for trapezoid",
+		"author" : "" 
+	},
+	"triangle" : {
+		"description" : "Description for triangle",
+		"author" : "" 
+	},
+	"zap" : {
+		"description" : "Description for zap",
+		"author" : "Bad"
+	}
+	}
+}

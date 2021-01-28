@@ -13,6 +13,7 @@ using namespace shout;
 App::App( hise::MainController* _mc )
 : m_mainController( _mc )
 , m_presets( _mc )
+, m_presetInfo( m_presets )
 , m_sampleMaps( _mc )
 , m_midiListener( _mc->getKeyboardState() )
 , m_targetKey( _mc, m_presets)
@@ -23,6 +24,11 @@ App::App( hise::MainController* _mc )
 Presets& App::presets()
 {
     return m_presets;
+}
+
+PresetInfo& App::presetInfo()
+{
+    return m_presetInfo;
 }
 
 SampleMaps& App::sampleMaps()

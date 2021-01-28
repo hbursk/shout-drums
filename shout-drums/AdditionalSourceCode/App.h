@@ -12,6 +12,7 @@
 
 #include "Localizations.h"
 #include "MidiListener.h"
+#include "PresetInfo.h"
 #include "Presets.h"
 #include "TargetKey.h"
 #include "SampleMaps.h"
@@ -26,6 +27,7 @@ public:
     ~App() = default;
 
     Presets&      presets();
+    PresetInfo&   presetInfo();
     SampleMaps&   sampleMaps();
     MidiListener& midiListener();
     TargetKey&    targetKey();
@@ -34,6 +36,7 @@ private:
     hise::MainController* m_mainController = nullptr;
 
     Presets       m_presets;
+    PresetInfo    m_presetInfo;
     SampleMaps    m_sampleMaps;
     MidiListener  m_midiListener;
     Localizations m_localizations;

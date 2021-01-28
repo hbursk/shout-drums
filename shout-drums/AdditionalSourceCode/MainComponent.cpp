@@ -8,6 +8,8 @@
 #include "WaterFillFlatAnimationBlue.h"
 #include "WaterFillFlatAnimationOrange.h"
 #include "WaterFillFlatAnimationTeal.h"
+#include "VolumeAnimation.h"
+#include "Spec.h"
 
 
 //#define SHOW_KEYBOARD
@@ -70,10 +72,11 @@ FloatingTileContent(parent)
     const float animationStart = 0.0099f;
     const float animationEnd = 0.9703f;
 
-            
     addAndMakeVisible( &m_gainSlider );
     m_gainSlider.rangeAndSkewPoint( -100.f, 0.f, -30.f );
+    m_gainSlider.offsetAndMargin(0, 0);
     m_gainSlider.setInfoText(TRANS("output").toStdString(), TRANS("Click and drag up and down to change the main volume").toStdString());
+    m_gainSlider.setIconAnimation(volume_json, volume_jsonSize, 0, 1);
     m_gainSlider.updateDoubleClickValue();
 
 //    addAndMakeVisible( &m_reverbMixSlider );
@@ -241,9 +244,10 @@ void MainComponent::resized()
 
     fb.performLayout (area.withTrimmedBottom( 80 ).toFloat() );
     
-    const int switcherHeight = 60;
-    const int midiBarHeight = 8;
-    const int presetBarHeight = switcherHeight + midiBarHeight + 128;
+    const int switcherHeight = shout::spec::preset::switcherHeight;
+    const int midiBarHeight = shout::spec::preset::midiBarHeight;
+    const int presetInfoHeight = shout::spec::preset::presetInfoHeight;
+    const int presetBarHeight = switcherHeight + midiBarHeight + shout::spec::preset::presetPickerHeight + presetInfoHeight;
     
     m_presetBarContainer.setBounds( 0, total_height - switcherHeight - midiBarHeight, total_width, presetBarHeight );
     m_infoView.setBounds(0, m_presetBarContainer.getY() - 40, total_width, 40);
@@ -267,6 +271,8 @@ void MainComponent::updateAllKnobIconAnimation(const char * animation, size_t an
 {
     const float animationStart = 0.0099f;
     const float animationEnd = 0.9703f;
+    
+    m_gainSlider.setIconAnimation( volume_json, volume_jsonSize, 0, 1 );
 
     m_reverbMacroSlider.setIconAnimation(animation, animationSize, animationStart, animationEnd);
 //    m_reverbMixSlider.setIconAnimation(animation, animationSize, animationStart, animationEnd);

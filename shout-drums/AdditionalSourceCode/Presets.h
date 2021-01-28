@@ -116,6 +116,7 @@ public:
     
     Property<std::string> presetName;
     Property<std::string> presetBank;
+    Property<std::string> presetNameOnly;
     Property<CategoryTypeAndColor> presetCategory;
     Property<PresetSelection> presetSelection;
     Property<bool> supportsArpeggiator{false};

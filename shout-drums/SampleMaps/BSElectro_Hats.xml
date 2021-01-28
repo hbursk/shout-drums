@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="BSElectro_Hats" RRGroupAmount="1" MicPositions=";" SaveMode="2">
+  <sample Root="50" LoKey="62" HiKey="62" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_HatClosed_D1.wav" Duplicate="0"
+          MonolithOffset="0" MonolithLength="12288" SampleRate="44100"/>
+  <sample Root="51" LoKey="63" HiKey="63" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Crunch_F#2.wav" Duplicate="0"
+          MonolithOffset="12288" MonolithLength="16384" SampleRate="44100"/>
+  <sample Root="54" LoKey="66" HiKey="66" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Shaker1_A2.wav" Duplicate="0"
+          MonolithOffset="28672" MonolithLength="8192" SampleRate="44100"
+          Volume="6"/>
+  <sample Root="58" LoKey="70" HiKey="70" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Shaker2_A#2.wav" Duplicate="0"
+          MonolithOffset="36864" MonolithLength="20480" SampleRate="44100"
+          Volume="5"/>
+  <sample Root="26" LoKey="14" HiKey="14" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_HatClosed_D1.wav" Duplicate="1"
+          MonolithOffset="57344" MonolithLength="12288" SampleRate="44100"/>
+  <sample Root="27" LoKey="15" HiKey="15" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Crunch_F#2.wav" Duplicate="1"
+          MonolithOffset="69632" MonolithLength="16384" SampleRate="44100"/>
+  <sample Root="30" LoKey="18" HiKey="18" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Shaker1_A2.wav" Duplicate="1"
+          MonolithOffset="86016" MonolithLength="8192" SampleRate="44100"
+          Volume="6"/>
+  <sample Root="34" LoKey="22" HiKey="22" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Shaker2_A#2.wav" Duplicate="1"
+          MonolithOffset="94208" MonolithLength="20480" SampleRate="44100"
+          Volume="5"/>
+  <sample Root="38" LoKey="38" HiKey="38" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_HatClosed_D1.wav" Duplicate="1"
+          MonolithOffset="114688" MonolithLength="12288" SampleRate="44100"/>
+  <sample Root="39" LoKey="39" HiKey="39" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Crunch_F#2.wav" Duplicate="1"
+          MonolithOffset="126976" MonolithLength="16384" SampleRate="44100"/>
+  <sample Root="42" LoKey="42" HiKey="42" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Shaker1_A2.wav" Duplicate="1"
+          MonolithOffset="143360" MonolithLength="8192" SampleRate="44100"
+          Volume="6"/>
+  <sample Root="46" LoKey="46" HiKey="46" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_Electrokit_Shaker2_A#2.wav" Duplicate="1"
+          MonolithOffset="151552" MonolithLength="20480" SampleRate="44100"
+          Volume="5"/>
+</samplemap>

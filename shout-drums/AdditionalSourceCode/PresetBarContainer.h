@@ -11,6 +11,7 @@
 #include "JuceHeader.h"
 #include "App.h"
 #include "Presets.h"
+#include "PresetInfoView.h"
 #include "PresetScrollingPicker.h"
 #include "PresetSwitcher.h"
 #include "MidiBarComponent.h"
@@ -48,4 +49,5 @@ private:
     LottieButton m_arpButton;
     Presets& m_presets;
     KeySwitcher m_keySwitcher;
+    shout::PresetInfoView m_presetInfoView;
 };

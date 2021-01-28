@@ -228,6 +228,7 @@ void Presets::updateSelection()
     presetBank( m_banks[bank].name );
     presetCategory( CategoryTypeAndColor(m_banks[bank].categories[cat].type,  m_banks[bank].categories[cat].color) );
     presetName( lowercase(m_banks[bank].categories[cat].name + " || " + presetStr) );
+    presetNameOnly( lowercase( presetStr ) );
     supportsArpeggiator( m_banks[bank].categories[cat].type != CategoryType::Drums );
 
     PresetSelection sel;

@@ -58,15 +58,21 @@ public:
     {
         auto area = getLocalBounds();
         
-        const float margin = 8.0;
+        const float margin = m_animationMargin;
         
-        m_iconAnimation->setBounds(margin/2.0 + 1.0, margin,area.getWidth()- (margin + 1.0), area.getWidth()-(margin+1.0));
+        m_iconAnimation->setBounds(margin/2.0 + m_animationOffset, margin,area.getWidth()- (margin + m_animationOffset), area.getWidth()-(margin + m_animationOffset));
         
         m_slider.setBounds(0, 0, area.getWidth(), area.getWidth() );
         m_label.setBounds( 0, area.getWidth() - 1, area.getWidth(), 22 );
     }
-
     
+    void offsetAndMargin( float offset, float margin )
+    {
+        m_animationOffset = offset;
+        m_animationMargin = margin;
+        resized();
+    }
+
     juce::Slider& slider()
     {
         return m_slider;
@@ -164,6 +170,8 @@ private:
     ScopedPointer<RLottieComponent> m_iconAnimation;
     float m_animationStart = 0.0f;
     float m_animationEnd = 1.0f;
+    float m_animationOffset = 1.0f;
+    float m_animationMargin = 8.0f;
     hise::raw::Reference<Processor> m_processorReference;
     Presets& m_presets;
 
