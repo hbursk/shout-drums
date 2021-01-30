@@ -48,6 +48,8 @@ const char drum_perc_id[] = "Perc";
 const char drum_toms_id[] = "Toms";
 
 const char hats_pitch_id[] = "HatsPitch";
+const char poly_filter_id[] = "PolyFilter";
+const char poly_filter_velo_mod_id[] = "PolyVeloMod";
 
 enum MacroIndexes
 {

@@ -3,7 +3,7 @@
 <Preset Version="1.0.0">
   <Control id="UnisonoVoiceAmount" value="16"/>
   <Control id="UnisonoDetune" value="0.0208125"/>
-  <Control id="UnisonoSpread" value="0"/>
+  <Control id="UnisonoSpread" value="0.297312"/>
   <Control id="ArpBypass" value="1"/>
   <Control id="ArpNumSteps" value="8"/>
   <Control id="ArpNumSteps" value="8"/>
@@ -15,7 +15,7 @@
   <Control id="ArpSemitone" value="32............................................"/>
   <Control id="ArpVelocity" value="32...f+BA...JD..3uP..fmBA..9KD..XpP..f+BA..TID"/>
   <Control id="ArpLength" value="32....rBA..xJD..HqP..frBA..3JD..fqP..ftBA..5JD"/>
-  <Control id="WaveForm1" value="1"/>
+  <Control id="WaveForm1" value="3"/>
   <Control id="WaveForm2" value="3"/>
   <Control id="PulseWidth1" value="0.5"/>
   <Control id="PulseWidth2" value="0.5"/>
@@ -28,7 +28,7 @@
   <Control id="WaveGeneratorMix" value="0.5"/>
   <Control id="EnableSecondOscillator" value="0"/>
   <Control id="WaveGeneratorBypass" value="0"/>
-  <Control id="WaveGeneratorGain" value="0.416671"/>
+  <Control id="WaveGeneratorGain" value="0.327531"/>
   <Control id="WaveGeneratorPan" value="0"/>
   <Control id="LoadedMap1" value="BS_LIT_Synth"/>
   <Control id="Sampler1Gain" value="1"/>
@@ -40,7 +40,7 @@
   <Control id="Sampler2Bypass" value="1"/>
   <Control id="VeloTable1" value="24......PDQD4C...vO...f+....9C...vO"/>
   <Control id="Release1" value="1353"/>
-  <Control id="Attack1" value="379"/>
+  <Control id="Attack1" value="1"/>
   <Control id="KicksMap" value="Scone_Kicks"/>
   <Control id="KicksGain" value="1"/>
   <Control id="KicksPan" value="0"/>
@@ -77,7 +77,10 @@
   <Control id="DelayFdbkR" value="0.0169687"/>
   <Control id="DelayTimeL" value="6"/>
   <Control id="DelayTimeR" value="6"/>
+  <Control id="DelayLowpass" value="20000"/>
+  <Control id="DelayHipass" value="20"/>
   <Control id="OutputGain" value="0"/>
+  <Control id="SourceKey" value="13"/>
   <MidiAutomation>
     <Controller Controller="14" Processor="Shape FX1" MacroIndex="-1" Start="0"
                 End="0.75" FullStart="0" FullEnd="0.75" Skew="1" Interval="0.01"

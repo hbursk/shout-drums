@@ -3,41 +3,50 @@
 <samplemap ID="Pancake_Hats" RRGroupAmount="1" MicPositions=";" SaveMode="2">
   <sample Root="26" LoKey="14" HiKey="14" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Hi Hat 1.wav" Duplicate="0"
-          MonolithOffset="0" MonolithLength="65536" SampleRate="44100"/>
+          MonolithOffset="0" MonolithLength="65536" SampleRate="44100"
+          Volume="-4"/>
   <sample Root="27" LoKey="15" HiKey="15" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Hi Hat 2.wav" Duplicate="0"
-          MonolithOffset="65536" MonolithLength="69632" SampleRate="44100"/>
+          MonolithOffset="65536" MonolithLength="69632" SampleRate="44100"
+          Volume="-4"/>
   <sample Root="50" LoKey="62" HiKey="62" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Hi Hat 1.wav" Duplicate="1"
-          MonolithOffset="135168" MonolithLength="65536" SampleRate="44100"/>
+          MonolithOffset="135168" MonolithLength="65536" SampleRate="44100"
+          Volume="-4"/>
   <sample Root="51" LoKey="63" HiKey="63" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Hi Hat 2.wav" Duplicate="1"
-          MonolithOffset="200704" MonolithLength="69632" SampleRate="44100"/>
+          MonolithOffset="200704" MonolithLength="69632" SampleRate="44100"
+          Volume="-4"/>
   <sample Root="38" LoKey="38" HiKey="38" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Hi Hat 1.wav" Duplicate="1"
-          MonolithOffset="270336" MonolithLength="65536" SampleRate="44100"/>
+          MonolithOffset="270336" MonolithLength="65536" SampleRate="44100"
+          Volume="-4"/>
   <sample Root="39" LoKey="39" HiKey="39" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Hi Hat 2.wav" Duplicate="1"
-          MonolithOffset="335872" MonolithLength="69632" SampleRate="44100"/>
+          MonolithOffset="335872" MonolithLength="69632" SampleRate="44100"
+          Volume="-4"/>
   <sample Root="30" LoKey="18" HiKey="18" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Mid length Fizz Hat .wav" Duplicate="0"
-          MonolithOffset="405504" MonolithLength="57344" SampleRate="44100"/>
+          MonolithOffset="405504" MonolithLength="57344" SampleRate="44100"
+          Volume="-4"/>
   <sample Root="54" LoKey="66" HiKey="66" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Mid length Fizz Hat .wav" Duplicate="1"
-          MonolithOffset="462848" MonolithLength="57344" SampleRate="44100"/>
+          MonolithOffset="462848" MonolithLength="57344" SampleRate="44100"
+          Volume="-4"/>
   <sample Root="42" LoKey="42" HiKey="42" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Mid length Fizz Hat .wav" Duplicate="1"
-          MonolithOffset="520192" MonolithLength="57344" SampleRate="44100"/>
+          MonolithOffset="520192" MonolithLength="57344" SampleRate="44100"
+          Volume="-4"/>
   <sample Root="34" LoKey="22" HiKey="22" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Mid length Fizz Hat Filter.wav"
           Duplicate="0" MonolithOffset="577536" MonolithLength="65536"
-          SampleRate="44100"/>
+          SampleRate="44100" Volume="-4"/>
   <sample Root="58" LoKey="70" HiKey="70" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Mid length Fizz Hat Filter.wav"
           Duplicate="1" MonolithOffset="643072" MonolithLength="65536"
-          SampleRate="44100"/>
+          SampleRate="44100" Volume="-4"/>
   <sample Root="46" LoKey="46" HiKey="46" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Mid length Fizz Hat Filter.wav"
           Duplicate="1" MonolithOffset="708608" MonolithLength="65536"
-          SampleRate="44100"/>
+          SampleRate="44100" Volume="-4"/>
 </samplemap>

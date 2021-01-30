@@ -3,56 +3,74 @@
 <samplemap ID="Pancake_Toms" RRGroupAmount="1" MicPositions=";" SaveMode="2">
   <sample Root="36" LoKey="24" HiKey="24" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Bloop Tom.wav" Duplicate="0"
-          MonolithOffset="0" MonolithLength="53248" SampleRate="44100"/>
+          MonolithOffset="0" MonolithLength="53248" SampleRate="44100"
+          Volume="-3"/>
   <sample Root="37" LoKey="25" HiKey="25" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Click Tom.wav" Duplicate="0"
-          MonolithOffset="53248" MonolithLength="90112" SampleRate="44100"/>
+          MonolithOffset="53248" MonolithLength="90112" SampleRate="44100"
+          Volume="-3"/>
   <sample Root="38" LoKey="26" HiKey="26" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Swoop Tom Dry.wav" Duplicate="0"
-          MonolithOffset="143360" MonolithLength="102400" SampleRate="44100"/>
+          MonolithOffset="143360" MonolithLength="102400" SampleRate="44100"
+          Volume="-3"/>
   <sample Root="39" LoKey="27" HiKey="27" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Swoop Tom Spacey.wav" Duplicate="0"
-          MonolithOffset="245760" MonolithLength="135168" SampleRate="44100"/>
+          MonolithOffset="245760" MonolithLength="135168" SampleRate="44100"
+          Volume="-3"/>
   <sample Root="40" LoKey="28" HiKey="28" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Twerp Tom.wav" Duplicate="0"
-          MonolithOffset="380928" MonolithLength="86016" SampleRate="44100"/>
+          MonolithOffset="380928" MonolithLength="86016" SampleRate="44100"
+          Volume="-3"/>
   <sample Root="44" LoKey="32" HiKey="32" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Space Junk Tom.wav" Duplicate="0"
-          MonolithOffset="466944" MonolithLength="135168" SampleRate="44100"/>
+          MonolithOffset="466944" MonolithLength="135168" SampleRate="44100"
+          Volume="-3"/>
   <sample Root="60" LoKey="72" HiKey="72" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Bloop Tom.wav" Duplicate="1"
-          MonolithOffset="602112" MonolithLength="53248" SampleRate="44100"/>
+          MonolithOffset="602112" MonolithLength="53248" SampleRate="44100"
+          Volume="-3"/>
   <sample Root="61" LoKey="73" HiKey="73" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Click Tom.wav" Duplicate="1"
-          MonolithOffset="655360" MonolithLength="90112" SampleRate="44100"/>
+          MonolithOffset="655360" MonolithLength="90112" SampleRate="44100"
+          Volume="-3"/>
   <sample Root="62" LoKey="74" HiKey="74" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Swoop Tom Dry.wav" Duplicate="1"
-          MonolithOffset="745472" MonolithLength="102400" SampleRate="44100"/>
+          MonolithOffset="745472" MonolithLength="102400" SampleRate="44100"
+          Volume="-3"/>
   <sample Root="63" LoKey="75" HiKey="75" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Swoop Tom Spacey.wav" Duplicate="1"
-          MonolithOffset="847872" MonolithLength="135168" SampleRate="44100"/>
+          MonolithOffset="847872" MonolithLength="135168" SampleRate="44100"
+          Volume="-3"/>
   <sample Root="64" LoKey="76" HiKey="76" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Twerp Tom.wav" Duplicate="1"
-          MonolithOffset="983040" MonolithLength="86016" SampleRate="44100"/>
+          MonolithOffset="983040" MonolithLength="86016" SampleRate="44100"
+          Volume="-3"/>
   <sample Root="68" LoKey="80" HiKey="80" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Space Junk Tom.wav" Duplicate="1"
-          MonolithOffset="1069056" MonolithLength="135168" SampleRate="44100"/>
+          MonolithOffset="1069056" MonolithLength="135168" SampleRate="44100"
+          Volume="-3"/>
   <sample Root="48" LoKey="48" HiKey="48" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Bloop Tom.wav" Duplicate="1"
-          MonolithOffset="1204224" MonolithLength="53248" SampleRate="44100"/>
+          MonolithOffset="1204224" MonolithLength="53248" SampleRate="44100"
+          Volume="-3"/>
   <sample Root="49" LoKey="49" HiKey="49" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Click Tom.wav" Duplicate="1"
-          MonolithOffset="1257472" MonolithLength="90112" SampleRate="44100"/>
+          MonolithOffset="1257472" MonolithLength="90112" SampleRate="44100"
+          Volume="-3"/>
   <sample Root="50" LoKey="50" HiKey="50" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Swoop Tom Dry.wav" Duplicate="1"
-          MonolithOffset="1347584" MonolithLength="102400" SampleRate="44100"/>
+          MonolithOffset="1347584" MonolithLength="102400" SampleRate="44100"
+          Volume="-3"/>
   <sample Root="51" LoKey="51" HiKey="51" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Swoop Tom Spacey.wav" Duplicate="1"
-          MonolithOffset="1449984" MonolithLength="135168" SampleRate="44100"/>
+          MonolithOffset="1449984" MonolithLength="135168" SampleRate="44100"
+          Volume="-3"/>
   <sample Root="52" LoKey="52" HiKey="52" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Twerp Tom.wav" Duplicate="1"
-          MonolithOffset="1585152" MonolithLength="86016" SampleRate="44100"/>
+          MonolithOffset="1585152" MonolithLength="86016" SampleRate="44100"
+          Volume="-3"/>
   <sample Root="56" LoKey="56" HiKey="56" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Pancake_Space Junk Tom.wav" Duplicate="1"
-          MonolithOffset="1671168" MonolithLength="135168" SampleRate="44100"/>
+          MonolithOffset="1671168" MonolithLength="135168" SampleRate="44100"
+          Volume="-3"/>
 </samplemap>

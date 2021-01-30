@@ -37,6 +37,8 @@ PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::A
 ,m_delayFeedbackRightSlider( TRANS("dly fR").toStdString(), mc, delay_id, app.presets() )
 ,m_delayLeftTimeSlider( TRANS("dly L").toStdString(), mc, delay_id, app.presets() )
 ,m_delayRightTimeSlider( TRANS("dly R").toStdString(), mc, delay_id, app.presets() )
+,m_delayLowpassSlider( TRANS("low").toStdString(), mc, delay_id, app.presets() )
+,m_delayHipassSlider( TRANS("hi").toStdString(), mc, delay_id, app.presets() )
 ,m_attackSlider( TRANS("attack").toStdString(), mc, synth_group_ahdsr_id, app.presets() )
 ,m_releaseSlider( TRANS("release").toStdString(), mc, synth_group_ahdsr_id, app.presets())
 ,m_savePresetButton()
@@ -130,19 +132,24 @@ PresetEditorComponent::PresetEditorComponent( hise::MainController *mc, shout::A
     addAndMakeVisible( &m_delayFeedbackRightSlider );
     
     addAndMakeVisible( &m_delayLeftTimeSlider );
-    m_delayLeftTimeSlider.slider().setRange(0, 19, 1);
+    m_delayLeftTimeSlider.rangeAndIncrement(0, 19, 1);
 
     addAndMakeVisible( &m_delayRightTimeSlider );
-    m_delayRightTimeSlider.slider().setRange(0, 19, 1);
+    m_delayRightTimeSlider.rangeAndIncrement(0, 19, 1);
+    
+    addAndMakeVisible( &m_delayLowpassSlider );
+    m_delayLowpassSlider.rangeAndSkewPoint(20.0, 20000.0, 9990.0);
+    addAndMakeVisible( &m_delayHipassSlider );
+    m_delayHipassSlider.rangeAndSkewPoint(20.0, 20000.0, 9990.0);
 
     addAndMakeVisible( &m_widthSlider );
     m_widthSlider.rangeAndSkewPoint(0, 200, 100);
     
     addAndMakeVisible( &m_attackSlider );
-    m_attackSlider.slider().setRange(juce::Range<double>(0, 20000), 1);
+    m_attackSlider.rangeAndIncrement(0, 20000, 1);
     
     addAndMakeVisible( &m_releaseSlider );
-    m_releaseSlider.slider().setRange(juce::Range<double>(80,20000), 1);
+    m_releaseSlider.rangeAndIncrement(80,20000, 1);
     
     addAndMakeVisible(&m_sampler1Gain);
     addAndMakeVisible(&m_sampler2Gain);
@@ -297,6 +304,8 @@ void PresetEditorComponent::resized()
     fb.items.add (juce::FlexItem (m_delayFeedbackRightSlider).withMinWidth (knobWidth).withMinHeight (knobHeight));
     fb.items.add (juce::FlexItem (m_delayLeftTimeSlider).withMinWidth (knobWidth).withMinHeight (knobHeight));
     fb.items.add (juce::FlexItem (m_delayRightTimeSlider).withMinWidth (knobWidth).withMinHeight (knobHeight));
+    fb.items.add (juce::FlexItem (m_delayLowpassSlider).withMinWidth (knobWidth).withMinHeight (knobHeight));
+    fb.items.add (juce::FlexItem (m_delayHipassSlider).withMinWidth (knobWidth).withMinHeight (knobHeight));
 
     fb.performLayout (area.withLeft(area.getWidth()-400).withRight(area.getWidth()) );
 }

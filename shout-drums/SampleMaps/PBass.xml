@@ -1,58 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<samplemap ID="PBass" RRGroupAmount="1" MicPositions=";">
+<samplemap ID="PBass" RRGroupAmount="1" MicPositions=";" SaveMode="2">
   <sample Root="34" LoKey="34" HiKey="34" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_A#0.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_A#0.wav" Duplicate="1" MonolithOffset="0"
+          MonolithLength="208896" SampleRate="44100"/>
   <sample Root="46" LoKey="46" HiKey="46" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_A#1.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_A#1.wav" Duplicate="1" MonolithOffset="208896"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="33" LoKey="33" HiKey="33" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_A0.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_A0.wav" Duplicate="1" MonolithOffset="421888"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="45" LoKey="45" HiKey="45" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_A1.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_A1.wav" Duplicate="1" MonolithOffset="634880"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="35" LoKey="35" HiKey="35" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_B0.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_B0.wav" Duplicate="1" MonolithOffset="847872"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="47" LoKey="47" HiKey="47" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_B1.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_B1.wav" Duplicate="1" MonolithOffset="1060864"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="37" LoKey="37" HiKey="38" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_C#1.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_C#1.wav" Duplicate="1" MonolithOffset="1273856"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="49" LoKey="49" HiKey="49" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_C#2.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_C#2.wav" Duplicate="1" MonolithOffset="1486848"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="36" LoKey="36" HiKey="36" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_C1.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_C1.wav" Duplicate="1" MonolithOffset="1699840"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="48" LoKey="48" HiKey="48" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_C2.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_C2.wav" Duplicate="1" MonolithOffset="1912832"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="39" LoKey="39" HiKey="39" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_D#1.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_D#1.wav" Duplicate="1" MonolithOffset="2125824"
+          MonolithLength="241664" SampleRate="44100"/>
   <sample Root="51" LoKey="51" HiKey="51" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_D#2.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_D#2.wav" Duplicate="1" MonolithOffset="2367488"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="50" LoKey="50" HiKey="50" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_D2.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_D2.wav" Duplicate="1" MonolithOffset="2580480"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="28" LoKey="24" HiKey="28" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_E0.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_E0.wav" Duplicate="1" MonolithOffset="2793472"
+          MonolithLength="208896" SampleRate="44100"/>
   <sample Root="40" LoKey="40" HiKey="40" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_E1.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_E1.wav" Duplicate="1" MonolithOffset="3002368"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="52" LoKey="52" HiKey="52" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_E2.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_E2.wav" Duplicate="1" MonolithOffset="3215360"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="30" LoKey="30" HiKey="30" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_F#0.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_F#0.wav" Duplicate="1" MonolithOffset="3428352"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="42" LoKey="42" HiKey="42" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_F#1.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_F#1.wav" Duplicate="1" MonolithOffset="3641344"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="54" LoKey="54" HiKey="54" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_F#2.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_F#2.wav" Duplicate="1" MonolithOffset="3854336"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="29" LoKey="29" HiKey="29" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_F0.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_F0.wav" Duplicate="1" MonolithOffset="4067328"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="41" LoKey="41" HiKey="41" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_F1.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_F1.wav" Duplicate="1" MonolithOffset="4280320"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="53" LoKey="53" HiKey="53" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_F2.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_F2.wav" Duplicate="1" MonolithOffset="4493312"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="32" LoKey="32" HiKey="32" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_G#0.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_G#0.wav" Duplicate="1" MonolithOffset="4706304"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="44" LoKey="44" HiKey="44" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_G#1.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_G#1.wav" Duplicate="1" MonolithOffset="4919296"
+          MonolithLength="212992" SampleRate="44100"/>
   <sample Root="31" LoKey="31" HiKey="31" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_G0.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_G0.wav" Duplicate="1" MonolithOffset="5132288"
+          MonolithLength="208896" SampleRate="44100"/>
   <sample Root="43" LoKey="43" HiKey="43" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_G1.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_G1.wav" Duplicate="1" MonolithOffset="5341184"
+          MonolithLength="266240" SampleRate="44100"/>
   <sample Root="55" LoKey="55" HiKey="59" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_Bass_G2.wav" Duplicate="0"/>
+          FileName="{PROJECT_FOLDER}BS_Bass_G2.wav" Duplicate="1" MonolithOffset="5607424"
+          MonolithLength="212992" SampleRate="44100"/>
 </samplemap>

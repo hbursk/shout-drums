@@ -3,29 +3,29 @@
 <samplemap ID="Scone_Claps" RRGroupAmount="1" MicPositions=";" SaveMode="2">
   <sample Root="55" LoKey="67" HiKey="67" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Scones_Chit.wav" Duplicate="0" MonolithOffset="0"
-          MonolithLength="122880" SampleRate="44100"/>
+          MonolithLength="122880" SampleRate="44100" Volume="-1"/>
   <sample Root="56" LoKey="68" HiKey="68" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Scones_Clack .wav" Duplicate="0" MonolithOffset="122880"
-          MonolithLength="61440" SampleRate="44100"/>
+          MonolithLength="61440" SampleRate="44100" Volume="-1"/>
   <sample Root="57" LoKey="69" HiKey="69" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Scones_Clack 2.wav" Duplicate="0" MonolithOffset="184320"
-          MonolithLength="65536" SampleRate="44100"/>
+          MonolithLength="65536" SampleRate="44100" Volume="-1"/>
   <sample Root="31" LoKey="19" HiKey="19" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Scones_Chit.wav" Duplicate="1" MonolithOffset="249856"
-          MonolithLength="122880" SampleRate="44100"/>
+          MonolithLength="122880" SampleRate="44100" Volume="-1"/>
   <sample Root="32" LoKey="20" HiKey="20" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Scones_Clack .wav" Duplicate="1" MonolithOffset="372736"
-          MonolithLength="61440" SampleRate="44100"/>
+          MonolithLength="61440" SampleRate="44100" Volume="-1"/>
   <sample Root="33" LoKey="21" HiKey="21" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Scones_Clack 2.wav" Duplicate="1" MonolithOffset="434176"
-          MonolithLength="65536" SampleRate="44100"/>
+          MonolithLength="65536" SampleRate="44100" Volume="-1"/>
   <sample Root="43" LoKey="43" HiKey="43" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Scones_Chit.wav" Duplicate="1" MonolithOffset="499712"
-          MonolithLength="122880" SampleRate="44100"/>
+          MonolithLength="122880" SampleRate="44100" Volume="-1"/>
   <sample Root="44" LoKey="44" HiKey="44" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Scones_Clack .wav" Duplicate="1" MonolithOffset="622592"
-          MonolithLength="61440" SampleRate="44100"/>
+          MonolithLength="61440" SampleRate="44100" Volume="-1"/>
   <sample Root="45" LoKey="45" HiKey="45" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}Scones_Clack 2.wav" Duplicate="1" MonolithOffset="684032"
-          MonolithLength="65536" SampleRate="44100"/>
+          MonolithLength="65536" SampleRate="44100" Volume="-1"/>
 </samplemap>

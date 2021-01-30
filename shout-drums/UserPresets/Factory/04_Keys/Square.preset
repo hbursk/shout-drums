@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Preset Version="1.0.0">
-  <Control id="UnisonoVoiceAmount" value="1"/>
-  <Control id="UnisonoDetune" value="0"/>
-  <Control id="UnisonoSpread" value="1"/>
-  <Control id="ArpBypass" value="0"/>
+  <Control id="UnisonoVoiceAmount" value="16"/>
+  <Control id="UnisonoDetune" value="0.0208125"/>
+  <Control id="UnisonoSpread" value="0.297312"/>
+  <Control id="PolyFilterBypass" value="0"/>
+  <Control id="ArpBypass" value="1"/>
   <Control id="ArpNumSteps" value="8"/>
   <Control id="ArpNumSteps" value="8"/>
   <Control id="ArpStride" value="1"/>
@@ -15,7 +16,7 @@
   <Control id="ArpSemitone" value="32............................................"/>
   <Control id="ArpVelocity" value="32...f+BA...JD..3uP..fmBA..9KD..XpP..f+BA..TID"/>
   <Control id="ArpLength" value="32....rBA..xJD..HqP..frBA..3JD..fqP..ftBA..5JD"/>
-  <Control id="WaveForm1" value="3"/>
+  <Control id="WaveForm1" value="4"/>
   <Control id="WaveForm2" value="3"/>
   <Control id="PulseWidth1" value="0.5"/>
   <Control id="PulseWidth2" value="0.5"/>
@@ -27,20 +28,20 @@
   <Control id="WaveGeneratorPan2" value="0"/>
   <Control id="WaveGeneratorMix" value="0.5"/>
   <Control id="EnableSecondOscillator" value="0"/>
-  <Control id="WaveGeneratorBypass" value="1"/>
-  <Control id="WaveGeneratorGain" value="0.25"/>
+  <Control id="WaveGeneratorBypass" value="0"/>
+  <Control id="WaveGeneratorGain" value="0.239344"/>
   <Control id="WaveGeneratorPan" value="0"/>
-  <Control id="LoadedMap1" value="BS_PP_Synth"/>
-  <Control id="Sampler1Gain" value="0.351828"/>
+  <Control id="LoadedMap1" value="BS_LIT_Synth"/>
+  <Control id="Sampler1Gain" value="1"/>
   <Control id="Sampler1Pan" value="0"/>
-  <Control id="Sampler1Bypass" value="0"/>
+  <Control id="Sampler1Bypass" value="1"/>
   <Control id="LoadedMap2" value=""/>
   <Control id="Sampler2Gain" value="1"/>
   <Control id="Sampler2Pan" value="0"/>
   <Control id="Sampler2Bypass" value="1"/>
   <Control id="VeloTable1" value="24......PDQD4C...vO...f+....9C...vO"/>
-  <Control id="Release1" value="1424"/>
-  <Control id="Attack1" value="0"/>
+  <Control id="Release1" value="1353"/>
+  <Control id="Attack1" value="5"/>
   <Control id="KicksMap" value="Scone_Kicks"/>
   <Control id="KicksGain" value="1"/>
   <Control id="KicksPan" value="0"/>
@@ -70,14 +71,17 @@
   <Control id="CymbalsMuter" value="1"/>
   <Control id="PercMuter" value="1"/>
   <Control id="TomsMuter" value="1"/>
-  <Control id="Width" value="200"/>
-  <Control id="SaturationMix" value="0.367136"/>
-  <Control id="DelayMix" value="0"/>
-  <Control id="DelayFdbkL" value="0.0798125"/>
-  <Control id="DelayFdbkR" value="0.0460625"/>
+  <Control id="Width" value="97.3219"/>
+  <Control id="SaturationMix" value="0.369531"/>
+  <Control id="DelayMix" value="0.122044"/>
+  <Control id="DelayFdbkL" value="0.00653125"/>
+  <Control id="DelayFdbkR" value="0.0169687"/>
   <Control id="DelayTimeL" value="6"/>
   <Control id="DelayTimeR" value="6"/>
+  <Control id="DelayLowpass" value="20000"/>
+  <Control id="DelayHipass" value="20"/>
   <Control id="OutputGain" value="0"/>
+  <Control id="SourceKey" value="13"/>
   <MidiAutomation>
     <Controller Controller="14" Processor="Shape FX1" MacroIndex="-1" Start="0"
                 End="0.75" FullStart="0" FullEnd="0.75" Skew="1" Interval="0.01"

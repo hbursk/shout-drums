@@ -22,6 +22,10 @@
 		"description" : "Description for scone",
 		"author" : "Dresage"
 	},
+	"electro":{
+		"description" : "Description for electro",
+		"author" : "Bad"
+	},
 	"cookin" : {
 		"description" : "Foley sounds from power tools to the kitchen",
 		"author" : "Dresage"
@@ -56,6 +60,10 @@
 	},
 	"zap" : {
 		"description" : "Description for zap",
+		"author" : "Bad"
+	},
+	"p-bass":{
+		"description" : "Description for p-bass",
 		"author" : "Bad"
 	}
 	}

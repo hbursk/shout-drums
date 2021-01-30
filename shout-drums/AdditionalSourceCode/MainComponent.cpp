@@ -13,7 +13,7 @@
 
 
 //#define SHOW_KEYBOARD
-#define SHOW_PRESET_EDITOR
+//#define SHOW_PRESET_EDITOR
 //#define USE_OPENGL
 
 #if USE_RAW_FRONTEND

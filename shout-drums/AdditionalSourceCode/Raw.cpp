@@ -15,6 +15,7 @@ DrumsData::DrumsData(MainController* mc) :
     addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynthGroup::SpecialParameters::UnisonoVoiceAmount>>("UnisonoVoiceAmount", synth_group_id );
     addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynthGroup::SpecialParameters::UnisonoDetune>>("UnisonoDetune", synth_group_id );
     addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynthGroup::SpecialParameters::UnisonoSpread>>("UnisonoSpread", synth_group_id );
+    addToUserPreset<raw::GenericStorage::Bypassed<false>>("PolyFilterBypass", poly_filter_velo_mod_id);
     
     // arp
     addToUserPreset<raw::GenericStorage::Bypassed<false>>("ArpBypass", arp_id );
@@ -110,7 +111,9 @@ DrumsData::DrumsData(MainController* mc) :
     addToUserPreset<raw::GenericStorage::Attribute<DelayEffect::Parameters::FeedbackRight>>("DelayFdbkR", delay_id);
     addToUserPreset<raw::GenericStorage::Attribute<DelayEffect::Parameters::DelayTimeLeft>>("DelayTimeL", delay_id);
     addToUserPreset<raw::GenericStorage::Attribute<DelayEffect::Parameters::DelayTimeRight>>("DelayTimeR", delay_id);
-    
+    addToUserPreset<raw::GenericStorage::Attribute<DelayEffect::Parameters::LowPassFreq>>("DelayLowpass", delay_id);
+    addToUserPreset<raw::GenericStorage::Attribute<DelayEffect::Parameters::HiPassFreq>>("DelayHipass", delay_id);
+
     // output
     addToUserPreset<raw::GenericStorage::Attribute<GainEffect::Gain>>("OutputGain", simple_gain_id);
     
@@ -135,6 +138,7 @@ void DrumsData::createModules(MainController* mc)
     auto delay = builder.create<hise::DelayEffect>( root, raw::IDs::Chains::FX );
     delay->setId( delay_id );
     ProcessorHelpers::restoreFromBase64String( delay, "253.3ocYPFjSCCCDEcLgH.wVVvwnQ8.zn1PEH0hhpiXua7PiEIdB1Npja.2udQ3F.woMsQhY0+8+5OikSMTNZsjAX2m0Vi.6lvDrTzBuj.raOpif4s0BqEk.iEzakopvU36Nfc20P+7X74fMpcEiRdHdIhxsh7OF0Hd5zCyF7GWnOXEsOs6fKM3mm2y2GheV8OWHIds5qKH.YXUMwa04WL+YFK3IoxQFtS3PKvBlSxVdAsW2oCif2TV01R7HvoRxql.vhBUoLc3Sx1sqMTiSo2sV3L96F9ZSEmZL43hBgVikcKOjcE3q1yS7r+QvQsrG9saNEF4Y1ovngP3Oxa5YZB");
+    delay->setAttribute(hise::DelayEffect::Parameters::LowPassFreq, 2000.f, dontSendNotification);
 
     auto conv = builder.create<hise::ConvolutionEffect>( root, raw::IDs::Chains::FX );
     conv->setId( convolution_reverb_id );
@@ -179,7 +183,17 @@ void DrumsData::createModules(MainController* mc)
     arpeggiator->setId( arp_id );
     ProcessorHelpers::restoreFromBase64String(arpeggiator, "468.3ocqT98SaCCDG2FvZBgJTplzdcuOoJXU6g81HsUZP2FQ3Jzd0M9ZiEt1gjK.4+9Ym1t0eLU4fvuD+8r8m6qubxw41DnnvlSnGNtJCHzVrqxyfYyTBzE85AD5oqG4RRTUlnn.jDJ8.5gCkJWTNJPnvwHxJq3o1mMt4rKI2qJTSzvBA2ps9YWPH8SUZY7pbWPbQrFDLHgP63mla0tsh0N5TFOIWkgQkHZMDkzGZgKVF5IgtzswiOhrZD.iVr6fB.2DAit2iy0JIjWe7yX+pbNGgrkw1xCe7ag.4DlmPsOZvkXM.sqAvePskMXTZfkAGAaNNBpZdwbyKRF.xQF6j.pDsWBnuc9Daj8kZDcXb3wRvj.+MbXWl0rQK1sIn3I3NgYFz7+oGy3okSmpgWWG0IrgFgqcerZu.NZAfNaj+XQxC0PduqLLWM1Zf0VXGZRAJHzKX89b2FLZfItGz1DEVsqIXz2ssAl9onqbetYP2t8Jic54d8WG4z+NKd05icOlDpA5v9AXlgoAk9t4d7u3S+2ezmtZcOudZsF85uby.RXchmy5mJLFPyAMj3eFb+Mh+WHefcaIlUhuAnNm8y3gtmXyWA6ePNHXHm4gLzH2AQaOh+vqMl48");
     arpeggiator->setBypassed( true );
-
+    
+    // add filter
+    auto filter = builder.create<hise::PolyFilterEffect>( synthGroup, raw::IDs::Chains::FX);
+    filter->setId( poly_filter_id );
+    ProcessorHelpers::restoreFromBase64String(filter, "368.3oc0SFzRCCCEGOw0.pGDUPQusKdRP1FBhm1baNYfhcr4tm09jFHzTSx1n5kczOD9sxuH6ifIsasNYhCTA8cnj26k9xu+8epqT3AJkPhvazKNBP3cItBdbTfHj40hw0fD0tooKIMoLpdbDUo.eDFW3JJKzzyAMKZIgGFBgdwYEe90Zcx2wzp2H7g77Cp0YHkyzy2+jWdZxE0YQBNU1NTCgp7dIAdsK8YZgrqlpAEBWntvOtafXrAiBjxn9LEa.GRS5J3B6pRHTi.F22ctXUlA43lKcmTouMwP2PN0L+FAVkYE99jLQUbValHbguBKgzoU+HoNqFosDbe6T+Dpwui50SodSRefK7rGuk28xRKlolJeMt2ofdzDdxq0NbDH01WJ2.ZBdrA.eQabZ04mYxLZR0TD9HRkSOIId75X4YMLKFcq4w8GaqcdZ9OmghVQ+bGh8R6ukUVZoVY4uAuGRl8+PQ68v+ObuEoye.XeCXSUIEI");
+    
+    // add velocity mod for filter
+    auto veloFilter = builder.create<hise::VelocityModulator>( filter, hise::PolyFilterEffect::FrequencyChain);
+    veloFilter->setId( poly_filter_velo_mod_id);
+    ProcessorHelpers::restoreFromBase64String(veloFilter, "203.3ocUPErhBCDCMQsf6d26dwSKHprvhmDp0C8vxJTq30wNQ5.CMRynR+q8SvY5REMGBu2ijWdjs0bAIBWC3vcMmI.+LZOY4BiqARS.bzS53eY8Eqxw0Kf3lyJQHMfX+zJGUIg4wOF.s08U4BsSczRupkVckpcgk5z.HgJLGIq252Fs6lsdjnbJ.mDs36os0g77Y+r1Ct9muc5qf1x+4.1ai13iXlS4HAv9wrtIqjuU4wQyg8FwzFq.Iisb.MCf0kFqda2yP7g3AzRqHcK");
+    veloFilter->setAttribute(hise::VelocityModulator::SpecialParameters::DecibelMode, 1, dontSendNotification);
 
     // Sampler1 module
     auto sampler1 = builder.create<ModulatorSampler>( synthGroup );

@@ -59,6 +59,8 @@ private:
     Knob<hise::DelayEffect::Parameters::FeedbackRight> m_delayFeedbackRightSlider;
     Knob<hise::DelayEffect::Parameters::DelayTimeLeft> m_delayLeftTimeSlider;
     Knob<hise::DelayEffect::Parameters::DelayTimeRight> m_delayRightTimeSlider;
+    Knob<hise::DelayEffect::Parameters::LowPassFreq> m_delayLowpassSlider;
+    Knob<hise::DelayEffect::Parameters::HiPassFreq> m_delayHipassSlider;
 
     Knob<hise::AhdsrEnvelope::SpecialParameters::Attack> m_attackSlider;
     Knob<hise::AhdsrEnvelope::SpecialParameters::Release> m_releaseSlider;
