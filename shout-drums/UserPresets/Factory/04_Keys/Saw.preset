@@ -4,6 +4,7 @@
   <Control id="UnisonoVoiceAmount" value="16"/>
   <Control id="UnisonoDetune" value="0.0208125"/>
   <Control id="UnisonoSpread" value="0.297312"/>
+  <Control id="PolyFilterBypass" value="0"/>
   <Control id="ArpBypass" value="1"/>
   <Control id="ArpNumSteps" value="8"/>
   <Control id="ArpNumSteps" value="8"/>
@@ -30,6 +31,7 @@
   <Control id="WaveGeneratorBypass" value="0"/>
   <Control id="WaveGeneratorGain" value="0.327531"/>
   <Control id="WaveGeneratorPan" value="0"/>
+  <Control id="WaveGeneratorVoiceLimit" value="256"/>
   <Control id="LoadedMap1" value="BS_LIT_Synth"/>
   <Control id="Sampler1Gain" value="1"/>
   <Control id="Sampler1Pan" value="0"/>

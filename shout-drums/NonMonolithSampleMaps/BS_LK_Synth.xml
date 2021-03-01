@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="BS_LK_Synth" RRGroupAmount="1" MicPositions=";">
+  <sample Root="24" LoKey="12" HiKey="35" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_LK Synth_C0.wav" Duplicate="1" LoopStart="49933"
+          LoopEnd="183674" LoopXFade="8192" LoopEnabled="1"/>
+  <sample Root="36" LoKey="36" HiKey="47" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_LK Synth_C1.wav" Duplicate="1" LoopStart="43581"
+          LoopEnabled="1" LoopEnd="179954" LoopXFade="8192"/>
+  <sample Root="48" LoKey="48" HiKey="59" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_LK Synth_C2.wav" Duplicate="1" LoopEnabled="1"
+          LoopStart="44817" LoopEnd="107274" LoopXFade="8192"/>
+  <sample Root="60" LoKey="60" HiKey="84" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_LK Synth_C3.wav" Duplicate="1" LoopStart="54823"
+          LoopEnabled="1" LoopEnd="154041" LoopXFade="8192"/>
+</samplemap>

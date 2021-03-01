@@ -14,6 +14,7 @@ public:
     virtual ~HorizontalListBox() = default;
     
     void mouseWheelMove(const MouseEvent&, const MouseWheelDetails&) override;
+    bool keyPressed (const KeyPress& key) override;
 
 };
 }

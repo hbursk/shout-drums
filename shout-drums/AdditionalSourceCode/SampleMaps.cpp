@@ -38,7 +38,7 @@ SampleMaps::SampleMaps( hise::MainController* mc )
     filterSampleMaps( {"Tom"}, tomsMaps );
     
     // TODO: Change filter when I have the proper instruments
-    filterSampleMaps( {"FX", "Strings", "Synth", "Bass"}, instrumentMaps );
+    filterSampleMaps( {"FX", "Strings", "Synth", "Bass", "Vox"}, instrumentMaps );
 }
 
 void SampleMaps::filterSampleMaps( const std::vector<std::string>& filter, Property<std::vector<std::string>>& property )

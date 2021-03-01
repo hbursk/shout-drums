@@ -10,10 +10,10 @@
 
 #include <cmath>
 
-std::string MidiUtils::noteNumberToString( int noteNumber )
+juce::String MidiUtils::noteNumberToString( int noteNumber )
 {
     // mod 12 to get the scale note
-    std::string note;
+    juce::String note;
     
     auto moddedNote = noteNumber % 12;
     switch (moddedNote)
@@ -23,7 +23,7 @@ std::string MidiUtils::noteNumberToString( int noteNumber )
             break;
             
         case 1:
-            note = "C♯";
+            note = L"C\u266f";
             break;
             
         case 2:
@@ -31,7 +31,7 @@ std::string MidiUtils::noteNumberToString( int noteNumber )
             break;
             
         case 3:
-            note = "D♯";
+            note = L"D\u266f";
             break;
             
         case 4:
@@ -43,7 +43,7 @@ std::string MidiUtils::noteNumberToString( int noteNumber )
             break;
             
         case 6:
-            note = "F♯";
+            note = L"F\u266f";
             break;
             
         case 7:
@@ -51,7 +51,7 @@ std::string MidiUtils::noteNumberToString( int noteNumber )
             break;
             
         case 8:
-            note = "G♯";
+            note = L"G\u266f";
             break;
             
         case 9:
@@ -59,7 +59,7 @@ std::string MidiUtils::noteNumberToString( int noteNumber )
             break;
             
         case 10:
-            note = "A♯";
+            note = L"A\u266f";
             break;
             
         case 11:
@@ -70,14 +70,14 @@ std::string MidiUtils::noteNumberToString( int noteNumber )
     return note;
 }
 
-std::string MidiUtils::noteNumberToStringWithOctave( int noteNumber )
+juce::String MidiUtils::noteNumberToStringWithOctave( int noteNumber )
 {
     auto note = noteNumberToString(noteNumber);
     
     int range = std::floor( noteNumber / 12);
     int rangeOffset = range - 2;
     
-    note += std::to_string(rangeOffset);
+    note += juce::String(std::to_string(rangeOffset));
     
     return note;
 }

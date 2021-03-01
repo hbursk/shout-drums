@@ -31,3 +31,8 @@ void HorizontalListBox::mouseWheelMove(const MouseEvent& e, const MouseWheelDeta
         Component::mouseWheelMove (e, wheel);
     }
 }
+
+bool HorizontalListBox::keyPressed (const KeyPress& key)
+{
+    return false;
+}

@@ -47,6 +47,11 @@ MidiBarComponent::MidiBarComponent( MidiListener& listener, Presets& presets )
     });
 }
 
+MidiBarComponent::~MidiBarComponent()
+{
+    stopTimer();
+}
+
 
 void MidiBarComponent::paint(Graphics& g)
 {
@@ -179,10 +184,16 @@ void MidiBarComponent::updateRanges(CategoryType type)
 {
     clearRanges();
     
+    const float darkAmt = 0.2;
+    const float brightAmt = 0.2;
     switch (type)
     {
         case CategoryType::Drums:
         {
+//            addRange( 12, 35, drums_green.darker(darkAmt), drums_green.darker(darkAmt).brighter(1.25), false );
+//            addRange( 36, 59, drums_green, drums_green.brighter(1.25), true );
+//            addRange( 60, 84, drums_green.brighter(brightAmt),  drums_green.brighter(brightAmt).brighter(1.25), false );
+
             addRange( 12, 35, drums_blue, drums_blue.brighter(1.25), false );
             addRange( 36, 59, drums_green, drums_green.brighter(1.25), true );
             addRange( 60, 84, drums_yellow,  drums_yellow.brighter(1.25), false );
@@ -192,6 +203,10 @@ void MidiBarComponent::updateRanges(CategoryType type)
             
         case CategoryType::Vox:
         {
+//            addRange( 12, 35, vox_green.darker(darkAmt), vox_green.darker(darkAmt).brighter(1.25), false );
+//            addRange( 36, 59, vox_green, vox_green.brighter(1.25), true );
+//            addRange( 60, 84, vox_green.brighter(brightAmt),  vox_green.brighter(brightAmt).brighter(1.25), false );
+
             addRange( 12, 35, vox_maroon, vox_maroon.brighter(1.25), false );
             addRange( 36, 59, vox_green, vox_green.brighter(1.25), true );
             addRange( 60, 84, vox_red,  vox_red.brighter(1.25), false );
@@ -200,6 +215,10 @@ void MidiBarComponent::updateRanges(CategoryType type)
             
         case CategoryType::FX:
         {
+//            addRange( 12, 35, fx_green.darker(darkAmt), fx_green.darker(darkAmt).brighter(1.25), false );
+//            addRange( 36, 59, fx_green, fx_green.brighter(1.25), true );
+//            addRange( 60, 84, fx_green.brighter(brightAmt),  fx_green.brighter(brightAmt).brighter(1.25), false );
+
             addRange( 12, 35, fx_red, fx_red.brighter(1.25), false );
             addRange( 36, 59, fx_green, fx_green.brighter(1.25), true );
             addRange( 60, 84, fx_yellow,  fx_yellow.brighter(1.25), false );
@@ -214,6 +233,8 @@ void MidiBarComponent::updateRanges(CategoryType type)
             
         case CategoryType::Bass:
         {
+//            addRange( 12, 84, bass_teal, juce::Colours::white, false );
+
             addRange( 12, 84, bass_yellow, juce::Colours::white, false );
         }
             break;

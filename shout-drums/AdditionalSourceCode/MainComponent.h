@@ -44,6 +44,7 @@ public:
 
     void paint(Graphics& g) override;
     
+    bool keyPressed(const KeyPress& key) override;
 
 protected:
     

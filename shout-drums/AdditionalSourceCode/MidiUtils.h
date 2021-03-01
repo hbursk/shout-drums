@@ -1,11 +1,13 @@
 #pragma once
 
+#include "JuceHeader.h"
+
 #include <string>
 
 class MidiUtils
 {
 public:
-    static std::string noteNumberToString( int noteNumber );
-    static std::string noteNumberToStringWithOctave( int noteNumber );
+    static juce::String noteNumberToString( int noteNumber );
+    static juce::String noteNumberToStringWithOctave( int noteNumber );
     
 };

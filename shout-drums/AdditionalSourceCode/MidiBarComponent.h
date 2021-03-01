@@ -61,7 +61,7 @@ public:
     };
     
     MidiBarComponent( MidiListener& listener, Presets& presets );
-    virtual ~MidiBarComponent() = default;
+    virtual ~MidiBarComponent();
     
     void paint(Graphics& g) override;
     

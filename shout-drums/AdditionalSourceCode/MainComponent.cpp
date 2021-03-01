@@ -25,7 +25,6 @@ FloatingTileContent(parent)
 #endif
   m_app( mc )
 , m_gainSlider( "", mc, "Simple Gain1", m_app.presets() )
-//, m_reverbMixSlider( TRANS("reverb").toStdString(), mc, "Convolution Reverb", m_app.presets() )
 , m_reverbMacroSlider( TRANS("reverb").toStdString(), mc, m_app.presets())
 , m_infoView( m_app.presets() )
 , m_saturationMixSlider( TRANS("drive").toStdString(), mc, "Shape FX1", m_app.presets() )
@@ -78,12 +77,6 @@ FloatingTileContent(parent)
     m_gainSlider.setInfoText(TRANS("output").toStdString(), TRANS("Click and drag up and down to change the main volume").toStdString());
     m_gainSlider.setIconAnimation(volume_json, volume_jsonSize, 0, 1);
     m_gainSlider.updateDoubleClickValue();
-
-//    addAndMakeVisible( &m_reverbMixSlider );
-//    m_reverbMixSlider.rangeAndSkewPoint( -100.f, -20.f, -30.f );
-//    m_reverbMixSlider.setInfoText(TRANS("reverb").toStdString(), TRANS("Click and drag up and down to add more space").toStdString());
-//    m_reverbMixSlider.setIconAnimation(waterfillpink_json, waterfillpink_jsonSize, animationStart, animationEnd);
-//    m_reverbMixSlider.updateDoubleClickValue();
     
     addAndMakeVisible( &m_reverbMacroSlider );
     m_reverbMacroSlider.setInfoText(TRANS("reverb").toStdString(), TRANS("Click and drag up and down to add more space").toStdString());
@@ -238,7 +231,6 @@ void MainComponent::resized()
 
     fb.items.add (juce::FlexItem (m_saturationMixSlider).withMinWidth (width).withMinHeight (height));
     fb.items.add (juce::FlexItem (m_delayMixSlider).withMinWidth (width).withMinHeight (height));
-//    fb.items.add (juce::FlexItem (m_reverbMixSlider).withMinWidth (width).withMinHeight (height));
     fb.items.add (juce::FlexItem (m_reverbMacroSlider).withMinWidth (width).withMinHeight (height));
     fb.items.add (juce::FlexItem (m_widthSlider).withMinWidth (width).withMinHeight (height));
 
@@ -267,6 +259,24 @@ void MainComponent::paint(Graphics& g)
     g.fillAll(juce::Colour(0xff000000));
 }
 
+bool MainComponent::keyPressed(const KeyPress& key)
+{
+    if (key.isKeyCode(KeyPress::leftKey))
+    {
+        m_app.presets().prevPreset();
+    }
+    else if (key.isKeyCode(KeyPress::rightKey))
+    {
+        m_app.presets().nextPreset();
+    }
+    else
+    {
+        return false;
+    }
+    
+    return true;
+}
+
 void MainComponent::updateAllKnobIconAnimation(const char * animation, size_t animationSize)
 {
     const float animationStart = 0.0099f;
@@ -275,7 +285,6 @@ void MainComponent::updateAllKnobIconAnimation(const char * animation, size_t an
     m_gainSlider.setIconAnimation( volume_json, volume_jsonSize, 0, 1 );
 
     m_reverbMacroSlider.setIconAnimation(animation, animationSize, animationStart, animationEnd);
-//    m_reverbMixSlider.setIconAnimation(animation, animationSize, animationStart, animationEnd);
     m_saturationMixSlider.setIconAnimation(animation, animationSize, animationStart, animationEnd);
     m_delayMixSlider.setIconAnimation(animation, animationSize, animationStart, animationEnd);
     m_widthSlider.setIconAnimation(animation, animationSize, animationStart, animationEnd);

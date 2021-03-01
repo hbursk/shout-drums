@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="Meringue_Vox" RRGroupAmount="1" MicPositions=";" SaveMode="2">
+  <sample Root="29" LoKey="12" HiKey="29" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_F0.wav" Duplicate="0" MonolithOffset="0"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="46" LoKey="46" HiKey="46" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_A#2.wav" Duplicate="0" MonolithOffset="405504"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="33" LoKey="33" HiKey="33" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_A0.wav" Duplicate="0" MonolithOffset="811008"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="45" LoKey="45" HiKey="45" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_A1.wav" Duplicate="0" MonolithOffset="1216512"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="35" LoKey="35" HiKey="35" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_B0.wav" Duplicate="0" MonolithOffset="1622016"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="47" LoKey="47" HiKey="47" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_B1.wav" Duplicate="0" MonolithOffset="2027520"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="34" LoKey="34" HiKey="34" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_Bb1.wav" Duplicate="0" MonolithOffset="2433024"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="37" LoKey="37" HiKey="37" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_C#1.wav" Duplicate="0" MonolithOffset="2838528"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="49" LoKey="49" HiKey="49" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_C#2.wav" Duplicate="0" MonolithOffset="3244032"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="36" LoKey="36" HiKey="36" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_C1.wav" Duplicate="0" MonolithOffset="3649536"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="48" LoKey="48" HiKey="48" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_C2.wav" Duplicate="0" MonolithOffset="4055040"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="39" LoKey="39" HiKey="39" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_D#1.wav" Duplicate="0" MonolithOffset="4460544"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="51" LoKey="51" HiKey="51" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_D#2.wav" Duplicate="0" MonolithOffset="4866048"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="38" LoKey="38" HiKey="38" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_D1.wav" Duplicate="0" MonolithOffset="5271552"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="50" LoKey="50" HiKey="50" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_D2.wav" Duplicate="0" MonolithOffset="5677056"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="40" LoKey="40" HiKey="40" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_E1.wav" Duplicate="0" MonolithOffset="6082560"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="30" LoKey="30" HiKey="30" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_F#0.wav" Duplicate="0" MonolithOffset="6488064"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="42" LoKey="42" HiKey="42" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_F#1.wav" Duplicate="0" MonolithOffset="6893568"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="32" LoKey="32" HiKey="32" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_G#0.wav" Duplicate="0" MonolithOffset="7299072"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="44" LoKey="44" HiKey="44" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_G#1.wav" Duplicate="0" MonolithOffset="7704576"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="43" LoKey="43" HiKey="43" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_G1.wav" Duplicate="0" MonolithOffset="8110080"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="41" LoKey="41" HiKey="41" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_F1.wav" Duplicate="0" MonolithOffset="8515584"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="53" LoKey="53" HiKey="84" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_F2.wav" Duplicate="0" MonolithOffset="8921088"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="52" LoKey="52" HiKey="52" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_E2.wav" Duplicate="0" MonolithOffset="9326592"
+          MonolithLength="405504" SampleRate="44100"/>
+  <sample Root="31" LoKey="31" HiKey="31" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Meringue_G0.wav" Duplicate="0" MonolithOffset="9732096"
+          MonolithLength="405504" SampleRate="44100" Volume="-4"/>
+</samplemap>

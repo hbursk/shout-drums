@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="Buffet_Vox" RRGroupAmount="1" MicPositions=";">
+  <sample Root="48" LoKey="60" HiKey="60" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ah_ah.wav" Duplicate="0"/>
+  <sample Root="49" LoKey="61" HiKey="61" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ah.wav" Duplicate="0"/>
+  <sample Root="50" LoKey="62" HiKey="62" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ahyeh.wav" Duplicate="0"/>
+  <sample Root="51" LoKey="63" HiKey="63" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_ehyah.wav" Duplicate="0"/>
+  <sample Root="52" LoKey="64" HiKey="64" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ha_melody.wav" Duplicate="0"/>
+  <sample Root="53" LoKey="65" HiKey="65" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Hey_Melody.wav" Duplicate="0"/>
+  <sample Root="54" LoKey="66" HiKey="66" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Hoo_Hoo.wav" Duplicate="0"/>
+  <sample Root="55" LoKey="67" HiKey="67" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_I_take_it_slow.wav" Duplicate="0"/>
+  <sample Root="56" LoKey="68" HiKey="68" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Nana.wav" Duplicate="0"/>
+  <sample Root="57" LoKey="69" HiKey="69" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_no_noah.wav" Duplicate="0"/>
+  <sample Root="58" LoKey="70" HiKey="70" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Oo_flip.wav" Duplicate="0"/>
+  <sample Root="59" LoKey="71" HiKey="71" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_PHrase_1.wav" Duplicate="0"/>
+  <sample Root="60" LoKey="72" HiKey="72" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_PHrase_2.wav" Duplicate="0"/>
+  <sample Root="61" LoKey="73" HiKey="73" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Popcorn.wav" Duplicate="0"/>
+  <sample Root="62" LoKey="74" HiKey="74" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Run.wav" Duplicate="0"/>
+  <sample Root="63" LoKey="75" HiKey="75" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Two_Note_ouh.wav" Duplicate="0"/>
+  <sample Root="64" LoKey="76" HiKey="76" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_uh_2.wav" Duplicate="0"/>
+  <sample Root="65" LoKey="77" HiKey="77" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_uh1.wav" Duplicate="0"/>
+  <sample Root="66" LoKey="78" HiKey="78" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Vocal_Fry.wav" Duplicate="0"/>
+  <sample Root="67" LoKey="79" HiKey="79" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_woo!.wav" Duplicate="0"/>
+  <sample Root="68" LoKey="80" HiKey="80" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeah_ah.wav" Duplicate="0"/>
+  <sample Root="69" LoKey="81" HiKey="81" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeah!.wav" Duplicate="0"/>
+  <sample Root="70" LoKey="82" HiKey="82" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeh.wav" Duplicate="0"/>
+  <sample Root="71" LoKey="83" HiKey="83" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yuh.wav" Duplicate="0"/>
+  <sample Root="24" LoKey="12" HiKey="12" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ah_ah.wav" Duplicate="1"/>
+  <sample Root="25" LoKey="13" HiKey="13" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ah.wav" Duplicate="1"/>
+  <sample Root="26" LoKey="14" HiKey="14" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ahyeh.wav" Duplicate="1"/>
+  <sample Root="27" LoKey="15" HiKey="15" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_ehyah.wav" Duplicate="1"/>
+  <sample Root="28" LoKey="16" HiKey="16" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ha_melody.wav" Duplicate="1"/>
+  <sample Root="29" LoKey="17" HiKey="17" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Hey_Melody.wav" Duplicate="1"/>
+  <sample Root="30" LoKey="18" HiKey="18" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Hoo_Hoo.wav" Duplicate="1"/>
+  <sample Root="31" LoKey="19" HiKey="19" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_I_take_it_slow.wav" Duplicate="1"/>
+  <sample Root="32" LoKey="20" HiKey="20" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Nana.wav" Duplicate="1"/>
+  <sample Root="33" LoKey="21" HiKey="21" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_no_noah.wav" Duplicate="1"/>
+  <sample Root="34" LoKey="22" HiKey="22" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Oo_flip.wav" Duplicate="1"/>
+  <sample Root="35" LoKey="23" HiKey="23" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_PHrase_1.wav" Duplicate="1"/>
+  <sample Root="36" LoKey="24" HiKey="24" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_PHrase_2.wav" Duplicate="1"/>
+  <sample Root="37" LoKey="25" HiKey="25" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Popcorn.wav" Duplicate="1"/>
+  <sample Root="38" LoKey="26" HiKey="26" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Run.wav" Duplicate="1"/>
+  <sample Root="39" LoKey="27" HiKey="27" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Two_Note_ouh.wav" Duplicate="1"/>
+  <sample Root="40" LoKey="28" HiKey="28" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_uh_2.wav" Duplicate="1"/>
+  <sample Root="41" LoKey="29" HiKey="29" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_uh1.wav" Duplicate="1"/>
+  <sample Root="42" LoKey="30" HiKey="30" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Vocal_Fry.wav" Duplicate="1"/>
+  <sample Root="43" LoKey="31" HiKey="31" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_woo!.wav" Duplicate="1"/>
+  <sample Root="44" LoKey="32" HiKey="32" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeah_ah.wav" Duplicate="1"/>
+  <sample Root="45" LoKey="33" HiKey="33" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeah!.wav" Duplicate="1"/>
+  <sample Root="46" LoKey="34" HiKey="34" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeh.wav" Duplicate="1"/>
+  <sample Root="47" LoKey="35" HiKey="35" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yuh.wav" Duplicate="1"/>
+  <sample Root="36" LoKey="36" HiKey="36" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ah_ah.wav" Duplicate="1"/>
+  <sample Root="37" LoKey="37" HiKey="37" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ah.wav" Duplicate="1"/>
+  <sample Root="38" LoKey="38" HiKey="38" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ahyeh.wav" Duplicate="1"/>
+  <sample Root="39" LoKey="39" HiKey="39" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_ehyah.wav" Duplicate="1"/>
+  <sample Root="40" LoKey="40" HiKey="40" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ha_melody.wav" Duplicate="1"/>
+  <sample Root="41" LoKey="41" HiKey="41" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Hey_Melody.wav" Duplicate="1"/>
+  <sample Root="42" LoKey="42" HiKey="42" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Hoo_Hoo.wav" Duplicate="1"/>
+  <sample Root="43" LoKey="43" HiKey="43" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_I_take_it_slow.wav" Duplicate="1"/>
+  <sample Root="44" LoKey="44" HiKey="44" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Nana.wav" Duplicate="1"/>
+  <sample Root="45" LoKey="45" HiKey="45" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_no_noah.wav" Duplicate="1"/>
+  <sample Root="46" LoKey="46" HiKey="46" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Oo_flip.wav" Duplicate="1"/>
+  <sample Root="47" LoKey="47" HiKey="47" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_PHrase_1.wav" Duplicate="1"/>
+  <sample Root="48" LoKey="48" HiKey="48" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_PHrase_2.wav" Duplicate="1"/>
+  <sample Root="49" LoKey="49" HiKey="49" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Popcorn.wav" Duplicate="1"/>
+  <sample Root="50" LoKey="50" HiKey="50" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Run.wav" Duplicate="1"/>
+  <sample Root="51" LoKey="51" HiKey="51" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Two_Note_ouh.wav" Duplicate="1"/>
+  <sample Root="52" LoKey="52" HiKey="52" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_uh_2.wav" Duplicate="1"/>
+  <sample Root="53" LoKey="53" HiKey="53" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_uh1.wav" Duplicate="1"/>
+  <sample Root="54" LoKey="54" HiKey="54" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Vocal_Fry.wav" Duplicate="1"/>
+  <sample Root="55" LoKey="55" HiKey="55" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_woo!.wav" Duplicate="1"/>
+  <sample Root="56" LoKey="56" HiKey="56" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeah_ah.wav" Duplicate="1"/>
+  <sample Root="57" LoKey="57" HiKey="57" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeah!.wav" Duplicate="1"/>
+  <sample Root="58" LoKey="58" HiKey="58" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeh.wav" Duplicate="1"/>
+  <sample Root="59" LoKey="59" HiKey="59" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yuh.wav" Duplicate="1"/>
+</samplemap>

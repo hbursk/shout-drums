@@ -8,6 +8,7 @@
 
 #include "PresetInfo.h"
 #include "PresetInfo-en.h"
+#include "PresetInfo-es.h"
 
 using namespace shout;
 
@@ -35,7 +36,15 @@ void PresetInfo::openUrl() const
 
 void PresetInfo::parseJson()
 {
-    auto json = String( PresetInfoen_json, PresetInfoen_jsonSize).toStdString();
+    std::string json;
+    if( SystemStats::getUserLanguage() == "es" )
+    {
+        json = String( CharPointer_UTF8(PresetInfoes_json), PresetInfoes_jsonSize).toStdString();
+    }
+    else
+    {
+        json = String( PresetInfoen_json, PresetInfoen_jsonSize).toStdString();
+    }
     const auto j = json::parse( json );
     
     auto authors = j.at("authors").get<nlohmann::json>();

@@ -15,7 +15,7 @@ DrumsData::DrumsData(MainController* mc) :
     addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynthGroup::SpecialParameters::UnisonoVoiceAmount>>("UnisonoVoiceAmount", synth_group_id );
     addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynthGroup::SpecialParameters::UnisonoDetune>>("UnisonoDetune", synth_group_id );
     addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynthGroup::SpecialParameters::UnisonoSpread>>("UnisonoSpread", synth_group_id );
-    addToUserPreset<raw::GenericStorage::Bypassed<false>>("PolyFilterBypass", poly_filter_velo_mod_id);
+    addToUserPreset<raw::GenericStorage::Bypassed<false>>("PolyFilterBypass", poly_filter_id);
     
     // arp
     addToUserPreset<raw::GenericStorage::Bypassed<false>>("ArpBypass", arp_id );
@@ -46,6 +46,8 @@ DrumsData::DrumsData(MainController* mc) :
     addToUserPreset<raw::GenericStorage::Bypassed<false>>("WaveGeneratorBypass", waveform_generator_id);
     addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("WaveGeneratorGain", waveform_generator_id);
     addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Balance>>("WaveGeneratorPan", waveform_generator_id);
+    addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::VoiceLimit>>("WaveGeneratorVoiceLimit", waveform_generator_id);
+
 
     addToUserPreset<raw::GenericStorage::SampleMap>("LoadedMap1",  sampler1_id );
     addToUserPreset<raw::GenericStorage::Attribute<ModulatorSynth::Parameters::Gain>>("Sampler1Gain", sampler1_id);
@@ -142,8 +144,9 @@ void DrumsData::createModules(MainController* mc)
 
     auto conv = builder.create<hise::ConvolutionEffect>( root, raw::IDs::Chains::FX );
     conv->setId( convolution_reverb_id );
-    ProcessorHelpers::restoreFromBase64String( conv, "341.3ocUQsjSCCCD0l1tfErohC.hC.p8D.p4CTTosJI.B1fbiGkXgimHamVhPrmiE2AtHbCf31FQpWMu2a97FOK0XJXLnlPGlTWBD5IC7P0ZTVYEnhL0mPOsKyYQvZPuhLotjYL.mPo8700WyDJB839j8uGA6gTO80LlETo0cyZZQYkz.y.UlM+egetb4NaMUUVY6xeuAlvReMSiUJdRtFX7CKC3fjcvLtQ30oGe98U9rhRgJqaNggI6V9NTBILmUzvc9f2WFs31.ujWBWLyOH5i81dQInYWrgslT31zATWcEr2bgCelRjHVFaYZaqliHPwa0o8B3BKpaxwBFBs+DjWGmiaZZVuAiIOHLhURXGHFknKZDIDkb2+tKl3kKj7ksGQSyPhvl6jJ6NlUKbVYdUQLVoSAublRARia7GQbktEOp0cwfhuE7ayau3XGltWbbqH4OnqNLVL");
-    
+//    ProcessorHelpers::restoreFromBase64String( conv, "341.3ocUQsjSCCCD0l1tfErohC.hC.p8D.p4CTTosJI.B1fbiGkXgimHamVhPrmiE2AtHbCf31FQpWMu2a97FOK0XJXLnlPGlTWBD5IC7P0ZTVYEnhL0mPOsKyYQvZPuhLotjYL.mPo8700WyDJB839j8uGA6gTO80LlETo0cyZZQYkz.y.UlM+egetb4NaMUUVY6xeuAlvReMSiUJdRtFX7CKC3fjcvLtQ30oGe98U9rhRgJqaNggI6V9NTBILmUzvc9f2WFs31.ujWBWLyOH5i81dQInYWrgslT31zATWcEr2bgCelRjHVFaYZaqliHPwa0o8B3BKpaxwBFBs+DjWGmiaZZVuAiIOHLhURXGHFknKZDIDkb2+tKl3kKj7ksGQSyPhvl6jJ6NlUKbVYdUQLVoSAublRARia7GQbktEOp0cwfhuE7ayau3XGltWbbqH4OnqNLVL");
+
+    ProcessorHelpers::restoreFromBase64String( conv, "336.3ocUQEjSCCCDzl1bfCbAwC.wC.0xG.TSRoEUZiRBf3DxMdUhEN1Q1NsMBwENwyh+.eD9APbShHcOsyL6N6tZCTxDPqkJD9z3pB.gOwwUJ1H4kFlTfl6gvm0m47PXCnVilTUPzZfhv3AdppaILABe7PTa7DXNj54uVPLfHopeUyyKJ4ZXAHRMY+K7y0AMq0bQQooO+CZXBI40TkrTPiyT.gdXa.E3jClwLlaOO976a7H4ELQZ+ZlNMt436Qw3vRRdM2ENuEDt5Ne23WltZgme36sq8LBme0kaIaP41K0Aa6Kmryl9wtgHtTVDYHJSmlkvWP6f3A9TlQppqw.5Z3DIsJJSts1rANiQOxzr0bnADI4Ra1HDxMiwoAcONcsSgx5eiH8dhQwrieYYdjrTk.tYDg.3Z6HOBYacOdT2JDAB5dvu0Qq3XKF2JNtSD8Gk+oXG");
     
     auto gain = builder.create<hise::GainEffect>( root, raw::IDs::Chains::FX );
     gain->setId( simple_gain_id );

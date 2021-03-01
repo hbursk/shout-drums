@@ -2,5 +2,5 @@
 // Source file: ../Localization/PresetInfo-en.json
 
 extern const char*  PresetInfoen_json;
-const unsigned int  PresetInfoen_jsonSize = 1389;
+const unsigned int  PresetInfoen_jsonSize = 2791;
 

@@ -10,6 +10,7 @@
 #include "ExpandAnimation.h"
 #include "ProcessorKeys.h"
 #include "LightningAnimation.h"
+#include "InfoView.h"
 #include "Spec.h"
 
 PresetBarContainer::PresetBarContainer(MainController* mc, shout::App& app, MidiListener& midiListener)
@@ -35,6 +36,9 @@ PresetBarContainer::PresetBarContainer(MainController* mc, shout::App& app, Midi
     addChildComponent(&m_keySwitcher);
     addAndMakeVisible(&m_presetInfoView);
     
+    m_expandButton.getProperties().set(info_title_property, TRANS("presets"));
+    m_expandButton.getProperties().set(info_message_property, TRANS("Click to open and close the preset browser"));
+
     auto &presets = app.presets();
     auto expand = [this, &presets](){
         

@@ -1,5 +1,6 @@
 // Auto-generated binary data by the Projucer
-// Source file: ../Images/Montserrat-Regular.ttf
+// Source file: ../../../../Downloads/Montserrat-Regular.ttf
 
-extern const char* MontserratRegular_ttf;
-const unsigned int MontserratRegular_ttfSize = 245708;
+extern const char*  MontserratRegular_ttf;
+const unsigned int  MontserratRegular_ttfSize = 304100;
+

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="Buffet_Vox" RRGroupAmount="1" MicPositions=";" SaveMode="2">
+  <sample Root="53" LoKey="60" HiKey="60" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ah_ah.wav" Duplicate="0" MonolithOffset="0"
+          MonolithLength="151552" SampleRate="44100" Volume="-7"/>
+  <sample Root="54" LoKey="61" HiKey="61" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ah.wav" Duplicate="0" MonolithOffset="151552"
+          MonolithLength="118784" SampleRate="44100" Volume="-7"/>
+  <sample Root="55" LoKey="62" HiKey="62" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ahyeh.wav" Duplicate="0" MonolithOffset="270336"
+          MonolithLength="122880" SampleRate="44100" Volume="-7"/>
+  <sample Root="56" LoKey="63" HiKey="63" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_ehyah.wav" Duplicate="0" MonolithOffset="393216"
+          MonolithLength="102400" SampleRate="44100" Volume="-7"/>
+  <sample Root="57" LoKey="64" HiKey="64" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ha_melody.wav" Duplicate="0"
+          MonolithOffset="495616" MonolithLength="114688" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="58" LoKey="65" HiKey="65" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Hey_Melody.wav" Duplicate="0"
+          MonolithOffset="610304" MonolithLength="163840" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="59" LoKey="66" HiKey="66" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Hoo_Hoo.wav" Duplicate="0" MonolithOffset="774144"
+          MonolithLength="135168" SampleRate="44100" Volume="-10"/>
+  <sample Root="60" LoKey="67" HiKey="67" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_I_take_it_slow.wav" Duplicate="0"
+          MonolithOffset="909312" MonolithLength="122880" SampleRate="44100"
+          Volume="-10"/>
+  <sample Root="61" LoKey="68" HiKey="68" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Nana.wav" Duplicate="0" MonolithOffset="1032192"
+          MonolithLength="167936" SampleRate="44100" Volume="-10"/>
+  <sample Root="62" LoKey="69" HiKey="69" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_no_noah.wav" Duplicate="0" MonolithOffset="1200128"
+          MonolithLength="135168" SampleRate="44100" Volume="-7"/>
+  <sample Root="63" LoKey="70" HiKey="70" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Oo_flip.wav" Duplicate="0" MonolithOffset="1335296"
+          MonolithLength="81920" SampleRate="44100" Volume="-7"/>
+  <sample Root="64" LoKey="71" HiKey="71" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_PHrase_1.wav" Duplicate="0"
+          MonolithOffset="1417216" MonolithLength="106496" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="65" LoKey="72" HiKey="72" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_PHrase_2.wav" Duplicate="0"
+          MonolithOffset="1523712" MonolithLength="86016" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="66" LoKey="73" HiKey="73" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Popcorn.wav" Duplicate="0" MonolithOffset="1609728"
+          MonolithLength="262144" SampleRate="44100" Volume="-7"/>
+  <sample Root="67" LoKey="74" HiKey="74" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Run.wav" Duplicate="0" MonolithOffset="1871872"
+          MonolithLength="163840" SampleRate="44100" Volume="-7"/>
+  <sample Root="68" LoKey="75" HiKey="75" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Two_Note_ouh.wav" Duplicate="0"
+          MonolithOffset="2035712" MonolithLength="143360" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="69" LoKey="76" HiKey="76" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_uh_2.wav" Duplicate="0" MonolithOffset="2179072"
+          MonolithLength="24576" SampleRate="44100" Volume="-7"/>
+  <sample Root="70" LoKey="77" HiKey="77" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_uh1.wav" Duplicate="0" MonolithOffset="2203648"
+          MonolithLength="28672" SampleRate="44100" Volume="-7"/>
+  <sample Root="71" LoKey="78" HiKey="78" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Vocal_Fry.wav" Duplicate="0"
+          MonolithOffset="2232320" MonolithLength="65536" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="72" LoKey="79" HiKey="79" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_woo!.wav" Duplicate="0" MonolithOffset="2297856"
+          MonolithLength="106496" SampleRate="44100" Volume="-7"/>
+  <sample Root="73" LoKey="80" HiKey="80" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeah_ah.wav" Duplicate="0" MonolithOffset="2404352"
+          MonolithLength="90112" SampleRate="44100" Volume="-7"/>
+  <sample Root="74" LoKey="81" HiKey="81" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeah!.wav" Duplicate="0" MonolithOffset="2494464"
+          MonolithLength="94208" SampleRate="44100" Volume="-7"/>
+  <sample Root="75" LoKey="82" HiKey="82" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeh.wav" Duplicate="0" MonolithOffset="2588672"
+          MonolithLength="32768" SampleRate="44100" Volume="-7"/>
+  <sample Root="76" LoKey="83" HiKey="83" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yuh.wav" Duplicate="0" MonolithOffset="2621440"
+          MonolithLength="110592" SampleRate="44100" Volume="-7"/>
+  <sample Root="17" LoKey="12" HiKey="12" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ah_ah.wav" Duplicate="1" MonolithOffset="2732032"
+          MonolithLength="151552" SampleRate="44100" Volume="-7"/>
+  <sample Root="18" LoKey="13" HiKey="13" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ah.wav" Duplicate="1" MonolithOffset="2883584"
+          MonolithLength="118784" SampleRate="44100" Volume="-7"/>
+  <sample Root="19" LoKey="14" HiKey="14" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ahyeh.wav" Duplicate="1" MonolithOffset="3002368"
+          MonolithLength="122880" SampleRate="44100" Volume="-7"/>
+  <sample Root="20" LoKey="15" HiKey="15" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_ehyah.wav" Duplicate="1" MonolithOffset="3125248"
+          MonolithLength="102400" SampleRate="44100" Volume="-7"/>
+  <sample Root="21" LoKey="16" HiKey="16" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ha_melody.wav" Duplicate="1"
+          MonolithOffset="3227648" MonolithLength="114688" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="22" LoKey="17" HiKey="17" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Hey_Melody.wav" Duplicate="1"
+          MonolithOffset="3342336" MonolithLength="163840" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="23" LoKey="18" HiKey="18" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Hoo_Hoo.wav" Duplicate="1" MonolithOffset="3506176"
+          MonolithLength="135168" SampleRate="44100" Volume="-10"/>
+  <sample Root="24" LoKey="19" HiKey="19" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_I_take_it_slow.wav" Duplicate="1"
+          MonolithOffset="3641344" MonolithLength="122880" SampleRate="44100"
+          Volume="-10"/>
+  <sample Root="25" LoKey="20" HiKey="20" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Nana.wav" Duplicate="1" MonolithOffset="3764224"
+          MonolithLength="167936" SampleRate="44100" Volume="-10"/>
+  <sample Root="26" LoKey="21" HiKey="21" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_no_noah.wav" Duplicate="1" MonolithOffset="3932160"
+          MonolithLength="135168" SampleRate="44100" Volume="-7"/>
+  <sample Root="27" LoKey="22" HiKey="22" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Oo_flip.wav" Duplicate="1" MonolithOffset="4067328"
+          MonolithLength="81920" SampleRate="44100" Volume="-7"/>
+  <sample Root="28" LoKey="23" HiKey="23" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_PHrase_1.wav" Duplicate="1"
+          MonolithOffset="4149248" MonolithLength="106496" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="29" LoKey="24" HiKey="24" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_PHrase_2.wav" Duplicate="1"
+          MonolithOffset="4255744" MonolithLength="86016" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="30" LoKey="25" HiKey="25" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Popcorn.wav" Duplicate="1" MonolithOffset="4341760"
+          MonolithLength="262144" SampleRate="44100" Volume="-7"/>
+  <sample Root="31" LoKey="26" HiKey="26" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Run.wav" Duplicate="1" MonolithOffset="4603904"
+          MonolithLength="163840" SampleRate="44100" Volume="-7"/>
+  <sample Root="32" LoKey="27" HiKey="27" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Two_Note_ouh.wav" Duplicate="1"
+          MonolithOffset="4767744" MonolithLength="143360" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="33" LoKey="28" HiKey="28" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_uh_2.wav" Duplicate="1" MonolithOffset="4911104"
+          MonolithLength="24576" SampleRate="44100" Volume="-7"/>
+  <sample Root="34" LoKey="29" HiKey="29" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_uh1.wav" Duplicate="1" MonolithOffset="4935680"
+          MonolithLength="28672" SampleRate="44100" Volume="-7"/>
+  <sample Root="35" LoKey="30" HiKey="30" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Vocal_Fry.wav" Duplicate="1"
+          MonolithOffset="4964352" MonolithLength="65536" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="36" LoKey="31" HiKey="31" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_woo!.wav" Duplicate="1" MonolithOffset="5029888"
+          MonolithLength="106496" SampleRate="44100" Volume="-7"/>
+  <sample Root="37" LoKey="32" HiKey="32" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeah_ah.wav" Duplicate="1" MonolithOffset="5136384"
+          MonolithLength="90112" SampleRate="44100" Volume="-7"/>
+  <sample Root="38" LoKey="33" HiKey="33" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeah!.wav" Duplicate="1" MonolithOffset="5226496"
+          MonolithLength="94208" SampleRate="44100" Volume="-7"/>
+  <sample Root="39" LoKey="34" HiKey="34" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeh.wav" Duplicate="1" MonolithOffset="5320704"
+          MonolithLength="32768" SampleRate="44100" Volume="-7"/>
+  <sample Root="40" LoKey="35" HiKey="35" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yuh.wav" Duplicate="1" MonolithOffset="5353472"
+          MonolithLength="110592" SampleRate="44100" Volume="-7"/>
+  <sample Root="36" LoKey="36" HiKey="36" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ah_ah.wav" Duplicate="1" MonolithOffset="5464064"
+          MonolithLength="151552" SampleRate="44100" Volume="-7"/>
+  <sample Root="37" LoKey="37" HiKey="37" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ah.wav" Duplicate="1" MonolithOffset="5615616"
+          MonolithLength="118784" SampleRate="44100" Volume="-7"/>
+  <sample Root="38" LoKey="38" HiKey="38" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ahyeh.wav" Duplicate="1" MonolithOffset="5734400"
+          MonolithLength="122880" SampleRate="44100" Volume="-7"/>
+  <sample Root="39" LoKey="39" HiKey="39" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_ehyah.wav" Duplicate="1" MonolithOffset="5857280"
+          MonolithLength="102400" SampleRate="44100" Volume="-7"/>
+  <sample Root="40" LoKey="40" HiKey="40" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Ha_melody.wav" Duplicate="1"
+          MonolithOffset="5959680" MonolithLength="114688" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="41" LoKey="41" HiKey="41" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Hey_Melody.wav" Duplicate="1"
+          MonolithOffset="6074368" MonolithLength="163840" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="42" LoKey="42" HiKey="42" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Hoo_Hoo.wav" Duplicate="1" MonolithOffset="6238208"
+          MonolithLength="135168" SampleRate="44100" Volume="-10"/>
+  <sample Root="43" LoKey="43" HiKey="43" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_I_take_it_slow.wav" Duplicate="1"
+          MonolithOffset="6373376" MonolithLength="122880" SampleRate="44100"
+          Volume="-9"/>
+  <sample Root="44" LoKey="44" HiKey="44" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Nana.wav" Duplicate="1" MonolithOffset="6496256"
+          MonolithLength="167936" SampleRate="44100" Volume="-10"/>
+  <sample Root="45" LoKey="45" HiKey="45" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_no_noah.wav" Duplicate="1" MonolithOffset="6664192"
+          MonolithLength="135168" SampleRate="44100" Volume="-7"/>
+  <sample Root="46" LoKey="46" HiKey="46" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Oo_flip.wav" Duplicate="1" MonolithOffset="6799360"
+          MonolithLength="81920" SampleRate="44100" Volume="-7"/>
+  <sample Root="47" LoKey="47" HiKey="47" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_PHrase_1.wav" Duplicate="1"
+          MonolithOffset="6881280" MonolithLength="106496" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="48" LoKey="48" HiKey="48" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_PHrase_2.wav" Duplicate="1"
+          MonolithOffset="6987776" MonolithLength="86016" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="49" LoKey="49" HiKey="49" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Popcorn.wav" Duplicate="1" MonolithOffset="7073792"
+          MonolithLength="262144" SampleRate="44100" Volume="-7"/>
+  <sample Root="50" LoKey="50" HiKey="50" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Run.wav" Duplicate="1" MonolithOffset="7335936"
+          MonolithLength="163840" SampleRate="44100" Volume="-7"/>
+  <sample Root="51" LoKey="51" HiKey="51" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Two_Note_ouh.wav" Duplicate="1"
+          MonolithOffset="7499776" MonolithLength="143360" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="52" LoKey="52" HiKey="52" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_uh_2.wav" Duplicate="1" MonolithOffset="7643136"
+          MonolithLength="24576" SampleRate="44100" Volume="-7"/>
+  <sample Root="53" LoKey="53" HiKey="53" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_uh1.wav" Duplicate="1" MonolithOffset="7667712"
+          MonolithLength="28672" SampleRate="44100" Volume="-7"/>
+  <sample Root="54" LoKey="54" HiKey="54" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_Vocal_Fry.wav" Duplicate="1"
+          MonolithOffset="7696384" MonolithLength="65536" SampleRate="44100"
+          Volume="-7"/>
+  <sample Root="55" LoKey="55" HiKey="55" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_woo!.wav" Duplicate="1" MonolithOffset="7761920"
+          MonolithLength="106496" SampleRate="44100" Volume="-7"/>
+  <sample Root="56" LoKey="56" HiKey="56" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeah_ah.wav" Duplicate="1" MonolithOffset="7868416"
+          MonolithLength="90112" SampleRate="44100" Volume="-7"/>
+  <sample Root="57" LoKey="57" HiKey="57" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeah!.wav" Duplicate="1" MonolithOffset="7958528"
+          MonolithLength="94208" SampleRate="44100" Volume="-7"/>
+  <sample Root="58" LoKey="58" HiKey="58" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yeh.wav" Duplicate="1" MonolithOffset="8052736"
+          MonolithLength="32768" SampleRate="44100" Volume="-7"/>
+  <sample Root="59" LoKey="59" HiKey="59" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Buffet_yuh.wav" Duplicate="1" MonolithOffset="8085504"
+          MonolithLength="110592" SampleRate="44100" Volume="-7"/>
+</samplemap>

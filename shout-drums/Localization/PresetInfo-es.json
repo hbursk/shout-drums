@@ -1,0 +1,106 @@
+{
+	"authors":{
+		"Dresage" :{
+			"name" : "Dresage",
+			"url" : "https://bit.ly/2NvWekk"
+		},
+		"Bad" : {
+			"name" : "Bad Snacks",
+			"url" : "https://bit.ly/3t7dg91"
+		}
+	},
+	"presets":{
+	"pancake":{
+		"description" : "Dulces tambores que aportarán textura a tus ritmos",
+		"author" : "Dresage"
+	},
+	"biscuit" : {
+		"description" : "Patadas hinchadas y percusión burbujeante",
+		"author" : "Dresage"
+	},
+	"scone" : {
+		"description" : "Tambores que golpean con impacto",
+		"author" : "Dresage"
+	},
+	"electro":{
+		"description" : "808 patadas y trampas ágiles son la base de cualquier pista",
+		"author" : "Bad"
+	},
+	"cookin" : {
+		"description" : "Sonidos metálicos clicky y clacky",
+		"author" : "Dresage"
+	},
+	"strings" : {
+		"description" : "Hermosos acordes de violín que puedes tocar con un dedo",
+		"author" : "Bad"
+	},
+	"stringsss" : {
+		"description" : "Hermosos acordes de violín estirados que puedes tocar con un dedo",
+		"author" : "Bad"
+	},
+	"buffet" : {
+		"description" : "Una colección de corridas y adlibs de pop vocal femenino",
+		"author" : "Dresage"
+	},
+	"jello" : {
+		"description" : "Voces femeninas con alma de 2000",
+		"author" : "Dresage"
+	},
+	"funfetti" : {
+		"description" : "Melodías grupales femeninas en armonía",
+		"author" : "Dresage"
+	},
+	"lit" : {
+		"description" : "Sonido de sintetizador analógico redondo para solistas o bajos",
+		"author" : "Bad"
+	},
+	"meringue" : {
+		"description" : "¡Un instrumento vocal sedoso que puedes tocar tú mismo!",
+		"author" : "Dresage"
+	},
+	"meringueee" : {
+		"description" : "¡Un instrumento vocal sedoso que puedes tocar tú mismo!",
+		"author" : "Dresage"
+	},
+	"pluck" : {
+		"description" : "Sonido de sintetizador para líneas melódicas",
+		"author" : "Bad"
+	},
+	"saw" : {
+		"description" : "Sonido de sintetizador de diente de sierra esencial",
+		"author" : "" 
+	},
+	"sine" : {
+		"description" : "Los hermosos tonos simples de una onda sinusoidal",
+		"author" : "" 
+	},
+	"smooth" : {
+		"description" : "Caída suave en este tono de sintetizador",
+		"author" : "Bad" 
+	},
+	"square" : {
+		"description" : "Cuando necesite más, busque la onda cuadrada",
+		"author" : "" 
+	},
+	"trapezoid" : {
+		"description" : "Un cruce entre un traingle y una onda cuadrada",
+		"author" : "" 
+	},
+	"triangle" : {
+		"description" : "Preciosos tonos de campana de este triángulo",
+		"author" : "" 
+	},
+	"zap" : {
+		"description" : "Corta la mezcla con este vibrante sintetizador",
+		"author" : "Bad"
+	},
+	"p-bass":{
+		"description" : "Completa el extremo inferior con este bajo clásico",
+		"author" : "Bad"
+	},
+	"synth":{
+		"description" : "Gama baja analógica",
+		"author" : "Bad"
+	}
+	}
+}

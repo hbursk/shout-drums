@@ -15,6 +15,7 @@ class InfoView : public juce::Component, private juce::Timer
 {
 public:
     InfoView(Presets& presets);
+    virtual ~InfoView();
 
     void resized() override;
     

@@ -11,59 +11,95 @@
 	},
 	"presets":{
 	"pancake":{
-		"description" : "Description for pancake",
+		"description" : "Sweet syrupy drums that will bring a unique texture to your beats",
 		"author" : "Dresage"
 	},
 	"biscuit" : {
-		"description" : "Description for biscuit",
+		"description" : "Puffy kicks and fizzy, quirky percussion gives you all the tools to make beats that don't skip the carbs",
 		"author" : "Dresage"
 	},
 	"scone" : {
-		"description" : "Description for scone",
+		"description" : "Drums that hit but stay round and doughy on impact",
 		"author" : "Dresage"
 	},
 	"electro":{
-		"description" : "Description for electro",
+		"description" : "808 kicks and snappy snares are the foundation of any track",
 		"author" : "Bad"
 	},
 	"cookin" : {
-		"description" : "Foley sounds from power tools to the kitchen",
+		"description" : "Clicky and clacky metallic found sounds that found their way to you!",
 		"author" : "Dresage"
 	},
-	"stringsss" : {
-		"description" : "Beautiful chords you can play with one finger",
+	"strings" : {
+		"description" : "Beautiful violin chords you can play with one finger",
 		"author" : "Bad"
 	},
+	"stringsss" : {
+		"description" : "Beautiful stretched violin chords you can play with one finger",
+		"author" : "Bad"
+	},
+	"buffet" : {
+		"description" : "A collection of female vocal pop runs and adlibs that fizz, crunch and manipulate pitch/formant",
+		"author" : "Dresage"
+	},
+	"jello" : {
+		"description" : "Female vocals with throwback 2000's soul and all the boyband era feels",
+		"author" : "Dresage"
+	},
+	"funfetti" : {
+		"description" : "Female group melodies in harmony. A technicolor good time!",
+		"author" : "Dresage"
+	},
 	"lit" : {
-		"description" : "Round analog synth sound with arpeggiation",
+		"description" : "Round analog synth sound for leads or bass",
+		"author" : "Bad"
+	},
+	"meringue" : {
+		"description" : "A silky whipped vocal instrument you can play yourself!",
+		"author" : "Dresage"
+	},
+	"meringueee" : {
+		"description" : "A stretched silky whipped vocal instrument you can play yourself!",
+		"author" : "Dresage"
+	},
+	"pluck" : {
+		"description" : "Lovely synth sound for melody lines",
 		"author" : "Bad"
 	},
 	"saw" : {
-		"description" : "Description for saw",
+		"description" : "Essential sawtooth synth sound",
 		"author" : "" 
 	},
 	"sine" : {
-		"description" : "Description for sine",
+		"description" : "The lovely simple tones of a sinewave",
 		"author" : "" 
 	},
+	"smooth" : {
+		"description" : "Smooth falloff on this synth tone",
+		"author" : "Bad" 
+	},
 	"square" : {
-		"description" : "Description for square",
+		"description" : "When you need more, reach for the square wave",
 		"author" : "" 
 	},
 	"trapezoid" : {
-		"description" : "Description for trapezoid",
+		"description" : "A cross between a traingle and a square wave",
 		"author" : "" 
 	},
 	"triangle" : {
-		"description" : "Description for triangle",
+		"description" : "Lovely bell like tones from this triangle",
 		"author" : "" 
 	},
 	"zap" : {
-		"description" : "Description for zap",
+		"description" : "Cut through the mix with this buzzy synth",
 		"author" : "Bad"
 	},
 	"p-bass":{
-		"description" : "Description for p-bass",
+		"description" : "Fill out the bottom end with this classic bass guitar",
+		"author" : "Bad"
+	},
+	"synth":{
+		"description" : "Analog low end",
 		"author" : "Bad"
 	}
 	}

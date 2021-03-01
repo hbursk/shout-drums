@@ -14,7 +14,7 @@
           LoopEnd="196881" LoopStart="31945" LoopEnabled="1" LoopXFade="8192"
           MonolithOffset="835584" MonolithLength="425984" SampleRate="44100"
           Volume="-1"/>
-  <sample Root="60" LoKey="60" HiKey="83" LoVel="0" HiVel="127" RRGroup="1"
+  <sample Root="60" LoKey="60" HiKey="84" LoVel="0" HiVel="127" RRGroup="1"
           FileName="{PROJECT_FOLDER}BS_LIT Synth_C3.wav" Duplicate="1"
           LoopStart="40033" LoopEnd="344105" LoopXFade="8192" LoopEnabled="1"
           MonolithOffset="1261568" MonolithLength="425984" SampleRate="44100"

@@ -163,6 +163,11 @@ private:
             }
             
             auto pData = data->getParameter(0);
+            if (pData == nullptr)
+            {
+                return;
+            }
+            
             auto proc = pData->getProcessor();
             auto pIndex = pData->getParameter();
             
@@ -173,16 +178,29 @@ private:
                 hise::raw::Reference<Processor>::ParameterCallback update = [this](float newValue)
                 {
                     auto data = m_mainController->getMacroManager().getMacroChain()->getMacroControlData(MacroIndex);
+                   
+                    if ( data == nullptr )
+                    {
+                        return;
+                    }
                     
                     auto pData = data->getParameter(0);
-                    if (m_iconAnimation)
+                    if (pData == nullptr)
+                    {
+                        return;
+                    }
+                    
+                    if ( m_iconAnimation )
                     {
                         auto range = pData->getParameterRange();
                         auto n = range.convertTo0to1(newValue);
                         auto normalized = m_slider.valueToProportionOfLength( n );
                         auto scaled = normalized * (m_animationEnd - m_animationStart) + m_animationStart;
                         juce::MessageManager::callAsync([this, scaled](){
-                            m_iconAnimation->setFrameNormalised( scaled );
+                            if (m_iconAnimation)
+                            {
+                                m_iconAnimation->setFrameNormalised( scaled );
+                            }
                         });
 
                     }

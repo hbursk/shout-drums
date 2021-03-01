@@ -3,6 +3,7 @@
 #include "Colors.h"
 
 #include <algorithm>
+#include <cctype>
 
 const char category_drums[] = "Drums";
 const char category_fx[] = "FX";

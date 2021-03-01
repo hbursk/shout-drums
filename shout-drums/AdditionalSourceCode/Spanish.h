@@ -1,6 +1,6 @@
 // Auto-generated binary data by the Projucer
-// Source file: Spanish.txt
+// Source file: ../Localization/Spanish.txt
 
 extern const char*  Spanish_txt;
-const unsigned int  Spanish_txtSize = 1597;
+const unsigned int  Spanish_txtSize = 2085;
 

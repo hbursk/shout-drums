@@ -2,19 +2,19 @@
 
 <samplemap ID="BS_PP_Synth" RRGroupAmount="1" MicPositions=";" SaveMode="2">
   <sample Root="24" LoKey="12" HiKey="35" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_PP Synth_C0.wav" Duplicate="1" LoopStart="56553"
+          FileName="{PROJECT_FOLDER}BS_PP Synth_C0.wav" Duplicate="0" LoopStart="56553"
           LoopXFade="8192" LoopEnd="171858" LoopEnabled="1" MonolithOffset="0"
           MonolithLength="229376" SampleRate="44100"/>
   <sample Root="36" LoKey="36" HiKey="47" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_PP Synth_C1.wav" Duplicate="1" Volume="2"
+          FileName="{PROJECT_FOLDER}BS_PP Synth_C1.wav" Duplicate="0" Volume="2"
           LoopStart="60087" LoopEnabled="1" LoopEnd="174068" LoopXFade="8192"
           MonolithOffset="229376" MonolithLength="212992" SampleRate="44100"/>
   <sample Root="48" LoKey="48" HiKey="59" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_PP Synth_C2.wav" Duplicate="1" LoopStart="37380"
+          FileName="{PROJECT_FOLDER}BS_PP Synth_C2.wav" Duplicate="0" LoopStart="37380"
           LoopEnd="172637" LoopXFade="8192" LoopEnabled="1" MonolithOffset="442368"
           MonolithLength="212992" SampleRate="44100"/>
-  <sample Root="60" LoKey="60" HiKey="83" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}BS_PP Synth_C3.wav" Duplicate="1" LoopStart="65536"
+  <sample Root="60" LoKey="60" HiKey="84" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}BS_PP Synth_C3.wav" Duplicate="0" LoopStart="65536"
           LoopEnd="192028" LoopEnabled="1" LoopXFade="8192" MonolithOffset="655360"
           MonolithLength="212992" SampleRate="44100"/>
 </samplemap>

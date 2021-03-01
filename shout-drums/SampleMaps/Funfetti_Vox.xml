@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="Funfetti_Vox" RRGroupAmount="1" MicPositions=";" SaveMode="2">
+  <sample Root="53" LoKey="60" HiKey="60" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Adventure.wav" Duplicate="0"
+          MonolithOffset="0" MonolithLength="151552" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="54" LoKey="61" HiKey="61" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Ah_Melody.wav" Duplicate="0"
+          MonolithOffset="151552" MonolithLength="122880" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="55" LoKey="62" HiKey="62" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Ah_Pretty.wav" Duplicate="0"
+          MonolithOffset="274432" MonolithLength="188416" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="56" LoKey="63" HiKey="63" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_ah_response.wav" Duplicate="0"
+          MonolithOffset="462848" MonolithLength="77824" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="57" LoKey="64" HiKey="64" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Ah_Unison.wav" Duplicate="0"
+          MonolithOffset="540672" MonolithLength="188416" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="58" LoKey="65" HiKey="65" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_alanis_1.wav" Duplicate="0"
+          MonolithOffset="729088" MonolithLength="53248" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="59" LoKey="66" HiKey="66" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_alanis_2.wav" Duplicate="0"
+          MonolithOffset="782336" MonolithLength="57344" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="60" LoKey="67" HiKey="67" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Down_Melody.wav" Duplicate="0"
+          MonolithOffset="839680" MonolithLength="49152" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="61" LoKey="68" HiKey="68" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hey_Group.wav" Duplicate="0"
+          MonolithOffset="888832" MonolithLength="90112" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="62" LoKey="69" HiKey="69" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hey_Hey_unison.wav" Duplicate="0"
+          MonolithOffset="978944" MonolithLength="147456" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="63" LoKey="70" HiKey="70" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hey_Hey.wav" Duplicate="0"
+          MonolithOffset="1126400" MonolithLength="65536" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="64" LoKey="71" HiKey="71" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hey.wav" Duplicate="0" MonolithOffset="1191936"
+          MonolithLength="40960" SampleRate="44100" Volume="-8"/>
+  <sample Root="65" LoKey="72" HiKey="72" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hey1.wav" Duplicate="0" MonolithOffset="1232896"
+          MonolithLength="118784" SampleRate="44100" Volume="-8"/>
+  <sample Root="66" LoKey="73" HiKey="73" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Heys.wav" Duplicate="0" MonolithOffset="1351680"
+          MonolithLength="122880" SampleRate="44100" Volume="-8"/>
+  <sample Root="67" LoKey="74" HiKey="74" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hoo_question.wav" Duplicate="0"
+          MonolithOffset="1474560" MonolithLength="155648" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="68" LoKey="75" HiKey="75" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_nana.wav" Duplicate="0" MonolithOffset="1630208"
+          MonolithLength="131072" SampleRate="44100" Volume="-8"/>
+  <sample Root="69" LoKey="76" HiKey="76" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Oh_melody_group.wav" Duplicate="0"
+          MonolithOffset="1761280" MonolithLength="167936" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="70" LoKey="77" HiKey="77" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Pretty_oo.wav" Duplicate="0"
+          MonolithOffset="1929216" MonolithLength="208896" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="71" LoKey="78" HiKey="78" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_siren.wav" Duplicate="0" MonolithOffset="2138112"
+          MonolithLength="98304" SampleRate="44100" Volume="-8"/>
+  <sample Root="72" LoKey="79" HiKey="79" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_That's_all_folks.wav" Duplicate="0"
+          MonolithOffset="2236416" MonolithLength="184320" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="73" LoKey="80" HiKey="80" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Welcome_aboard.wav" Duplicate="0"
+          MonolithOffset="2420736" MonolithLength="286720" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="74" LoKey="81" HiKey="81" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_woo_melody.wav" Duplicate="0"
+          MonolithOffset="2707456" MonolithLength="139264" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="75" LoKey="82" HiKey="82" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_yah.wav" Duplicate="0" MonolithOffset="2846720"
+          MonolithLength="114688" SampleRate="44100" Volume="-8"/>
+  <sample Root="76" LoKey="83" HiKey="83" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_yeh_yeh.wav" Duplicate="0"
+          MonolithOffset="2961408" MonolithLength="69632" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="17" LoKey="12" HiKey="12" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Adventure.wav" Duplicate="1"
+          MonolithOffset="3031040" MonolithLength="151552" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="18" LoKey="13" HiKey="13" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Ah_Melody.wav" Duplicate="1"
+          MonolithOffset="3182592" MonolithLength="122880" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="19" LoKey="14" HiKey="14" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Ah_Pretty.wav" Duplicate="1"
+          MonolithOffset="3305472" MonolithLength="188416" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="20" LoKey="15" HiKey="15" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_ah_response.wav" Duplicate="1"
+          MonolithOffset="3493888" MonolithLength="77824" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="21" LoKey="16" HiKey="16" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Ah_Unison.wav" Duplicate="1"
+          MonolithOffset="3571712" MonolithLength="188416" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="22" LoKey="17" HiKey="17" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_alanis_1.wav" Duplicate="1"
+          MonolithOffset="3760128" MonolithLength="53248" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="23" LoKey="18" HiKey="18" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_alanis_2.wav" Duplicate="1"
+          MonolithOffset="3813376" MonolithLength="57344" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="24" LoKey="19" HiKey="19" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Down_Melody.wav" Duplicate="1"
+          MonolithOffset="3870720" MonolithLength="49152" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="25" LoKey="20" HiKey="20" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hey_Group.wav" Duplicate="1"
+          MonolithOffset="3919872" MonolithLength="90112" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="26" LoKey="21" HiKey="21" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hey_Hey_unison.wav" Duplicate="1"
+          MonolithOffset="4009984" MonolithLength="147456" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="27" LoKey="22" HiKey="22" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hey_Hey.wav" Duplicate="1"
+          MonolithOffset="4157440" MonolithLength="65536" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="28" LoKey="23" HiKey="23" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hey.wav" Duplicate="1" MonolithOffset="4222976"
+          MonolithLength="40960" SampleRate="44100" Volume="-8"/>
+  <sample Root="29" LoKey="24" HiKey="24" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hey1.wav" Duplicate="1" MonolithOffset="4263936"
+          MonolithLength="118784" SampleRate="44100" Volume="-8"/>
+  <sample Root="30" LoKey="25" HiKey="25" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Heys.wav" Duplicate="1" MonolithOffset="4382720"
+          MonolithLength="122880" SampleRate="44100" Volume="-8"/>
+  <sample Root="31" LoKey="26" HiKey="26" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hoo_question.wav" Duplicate="1"
+          MonolithOffset="4505600" MonolithLength="155648" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="32" LoKey="27" HiKey="27" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_nana.wav" Duplicate="1" MonolithOffset="4661248"
+          MonolithLength="131072" SampleRate="44100" Volume="-8"/>
+  <sample Root="33" LoKey="28" HiKey="28" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Oh_melody_group.wav" Duplicate="1"
+          MonolithOffset="4792320" MonolithLength="167936" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="34" LoKey="29" HiKey="29" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Pretty_oo.wav" Duplicate="1"
+          MonolithOffset="4960256" MonolithLength="208896" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="35" LoKey="30" HiKey="30" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_siren.wav" Duplicate="1" MonolithOffset="5169152"
+          MonolithLength="98304" SampleRate="44100" Volume="-8"/>
+  <sample Root="36" LoKey="31" HiKey="31" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_That's_all_folks.wav" Duplicate="1"
+          MonolithOffset="5267456" MonolithLength="184320" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="37" LoKey="32" HiKey="32" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Welcome_aboard.wav" Duplicate="1"
+          MonolithOffset="5451776" MonolithLength="286720" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="38" LoKey="33" HiKey="33" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_woo_melody.wav" Duplicate="1"
+          MonolithOffset="5738496" MonolithLength="139264" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="39" LoKey="34" HiKey="34" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_yah.wav" Duplicate="1" MonolithOffset="5877760"
+          MonolithLength="114688" SampleRate="44100" Volume="-8"/>
+  <sample Root="40" LoKey="35" HiKey="35" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_yeh_yeh.wav" Duplicate="1"
+          MonolithOffset="5992448" MonolithLength="69632" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="36" LoKey="36" HiKey="36" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Adventure.wav" Duplicate="1"
+          MonolithOffset="6062080" MonolithLength="151552" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="37" LoKey="37" HiKey="37" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Ah_Melody.wav" Duplicate="1"
+          MonolithOffset="6213632" MonolithLength="122880" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="38" LoKey="38" HiKey="38" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Ah_Pretty.wav" Duplicate="1"
+          MonolithOffset="6336512" MonolithLength="188416" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="39" LoKey="39" HiKey="39" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_ah_response.wav" Duplicate="1"
+          MonolithOffset="6524928" MonolithLength="77824" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="40" LoKey="40" HiKey="40" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Ah_Unison.wav" Duplicate="1"
+          MonolithOffset="6602752" MonolithLength="188416" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="41" LoKey="41" HiKey="41" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_alanis_1.wav" Duplicate="1"
+          MonolithOffset="6791168" MonolithLength="53248" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="42" LoKey="42" HiKey="42" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_alanis_2.wav" Duplicate="1"
+          MonolithOffset="6844416" MonolithLength="57344" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="43" LoKey="43" HiKey="43" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Down_Melody.wav" Duplicate="1"
+          MonolithOffset="6901760" MonolithLength="49152" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="44" LoKey="44" HiKey="44" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hey_Group.wav" Duplicate="1"
+          MonolithOffset="6950912" MonolithLength="90112" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="45" LoKey="45" HiKey="45" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hey_Hey_unison.wav" Duplicate="1"
+          MonolithOffset="7041024" MonolithLength="147456" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="46" LoKey="46" HiKey="46" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hey_Hey.wav" Duplicate="1"
+          MonolithOffset="7188480" MonolithLength="65536" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="47" LoKey="47" HiKey="47" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hey.wav" Duplicate="1" MonolithOffset="7254016"
+          MonolithLength="40960" SampleRate="44100" Volume="-8"/>
+  <sample Root="48" LoKey="48" HiKey="48" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hey1.wav" Duplicate="1" MonolithOffset="7294976"
+          MonolithLength="118784" SampleRate="44100" Volume="-8"/>
+  <sample Root="49" LoKey="49" HiKey="49" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Heys.wav" Duplicate="1" MonolithOffset="7413760"
+          MonolithLength="122880" SampleRate="44100" Volume="-8"/>
+  <sample Root="50" LoKey="50" HiKey="50" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Hoo_question.wav" Duplicate="1"
+          MonolithOffset="7536640" MonolithLength="155648" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="51" LoKey="51" HiKey="51" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_nana.wav" Duplicate="1" MonolithOffset="7692288"
+          MonolithLength="131072" SampleRate="44100" Volume="-8"/>
+  <sample Root="52" LoKey="52" HiKey="52" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Oh_melody_group.wav" Duplicate="1"
+          MonolithOffset="7823360" MonolithLength="167936" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="53" LoKey="53" HiKey="53" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Pretty_oo.wav" Duplicate="1"
+          MonolithOffset="7991296" MonolithLength="208896" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="54" LoKey="54" HiKey="54" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_siren.wav" Duplicate="1" MonolithOffset="8200192"
+          MonolithLength="98304" SampleRate="44100" Volume="-8"/>
+  <sample Root="55" LoKey="55" HiKey="55" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_That's_all_folks.wav" Duplicate="1"
+          MonolithOffset="8298496" MonolithLength="184320" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="56" LoKey="56" HiKey="56" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_Welcome_aboard.wav" Duplicate="1"
+          MonolithOffset="8482816" MonolithLength="286720" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="57" LoKey="57" HiKey="57" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_woo_melody.wav" Duplicate="1"
+          MonolithOffset="8769536" MonolithLength="139264" SampleRate="44100"
+          Volume="-8"/>
+  <sample Root="58" LoKey="58" HiKey="58" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_yah.wav" Duplicate="1" MonolithOffset="8908800"
+          MonolithLength="114688" SampleRate="44100" Volume="-8"/>
+  <sample Root="59" LoKey="59" HiKey="59" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Funfetti_yeh_yeh.wav" Duplicate="1"
+          MonolithOffset="9023488" MonolithLength="69632" SampleRate="44100"
+          Volume="-8"/>
+</samplemap>

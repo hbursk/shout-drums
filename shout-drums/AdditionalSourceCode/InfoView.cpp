@@ -5,6 +5,7 @@
 constexpr char default_info[] = "";
 constexpr char default_title[] = "";
 
+
 InfoView::InfoView(Presets& presets)
 {
     if ( juce::Desktop::getInstance().getMainMouseSource().canHover() )
@@ -20,6 +21,11 @@ InfoView::InfoView(Presets& presets)
     {
         disableDisplay( pickerState == PickerState::Open );
     });
+}
+
+InfoView::~InfoView()
+{
+    stopTimer();
 }
 
 void InfoView::resized()

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ProjectSettings>
-  <Name value="Snackage"/>
+  <Name value="Bold"/>
   <Version value="1.0.0"/>
   <Description value="Sounds from Dresage and Bad Snacks"/>
-  <BundleIdentifier value="com.shoutAudio.snackage"/>
-  <PluginCode value="Sasn"/>
+  <BundleIdentifier value="com.shoutAudio.bold"/>
+  <PluginCode value="Sabd"/>
   <EmbedAudioFiles value="Yes"/>
   <AdditionalDspLibraries value=""/>
   <OSXStaticLibs value=""/>
@@ -18,7 +18,7 @@
   <SupportFullDynamicsHLAC value="1"/>
   <AAXCategoryFX value="AAX_ePlugInCategory_Modulation"/>
   <SupportMonoFX value="No"/>
-  <VST3Support value="1"/>
+  <VST3Support value="0"/>
   <UseRawFrontend value="1"/>
   <EmbedImageFiles value="1"/>
   <ExtraDefinitionsLinux value=""/>
