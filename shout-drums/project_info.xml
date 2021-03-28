@@ -2,7 +2,7 @@
 
 <ProjectSettings>
   <Name value="Bold"/>
-  <Version value="1.0.0"/>
+  <Version value="1.0.1"/>
   <Description value="Sounds from Dresage and Bad Snacks"/>
   <BundleIdentifier value="com.shoutAudio.bold"/>
   <PluginCode value="Sabd"/>

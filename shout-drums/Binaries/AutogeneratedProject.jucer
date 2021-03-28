@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="Tw64Zd" name="Bold" projectType="audioplug" version="1.0.1"
+              bundleIdentifier="com.shoutAudio.bold" includeBinaryInAppConfig="1"
+              buildVST="1" buildVST3="0" buildAU="1" buildAUv3="0" buildStandalone="0"
+              buildRTAS="0" buildAAX="0" pluginName="Bold" pluginDesc="Bold"
+              pluginManufacturer="Shout Audio" pluginManufacturerCode="Shau"
+              pluginCode="Sabd" pluginChannelConfigs="" pluginIsSynth="1" pluginWantsMidiIn="1%"
+              pluginProducesMidiOut="0" pluginIsMidiEffectPlugin="0" pluginEditorRequiresKeys="1"
+              pluginAUExportPrefix="DemoProjectAU" pluginRTASCategory="" aaxIdentifier=""
+              pluginAAXCategory="2048" companyName="Shout Audio" companyWebsite="http://www.shoutaud.io"
+              companyCopyright="(c)2021, Shout Audio" displaySplashScreen="0"
+              reportAppUsage="0" splashScreenColour="Dark" enableIAA="1" cppLanguageStandard="14"
+              pluginFormats="buildVST,buildAU,enableIAA" pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn,pluginEditorRequiresKeys"
+              jucerFormatVersion="1">
+  <MAINGROUP id="SLR7uY" name="Bold">
+    <GROUP id="{122C85F1-8B09-257A-B636-113E3EAC258A}" name="Source">
+      <FILE id="eLP6Ii" name="balanceKnob_200.png" compile="0" resource="1"
+            file="Source/Images/balanceKnob_200.png"/>
+      <FILE id="O9wjCd" name="FrontendKnob_Bipolar.png" compile="0" resource="1"
+            file="Source/Images/FrontendKnob_Bipolar.png"/>
+      <FILE id="UAxUWd" name="FrontendKnob_Unipolar.png" compile="0" resource="1"
+            file="Source/Images/FrontendKnob_Unipolar.png"/>
+      <FILE id="KmyOlv" name="infoError.png" compile="0" resource="1" file="Source/Images/infoError.png"/>
+      <FILE id="CNpA5r" name="infoInfo.png" compile="0" resource="1" file="Source/Images/infoInfo.png"/>
+      <FILE id="MjbOy3" name="infoQuestion.png" compile="0" resource="1"
+            file="Source/Images/infoQuestion.png"/>
+      <FILE id="zsTpOz" name="infoWarning.png" compile="0" resource="1" file="Source/Images/infoWarning.png"/>
+      <FILE id="d1rhrw" name="knobEmpty_200.png" compile="0" resource="1"
+            file="Source/Images/knobEmpty_200.png"/>
+      <FILE id="u2SLs3" name="knobModulated_200.png" compile="0" resource="1"
+            file="Source/Images/knobModulated_200.png"/>
+      <FILE id="rTpn8D" name="knobUnmodulated_200.png" compile="0" resource="1"
+            file="Source/Images/knobUnmodulated_200.png"/>
+      <FILE id="jJzDA2" name="CopyProtection.cpp" compile="1" resource="0"
+            file="Source/CopyProtection.cpp"/>
+      <FILE id="AOT2K8" name="Plugin.cpp" compile="1" resource="0" file="Source/Plugin.cpp"/>
+      <FILE id="esGQuC" name="PresetData.cpp" compile="1" resource="0" file="Source/PresetData.cpp"/>
+      <FILE id="q8WZ82" name="PresetData.h" compile="0" resource="0" file="Source/PresetData.h"/>
+      <FILE id="jjzOA2" name="toggle_200.png" compile="0" resource="1" file="Source/Images/toggle_200.png"/>
+      <FILE id="dzrtgH" name="ArrowRightAnimation.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/ArrowRightAnimation.h"/>
+      <FILE id="ybfK93" name="PresetInfo-es.h" compile="0" resource="0" file="../AdditionalSourceCode/PresetInfo-es.h"/>
+      <FILE id="K16w8L" name="PresetTile.h" compile="0" resource="0" file="../AdditionalSourceCode/PresetTile.h"/>
+      <FILE id="bT4RhD" name="WaterFillFlatAnimationDarkPink.h" compile="0"
+            resource="0" file="../AdditionalSourceCode/WaterFillFlatAnimationDarkPink.h"/>
+      <FILE id="yEFjGY" name="KeySwitcher.h" compile="0" resource="0" file="../AdditionalSourceCode/KeySwitcher.h"/>
+      <FILE id="FSuOiS" name="MacroKnob.h" compile="0" resource="0" file="../AdditionalSourceCode/MacroKnob.h"/>
+      <FILE id="JEXgTV" name="AttributedLabel.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/AttributedLabel.h"/>
+      <FILE id="KHqHaT" name="FontMontserrat.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/FontMontserrat.h"/>
+      <FILE id="jWfLLI" name="MainComponent.h" compile="0" resource="0" file="../AdditionalSourceCode/MainComponent.h"/>
+      <FILE id="VVGPQw" name="PresetScrollingPicker.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/PresetScrollingPicker.h"/>
+      <FILE id="vkH8cu" name="ProcessorKeys.h" compile="0" resource="0" file="../AdditionalSourceCode/ProcessorKeys.h"/>
+      <FILE id="mqUWOw" name="WaterFillFlatAnimationTeal.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/WaterFillFlatAnimationTeal.h"/>
+      <FILE id="c5UAbV" name="WaterFillFlatAnimationOrange.h" compile="0"
+            resource="0" file="../AdditionalSourceCode/WaterFillFlatAnimationOrange.h"/>
+      <FILE id="FqC7aR" name="MidiUtils.h" compile="0" resource="0" file="../AdditionalSourceCode/MidiUtils.h"/>
+      <FILE id="oCHLAM" name="MidiListener.h" compile="0" resource="0" file="../AdditionalSourceCode/MidiListener.h"/>
+      <FILE id="TyMZ7o" name="Presets.h" compile="0" resource="0" file="../AdditionalSourceCode/Presets.h"/>
+      <FILE id="mKQGPq" name="WaveformGeneratorComponent.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/WaveformGeneratorComponent.h"/>
+      <FILE id="YL2wy3" name="MouthAnimation.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/MouthAnimation.h"/>
+      <FILE id="NEMmPl" name="ImageData.h" compile="0" resource="0" file="../AdditionalSourceCode/ImageData.h"/>
+      <FILE id="eA1voy" name="InfoView.h" compile="0" resource="0" file="../AdditionalSourceCode/InfoView.h"/>
+      <FILE id="kBtDv3" name="KeysAnimation.h" compile="0" resource="0" file="../AdditionalSourceCode/KeysAnimation.h"/>
+      <FILE id="xP6XHQ" name="DrumsImage.h" compile="0" resource="0" file="../AdditionalSourceCode/DrumsImage.h"/>
+      <FILE id="lsg5UU" name="HorizontalListBox.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/HorizontalListBox.h"/>
+      <FILE id="VxCA8j" name="PresetEditorComponent.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/PresetEditorComponent.h"/>
+      <FILE id="W5DOBt" name="App.h" compile="0" resource="0" file="../AdditionalSourceCode/App.h"/>
+      <FILE id="cxdM2F" name="Colors.h" compile="0" resource="0" file="../AdditionalSourceCode/Colors.h"/>
+      <FILE id="TuKpJ2" name="WaterFillFlatAnimationPink.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/WaterFillFlatAnimationPink.h"/>
+      <FILE id="J7BgAZ" name="MidiBarComponent.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/MidiBarComponent.h"/>
+      <FILE id="SBGuKn" name="FontOpenSans-Light.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/FontOpenSans-Light.h"/>
+      <FILE id="vOO32r" name="Spanish.h" compile="0" resource="0" file="../AdditionalSourceCode/Spanish.h"/>
+      <FILE id="SZpS1c" name="FontNotoSansJP-Regular.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/FontNotoSansJP-Regular.h"/>
+      <FILE id="pozgT5" name="ArrowLeftAnimation.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/ArrowLeftAnimation.h"/>
+      <FILE id="TmM27w" name="Spec.h" compile="0" resource="0" file="../AdditionalSourceCode/Spec.h"/>
+      <FILE id="fBllO5" name="MidiNotePowerButton.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/MidiNotePowerButton.h"/>
+      <FILE id="KMTYSv" name="KeysImage.h" compile="0" resource="0" file="../AdditionalSourceCode/KeysImage.h"/>
+      <FILE id="cxHx2V" name="VolumeAnimation.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/VolumeAnimation.h"/>
+      <FILE id="Qh73fK" name="PresetSwitcher.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/PresetSwitcher.h"/>
+      <FILE id="rj41YC" name="PresetBarContainer.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/PresetBarContainer.h"/>
+      <FILE id="Hv7bA8" name="LightningAnimation.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/LightningAnimation.h"/>
+      <FILE id="znExIu" name="TargetKey.h" compile="0" resource="0" file="../AdditionalSourceCode/TargetKey.h"/>
+      <FILE id="F0nXqF" name="WaterFillFlatAnimation.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/WaterFillFlatAnimation.h"/>
+      <FILE id="V8w4bs" name="Raw.h" compile="0" resource="0" file="../AdditionalSourceCode/Raw.h"/>
+      <FILE id="cLcjqk" name="ExpandAnimation.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/ExpandAnimation.h"/>
+      <FILE id="aC2dr3" name="BassImage.h" compile="0" resource="0" file="../AdditionalSourceCode/BassImage.h"/>
+      <FILE id="GHEcKm" name="BrightComboBox.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/BrightComboBox.h"/>
+      <FILE id="uoak7R" name="PowerButton.h" compile="0" resource="0" file="../AdditionalSourceCode/PowerButton.h"/>
+      <FILE id="RZjoLw" name="Font.h" compile="0" resource="0" file="../AdditionalSourceCode/Font.h"/>
+      <FILE id="KOt6tB" name="Localizations.h" compile="0" resource="0" file="../AdditionalSourceCode/Localizations.h"/>
+      <FILE id="kZMHT8" name="Property.h" compile="0" resource="0" file="../AdditionalSourceCode/Property.h"/>
+      <FILE id="Rx7Occ" name="VoxImage.h" compile="0" resource="0" file="../AdditionalSourceCode/VoxImage.h"/>
+      <FILE id="tQK2sC" name="FXImage.h" compile="0" resource="0" file="../AdditionalSourceCode/FXImage.h"/>
+      <FILE id="IkBV6U" name="LottieButton.h" compile="0" resource="0" file="../AdditionalSourceCode/LottieButton.h"/>
+      <FILE id="fDSoIQ" name="WaterFillFlatAnimationBlue.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/WaterFillFlatAnimationBlue.h"/>
+      <FILE id="t03Ci6" name="DrumPadsAnimation.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/DrumPadsAnimation.h"/>
+      <FILE id="nxBe7x" name="WaveformAnimation.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/WaveformAnimation.h"/>
+      <FILE id="teYiNy" name="Bind.h" compile="0" resource="0" file="../AdditionalSourceCode/Bind.h"/>
+      <FILE id="pUvIpa" name="PresetInfo.h" compile="0" resource="0" file="../AdditionalSourceCode/PresetInfo.h"/>
+      <FILE id="b0E5zI" name="SampleMaps.h" compile="0" resource="0" file="../AdditionalSourceCode/SampleMaps.h"/>
+      <FILE id="g4YHaY" name="PresetInfoView.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/PresetInfoView.h"/>
+      <FILE id="kzrnkD" name="RawEditor.h" compile="0" resource="0" file="../AdditionalSourceCode/RawEditor.h"/>
+      <FILE id="asU3hB" name="Knob.h" compile="0" resource="0" file="../AdditionalSourceCode/Knob.h"/>
+      <FILE id="q25mNd" name="ShoutLookAndFeel.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/ShoutLookAndFeel.h"/>
+      <FILE id="EdpF0V" name="SpeakerAnimation.h" compile="0" resource="0"
+            file="../AdditionalSourceCode/SpeakerAnimation.h"/>
+      <FILE id="mZZt0F" name="PresetInfo-en.h" compile="0" resource="0" file="../AdditionalSourceCode/PresetInfo-en.h"/>
+      <FILE id="V6TobS" name="HorizontalListBox.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/HorizontalListBox.cpp"/>
+      <FILE id="Kw4nd0" name="MidiUtils.cpp" compile="1" resource="0" file="../AdditionalSourceCode/MidiUtils.cpp"/>
+      <FILE id="hIDcnY" name="WaterFillFlatAnimationTeal.cpp" compile="1"
+            resource="0" file="../AdditionalSourceCode/WaterFillFlatAnimationTeal.cpp"/>
+      <FILE id="AEx2as" name="MouthAnimation.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/MouthAnimation.cpp"/>
+      <FILE id="GZuHUO" name="LightningAnimation.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/LightningAnimation.cpp"/>
+      <FILE id="x360hE" name="WaveformGeneratorComponent.cpp" compile="1"
+            resource="0" file="../AdditionalSourceCode/WaveformGeneratorComponent.cpp"/>
+      <FILE id="ofZdWc" name="BassImage.cpp" compile="1" resource="0" file="../AdditionalSourceCode/BassImage.cpp"/>
+      <FILE id="z1i5aF" name="PresetTile.cpp" compile="1" resource="0" file="../AdditionalSourceCode/PresetTile.cpp"/>
+      <FILE id="fldUhX" name="KeySwitcher.cpp" compile="1" resource="0" file="../AdditionalSourceCode/KeySwitcher.cpp"/>
+      <FILE id="HTat0w" name="PresetInfo.cpp" compile="1" resource="0" file="../AdditionalSourceCode/PresetInfo.cpp"/>
+      <FILE id="H9rKNm" name="PresetInfoView.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/PresetInfoView.cpp"/>
+      <FILE id="uHGjNV" name="VoxImage.cpp" compile="1" resource="0" file="../AdditionalSourceCode/VoxImage.cpp"/>
+      <FILE id="CwKV6L" name="Bind.cpp" compile="1" resource="0" file="../AdditionalSourceCode/Bind.cpp"/>
+      <FILE id="vb3ZPl" name="DrumsImage.cpp" compile="1" resource="0" file="../AdditionalSourceCode/DrumsImage.cpp"/>
+      <FILE id="keQgGP" name="MainComponent.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/MainComponent.cpp"/>
+      <FILE id="V7tJ3L" name="Spanish.cpp" compile="1" resource="0" file="../AdditionalSourceCode/Spanish.cpp"/>
+      <FILE id="SA9dl7" name="PresetEditorComponent.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/PresetEditorComponent.cpp"/>
+      <FILE id="qZAqys" name="ShoutLookAndFeel.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/ShoutLookAndFeel.cpp"/>
+      <FILE id="MKKRzG" name="PresetSwitcher.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/PresetSwitcher.cpp"/>
+      <FILE id="Abeo5V" name="DrumPadsAnimation.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/DrumPadsAnimation.cpp"/>
+      <FILE id="gtcyHH" name="WaterFillFlatAnimationPink.cpp" compile="1"
+            resource="0" file="../AdditionalSourceCode/WaterFillFlatAnimationPink.cpp"/>
+      <FILE id="YBBjD4" name="ExpandAnimation.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/ExpandAnimation.cpp"/>
+      <FILE id="MDcdrH" name="WaterFillFlatAnimationBlue.cpp" compile="1"
+            resource="0" file="../AdditionalSourceCode/WaterFillFlatAnimationBlue.cpp"/>
+      <FILE id="REXplH" name="WaterFillFlatAnimationDarkPink.cpp" compile="1"
+            resource="0" file="../AdditionalSourceCode/WaterFillFlatAnimationDarkPink.cpp"/>
+      <FILE id="QpH6Zx" name="Font.cpp" compile="1" resource="0" file="../AdditionalSourceCode/Font.cpp"/>
+      <FILE id="HSBUfi" name="PresetInfo-es.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/PresetInfo-es.cpp"/>
+      <FILE id="qTsEoV" name="FXImage.cpp" compile="1" resource="0" file="../AdditionalSourceCode/FXImage.cpp"/>
+      <FILE id="VcNCWD" name="Presets.cpp" compile="1" resource="0" file="../AdditionalSourceCode/Presets.cpp"/>
+      <FILE id="aLn3Xb" name="FontMontserrat.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/FontMontserrat.cpp"/>
+      <FILE id="vphqO1" name="Raw.cpp" compile="1" resource="0" file="../AdditionalSourceCode/Raw.cpp"/>
+      <FILE id="q55H6d" name="FontOpenSans-Light.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/FontOpenSans-Light.cpp"/>
+      <FILE id="F0s0VX" name="RawEditor.cpp" compile="1" resource="0" file="../AdditionalSourceCode/RawEditor.cpp"/>
+      <FILE id="oBUFdG" name="WaterFillFlatAnimation.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/WaterFillFlatAnimation.cpp"/>
+      <FILE id="VsgZeF" name="SpeakerAnimation.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/SpeakerAnimation.cpp"/>
+      <FILE id="ORbDwI" name="LottieButton.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/LottieButton.cpp"/>
+      <FILE id="pLxqro" name="PresetBarContainer.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/PresetBarContainer.cpp"/>
+      <FILE id="oDXyUA" name="MidiListener.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/MidiListener.cpp"/>
+      <FILE id="gFQH8f" name="SampleMaps.cpp" compile="1" resource="0" file="../AdditionalSourceCode/SampleMaps.cpp"/>
+      <FILE id="ibhvtz" name="FontNotoSansJP-Regular.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/FontNotoSansJP-Regular.cpp"/>
+      <FILE id="vRtetD" name="PresetInfo-en.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/PresetInfo-en.cpp"/>
+      <FILE id="FFuQjG" name="ArrowLeftAnimation.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/ArrowLeftAnimation.cpp"/>
+      <FILE id="zKZeTD" name="AttributedLabel.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/AttributedLabel.cpp"/>
+      <FILE id="eUEHCP" name="PresetScrollingPicker.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/PresetScrollingPicker.cpp"/>
+      <FILE id="KCbvnh" name="InfoView.cpp" compile="1" resource="0" file="../AdditionalSourceCode/InfoView.cpp"/>
+      <FILE id="qOmh73" name="KeysImage.cpp" compile="1" resource="0" file="../AdditionalSourceCode/KeysImage.cpp"/>
+      <FILE id="Arhg2h" name="WaveformAnimation.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/WaveformAnimation.cpp"/>
+      <FILE id="E9y50d" name="Localizations.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/Localizations.cpp"/>
+      <FILE id="GqrRBJ" name="TargetKey.cpp" compile="1" resource="0" file="../AdditionalSourceCode/TargetKey.cpp"/>
+      <FILE id="mAbF9X" name="VolumeAnimation.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/VolumeAnimation.cpp"/>
+      <FILE id="LkumW3" name="ArrowRightAnimation.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/ArrowRightAnimation.cpp"/>
+      <FILE id="uHakYB" name="KeysAnimation.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/KeysAnimation.cpp"/>
+      <FILE id="cAFkLI" name="WaterFillFlatAnimationOrange.cpp" compile="1"
+            resource="0" file="../AdditionalSourceCode/WaterFillFlatAnimationOrange.cpp"/>
+      <FILE id="dQWPhR" name="MidiBarComponent.cpp" compile="1" resource="0"
+            file="../AdditionalSourceCode/MidiBarComponent.cpp"/>
+      <FILE id="fVV59t" name="App.cpp" compile="1" resource="0" file="../AdditionalSourceCode/App.cpp"/>
+      <GROUP id="svjhkM" name="nlohmann">
+        <FILE id="OmT2xa" name="json.hpp" compile="0" resource="0" file="../AdditionalSourceCode/nlohmann/json.hpp"/>
+      </GROUP>
+      <GROUP id="gjmyzm" name="nod">
+        <FILE id="TbuBdg" name="nod.hpp" compile="0" resource="0" file="../AdditionalSourceCode/nod/nod.hpp"/>
+      </GROUP>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <VS2017 targetFolder="Builds/VisualStudio2017" vstLegacyFolder="/Users/hbursk/Development/shout-drums/lib/HISE/tools/SDK/VST3 SDK"
+            IPPLibrary="Sequential" extraDefs="HISE_NUM_PLUGIN_CHANNELS=2&#10;HI_ENABLE_EXTERNAL_CUSTOM_TILES=0&#10;USE_COMMON_APP_DATA_FOLDER=1&#10;HISE_USE_CUSTOM_ALERTWINDOW_LOOKANDFEEL=1&#10;HISE_INCLUDE_RLOTTIE=1">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       libraryPath=";%WIN_STATIC_LIB_FOLDER_D32%/" isDebug="1" optimisation="1"
+                       targetName="Bold_Debug x86" binaryPath="Compiled/" useRuntimeLibDLL="0"
+                       prebuildCommand="%PREBUILD_COMMAND%"/>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
+                       isDebug="1" optimisation="1" targetName="Bold_Debug_x64" libraryPath=";%WIN_STATIC_LIB_FOLDER_D64%"
+                       binaryPath="Compiled/" useRuntimeLibDLL="0" prebuildCommand="%PREBUILD_COMMAND%"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       libraryPath=";%WIN_STATIC_LIB_FOLDER_R32%" isDebug="0" optimisation="3"
+                       targetName="Bold x86" binaryPath="Compiled/" useRuntimeLibDLL="0"
+                       prebuildCommand="%PREBUILD_COMMAND%"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
+                       isDebug="0" optimisation="3" targetName="Bold x64" libraryPath=";%WIN_STATIC_LIB_FOLDER_R64%"
+                       binaryPath="Compiled/" useRuntimeLibDLL="0" prebuildCommand="%PREBUILD_COMMAND%"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_product_unlocking" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="hi_dsp_library" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_frontend" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_modules" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_scripting" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_core" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_lac" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_sampler" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_components" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_dsp" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_zstd" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_streaming" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_tools" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="stk_wrapper" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_snex" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+      </MODULEPATHS>
+    </VS2017>
+    <XCODE_MAC targetFolder="Builds/MacOSX" vstLegacyFolder="/Users/hbursk/Development/shout-drums/lib/HISE/tools/SDK/VST3 SDK"
+               extraCompilerFlags="-Wno-reorder -Wno-inconsistent-missing-override"
+               extraLinkerFlags="/opt/intel/ipp/lib/libippi.a  /opt/intel/ipp/lib/libipps.a /opt/intel/ipp/lib/libippvm.a /opt/intel/ipp/lib/libippcore.a "
+               extraDefs="HISE_NUM_PLUGIN_CHANNELS=2&#10;HI_ENABLE_EXTERNAL_CUSTOM_TILES=0&#10;USE_COMMON_APP_DATA_FOLDER=1&#10;HISE_USE_CUSTOM_ALERTWINDOW_LOOKANDFEEL=1&#10;HISE_INCLUDE_RLOTTIE=1">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="10.7 SDK" osxArchitecture="64BitIntel"
+                       isDebug="1" optimisation="1" enablePluginBinaryCopyStep="1" targetName="Bold Debug"
+                       headerPath="/opt/intel/ipp/include" libraryPath="/opt/intel/ipp/lib;"
+                       cppLibType="libc++"/>
+        <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="10.7 SDK" osxArchitecture="64BitIntel"
+                       isDebug="0" optimisation="3" enablePluginBinaryCopyStep="1" targetName="Bold"
+                       headerPath="/opt/intel/ipp/include" libraryPath="/opt/intel/ipp/lib;"
+                       cppLibType="libc++" linkTimeOptimisation="1" cppLanguageStandard="c++11"
+                       stripLocalSymbols="1"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_product_unlocking" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="hi_modules" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_dsp_library" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_frontend" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_scripting" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_core" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_lac" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_sampler" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_components" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_dsp" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_zstd" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_streaming" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_tools" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="stk_wrapper" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_snex" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+    <XCODE_IPHONE targetFolder="Builds/iOS" iosScreenOrientation="UIInterfaceOrientationLandscapeLeft,UIInterfaceOrientationLandscapeRight"
+                  extraCompilerFlags="-Wno-reorder -Wno-inconsistent-missing-override"
+                  extraLinkerFlags="" extraDefs="HI_ENABLE_EXTERNAL_CUSTOM_TILES=0&#10;USE_IPP=0&#10;HISE_IOS=1&#10;JUCE_USE_CUSTOM_PLUGIN_STANDALONE_APP=1&#10;USE_VDSP_FFT=1"
+                  UIStatusBarHidden="1" iosBackgroundAudio="1" iosBackgroundBle="0"
+                  customXcodeResourceFolders="../Samples&#10;../Images&#10;EmbeddedResources&#10;../UserPresets"
+                  iosAppGroups="%USE_APP_GROUPS%" iosAppGroupsId="%APP_GROUP_ID%"
+                  iosAppExtensionDuplicateResourcesFolder="0" iosDevelopmentTeamID="%DEVELOPMENT_TEAM_ID%"
+                  iosDeviceFamily="%TARGET_FAMILY%">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" iosCompatibility="9.0" isDebug="1" optimisation="1"
+                       targetName="Bold" cppLanguageStandard="c++11" cppLibType="libc++"/>
+        <CONFIGURATION name="Release" iosCompatibility="9.0" isDebug="0" optimisation="3"
+                       targetName="Bold" cppLanguageStandard="c++11" cppLibType="libc++"
+                       linkTimeOptimisation="1"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_product_unlocking" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="hi_scripting" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_modules" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_frontend" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_dsp_library" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_core" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_lac" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_sampler" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_components" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_dsp" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_zstd" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_streaming" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_tools" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="stk_wrapper" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_snex" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+      </MODULEPATHS>
+    </XCODE_IPHONE>
+    <LINUX_MAKE targetFolder="Builds/LinuxMakefile" vstLegacyFolder="/Users/hbursk/Development/shout-drums/lib/HISE/tools/SDK/VST3 SDK"
+                extraLinkerFlags="/opt/intel/ipp/lib/libippi.a  /opt/intel/ipp/lib/libipps.a /opt/intel/ipp/lib/libippvm.a /opt/intel/ipp/lib/libippcore.a"
+                extraDefs="HISE_NUM_PLUGIN_CHANNELS=2&#10;" linuxExtraPkgConfig="x11 xinerama xext">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" linkTimeOptimisation="0"
+                       targetName="Bold" defines="USE_IPP=enabled&#10;HI_ENABLE_LEGACY_CPU_SUPPORT=disabled"
+                       headerPath="/opt/intel/ipp/include" libraryPath="/opt/intel/ipp/lib"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="3" linkTimeOptimisation="1"
+                       targetName="Bold" defines="USE_IPP=enabled&#10;HI_ENABLE_LEGACY_CPU_SUPPORT=disabled"
+                       headerPath="/opt/intel/ipp/include" libraryPath="/opt/intel/ipp/lib"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_product_unlocking" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="/Users/hbursk/Development/shout-drums/lib/HISE/JUCE/modules"/>
+        <MODULEPATH id="hi_streaming" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_scripting" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_sampler" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_modules" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_lac" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_frontend" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_dsp_library" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_dsp" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_zstd" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_core" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_components" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hi_tools" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="stk_wrapper" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+        <MODULEPATH id="hnode_jit" path="/Users/hbursk/Development/shout-drums/lib/HISE"/>
+      </MODULEPATHS>
+    </LINUX_MAKE>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="hi_components" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="hi_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="hi_dsp" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="hi_dsp_library" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="hi_frontend" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="hi_lac" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="hi_modules" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="hi_sampler" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="hi_scripting" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="hi_snex" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="hi_streaming" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="hi_tools" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="hi_zstd" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_product_unlocking" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="stk_wrapper" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_QUICKTIME="disabled" USE_BACKEND="0" USE_FRONTEND="1" USE_RAW_FRONTEND="1"
+               HI_EXPORT_DSP_LIBRARY="0" HISE_ENABLE_MIDI_INPUT_FOR_FX="0" HISE_MIDIFX_PLUGIN="0"
+               USE_COPY_PROTECTION="0" IS_STANDALONE_APP="0" USE_IPP="1" FRONTEND_IS_PLUGIN="0"
+               USE_CUSTOM_FRONTEND_TOOLBAR="0" IS_STANDALONE_FRONTEND="0" USE_GLITCH_DETECTION="1"
+               ENABLE_PLOTTER="0" ENABLE_SCRIPTING_SAFE_CHECKS="0" ENABLE_ALL_PEAK_METERS="0"
+               USE_SPLASH_SCREEN="0" HI_SUPPORT_MONO_CHANNEL_LAYOUT="0" HI_SUPPORT_FULL_DYNAMICS_HLAC="1"
+               ENABLE_CONSOLE_OUTPUT="0" HI_ENABLE_LEGACY_CPU_SUPPORT="0" HLAC_MEASURE_DECODING_PERFORMANCE="0"
+               HLAC_DEBUG_LOG="0" HLAC_INCLUDE_TEST_SUITE="0" STANDALONE_STREAMING="0"
+               JUCE_ASSERTION_FIRFILTER="0" JUCE_WEB_BROWSER="0" JUCE_USE_CURL="0"
+               JUCE_DSP_USE_INTEL_MKL="0" JUCE_DSP_USE_SHARED_FFTW="0" JUCE_DSP_USE_STATIC_FFTW="0"
+               HISE_USE_CUSTOM_EXPANSION_TYPE="0" JUCE_HEADLESS_PLUGIN_CLIENT="0"/>
+  <LIVE_SETTINGS>
+    <OSX/>
+  </LIVE_SETTINGS>
+</JUCERPROJECT>
