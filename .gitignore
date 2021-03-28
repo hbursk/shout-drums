@@ -1,6 +1,7 @@
 
 # binary data
-Binaries/
+Binaries/Compiled/
+Binaries/Builds/
 *.hr1
 Samples/
 
