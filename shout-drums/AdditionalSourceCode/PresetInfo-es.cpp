@@ -100,7 +100,7 @@ static constexpr unsigned char PresetInfoes_json_local[] =
 "\t\t\"description\" : \"Corta la mezcla con este vibrante sintetizador\",\n"
 "\t\t\"author\" : \"Bad\"\n"
 "\t},\n"
-"\t\"p-bass\":{\n"
+"\t\"e-bass\":{\n"
 "\t\t\"description\" : \"Completa el extremo inferior con este bajo cl\xc3\xa1sico\",\n"
 "\t\t\"author\" : \"Bad\"\n"
 "\t},\n"
