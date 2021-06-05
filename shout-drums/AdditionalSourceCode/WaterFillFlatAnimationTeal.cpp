@@ -3,7 +3,7 @@
 
 #include "WaterFillFlatAnimationTeal.h"
 
-static constexpr unsigned char waterfill_teal_json_local[] =
+static const unsigned char waterfill_teal_json_local[] =
 "{\"v\":\"5.7.4\",\"fr\":29.9700012207031,\"ip\":12.00000048877,\"op\":113.000004602584,\"w\":307,\"h\":303,\"nm\":\"circle filling\",\"ddd\":0,\"assets\":[],\"layers\":[{\"ddd\":0,\"ind\":1,\"ty\":4,\"nm\":\"Shape Layer 3\",\"td\":1,\"sr\":1,\"ks\":{"
 "\"o\":{\"a\":0,\"k\":100,\"ix\":11},\"r\":{\"a\":0,\"k\":0,\"ix\":10},\"p\":{\"a\":0,\"k\":[152,141,0],\"ix\":2,\"l\":2},\"a\":{\"a\":0,\"k\":[0,-1,0],\"ix\":1,\"l\":2},\"s\":{\"a\":0,\"k\":[100,100,100],\"ix\":6,\"l\":2}},\"ao\":0,\"shapes\":[{\"ty\""
 ":\"gr\",\"it\":[{\"d\":1,\"ty\":\"el\",\"s\":{\"a\":0,\"k\":[250,250],\"ix\":2},\"p\":{\"a\":0,\"k\":[0,0],\"ix\":3},\"nm\":\"Ellipse Path 1\",\"mn\":\"ADBE Vector Shape - Ellipse\",\"hd\":false},{\"ty\":\"st\",\"c\":{\"a\":0,\"k\":[1,0.313725998822,"

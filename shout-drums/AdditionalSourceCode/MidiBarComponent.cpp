@@ -32,10 +32,16 @@ MidiBarComponent::MidiBarComponent( MidiListener& listener, Presets& presets )
             {
                 DyingNote dying;
                 dying.note = note;
+#if JUCE_WINDOWS
+                dying.alpha = 0;
+#endif
                 m_dyingNotes.push_back(dying);
             }
-            
+#if JUCE_WINDOWS
+            repaint();
+#else
             startTimer(1000.0/frame_rate);
+#endif
         });
     });
     

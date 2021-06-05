@@ -33,7 +33,11 @@ PresetInfoView::PresetInfoView(PresetInfo& _info)
 void PresetInfoView::resized()
 {
     const auto area = getLocalBounds();
+#if JUCE_WINDOWS
+    const int leftMargin = 0;
+#else
     const int leftMargin = 10;
+#endif
     const int topMargin = 0;
     m_infoLabel.setBounds( leftMargin,
                             topMargin,

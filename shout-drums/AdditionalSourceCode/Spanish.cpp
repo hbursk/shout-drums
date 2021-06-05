@@ -3,7 +3,7 @@
 
 #include "Spanish.h"
 
-static constexpr unsigned char Spanish_txt_local[] =
+static const unsigned char Spanish_txt_local[] =
 "language: Spanish\n"
 "countries: mx es\n"
 " \n"

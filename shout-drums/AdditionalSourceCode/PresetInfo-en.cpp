@@ -3,7 +3,7 @@
 
 #include "PresetInfo-en.h"
 
-static constexpr unsigned char PresetInfoen_json_local[] =
+static const unsigned char PresetInfoen_json_local[] =
 "{\n"
 "\t\"authors\":{\n"
 "\t\t\"Dresage\" :{\n"

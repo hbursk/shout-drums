@@ -3,7 +3,7 @@
 
 #include "FontOpenSans-Light.h"
 
-static constexpr unsigned char OpenSansLight_ttf_local[] = {
+static const unsigned char OpenSansLight_ttf_local[] = {
     0,   1,   0,   0,   0,   17,  1,   0,   0,   4,   0,   16,  71,  68,  69,  70,  11,  122, 12,  210, 0,   1,   138,
     16,  0,   0,   0,   46,  71,  80,  79,  83,  0,   25,  0,   12,  0,   1,   138, 64,  0,   0,   0,   16,  71,  83,
     85,  66,  227, 157, 41,  154, 0,   1,   138, 80,  0,   0,   2,   238, 79,  83,  47,  50,  160, 205, 155, 145, 0,
